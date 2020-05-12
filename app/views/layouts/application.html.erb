@@ -52,7 +52,8 @@
                 <%= link_to new_shot_path, class:"button is-primary"  do %>
                   <span class="icon is-small"><i class="fa fa-upload"></i></span>
                   <span>New Shot</span>
-                <% end %>
+                <%= link_to 'Profile', user_path(current_user) %>
+              <% end %>
               </p>
               <p class="control">
                 <%= link_to current_user.name, edit_user_registration_path, class:"button is-dark" %>
