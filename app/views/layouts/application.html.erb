@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DribbbleClone</title>
+    <title>Panóplia</title>
     <%= csrf_meta_tags %>
  		<meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -23,7 +23,7 @@
      <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <%= link_to root_path, class:"navbar-item" do %>
-          <h1 class="title is-5 has-text-white">Dribbble Clone</h1>
+          <h1 class="title is-5 has-text-white">Panóplia</h1>
         <% end  %>
       <div class="navbar-burger burger" data-target="navbar">
         <span></span>
@@ -52,10 +52,11 @@
                 <%= link_to new_shot_path, class:"button is-primary"  do %>
                   <span class="icon is-small"><i class="fa fa-upload"></i></span>
                   <span>New Shot</span>
-                <%= link_to 'Profile', user_path(current_user) %>
               <% end %>
               </p>
               <p class="control">
+               <%= link_to 'Profile', user_path(current_user) %>
+               <%= link_to 'Edit', edit_user_path(current_user) %>
                 <%= link_to current_user.name, edit_user_registration_path, class:"button is-dark" %>
               </p>
               <p class="control">
