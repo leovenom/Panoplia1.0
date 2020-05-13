@@ -61,7 +61,7 @@
           <div class="user-thumb">
           <%= image_tag shot.user.avatar %>
           </div>
-          <div class="user-name"><%= shot.user.name %></div>
+          <div class="user-name"><%=link_to shot.user.name, shot.user %></div>
         </div>
       </div>
     <% end %>
