@@ -5,7 +5,7 @@
 			<div class="column is-8">
 				<span class="by has-text-grey-light">by</span>
 				<div class="user-thumb">
-					<%= gravatar_image_tag(@shot.user.email.gsub('spam', 'mdeering'), alt: @shot.user.name, gravatar: { size: 20 }); %>
+				<%= image_tag @shot.user.avatar%>
 				</div>
 				<div class="user-name has-text-weight-bold"><%= @shot.user.name %></div>
 				<div class="shot-time"><span class="has-text-grey-light">posted</span><span class="has-text-weight-semibold">

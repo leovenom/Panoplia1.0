@@ -1,0 +1,102 @@
+<div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+        <%= image_tag @user.avatar %>
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">
+          <%= @user.username %>
+        </p>
+        <p class="subtitle is-6">
+          <%= @user.name %>
+        </p>
+      </div>
+    </div>
+
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+      <a href="#">#css</a> <a href="#">#responsive</a>
+      <br>
+      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="user-thumb">
+  <% if @user.avatar.attached? %>		
+    <%= image_tag @user.avatar %>
+    </div>
+    <div class="user-name"><%= @user.name %></div>
+<% end %>
+<div class="shots">
+<% @user_shots.each do|shot|%>
+<section class="section">
+        <div class="shot-grid-item">
+          <div class="shot-wrapper">
+          <%= link_to shot, class: "shot" do %>
+            <%= image_tag(shot.user_shot_url) %>
+            <div class="shot-data">
+              <h3 class="shot-title"><%= shot.title %></h3>
+              <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
+              <div class="shot-time">
+                <%= time_ago_in_words(shot.created_at) %>
+              </div>
+            </div>
+          <% end %>
+
+          <nav class="level shot-analytics">
+          <div class="level-left"></div>
+          <div class="level-right">
+            <div class="level-item views data">
+              <%= link_to shot do %>
+                <span class="icon"><i class="fa fa-eye"></i></span>
+                <%= shot.impressionist_count %>
+              <% end %>
+              
+            </div>
+            <div class="level-item comments data">
+            <%= link_to shot do %>
+              <span class="icon"><i class="fa fa-comment"></i></span>
+              <%= shot.comments.count %>
+            <% end %>
+          </div>
+          <div class="level-item likes">
+            <% if user_signed_in? %>
+              
+              <% if current_user.liked? shot %>
+                <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
+                  <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+                  <span class="vote_count"><%= shot.get_likes.size %></span>
+                <% end %>
+              <% else %>
+                <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+                  <span class="icon"><i class="fa fa-heart"></i></span>
+                  <span class="vote_count"><%= shot.get_likes.size %></span>
+                <% end %>
+              <% end %>
+            <% else %>
+                <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+                  <span class="icon"><i class="fa fa-heart"></i></span>
+                  <span class="vote_count"><%= shot.get_likes.size %></span>
+                <% end %>
+            <% end %>
+    
+          </div>
+        </div>
+      </nav>
+      </div>
+    </div> 
+  </section>
+  <% end %>
+  </div>
+  </section>

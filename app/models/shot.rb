@@ -5,4 +5,5 @@ class Shot < ApplicationRecord
 	mount_uploader :user_shot, UserShotUploader
 	is_impressionable
 	acts_as_votable
+	has_one_attached :avatar
 end
