@@ -44,15 +44,15 @@
 
         <div class="field">
           <div class="control">
-            <%= f.input :art, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            <%=  f.input :art, label: "Artist Area", required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
           </div>
         </div>
 
         <div class="field">
-        <%= f.label :available, "looking for a job?" %>
           <div class="control">
+            <label class="label">Looking for a job?</label>
             <%= f.check_box :available %>
-            <%= f.label :available, "I am avaiable for a job", autofocus: true, wrapper: false, label_html: { class: "label" } %>
+            <%= f.label :available, "I am avaiable for a job.", autofocus: true, wrapper: false, label_html: { class: "label" } %>
           </div>
         </div>
           <div class="field">
@@ -87,9 +87,10 @@
 
         <div class="field">
           <div class="control">
+            <label class="label">Are you a Entity?</label>
             <%= f.check_box :entity, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             <%= f.label :entity, "I am a entity", required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-            </div>
+          </div>
         </div>
    
         <%= f.button :submit, "Update", class:"button is-primary" %>
