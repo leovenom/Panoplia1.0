@@ -1,7 +1,7 @@
 class ShotsController < ApplicationController
   before_action :set_shot, only: [:show, :edit, :update, :destroy, :like, :unlike]
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :like, :unlike]
-  impressionist actions: [:show], unique: [:impressionable_type, :impressionable_id, :session_hash]
+  impressionist actions: [:show], unique: [:impressionable_type, :impressionable_id]
 
   # GET /shots
   # GET /shots.json

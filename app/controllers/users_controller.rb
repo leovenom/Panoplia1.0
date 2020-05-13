@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_shots  = @user.shots
   end
 
   def edit
@@ -12,6 +13,5 @@ class UsersController < ApplicationController
   end
 
   def update
-    
   end
 end

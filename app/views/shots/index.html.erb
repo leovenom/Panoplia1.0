@@ -59,7 +59,7 @@
         </div>
         <div class="user-data">
           <div class="user-thumb">
-            <%= gravatar_image_tag(shot.user.email.gsub('spam', 'mdeering'), alt: shot.user.name, gravatar: { size: 20 }); %>
+          <%= image_tag shot.user.avatar%>
           </div>
           <div class="user-name"><%= shot.user.name %></div>
         </div>
