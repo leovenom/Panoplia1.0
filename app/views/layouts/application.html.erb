@@ -20,10 +20,12 @@
       <p class="alert"><%= alert %></p>
     </div>
     <% end %>
-     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <%= link_to root_path, class:"navbar-item" do %>
-          <h1 class="title is-5 has-text-white">Panóplia</h1>
+        <div class="image-logo">
+        <%= image_tag 'panoplia-logo.png' %>
+        </div>
         <% end  %>
       <div class="navbar-burger burger" data-target="navbar">
         <span></span>
@@ -38,7 +40,7 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <%= link_to 'Shots', root_path , class:"button is-dark" %>
+                <%= link_to 'Shots', root_path , class:"button is-white" %>
               </p>
             </div>
           </div>
@@ -57,20 +59,20 @@
               <p class="control">
                <%#= link_to 'Profile', user_path(current_user) %>
                <%#= link_to 'Edit', edit_user_path(current_user) %>
-                <%= link_to 'Edit', edit_user_registration_path, class:"button is-dark" %>
-                <%= link_to current_user.name, user_path(current_user), class:"button is-dark" %>
+                <%= link_to 'Edit', edit_user_registration_path, class:"button is-white" %>
+                <%= link_to current_user.name, user_path(current_user), class:"button is-white" %>
 
-                <%#= link_to current_user.name, edit_user_registration_path, class:"button is-dark" %>
+                <%#= link_to current_user.name, edit_user_registration_path, class:"button is-white" %>
               </p>
               <p class="control">
-                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"button is-dark" %>
+                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"button is-white" %>
               </p>
               <% else %>
               <p class="control">
-                 <%= link_to "Sign In", new_user_session_path, class:"button is-dark" %>
+                 <%= link_to "Sign In", new_user_session_path, class:"button is-white" %>
               </p>
               <p class="control">
-                <%= link_to "Sign up", new_user_registration_path, class:"button is-dark"%>
+                <%= link_to "Sign up", new_user_registration_path, class:"button is-white"%>
               </p>
               <% end %>
             </div>
