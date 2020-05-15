@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+  font-family: Brice-Bold;
+  src: url(font-path('Brice-Bold.otf'));
+}
+
 
 $pink: #ea4c89;
 $pink-invert: #fff;
@@ -74,4 +79,19 @@ html, body {
 
 .visible {
 	display: block !important;
+}
+.is-white {
+	background-color: whitesmoke;
+}
+
+.navbar-item img {
+	max-height: 3.75rem;
+
+}
+
+a.navbar-item:hover, a.navbar-item.is-active,
+a.navbar-link:hover,
+a.navbar-link.is-active {
+  background-color: white;
+  color: #ea4c89;
 }

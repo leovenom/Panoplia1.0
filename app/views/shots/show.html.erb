@@ -79,7 +79,22 @@
             <% end %>
 					</div>
 				</div>
+
+				<h3> Random Inspiration</h3>
+				<div class="shot-wrapper">
+				<%= link_to @random_shot, class: "shot" do %>
+					<%= image_tag @random_shot.user_shot_url %>
+						<div class="shot-data">
+								<div class="user-thumb">
+									<%= image_tag @random_shot.user.avatar%>
+								</div>
+								<h3 class="shot-user"><%= @random_shot.user.name %></h3>
+								<h3 class="shot-title"><%= @random_shot.title %></h3>
+						</div>
+				</div>
+				<% end%>
 			</div>
+
 		</div>
 	</div>
 </div>

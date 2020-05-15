@@ -12,6 +12,7 @@ class ShotsController < ApplicationController
   # GET /shots/1
   # GET /shots/1.json
   def show
+    @random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
   end
 
   # GET /shots/new
