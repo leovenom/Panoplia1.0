@@ -7,6 +7,6 @@ protected
 
 def configure_permitted_parameters
   devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :entity])
-  devise_parameter_sanitizer.permit(:account_update, keys: [:name, :username, :location, :bio, :art, :available, :entity, :avatar])  
+  devise_parameter_sanitizer.permit(:account_update, keys: [:name, :username, :location, :bio, :art, :available, :avatar])  
 end
 end
