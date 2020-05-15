@@ -1,6 +1,4 @@
-# Let's Build A Dribbble Clone With Ruby on Rails
-
-# README
+# Let's Build Panóplia Plataform With Ruby on Rails
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
