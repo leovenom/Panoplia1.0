@@ -1,14 +1,22 @@
 <% if !user_signed_in? %>
-	<section class="hero is-warning is-large">
+	<section class="hero is-danger is-large">
 		<div class="hero-body">
 			<div class="container has-text-centered">
 				<h1 class="title is-size-3">
 					What are you working on? <span class="has-text-grey-light">Panóplia is where artists get inspired.</span>
 				</h1>
 				<div class="content">
-					<%= link_to "Login", new_user_session_path, class: "button is-primary" %>
+					<%#= link_to "I am Artist", new_user_registration_path, class: "button is-primary" %>
+					<%#= link_to "I am an Entity", new_user_registration_path, class:"button is-white"%>
 				</div>
 			</div>
 		</div>
 	</section>
+		<div class="level">
+		<%= link_to "I am Artist", new_user_registration_path, class: "button is-success is-large is-fullwidth" %>
+		<%= link_to "I am an Entity", new_user_registration_path, class:"button is-warning is-large is-fullwidth"%>
+	</div>
 <% end %>
+
+
+

@@ -13,11 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ 
  @font-face {
-  font-family: Brice-Bold;
-  src: url(font-path('Brice-Bold.otf'));
+  font-family: Brice;
+	src: url(font-path('Brice-SemiBoldSemiCondensed.otf'));
+	src: url(font-path('Brice-SemiBoldSemiExpanded.otf'));
 }
-
 
 $pink: #ea4c89;
 $pink-invert: #fff;
@@ -85,8 +86,8 @@ html, body {
 }
 
 .navbar-item img {
-	max-height: 3.75rem;
-
+	max-height: 3.35rem;
+	margin: 5px 0 5px 0;
 }
 
 a.navbar-item:hover, a.navbar-item.is-active,
@@ -94,4 +95,47 @@ a.navbar-link:hover,
 a.navbar-link.is-active {
   background-color: white;
   color: #ea4c89;
+}
+
+@media screen and (min-width: 769px), print {
+  .hero.is-large .hero-body {
+    padding-bottom: 17rem;
+    padding-top: 17rem;
+  }
+}
+
+.button.is-fullwidth {
+  display: flex;
+  width: 100%;
+  height: 115px;
+}
+
+.button {
+	font-family: Brice-SemiBoldSemiCondensed;
+	font-size: 1.3rem;
+}
+
+.button.is-large {
+	font-family: Brice-SemiBoldSemiExpanded;
+	font-size: 1.6rem;
+}
+
+.button.is-warning {
+	background-color: #FFDC00;
+}
+
+
+.button.is-success {
+		background-color: #32DC64;
+}
+
+.image.is-square img {
+  height: 250px;
+	width: 250px;
+	border-radius: 50%;
+}
+
+.image.is-square {
+	padding-top: 260px;
+
 }

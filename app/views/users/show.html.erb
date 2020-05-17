@@ -1,51 +1,71 @@
 <div class="card">
   <div class="card-image">
-    <section class="hero is-info is-large">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Large title
-      </h1>
-      <h2 class="subtitle">
-        Large subtitle
-      </h2>
-    </div>
+    <section class="hero is-info">
+      <div class="hero-body">
+        <div class="columns">
+          <div class="column">
+            <figure class="image is-square">
+              <%= image_tag @user.avatar unless @user.avatar.blank?  %>
+            </figure>
+          </div>
+          <div class="column">
+            <h1 class="title">
+              <%= @user.username %>
+            </h1>
+              <h2 class="subtitle">
+                <%= @user.art %>
+              </h2>
+              <h2 class="subtitle">
+                <%= @user.bio %>
+                <% if @user.available? %>
+                  <h2>I am available</h2>
+                <%end%>
+              </h2>
+              <div class="shot-time">
+                <%= time_ago_in_words(@user.created_at) %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
   </div>
-</section>
-  </div>
-  <div class="card-content">
+  
+  <%# <div class="card-content">
     <div class="media">
       <div class="media-left">
-        <figure class="image is-48x48">
-        <%= image_tag @user.avatar %>
-        </figure>
+        <figure class="image is-48x48"> %>
+        <%#= image_tag @user.avatar unless @user.avatar.blank?  %>
+        <%# </figure>
       </div>
       <div class="media-content">
-        <p class="title is-4">
-          <%= @user.username %>
-        </p>
-        <p class="subtitle is-6">
-          <%= @user.name %>
-        </p>
+        <p class="title is-4"> %>
+          <%#= @user.username %>
+        <%# </p>
+        <p class="subtitle is-6"> %>
+          <%#= @user.name %>
+        <%# </p>
       </div>
-    </div>
+    </div> %>
 
-    <div class="content">
+    <%# <div class="content">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+      Phasellus nec iaculis mauris. <a>@Panoplia</a>.
       <a href="#">#css</a> <a href="#">#responsive</a>
       <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
+      <div class="shot-time"> %>
+        <%#= time_ago_in_words(@user.created_at) %>
+      <%# </div>
+    </div> %>
+
   </div>
 </div>
 
 <section class="section">
   <div class="user-thumb">
   <% if @user.avatar.attached? %>		
-    <%= image_tag @user.avatar %>
+    <%#= image_tag @user.avatar %>
     </div>
-    <div class="user-name"><%= @user.name %></div>
+    <div class="user-name"><%#= @user.name %></div>
 <% end %>
 <div class="shots">
 <% @user_shots.each do|shot|%>

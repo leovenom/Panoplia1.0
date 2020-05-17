@@ -3,8 +3,12 @@
   <head>
     <title>Panóplia</title>
     <%= csrf_meta_tags %>
- 		<meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panóplia 〰 Plataforma de empoderamento e divulgação de artistas 〰</title>
+    <meta name="description" content="𝚙𝚘𝚛𝚚𝚞𝚎 𝚑á 𝚙𝚎𝚜𝚜𝚘𝚊𝚜 𝚚𝚞𝚎 𝚏𝚊𝚣𝚎𝚖 𝚌𝚘𝚒𝚜𝚊𝚜 𝚒𝚗𝚌𝚛í𝚟𝚎𝚒𝚜">
+    <meta property="og:title" content="〰 Plataforma de empoderamento e divulgação de artistas 〰">
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -24,7 +28,7 @@
       <div class="navbar-brand">
         <%= link_to root_path, class:"navbar-item" do %>
         <div class="image-logo">
-        <%= image_tag 'panoplia-logo.png' %>
+        <%= image_tag 'panoplia_logo.png' %>
         </div>
         <% end  %>
       <div class="navbar-burger burger" data-target="navbar">
@@ -40,7 +44,7 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <%= link_to 'Shots', root_path , class:"button is-white" %>
+                <%#= link_to 'Shots', root_path , class:"button is-white" %>
               </p>
             </div>
           </div>
@@ -69,10 +73,10 @@
               </p>
               <% else %>
               <p class="control">
-                 <%= link_to "Sign In", new_user_session_path, class:"button is-white" %>
+                 <%= link_to "Log in", new_user_session_path, class:"button is-white" %>
               </p>
               <p class="control">
-                <%= link_to "Sign up", new_user_registration_path, class:"button is-white"%>
+                <%#= link_to "Sign up", new_user_registration_path, class:"button is-white"%>
               </p>
               <% end %>
             </div>
