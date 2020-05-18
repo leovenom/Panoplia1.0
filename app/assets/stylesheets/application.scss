@@ -87,7 +87,7 @@ html, body {
 
 .navbar-item img {
 	max-height: 3.35rem;
-	margin: 5px 0 5px 0;
+	margin: 12px 0 12px 5px;
 }
 
 a.navbar-item:hover, a.navbar-item.is-active,
@@ -99,25 +99,26 @@ a.navbar-link.is-active {
 
 @media screen and (min-width: 769px), print {
   .hero.is-large .hero-body {
-    padding-bottom: 17rem;
-    padding-top: 17rem;
+    padding-bottom: 13rem;
+    padding-top: 13rem;
   }
 }
 
 .button.is-fullwidth {
   display: flex;
   width: 100%;
-  height: 115px;
+  height: 190px;
 }
 
 .button {
 	font-family: Brice-SemiBoldSemiCondensed;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 }
 
 .button.is-large {
 	font-family: Brice-SemiBoldSemiExpanded;
-	font-size: 1.6rem;
+	font-size: 2.2rem;
+	color: #0a0a0a;
 }
 
 .button.is-warning {
@@ -139,3 +140,15 @@ a.navbar-link.is-active {
 	padding-top: 260px;
 
 }
+
+.fa-play-circle:before {
+	content: "\f144";
+	font-size: 100px;
+}
+
+.button.is-warning:hover, .button.is-warning.is-hovered {
+  background-color: #f7d500;
+  border-color: transparent;
+  color: #fff;
+}
+
