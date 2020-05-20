@@ -2,7 +2,7 @@
   <div class="card-image">
     <section class="hero is-medium is-warning">
       <div class="hero-body">
-        <div class="columns is-centered is-vcentered">
+        <div class="columns is-centered">
 
           <div class="column is-2">
             <div class="image">
@@ -11,7 +11,7 @@
           </div>
 
           <div class="column is-7 has-text-centered">
-            <h1 class="title">
+            <h1 class="title is-size-1">
               <%= @user.username.upcase %>
             </h1>
             <h2 class="subtitle">
@@ -19,13 +19,22 @@
             </h2>
             <h2 class="subtitle">
               <%= @user.bio %>
+            </h2>
+            
+            <div class="buttons is-centered">
+              <button class="button is-white">+FOLLOW</button>
               <% if @user.available? %>
-                <h2>I am available</h2>
+              <button class="button is-white">+ HIRE ME</button>
               <%end%>
+            </div>
+
+            <h2 class="title is-size-7">
+              <%= @user.location.upcase %>
             </h2>
             <div class="shot-time">
-              <%= time_ago_in_words(@user.created_at) %>
+              <% time_ago_in_words(@user.created_at) %>
             </div>
+
           </div>
         </div>
 

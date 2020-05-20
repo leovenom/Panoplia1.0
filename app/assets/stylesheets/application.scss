@@ -146,6 +146,9 @@ a.navbar-link.is-active {
 .button.is-success {
 		background-color: #32DC64;
 }
+.buttons .button:not(:last-child) {
+  margin-right: 2.5rem;
+}
 
 .image img{
 	border-radius: 50%;
@@ -171,4 +174,8 @@ a.navbar-link.is-active {
   background-color: #f7d500;
   border-color: transparent;
   color: #fff;
+}
+
+.title:not(:last-child), .subtitle:not(:last-child) {
+	margin-bottom: 1.9rem;
 }
