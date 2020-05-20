@@ -86,7 +86,7 @@ html, body {
 }
 
 .navbar-item img {
-	max-height: 3.35rem;
+	max-height: 3.7rem;
 	margin: 12px 0 12px 5px;
 }
 
@@ -104,6 +104,13 @@ a.navbar-link.is-active {
   }
 }
 
+@media screen and (min-width: 769px), print {
+  .hero.is-medium .hero-body {
+    padding-bottom: 9rem;
+    padding-top: 5rem;
+  }
+}
+
 .button.is-fullwidth {
   display: flex;
   width: 100%;
@@ -112,33 +119,47 @@ a.navbar-link.is-active {
 
 .button {
 	font-family: Brice-SemiBoldSemiCondensed;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 }
 
 .button.is-large {
 	font-family: Brice-SemiBoldSemiExpanded;
 	font-size: 2.2rem;
 	color: #0a0a0a;
+	line-height: 29px;
+}
+
+.hero.is-warning .title {
+	font-family: Brice-SemiBoldSemiExpanded;
+	font-size: 2.2rem;
+	color: #0a0a0a;
+	line-height: 29px;
 }
 
 .button.is-warning {
 	background-color: #FFDC00;
 }
-
+.hero.is-warning {
+  background-color: #FFDC00;
+}
 
 .button.is-success {
 		background-color: #32DC64;
 }
 
-.image.is-square img {
-  height: 250px;
-	width: 250px;
+.image img{
 	border-radius: 50%;
+	display: block;
+  height: auto;
+  width: 40%;
 }
-
-.image.is-square {
-	padding-top: 260px;
-
+.column.is-2, .column.is-2-tablet {
+	flex: none;
+	width: 400px;
+	margin-right: -8vw;
+	margin-left: -19vw;
+	padding: 0 0px 0 90px;
+	margin-bottom: 40px;
 }
 
 .fa-play-circle:before {
@@ -151,4 +172,3 @@ a.navbar-link.is-active {
   border-color: transparent;
   color: #fff;
 }
-

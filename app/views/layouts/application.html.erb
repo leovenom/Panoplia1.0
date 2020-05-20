@@ -29,7 +29,7 @@
       <div class="navbar-brand">
         <%= link_to root_path, class:"navbar-item" do %>
         <div class="image-logo">
-        <%= image_tag 'panoplia_logo.png' %>
+        <%= image_tag 'Panoplia_logo.png' %>
         </div>
         <% end  %>
       <div class="navbar-burger burger" data-target="navbar">
@@ -58,23 +58,23 @@
               <p class="control">
                 <%= link_to new_shot_path, class:"button is-primary"  do %>
                   <span class="icon is-small"><i class="fa fa-upload"></i></span>
-                  <span>New Shot</span>
+                  <span>NEW SHOT</span>
               <% end %>
               </p>
               <p class="control">
                <%#= link_to 'Profile', user_path(current_user) %>
                <%#= link_to 'Edit', edit_user_path(current_user) %>
-                <%= link_to 'Edit', edit_user_registration_path, class:"button is-white" %>
-                <%= link_to current_user.name, user_path(current_user), class:"button is-white" %>
+                <%= link_to 'EDIT', edit_user_registration_path, class:"button is-white" %>
+                <%= link_to current_user.name.upcase, user_path(current_user), class:"button is-white" %>
 
                 <%#= link_to current_user.name, edit_user_registration_path, class:"button is-white" %>
               </p>
               <p class="control">
-                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"button is-white" %>
+                <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-white" %>
               </p>
               <% else %>
               <p class="control">
-                 <%= link_to "Log in", new_user_session_path, class:"button is-white" %>
+                 <%= link_to "LOG IN", new_user_session_path, class:"button is-white" %>
               </p>
               <p class="control">
                 <%#= link_to "Sign up", new_user_registration_path, class:"button is-white"%>
