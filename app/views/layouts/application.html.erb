@@ -18,11 +18,13 @@
   	<% if flash[:notice] %>
     	<div class="notification is-primary global-notification">
   	  	<p class="notice"><%= notice %></p>
+        <button class="delete"></button>
     	</div>
    	<% end %>
     <% if flash[:alert] %>
     <div class="notification is-danger global-notification">
       <p class="alert"><%= alert %></p>
+      <button class="delete"></button>
     </div>
     <% end %>
      <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -52,36 +54,32 @@
         </div>
 
         <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
               <% if user_signed_in? %>
-              <p class="control">
+              <p class="navbar-item">
                 <%= link_to new_shot_path, class:"button is-primary"  do %>
                   <span class="icon is-small"><i class="fa fa-upload"></i></span>
                   <span>NEW SHOT</span>
               <% end %>
               </p>
-              <p class="control">
+              <p class="navbar-item">
                <%#= link_to 'Profile', user_path(current_user) %>
                <%#= link_to 'Edit', edit_user_path(current_user) %>
                 <%= link_to 'EDIT', edit_user_registration_path, class:"button is-white" %>
+              </p>
+              <p class="navbar-item">
                 <%= link_to current_user.name.upcase, user_path(current_user), class:"button is-white" %>
-
                 <%#= link_to current_user.name, edit_user_registration_path, class:"button is-white" %>
               </p>
-              <p class="control">
+              <p class="navbar-item">
                 <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-white" %>
               </p>
+              
               <% else %>
-              <p class="control">
+              <p class="navbar-item">
                  <%= link_to "LOG IN", new_user_session_path, class:"button is-white" %>
               </p>
-              <p class="control">
-                <%#= link_to "Sign up", new_user_registration_path, class:"button is-white"%>
-              </p>
               <% end %>
-            </div>
-          </div>
+
         </div>
       </div>
     </nav> 
