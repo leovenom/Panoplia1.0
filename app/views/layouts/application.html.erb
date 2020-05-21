@@ -67,7 +67,7 @@
                 <%= link_to 'EDIT', edit_user_registration_path, class:"button is-white" %>
               </p>
               <p class="navbar-item">
-                <%= link_to current_user.name.upcase, user_path(current_user), class:"button is-white" %>
+                <%= link_to current_user.username.upcase, user_path(current_user), class:"button is-white" %>
                 <%#= link_to current_user.name, edit_user_registration_path, class:"button is-white" %>
               </p>
               <p class="navbar-item">

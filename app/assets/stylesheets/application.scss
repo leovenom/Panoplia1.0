@@ -146,7 +146,6 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 
 .button.is-large {
 	font-family: Brice-SemiBoldSemiExpanded;
-	font-size: 2.2rem;
 	color: #0a0a0a;
 	line-height: 29px;
 }
@@ -155,7 +154,6 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 	font-family: Brice-SemiBoldSemiExpanded;
 	font-size: 2.2rem;
 	color: #0a0a0a;
-	line-height: 29px;
 }
 
 .button.is-warning {
@@ -192,8 +190,8 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 }
 .button.is-white {
 	background-color: transparent;
-	border-color: transparent;
 	color: #0a0a0a;
+	border: none;
 }
 
 .button.is-white:hover, .button.is-white.is-hovered {
