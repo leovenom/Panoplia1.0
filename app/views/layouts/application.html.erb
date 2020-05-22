@@ -64,19 +64,19 @@
               <p class="navbar-item">
                <%#= link_to 'Profile', user_path(current_user) %>
                <%#= link_to 'Edit', edit_user_path(current_user) %>
-                <%= link_to 'EDIT', edit_user_registration_path, class:"button is-white" %>
+                <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black" %>
               </p>
               <p class="navbar-item">
-                <%= link_to current_user.username.upcase, user_path(current_user), class:"button is-white" %>
-                <%#= link_to current_user.name, edit_user_registration_path, class:"button is-white" %>
+                <%= link_to current_user.username.upcase, user_path(current_user), class:"button is-black" %>
+                <%#= link_to current_user.name, edit_user_registration_path, class:"button is-black" %>
               </p>
               <p class="navbar-item">
-                <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-white" %>
+                <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
               </p>
               
               <% else %>
               <p class="navbar-item">
-                 <%= link_to "LOG IN", new_user_session_path, class:"button is-white" %>
+                 <%= link_to "LOG IN", new_user_session_path, class:"button is-black" %>
               </p>
               <% end %>
 

@@ -100,15 +100,12 @@ a.navbar-link.is-active {
 .navbar {
 z-index: 99;
 position: relative;
-background-color: transparent;
+background-color: black;
 }
 .navbar-menu {
 	background-color: transparent;
 	box-shadow: none;
 	padding: 0.5rem 0;
-}
-.navbar-brand {
-
 }
 a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link.is-active {
 	background-color: transparent;
@@ -192,11 +189,13 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 	background-color: transparent;
 	color: #0a0a0a;
 	border: none;
+	border-color: transparent;
 }
 
 .button.is-white:hover, .button.is-white.is-hovered {
 	background-color: transparent;
 	border-color: transparent;
+	border: none;
 	color: #0a0a0a;
 }
 .image img{
@@ -229,8 +228,7 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 }
 
 .button.is-black {
-	background-color: white;
-	color: black;
+	background-color: black;
 }
 
 .title:not(:last-child), .subtitle:not(:last-child) {
