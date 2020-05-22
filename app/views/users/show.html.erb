@@ -11,8 +11,8 @@
           </div>
 
           <div class="column is-7 has-text-centered">
-            <h1 class="title is-size-1">
-              <%= @user.username.upcase %>
+            <h1 class="title is-size-3-mobile is-size-1-fullhd">
+              <%= @user.name.upcase %>
             </h1>
             <h2 class="subtitle">
               <%= @user.art %>
@@ -22,9 +22,9 @@
             </h2>
             
             <div class="buttons is-centered">
-              <button class="button is-black">+FOLLOW</button>
+              <button class="button is-white">+FOLLOW</button>
               <% if @user.available? %>
-              <button class="button is-black">+ HIRE ME</button>
+              <button class="button is-white">+ HIRE ME</button>
               <%end%>
             </div>
 
@@ -72,8 +72,8 @@
   </div>
 </div>
 
-<section class="section">
-<div class="shots">
+<section class="section user">
+<div class="shots user">
 <% @user_shots.each do|shot|%>
 <section class="section">
         <div class="shot-grid-item">

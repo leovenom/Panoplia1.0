@@ -1,6 +1,10 @@
 # https://jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html
 class RegistrationsController < Devise::RegistrationsController
-  
+  def update
+    redirect_to  user_path(@user)
+  end
+
+
  private
 
   def sign_up_params
