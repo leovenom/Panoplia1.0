@@ -164,7 +164,7 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 }
 .hero-body.show {
 	margin-bottom: -5rem;
-	margin-top: 25rem;
+	margin-top: 26rem;
 }
 .button.is-primary {
 	background-color: #a000b4;
@@ -186,14 +186,14 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
   margin-right: 2rem;
 }
 .button.is-white {
-	background-color: transparent;
-	color: #0a0a0a;
+	background-color: #a000b4;
+	color: white;
 	border: none;
 	border-color: transparent;
 }
 
 .button.is-white:hover, .button.is-white.is-hovered {
-	background-color: transparent;
+	background-color: white;
 	border-color: transparent;
 	border: none;
 	color: #0a0a0a;
@@ -202,7 +202,7 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 	border-radius: 50%;
 	display: block;
   height: auto;
-  width: 150px;
+  width: 200px;
 }
 .column.is-2, .column.is-2-tablet {
 	flex: none;
