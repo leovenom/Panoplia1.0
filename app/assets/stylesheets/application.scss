@@ -34,6 +34,22 @@ $link-hover: darken($primary, 20%);
 html, body {
 	min-height: 100vh;
 	background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+	overflow-x: hidden;
+}
+//notification
+.notification {
+  background-color: whitesmoke;
+  border-radius: 3px;
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+.notification > .delete {
+  position: absolute;
+  right: 0.5rem;
+  top: 1.4rem;
 }
 
 #drop_zone {
@@ -123,19 +139,19 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 	background-color: transparent;
 }
 
-@media screen and (min-width: 769px), print {
-  .hero.is-large .hero-body {
-    padding-bottom: 12rem;
-    padding-top: 12rem;
-  }
-}
+// @media screen and (min-width: 769px), print {
+//   .hero.is-large .hero-body {
+//     padding-bottom: 12rem;
+//     padding-top: 12rem;
+//   }
+// }
 
-@media screen and (min-width: 769px), print {
-  .hero.is-medium .hero-body {
-    padding-bottom: 9rem;
-    padding-top: 5rem;
-  }
-}
+// @media screen and (min-width: 769px), print {
+//   .hero.is-medium .hero-body {
+//     padding-bottom: 9rem;
+//     padding-top: 5rem;
+//   }
+// }
 
 
 .button.is-fullwidth {
@@ -166,7 +182,6 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 	.subtitle {
 		color: black;
 	}
-
 }
 .hero.is-warning .title {
 	font-family: Brice-SemiBoldSemiExpanded;
@@ -183,13 +198,13 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .hero.is-warning {
 	background-color: #ffdc00;
 	position: relative;
-	z-index: 0;
-	margin-top: -26rem;
+	padding-top: 4rem;
 }
-.hero-body.show {
-	margin-bottom: -5rem;
-	margin-top: 26rem;
+.hero.is-small .hero-body {
+  padding-bottom: 0rem;
+  padding-top: 0rem;
 }
+
 //buttons
 .button.is-warning {
 	background-color: #ffdc00;
