@@ -1,53 +1,46 @@
 <% if !user_signed_in? %>
-	<section class="hero is-danger is-large">
-		<div class="hero-body">
-			<div class="container has-text-centered">
-				<%# <h1 class="title is-size-3">
-					What are you working on? <span class="has-text-grey-light">Panóplia is where artists get inspired.</span>
-				</h1> %>
-				<i class="far fa-play-circle"></i>
-				<div class="content">
-					<%#= link_to "I am Artist", new_user_registration_path, class: "button is-primary" %>
-					<%#= link_to "I am an Entity", new_user_registration_path, class:"button is-white"%>
-				</div>
-			</div>
-		</div>
+
+<div>
+	<section class="hero">
+        <video controls>
+				    <source src="https://res.cloudinary.com/dmvgmogaf/video/upload/v1590167992/panoplia_cyvj5n.mp4" type="video/mp4">
+  			</video>
 	</section>
 
-	<section class="hero is-primary">
+	<div class="hero is-primary">
 		<div class="hero-body">
 			<div class="container has-text-centered">
 		<%= link_to "SIGN UP".html_safe, new_user_registration_path, class: "button is-primary is-medium " %>
 	    </div>
-  </div>
-</section>
+  	</div>
+	</div>
 
-<section class="hero yellow">
-  <div class="hero-body">
-		<div class="columns is-centered">
-			<div class="column has-text-centered">
-				<p class="title">🟣</p>
-				<p class="title">
-					JOIN OUR COMMUNITY
-				</p>
-				<p class="subtitle">
-					Be part of a community where you can showcase yout work<br/>to other artists and find new professional opportunities.
-				</p>
-			</div>
+	<section class="hero yellow">
+		<div class="hero-body">
+			<div class="columns is-centered">
+				<div class="column has-text-centered">
+					<p class="title">🟣</p>
+					<p class="title">
+						JOIN OUR COMMUNITY
+					</p>
+					<p class="subtitle">
+						Be part of a community where you can showcase yout work<br/>to other artists and find new professional opportunities.
+					</p>
+				</div>
 
-			<div class="column has-text-centered">
-				<p class="title">🟪</p>
-				<p class="title">
-					LOOKING FOR AN ARTIST?
-				</p>
-				<p class="subtitle">
-					Panóplia is the go-to place to connect with talented artists<br/>that match the creative needs of your company.
-				</p>
+				<div class="column has-text-centered">
+					<p class="title">🟪</p>
+					<p class="title">
+						LOOKING FOR AN ARTIST?
+					</p>
+					<p class="subtitle">
+						Panóplia is the go-to place to connect with talented artists<br/>that match the creative needs of your company.
+					</p>
+				</div>
 			</div>
 		</div>
-  </div>
-</section>
-
+	</section>
+</div>
 <% end %>
 
 
