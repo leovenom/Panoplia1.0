@@ -13,13 +13,14 @@
 }
 .shots {
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 1rem;
+	margin: 0 1.5rem 0 1.5rem;
 	@media only screen and (min-width: 1600px) {
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 	@media only screen and (max-width: 1300px) {
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 	@media only screen and (max-width: 1100px) { 
 		grid-template-columns: repeat(3, 1fr);
@@ -27,10 +28,14 @@
 	@media only screen and (max-width: 800px) {
 		grid-template-columns: 1fr 1fr;
 	}
-	@media only screen and (max-width: 400px) {
+	@media only screen and (max-width: 500px) {
 		grid-template-columns: 1fr;
 	}
 
+}
+
+.shot-grid-item {
+	padding: 0 2rem;
 }
 
 .shots.user{
@@ -54,7 +59,7 @@
 	}
 }
 .section.user{
-	padding: 3rem 3rem;
+	padding: 2.5rem 2rem;
 	.section {
 		padding: 1rem 1rem;
 	}
@@ -87,6 +92,9 @@
 			padding-top: .5rem;
 		}
 	}
+}
+.shot-grid-item {
+
 }
 
 .user-data {
