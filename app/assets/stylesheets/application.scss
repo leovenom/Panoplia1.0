@@ -38,6 +38,9 @@ html, body {
   padding: 0;
 	overflow-x: hidden;
 }
+.title {
+	font-family: Brice-SemiBoldSemiCondensed;
+}
 //notification
 .notification {
   background-color: whitesmoke;
@@ -101,8 +104,7 @@ html, body {
 .is-white {
 	background-color: whitesmoke;
 }
-//navbar
-
+//navba
 .navbar-item, .navbar-link {
 	color: #4a4a4a;
 	//display: block;
@@ -138,39 +140,15 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .navbar-item {
 	background-color: transparent;
 }
-
-// @media screen and (min-width: 769px), print {
-//   .hero.is-large .hero-body {
-//     padding-bottom: 12rem;
-//     padding-top: 12rem;
-//   }
-// }
-
-// @media screen and (min-width: 769px), print {
-//   .hero.is-medium .hero-body {
-//     padding-bottom: 9rem;
-//     padding-top: 5rem;
-//   }
-// }
-
-
-.button.is-fullwidth {
-  display: flex;
-  width: 100%;
-  height: 190px;
-}
-
-.button {
-	font-family: Brice-SemiBoldSemiCondensed;
-	font-size: 1.4rem;
-	border: 0;
-	padding-bottom: 0;
-}
-
-.button.is-large {
-	font-family: Brice-SemiBoldSemiExpanded;
-	color: #0a0a0a;
-	line-height: 29px;
+.navbar-dropdown {
+	background-color: black;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top: 1px solid black;
+	padding-left: 0.9rem;
+	padding-top: 0;
+	min-width: 100%;
+	top: 92%;
 }
 //Hero
 .hero.yellow {
@@ -206,6 +184,22 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 }
 
 //buttons
+.button.is-fullwidth {
+  display: flex;
+  width: 100%;
+  height: 190px;
+}
+.button {
+	font-family: Brice-SemiBoldSemiCondensed;
+	font-size: 1.4rem;
+	border: 0;
+	padding-bottom: 0;
+}
+.button.is-large {
+	font-family: Brice-SemiBoldSemiExpanded;
+	color: #0a0a0a;
+	line-height: 29px;
+}
 .button.is-warning {
 	background-color: #ffdc00;
 }
@@ -217,6 +211,10 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .button.is-black {
 	background-color: black;
 }
+.logout {
+	padding-left: 1rem;
+}
+
 .button.is-primary {
 	background-color: #9600c8;
 	border-color: transparent;
@@ -236,19 +234,14 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .buttons .button:not(:last-child) {
   margin-right: 2rem;
 }
-.button.is-white {
+.button.is-dark {
 	background-color: #9600c8;
-	color: white;
-	border: none;
-	border-color: transparent;
+
+}
+.button.is-dark:hover {
+	background-color: black;
 }
 
-.button.is-white:hover, .button.is-white.is-hovered {
-	background-color: white;
-	border-color: transparent;
-	border: none;
-	color: #0a0a0a;
-}
 //image
 .image img{
 	border-radius: 50%;
@@ -256,7 +249,6 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
   height: auto;
   width: 200px;
 }
-
 //columns
 .column.is-2, .column.is-2-tablet {
 	flex: none;
@@ -269,16 +261,9 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .column.is-7 {
 	padding: 1.75rem;
 }
-
-.fa-play-circle:before {
-	content: "\f144";
-	font-size: 100px;
-}
-
 .title:not(:last-child), .subtitle:not(:last-child) {
 	margin-bottom: 1.9rem;
 }
-
 .field.is-grouped {
   display: table-caption;
 }
@@ -289,4 +274,14 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .fa-square-full {
 	color:#9600c8;
 }
-
+//video
+video {
+	max-width: 100%;
+	object-fit: cover;
+	max-height: 580px; //450px
+}
+.notification.is-primary {
+	background-color: #ff78be;
+	color: #fff;
+	font-family: Brice-SemiBoldSemiCondensed;
+}

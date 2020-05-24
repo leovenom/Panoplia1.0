@@ -61,18 +61,30 @@
                   <span>NEW SHOT</span>
               <% end %>
               </p>
-              <p class="navbar-item">
-               <%#= link_to 'Profile', user_path(current_user) %>
-               <%#= link_to 'Edit', edit_user_path(current_user) %>
-                <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black" %>
-              </p>
-              <p class="navbar-item">
-                <%= link_to current_user.username.upcase, user_path(current_user), class:"button is-black" %>
-                <%#= link_to current_user.name, edit_user_registration_path, class:"button is-black" %>
-              </p>
-              <p class="navbar-item">
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="is-arrowless">
+                    <p class="navbar-item">
+                      <% if current_user.username?%>
+                      <%= link_to current_user.username.upcase, user_path(current_user), class:"button is-black" %>
+                      <% else%>
+                      <%= link_to current_user.name.upcase, user_path(current_user), class:"button is-black" %>
+                      <% end%>
+                    </p>
+                  </a>
+                  <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                      <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black" %>
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item">
+                      <%= link_to 'PROFILE', user_path(current_user), class:"button is-black" %>
+                    </a>
+                  </div>
+                </div>
+
+              <div class="navbar-item logout">
                 <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
-              </p>
+              </div>
               
               <% else %>
               <p class="navbar-item">

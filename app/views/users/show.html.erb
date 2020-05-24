@@ -22,15 +22,19 @@
             </h2>
             
             <div class="buttons is-centered">
-              <button class="button is-white">+FOLLOW</button>
+              <button class="button is-dark">+FOLLOW</button>
               <% if @user.available? %>
-              <button class="button is-white">+ HIRE ME</button>
+              <button class="button is-dark">+ HIRE ME</button>
+              <% else%>
+              <button class="button is-dark" title="Disabled button" disabled>+ HIRE ME</button>
               <%end%>
             </div>
 
             <h2 class="title is-size-7">
+            <% if current_user.location?%>
               <%= @user.location.upcase %>
             </h2>
+            <% end %>
             <div class="shot-time">
               <% time_ago_in_words(@user.created_at) %>
             </div>

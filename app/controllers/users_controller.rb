@@ -12,7 +12,5 @@ class UsersController < ApplicationController
     @user = current_user
     redirect_to profile_path
   end
-
-  def update
-  end
+  
 end
