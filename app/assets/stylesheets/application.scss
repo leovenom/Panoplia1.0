@@ -38,6 +38,9 @@ html, body {
   padding: 0;
 	overflow-x: hidden;
 }
+.title {
+	font-family: Brice-SemiBoldSemiCondensed;
+}
 //notification
 .notification {
   background-color: whitesmoke;
@@ -141,7 +144,6 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 	background-color: black;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
-	border-bottom-right-radius: 5px;
 	border-top: 1px solid black;
 	padding-left: 0.9rem;
 	padding-top: 0;
@@ -232,19 +234,14 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .buttons .button:not(:last-child) {
   margin-right: 2rem;
 }
-.button.is-white {
+.button.is-dark {
 	background-color: #9600c8;
-	color: white;
-	border: none;
-	border-color: transparent;
+
+}
+.button.is-dark:hover {
+	background-color: black;
 }
 
-.button.is-white:hover, .button.is-white.is-hovered {
-	background-color: white;
-	border-color: transparent;
-	border: none;
-	color: #0a0a0a;
-}
 //image
 .image img{
 	border-radius: 50%;
@@ -267,7 +264,6 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .title:not(:last-child), .subtitle:not(:last-child) {
 	margin-bottom: 1.9rem;
 }
-
 .field.is-grouped {
   display: table-caption;
 }

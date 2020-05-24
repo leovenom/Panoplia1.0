@@ -13,4 +13,8 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: 'users#show'
   resources :users, only: %i[show edit update]
+
+  as :user do
+    get 'users/profile', :to => 'devise/registrations#edit'
+  end
 end

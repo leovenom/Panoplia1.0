@@ -1,9 +1,11 @@
 # https://jacopretorius.net/2014/03/adding-custom-fields-to-your-devise-user-model-in-rails-4.html
 class RegistrationsController < Devise::RegistrationsController
-  def update
-    redirect_to  user_path(@user)
-  end
 
+
+
+  def after_update_path_for(user)
+    user_path(@user)
+  end
 
  private
 
