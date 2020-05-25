@@ -44,8 +44,8 @@
             </h2>
             <% end %>
             <div class="shot-time">
-              <% time_ago_in_words(@user.created_at) %>
-              <%= @user.followers.count %>
+              <%= time_ago_in_words(@user.created_at) %>
+              <p>Follows <%= @user.followers.count %></p>
             </div>
 
           </div>
