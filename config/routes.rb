@@ -17,4 +17,7 @@ Rails.application.routes.draw do
   as :user do
     get 'users/profile', :to => 'devise/registrations#edit'
   end
+  
+  resource :friendships, only: %i[create destroy]
+
 end
