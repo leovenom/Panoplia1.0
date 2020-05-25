@@ -13,11 +13,12 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: 'users#show'
   resources :users, only: %i[show edit update]
-
+  
+  resource :friendships, only: %i[create destroy]
   as :user do
     get 'users/profile', :to => 'devise/registrations#edit'
   end
-  
-  resource :friendships, only: %i[create destroy]
+
+ 
 
 end

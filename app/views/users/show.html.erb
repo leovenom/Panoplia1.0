@@ -21,23 +21,15 @@
               <%= @user.bio %>
             </h2>
 
-            
-            
+
             <div class="buttons is-centered">
-            <% if !current_user.following?(@user) %>
-              <%= form_for(current_user.active_friendships.build) do |f|%>
-                <div><%= hidden_field_tag :followed_id, @user.id %></div>
-                <%= f.submit "FOLLOW"%>
-              <%end%>
-            <% else %>
-              <%= form_for(current_user.active_friendships.find_by(followed_id: @user.id).destroy,
-                html: { method: :delete }) do |f| %>
-                <%= f.submit "UNFOLLOW" %>
+            <% if user_signed_in? %>
+              <% if current_user.following?(@user)%>
+                <%= button_to "UNFOLLOW", friendships_path(user_id: @user.id), class:"button is-dark", method: :delete%>
+            <%else%>
+                 <%= button_to "+FOLLOW", friendships_path(user_id: @user.id), class:"button is-dark"%>
               <%end%>
             <%end%>
-                          
-                          
-                          <button class="button is-dark">+FOLLOW</button>
 
               <% if @user.available? %>
               <button class="button is-dark">+ HIRE ME</button>
@@ -53,7 +45,7 @@
             <% end %>
             <div class="shot-time">
               <% time_ago_in_words(@user.created_at) %>
-              <%= current_user.followers.count %>
+              <%= @user.followers.count %>
             </div>
 
           </div>
