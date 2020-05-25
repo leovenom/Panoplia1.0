@@ -1,7 +1,10 @@
-<section class="section">
-	<div class="container">
+
 		<div class="columns is-centered">
-			<div class="column is-4">
+				<div class="column hero is-primaryV">
+        </div>
+        <div class="column hero is-purple">
+				</div>
+			<div class="column hero is-4 is-warning profile">
 				<h2 class="title is-2">Log in</h2>
 				<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -29,6 +32,8 @@
 				<br/>
 				<%= render "devise/shared/links" %>
 			</div>
+				<div class="column hero is-warning">
+        </div>
+        <div class="column hero is-warning">
+        </div>
 		</div>
-	</div>
-</section>
