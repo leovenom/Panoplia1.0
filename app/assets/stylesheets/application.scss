@@ -30,7 +30,9 @@ $link-hover: darken($primary, 20%);
 
 
 @import "bulma";
-
+hr {
+	background-color: black;
+}
 html, body {
 	min-height: 100vh;
 	background-color: #f4f4f4;
@@ -38,7 +40,7 @@ html, body {
   padding: 0;
 	overflow-x: hidden;
 }
-.title {
+.title.profile {
 	font-family: Brice-SemiBoldSemiCondensed;
 }
 //notification
@@ -178,6 +180,10 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 	position: relative;
 	padding-top: 4rem;
 }
+.hero.is-warning.profile {
+	padding: 4rem;
+}
+
 .hero.is-small .hero-body {
   padding-bottom: 0rem;
   padding-top: 0rem;
@@ -288,4 +294,10 @@ video {
 //column edit
 .hero.is-purple {
 	background-color:#9600c8;
+}
+.hero.is-primaryV  {
+	background-image: url("backgroundV.png");
+	position: relative;
+	background-size: cover; 
+  background-position: center;
 }
