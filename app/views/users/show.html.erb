@@ -39,13 +39,14 @@
             </div>
 
             <h2 class="title is-size-7">
-              <% if current_user.location?%>
+              <% if user_signed_in?%>
               <%= @user.location.upcase %>
             </h2>
-              <% end %>
-            <div class="shot-time ">
+            
+            <div class="shot-time">
               <% time_ago_in_words(@user.created_at) %>
-              <h2 class="subtitle">Follows <%= @user.followers.count %></h2>
+              <h2 class="subtitle is-size-6 ">Follows <%= @user.followers.count %></h2>
+              <% end %>
             </div>
 
           </div>
