@@ -11,3 +11,26 @@
 .user-thumb-avatar img {
   border-radius: 50%;
 }
+
+.navbar-burger {
+  color: white;
+  cursor: pointer;
+  display: block;
+  height: 3.25rem;
+  position: relative;
+  width: 3.25rem;
+  margin-left: auto;
+  margin-top: .75rem;
+}
+.navbar-burger span {
+  background-color: currentColor;
+  display: block;
+  height: 2px;
+  left: calc(50% - 8px);
+  position: absolute;
+  transform-origin: center;
+  transition-duration: 86ms;
+  transition-property: background-color, opacity, transform;
+  transition-timing-function: ease-out;
+  width: 18px;
+}

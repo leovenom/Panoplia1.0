@@ -119,6 +119,13 @@ html, body {
 	max-height: 3.7rem;
 	margin: 12px 0 12px 5px;
 }
+.navbar-dropdown .navbar-item {
+  /* padding-left: 1.5rem; */
+  /* padding-right: 1.5rem; */
+}
+.navbar-dropdown a.navbar-item:hover {
+	background-color: transparent;
+}
 
 a.navbar-item:hover, a.navbar-item.is-active,
 a.navbar-link:hover,
@@ -255,6 +262,12 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .button.is-roxo:hover {
 	background-color: black;
 	color: white
+}
+.button.is-black {
+	background-color: transparent;
+}
+.button.is-black:hover {
+	background-color: transparent;
 }
 
 //image
