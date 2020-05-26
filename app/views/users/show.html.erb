@@ -23,13 +23,13 @@
 
 
             <div class="buttons is-centered">
-            <% if user_signed_in? %>
-              <% if current_user.following?(@user)%>
-                <%= button_to "UNFOLLOW", friendships_path(user_id: @user.id), class:"button is-dark", method: :delete%>
-            <%else%>
-                 <%= button_to "+FOLLOW", friendships_path(user_id: @user.id), class:"button is-dark"%>
+              <% if user_signed_in? %>
+                <% if current_user.following?(@user)%>
+                  <%= button_to "UNFOLLOW", friendships_path(user_id: @user.id), class:"button is-dark", method: :delete%>
+              <%else%>
+                  <%= button_to "+FOLLOW", friendships_path(user_id: @user.id), class:"button is-dark"%>
+                <%end%>
               <%end%>
-            <%end%>
 
               <% if @user.available? %>
               <button class="button is-dark">+ HIRE ME</button>
@@ -39,10 +39,10 @@
             </div>
 
             <h2 class="title is-size-7">
-            <% if current_user.location?%>
+              <% if current_user.location?%>
               <%= @user.location.upcase %>
             </h2>
-            <% end %>
+              <% end %>
             <div class="shot-time ">
               <% time_ago_in_words(@user.created_at) %>
               <h2 class="subtitle">Follows <%= @user.followers.count %></h2>
