@@ -28,7 +28,7 @@
       <%# avatar profile %>
         <div class="field" id="avatar" >
           <div class="control">
-              <%= image_tag(resource.avatar) if resource.avatar.attached? %>
+              <%= cl_image_tag(resource.avatar.key) if resource.avatar.attached? %>
           </div>
          </div>
         <div class="field">

@@ -41,6 +41,8 @@ gem 'impressionist', '~> 1.6'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'gravatar_image_tag'
 gem 'acts_as_votable', '~> 0.11.1'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary'
 
 
 group :development, :test do

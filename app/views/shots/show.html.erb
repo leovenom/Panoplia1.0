@@ -5,7 +5,7 @@
 			<div class="column is-8">
 				<span class="by has-text-grey-light">by</span>
 				<div class="user-thumb">
-				<%= image_tag @shot.user.avatar %>
+				<%= cl_image_tag @shot.user.avatar.key %>
 				</div>
 				<div class="user-name has-text-weight-bold"><%= @shot.user.name %></div>
 				<div class="shot-time"><span class="has-text-grey-light">posted</span><span class="has-text-weight-semibold">
@@ -18,7 +18,7 @@
 			<div class="column is-8">
 				<div class="shot-container">
 					<div class="shot-full">
-						 <%= image_tag @shot.user_shot_url unless @shot.user_shot.blank? %>
+						 <%= cl_image_tag @shot.user_shot_url unless @shot.user_shot.blank? %>
 					</div>
 
 					<% if user_signed_in? && (current_user.id == @shot.user_id) %>		
@@ -83,10 +83,10 @@
 				<h2 class="title is-3">Inspiration</h2>
 				<div class="shot-wrapper">
 				<%= link_to @random_shot, class: "shot" do %>
-					<%= image_tag @random_shot.user_shot_url %>
+					<%= cl_image_tag @random_shot.user_shot_url %>
 						<div class="shot-data">
 								<div class="user-thumb avatar">
-									<%= image_tag @random_shot.user.avatar, class:'avatar' %>
+									<%= cl_image_tag @random_shot.user.avatar.key, class:'avatar' %>
 									<h3 class="shot-user"><%= @random_shot.user.name %></h3>
 									<h3 class="shot-title"><%= @random_shot.title %></h3>
 								</div>
