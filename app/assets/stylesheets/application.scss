@@ -214,8 +214,15 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
   border-color: transparent;
   color: #fff;
 }
-.button.is-black {
-	background-color: black;
+.button.is-dark {
+  background-color: black;
+  border-color: transparent;
+  color: white;
+}
+.button.is-dark:hover {
+  background-color: #9600c8;
+  border-color: transparent;
+  color: white;
 }
 .logout {
 	padding-left: 1rem;
@@ -240,12 +247,14 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .buttons .button:not(:last-child) {
   margin-right: 2rem;
 }
-.button.is-dark {
+.button.is-roxo {
 	background-color: #9600c8;
+	color: white
 
 }
-.button.is-dark:hover {
+.button.is-roxo:hover {
 	background-color: black;
+	color: white
 }
 
 //image
