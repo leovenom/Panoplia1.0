@@ -43,9 +43,9 @@
               <%= @user.location.upcase %>
             </h2>
             <% end %>
-            <div class="shot-time">
-              <%= time_ago_in_words(@user.created_at) %>
-              <p>Follows <%= @user.followers.count %></p>
+            <div class="shot-time ">
+              <% time_ago_in_words(@user.created_at) %>
+              <h2 class="subtitle">Follows <%= @user.followers.count %></h2>
             </div>
 
           </div>
@@ -54,33 +54,6 @@
       </div>
     </section>
   </div>
-  
-  <%# <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48"> %>
-        <%#= image_tag @user.avatar unless @user.avatar.blank?  %>
-        <%# </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-4"> %>
-          <%#= @user.username %>
-        <%# </p>
-        <p class="subtitle is-6"> %>
-          <%#= @user.name %>
-        <%# </p>
-      </div>
-    </div> %>
-
-    <%# <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@Panoplia</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
-      <br>
-      <div class="shot-time"> %>
-        <%#= time_ago_in_words(@user.created_at) %>
-      <%# </div>
-    </div> %>
 
   </div>
 </div>
