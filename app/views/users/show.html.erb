@@ -43,8 +43,8 @@
               <%= @user.location.upcase %>
             </h2>
             <% end %>
-            <div class="shot-time">
-              <%= time_ago_in_words(@user.created_at) %>
+            <div class="shot-time ">
+              <% time_ago_in_words(@user.created_at) %>
               <h2 class="subtitle">Follows <%= @user.followers.count %></h2>
             </div>
 
