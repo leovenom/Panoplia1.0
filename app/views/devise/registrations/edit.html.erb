@@ -3,27 +3,20 @@
         <div class="column hero is-primaryV">
         </div>
         <div class="column hero is-purple">
-          <div class="field">
+          <%# <div class="field">
             <div>
-              <a class="title is-size-4 has-text-justified has-text-white">Public Profile</a>
-              <%= link_to "ava", "#ava"%>
+              <a href="#avatar" class="title is-size-4 has-text-justified has-text-white">Profile Picture</a>
             </div>
             <div>
-              <a class="title is-size-4 has-text-justified has-text-white">Profile Picture
+              <a href="#public-profile" class="title is-size-4 has-text-justified has-text-white">Public Profile</a>
             </div>
             <div>
-              <a class="title is-size-4 has-text-justified has-text-white">Account Settings</a>
+              <a href="#email" class="title is-size-4 has-text-justified has-text-white">Email</a>
             </div>
             <div>
-              <a class="title is-size-4 has-text-justified has-text-white">Password</a>
+              <a href="#password" class="title is-size-4 has-text-justified has-text-white">Password</a>
             </div>
-            <div>
-              <a class="title is-size-4 has-text-justified has-text-white">Social Networks</a>
-            </div>
-            <div>
-              <a class="title is-size-4 has-text-justified has-text-white">Email Notifications</a>
-            </div>
-          </div>
+          </div> %>
         </div>
 
       <div class="column is-4 hero is-warning profile">
@@ -33,20 +26,19 @@
         <%= f.error_notification %>
 
       <%# avatar profile %>
-      <div id="ava">
-        <div class="field">
+        <div class="field" id="avatar" >
           <div class="control">
               <%= image_tag(resource.avatar) if resource.avatar.attached? %>
           </div>
-        </div>
-
+         </div>
         <div class="field">
           <div class="control">
             <%= f.file_field :avatar, as: :file, input_html: { class: "file"}, wrapper: false, label_html: { class: "label" } %>
           </div>
         </div>
-      </div>
+         <hr />
       <%# public profile %>
+      <div id="public-profile">
         <div class="field">
           <div class="control">
             <%= f.input :username, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
@@ -57,6 +49,7 @@
               <%= f.input :name, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
+      
 
         <div class="field">
           <div class="control">
@@ -83,14 +76,20 @@
             <%= f.label :available, "I am avaiable for a job.", autofocus: true, wrapper: false, label_html: { class: "label" } %>
           </div>
         </div>
-
-        <%# account setings %>
+      </div>
+       <hr />
+        <%# email %>
+        <div id="email">
           <div class="field">
             <div class="control">
               <%= f.input :email, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
+        </div>
+         <hr />
         <%# password %>
+        
+        <div id="password">
           <div class="field">
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -108,6 +107,8 @@
             <%= f.input :password_confirmation, required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
+        </div>
+         <hr />
         <%# password confirmation %>
           <div class="field">
             <div class="control">
