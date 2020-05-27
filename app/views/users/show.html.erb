@@ -44,9 +44,16 @@
 
 
             <% time_ago_in_words(@user.created_at) %>
-            <div class="columns is-centered">
-              <h2 class="column title is-size-7">FOLLOWERS</h2><%= @user.followers.count %>
-              <h2 class="column title is-size-7">FOLLOWINGS <span><%= @user.followings.count %></h2> 
+            <div class="column is-centered">
+                <div class="tag is-warning">
+                  <span class="tag is-warning follow is-size-6">FOLLOWERS</span>
+                  <span class="is-size-6"><%= @user.followers.count %></span>
+                </div>
+
+                <div class="tag is-warning">
+                  <span class="tag is-warning follow is-size-6">FOLLOWINGS</span>
+                  <span class="is-size-6"><%= @user.followings.count %></span>
+                </div>
             </div>
             <% end %>
           </div>

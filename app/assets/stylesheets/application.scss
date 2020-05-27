@@ -328,3 +328,13 @@ video {
   background-color: whitesmoke;
   padding: 2rem 1.5rem 2rem;
 }
+
+.tag:not(body).is-warning {
+  background-color: transparent;
+}
+
+span.tag.is-warning.follow {
+	font-family: Brice-SemiBoldSemiCondensed;
+	margin-top: 3px;
+	color: black;
+}
