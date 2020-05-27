@@ -225,11 +225,17 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
   background-color: black;
   border-color: transparent;
   color: white;
+
 }
 .button.is-dark:hover {
   background-color: #9600c8;
   border-color: transparent;
   color: white;
+}
+.button.is-dark[disabled]:hover {
+	background-color: #363636;
+	border-color: transparent;
+	box-shadow: none;
 }
 .logout {
 	padding-left: 1rem;
@@ -327,4 +333,14 @@ video {
 .footer {
   background-color: whitesmoke;
   padding: 2rem 1.5rem 2rem;
+}
+
+.tag:not(body).is-warning {
+  background-color: transparent;
+}
+
+span.tag.is-warning.follow {
+	font-family: Brice-SemiBoldSemiCondensed;
+	margin-top: 3px;
+	color: black;
 }
