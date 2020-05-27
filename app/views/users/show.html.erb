@@ -20,17 +20,21 @@
             <h2 class="subtitle">
               <%= @user.bio %>
             </h2>
-
+            <br/>
+            <h2 class="title is-size-7">
+            <% if user_signed_in?%>
+              <%= @user.location.upcase %>
+            </h2>
 
             <div class="buttons is-centered">
-              <% if user_signed_in? %>
-                <% if current_user.following?(@user)%>
+              <% if user_signed_in? && !current_user?(@user) %>
+                <% if current_user.following?(@user) %>
                   <%= button_to "UNFOLLOW", friendships_path(user_id: @user.id), class:"button is-dark", method: :delete%>
               <%else%>
                   <%= button_to "+FOLLOW", friendships_path(user_id: @user.id), class:"button is-roxo"%>
                 <%end%>
               <%end%>
-
+ 
               <% if @user.available? %>
               <button class="button is-roxo">+ HIRE ME</button>
               <% else%>
@@ -38,17 +42,13 @@
               <%end%>
             </div>
 
-            <h2 class="title is-size-7">
-              <% if user_signed_in?%>
-              <%= @user.location.upcase %>
-            </h2>
-            
-            <div class="shot-time">
-              <% time_ago_in_words(@user.created_at) %>
-              <h2 class="subtitle is-size-6 ">Follows <%= @user.followers.count %></h2>
-              <% end %>
-            </div>
 
+            <% time_ago_in_words(@user.created_at) %>
+            <div class="columns is-centered">
+              <h2 class="column title is-size-7">FOLLOWERS</h2><%= @user.followers.count %>
+              <h2 class="column title is-size-7">FOLLOWINGS <span><%= @user.followings.count %></h2> 
+            </div>
+            <% end %>
           </div>
         </div>
 
