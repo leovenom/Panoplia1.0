@@ -7,6 +7,8 @@ class ShotsController < ApplicationController
   # GET /shots.json
   def index
     @shots = Shot.all.order('created_at DESC')
+    @random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
+    @user_shots_entity = Shot
   end
 
   # GET /shots/1
