@@ -5,7 +5,7 @@
 			<div class="column is-8">
 				<span class="by has-text-grey-light">by</span>
 				<div class="user-thumb">
-				<%= cl_image_tag @shot.user.avatar.key %>
+				<%= cl_image_tag @shot.user.avatar.key unless @shot.user.avatar.blank?%>
 				</div>
 				<div class="user-name has-text-weight-bold"><%= @shot.user.name %></div>
 				<div class="shot-time"><span class="has-text-grey-light">posted</span><span class="has-text-weight-semibold">
@@ -86,7 +86,7 @@
 					<%= cl_image_tag @random_shot.user_shot_url %>
 						<div class="shot-data">
 								<div class="user-thumb avatar">
-									<%= cl_image_tag @random_shot.user.avatar.key, class:'avatar' %>
+									<%= cl_image_tag @random_shot.user.avatar.key, class:'avatar' unless @random_shot.user.avatar.blank?  %>
 									<h3 class="shot-user"><%= @random_shot.user.name %></h3>
 									<h3 class="shot-title"><%= @random_shot.title %></h3>
 								</div>

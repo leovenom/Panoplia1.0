@@ -1,3 +1,2 @@
 class Entity < User
-
 end
