@@ -7,7 +7,7 @@
 				<div class="user-thumb">
 				<%= cl_image_tag @shot.user.avatar.key unless @shot.user.avatar.blank?%>
 				</div>
-				<div class="user-name has-text-weight-bold"><%= @shot.user.name %></div>
+				<div class="user-name has-text-weight-bold"><%=link_to @shot.user.name, @shot.user %></div>
 				<div class="shot-time"><span class="has-text-grey-light">posted</span><span class="has-text-weight-semibold">
 					<%= verbose_date(@shot.created_at) %>
 				</span></div>
