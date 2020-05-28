@@ -3,7 +3,6 @@
     <section class="hero is-small is-warning">
       <div class="hero-body show">
         <div class="columns is-centered">
-        
           <div class="column is-2 has-text-centered">
             <figure class="image is-inline-block">
               <%= cl_image_tag @user.avatar.key unless @user.avatar.blank? %>
@@ -23,11 +22,11 @@
             <br/>
             <h2 class="title is-size-7">
             <% if user_signed_in?%>
-              <%= @user.location.upcase %>
+              <%= @user.location%>
             </h2>
 
             <div class="buttons is-centered">
-              <% if user_signed_in? && !current_user?(@user) %>
+              <% if user_signed_in? && !current_user?(@user)%>
                 <% if current_user.following?(@user) %>
                   <%= button_to "UNFOLLOW", friendships_path(user_id: @user.id), class:"button is-dark", method: :delete%>
               <%else%>
@@ -35,11 +34,19 @@
                 <%end%>
               <%end%>
  
-              <% if @user.available? %>
-              <button class="button is-roxo">+ HIRE ME</button>
-              <% else%>
-              <button class="button is-dark" title="Disabled button" disabled>+ HIRE ME
-              </button>
+              <% if @user.available? && !current_user?(@user)%>
+                <button class="button is-roxo">+ HIRE ME</button>
+                <% elsif !current_user?(@user)%>
+                <%# só uma entidade pode contratar outra entidade %>
+                <% if current_user.entity? %>
+                <button class="button is-dark" title="button">+ HIRE ME
+                </button>
+              <%end%>
+           <%end%>
+
+              <% if @user.entity %>
+                <button class="button is-dark" title="Disabled button">I am a company
+                </button>
               <%end%>
             </div>
 
