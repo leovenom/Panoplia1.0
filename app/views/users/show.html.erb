@@ -38,13 +38,13 @@
                 <button class="button is-roxo">+ HIRE ME</button>
                 <% elsif !current_user?(@user)%>
                 <%# só uma entidade pode contratar outra entidade %>
-                <% if current_user.entity? %>
+                <%# if current_user.entity? %>
                 <button class="button is-dark" title="button">+ HIRE ME
                 </button>
               <%end%>
-           <%end%>
+           <%#end%>
 
-              <% if @user.entity %>
+              <% if @user.entity && !current_user?(@user)%>
                 <button class="button is-dark" title="Disabled button">I am a company
                 </button>
               <%end%>
