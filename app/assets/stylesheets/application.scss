@@ -170,6 +170,17 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 		color: black;
 	}
 }
+
+p.subtitle.cards{
+	font-family: Brice-SemiBoldSemiCondensed;
+	color: black;
+	font-size: 2rem;
+}
+p.subtitle.cards span{
+
+	color: #9600c8;
+}
+
 .hero.is-warning .title {
 	font-family: Brice-SemiBoldSemiExpanded;
 	font-size: 2.2rem;
