@@ -2,89 +2,137 @@
 
 <section class="section">
 <div class="columns">
+
   <div class="column">
     <p class="bd-notification is-info">First column</p>
 
-  <div class="shots">
-    <% @shots.each do |shot| %>
-      <div class="shot-grid-item">
-        <div class="shot-wrapper">
-          
-        <%= link_to shot, class: "shot" do %>
-          <%= cl_image_tag(shot.user_shot_url) %>
-          <div class="shot-data">
-            <h3 class="shot-title"><%= shot.title %></h3>
-            <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
-            <div class="shot-time">
-              <%= time_ago_in_words(shot.created_at) %>
+    <div class="shots">
+      <% @shots.each do |shot| %>
+        <div class="shot-grid-item">
+          <div class="shot-wrapper">
+            
+          <%= link_to shot, class: "shot" do %>
+            <%= cl_image_tag(shot.user_shot_url) %>
+            <div class="shot-data">
+              <h3 class="shot-title"><%= shot.title %></h3>
+              <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
+              <div class="shot-time">
+                <%= time_ago_in_words(shot.created_at) %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
 
-        <nav class="level shot-analytics">
-          <div class="level-left"></div>
-          <div class="level-right">
-            <div class="level-item views data">
-              <%= link_to shot do %>
-                <span class="icon"><i class="fa fa-eye"></i></span>
-                <%= shot.impressionist_count %>
-              <% end %>
-            </div>
-            <div class="level-item comments data">
-              <%= link_to shot do %>
-                <span class="icon"><i class="fa fa-comment"></i></span>
-                 <%= shot.comments.count %>
-              <% end %>
-            </div>
-            <div class="level-item likes">
-              <% if user_signed_in? %>
-                
-                <% if current_user.liked? shot %>
-                  <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
-                    <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
-                    <span class="vote_count"><%= shot.get_likes.size %></span>
+          <nav class="level shot-analytics">
+            <div class="level-left"></div>
+            <div class="level-right">
+              <div class="level-item views data">
+                <%= link_to shot do %>
+                  <span class="icon"><i class="fa fa-eye"></i></span>
+                  <%= shot.impressionist_count %>
+                <% end %>
+              </div>
+              <div class="level-item comments data">
+                <%= link_to shot do %>
+                  <span class="icon"><i class="fa fa-comment"></i></span>
+                  <%= shot.comments.count %>
+                <% end %>
+              </div>
+              <div class="level-item likes">
+                <% if user_signed_in? %>
+                  
+                  <% if current_user.liked? shot %>
+                    <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
+                      <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+                      <span class="vote_count"><%= shot.get_likes.size %></span>
+                    <% end %>
+                  <% else %>
+                    <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+                      <span class="icon"><i class="fa fa-heart"></i></span>
+                      <span class="vote_count"><%= shot.get_likes.size %></span>
+                    <% end %>
                   <% end %>
                 <% else %>
-                  <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
-                    <span class="icon"><i class="fa fa-heart"></i></span>
-                    <span class="vote_count"><%= shot.get_likes.size %></span>
-                  <% end %>
+                    <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+                      <span class="icon"><i class="fa fa-heart"></i></span>
+                      <span class="vote_count"><%= shot.get_likes.size %></span>
+                    <% end %>
                 <% end %>
-              <% else %>
-                  <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
-                    <span class="icon"><i class="fa fa-heart"></i></span>
-                    <span class="vote_count"><%= shot.get_likes.size %></span>
-                  <% end %>
-              <% end %>
 
+              </div>
             </div>
+          </nav>
           </div>
-        </nav>
-        </div>
-        <div class="user-data">
-          <div class="user-thumb">
-          <%= cl_image_tag shot.user.avatar.key unless shot.user.avatar.blank? %> 
+          <div class="user-data">
+            <div class="user-thumb">
+            <%= cl_image_tag shot.user.avatar.key unless shot.user.avatar.blank? %> 
+            </div>
+            <div class="user-name"><%=link_to shot.user.name, shot.user %></div>
           </div>
-          <div class="user-name"><%=link_to shot.user.name, shot.user %></div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-    </div>
-      <div class="column is-3">
-        <p class="bd-notification is-danger">Second column Entity</p>
-      <div class="shot-wrapper">
-				<%= link_to @entity_random_shot, class: "shot" do %>
-					<%= cl_image_tag @entity_random_shot.user_shot_url %>
-          	<div class="shot-data">
-							<div class="user-thumb avatar">
-								<%= cl_image_tag @entity_random_shot.user.avatar.key, class:'avatar' unless @entity_random_shot.user.avatar.blank?  %>
-								<h3 class="shot-user"><%= @entity_random_shot.user.name %></h3>
-								<h3 class="shot-title"><%= @entity_random_shot.title %></h3>
-								</div>
-						</div>
-			</div>
+
+  <div class="column is-3">
+    <p class="bd-notification is-danger">Second column Entity</p>
+
+    
+    <div class="shot-wrapper">
+      <%= link_to @entity_random_shot, class: "shot" do %>
+      <% if @entity_random_shot.user_shot_url.present?%>
+        <%= cl_image_tag @entity_random_shot.user_shot_url %>
+          <% else %>
+            <label><%= @entity_random_shot.description %></label>
+                <div class="shot-data">
+                  <div class="user-thumb avatar">
+                    <%= cl_image_tag @entity_random_shot.user.avatar.key, class:'avatar' unless @entity_random_shot.user.avatar.blank?  %>
+                    <h3 class="shot-user"><%= @entity_random_shot.user.name %></h3>
+                    <h3 class="shot-title"><%= @entity_random_shot.title %></h3>
+                  </div>
+                </div>
           <% end%>
-        </div>
-    </div>
+      <% end%>
+      <nav class="level shot-analytics">
+       <div class="level-left"></div>
+       <div class="level-right">
+         <div class="level-item views data">
+           <%= link_to @entity_random_shot do %>
+             <span class="icon"><i class="fa fa-eye"></i></span>
+             <%= @entity_random_shot.impressionist_count %>
+           <% end %>
+         </div>
+        <div class="level-item comments data">
+          <%= link_to @entity_random_shot do %>
+             <span class="icon"><i class="fa fa-comment"></i></span>
+             <%= @entity_random_shot.comments.count %>
+           <% end %>
+         </div>
+         <div class="level-item likes">
+           <% if user_signed_in? %>
+                  
+             <% if current_user.liked? @entity_random_shot %>
+               <%= link_to unlike_shot_path(@entity_random_shot), method: :put, class: "unlike_shot" do %>
+                 <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+                 <span class="vote_count"><%= @entity_random_shot.get_likes.size %></span>
+               <% end %>
+             <% else %>
+               <%= link_to like_shot_path(@entity_random_shot), method: :put, class: "like_shot" do %>
+                 <span class="icon"><i class="fa fa-heart"></i></span>
+                 <span class="vote_count"><%= @entity_random_shot.get_likes.size %></span>
+               <% end %>
+             <% end %>
+           <% else %>
+              <%= link_to like_shot_path(@entity_random_shot), method: :put, class: "like_shot" do %>
+                 <span class="icon"><i class="fa fa-heart"></i></span>
+                 <span class="vote_count"><%= @entity_random_shot.get_likes.size %></span>
+               <% end %>
+           <% end %>
+
+         </div>
+       </div>
+     </nav>
+
+    </div> 
+  </div>
+</div>
 </section>

@@ -9,8 +9,7 @@ class ShotsController < ApplicationController
     #@shots = Shot.all.order('created_at DESC')
     @shots = Shot.includes(:user).where.not(id: @shot).where(users: { entity: false}).order('shots.created_at DESC')
     @random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
-    @entity_random_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: true}).order("RANDOM()").first
-
+    @entity_random_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: true}).order('shots.created_at DESC').first
     # só copiei de cima
   end
 
