@@ -6,15 +6,19 @@ class ShotsController < ApplicationController
   # GET /shots
   # GET /shots.json
   def index
-    @shots = Shot.all.order('created_at DESC')
+    #@shots = Shot.all.order('created_at DESC')
+    @shots = Shot.includes(:user).where.not(id: @shot).where(users: { entity: false}).order('shots.created_at DESC')
     @random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
-    @user_shots_entity = Shot
+    @entity_random_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: true}).order("RANDOM()").first
+
+    # só copiei de cima
   end
 
   # GET /shots/1
   # GET /shots/1.json
   def show
     @random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
+    @entity_random_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: true}).order("RANDOM()").first
   end
 
   # GET /shots/new
