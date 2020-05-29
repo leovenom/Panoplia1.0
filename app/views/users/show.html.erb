@@ -75,21 +75,25 @@
 </div>
 
 <section class="section user">
-<div class="shots user">
-<% @user_shots.each do|shot|%>
-<section class="section">
-        <div class="shot-grid-item">
-          <div class="shot-wrapper">
-          <%= link_to shot, class: "shot" do %>
-            <%= cl_image_tag(shot.user_shot_url) %>
-            <div class="shot-data">
-              <h3 class="shot-title"><%= shot.title %></h3>
-              <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
-              <div class="shot-time">
-                <%= time_ago_in_words(shot.created_at) %>
-              </div>
-            </div>
-          <% end %>
+  <div class="shots user">
+    <% @user_shots.each do|shot|%>
+      <section class="section">
+              <div class="shot-grid-item">
+                <div class="shot-wrapper">
+                <%= link_to shot, class: "shot" do %>
+                  <% if shot.user_shot_url.present?%>
+                    <%= cl_image_tag(shot.user_shot_url) %>
+                  <% else %>
+                    <label><%= shot.description %></label>
+                      <div class="shot-data">
+                        <h3 class="shot-title"><%= shot.title %></h3>
+                        <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
+                        <div class="shot-time">
+                          <%= time_ago_in_words(shot.created_at) %>
+                        </div>
+                      </div>
+                  <% end %>
+                  <% end%>
 
           <nav class="level shot-analytics">
           <div class="level-left"></div>
