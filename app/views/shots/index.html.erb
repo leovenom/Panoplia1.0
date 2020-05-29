@@ -72,10 +72,17 @@
   </div>
     </div>
       <div class="column is-3">
-        <p class="bd-notification is-danger"></p>
+        <p class="bd-notification is-danger">Second column Entity</p>
       <div class="shot-wrapper">
 				<%= link_to @entity_random_shot, class: "shot" do %>
 					<%= cl_image_tag @entity_random_shot.user_shot_url %>
+          	<div class="shot-data">
+							<div class="user-thumb avatar">
+								<%= cl_image_tag @entity_random_shot.user.avatar.key, class:'avatar' unless @entity_random_shot.user.avatar.blank?  %>
+								<h3 class="shot-user"><%= @entity_random_shot.user.name %></h3>
+								<h3 class="shot-title"><%= @entity_random_shot.title %></h3>
+								</div>
+						</div>
 			</div>
           <% end%>
         </div>
