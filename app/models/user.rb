@@ -29,9 +29,8 @@ class User < ApplicationRecord
     following_ids.include?(other_user.id)
   end
   
-
-  def entity?
-    type == 'Entity'
-  end
+  # def entities
+  #   Shot.where(use_type: "entity")
+  # end
   
 end
