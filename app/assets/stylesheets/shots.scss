@@ -137,12 +137,17 @@
 	font-size: .9rem;
 	a,
 	.icon {
-		color: #aaa;
+		color: #9600c8;
 	}
-	.icon:hover,
+	// .icon:hover,
+	// a:hover {
+	// 	color: darken(#aaa, 25%);
+	// }
+		.icon:hover,
 	a:hover {
-		color: darken(#aaa, 25%);
+		color: #ff78be;
 	}
+
 }
 
 .panel.show-shot-analytics {
