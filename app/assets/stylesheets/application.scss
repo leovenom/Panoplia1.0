@@ -13,23 +13,19 @@
  *= require_tree .
  *= require_self
  */
- 
- @font-face {
-  font-family: Brice;
-	src: url(font-path('Brice-SemiBoldSemiCondensed.otf'));
-	src: url(font-path('Brice-SemiBoldSemiExpanded.otf'));
-}
+ @import "config/colors";
+ @import "bulma";
 
-$pink: #ea4c89;
-$pink-invert: #fff;
+ @import "components/avatar";
+ @import "components/buttons";
+ @import "components/columns";
+ @import "components/fonts";
+ @import "components/footer";
+ @import "components/heros";
+ @import "components/icons";
+ @import "components/navbar";
+ @import "components/notifications";
 
-$primary: $pink;
-$primary-invert: $pink-invert;
-$link: $primary;
-$link-hover: darken($primary, 20%);
-
-
-@import "bulma";
 hr {
 	background-color: black;
 }
@@ -40,22 +36,8 @@ html, body {
   padding: 0;
 	overflow-x: hidden;
 }
-.title.profile {
-	font-family: Brice-SemiBoldSemiCondensed;
-}
-//notification
-.notification {
-  background-color: whitesmoke;
-  border-radius: 3px;
-  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
-  position: relative;
-  z-index: 1;
-}
-.notification > .delete {
-  position: absolute;
-  right: 0.5rem;
-  top: 1.4rem;
-}
+
+
 
 #drop_zone {
 	position: relative;
@@ -92,12 +74,9 @@ html, body {
 	}
 }
 
-.notification {
-	border-radius: none;
-	border-radius: 0;
-}
-.notification:not(:last-child) {
-	margin-bottom: 0;
+
+.field.is-grouped {
+  display: table-caption;
 }
 
 .visible {
@@ -105,186 +84,6 @@ html, body {
 }
 .is-white {
 	background-color: whitesmoke;
-}
-//navba
-.navbar-item, .navbar-link {
-	color: #4a4a4a;
-	//display: block;
-	line-height: 1.5;
-	padding: 0.8rem 2rem;
-	margin: -1rem;
-	position: relative;
-}
-.navbar-item img {
-	max-height: 3.7rem;
-	margin: 12px 0 12px 5px;
-}
-.navbar-dropdown .navbar-item {
-  /* padding-left: 1.5rem; */
-  /* padding-right: 1.5rem; */
-}
-.navbar-dropdown a.navbar-item:hover {
-	background-color: transparent;
-}
-
-a.navbar-item:hover, a.navbar-item.is-active,
-a.navbar-link:hover,
-a.navbar-link.is-active {
-  background-color: white;
-  color: #ff78be;
-}
-.navbar {
-z-index: 99;
-position: relative;
-background-color: black;
-}
-.navbar-menu {
-	background-color: transparent;
-	box-shadow: none;
-	padding: 0.5rem 0;
-}
-a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link.is-active {
-	background-color: transparent;
-}
-.navbar-item {
-	background-color: transparent;
-}
-.navbar-dropdown {
-	background-color: black;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-top: 1px solid black;
-	padding-left: 0.9rem;
-	padding-top: 0;
-	min-width: 100%;
-	top: 92%;
-}
-//Hero
-.hero.yellow {
-	background-color: #ffdc00;
-	.title {
-		font-family: Brice-SemiBoldSemiExpanded;
-		color: black;
-	}
-	.subtitle {
-		color: black;
-	}
-}
-
-p.subtitle.cards{
-	font-family: Brice-SemiBoldSemiCondensed;
-	color: black;
-	font-size: 2rem;
-}
-p.subtitle.cards span{
-
-	color: #9600c8;
-}
-
-.hero.is-warning .title {
-	font-family: Brice-SemiBoldSemiExpanded;
-	font-size: 2.2rem;
-	color: #0a0a0a;
-}
-.hero.is-primary{
-	background-image: url("background.png");
-	position: relative;
-	width: 100%;
-	background-size: cover; 
-  background-position: center;
-}
-.hero.is-warning {
-	background-color: #ffdc00;
-	position: relative;
-	padding-top: 4rem;
-}
-.hero.is-warning.profile {
-	padding: 4rem;
-}
-
-.hero.is-small .hero-body {
-  padding-bottom: 0rem;
-  padding-top: 0rem;
-}
-
-//buttons
-.button.is-fullwidth {
-  display: flex;
-  width: 100%;
-  height: 190px;
-}
-.button {
-	font-family: Brice-SemiBoldSemiCondensed;
-	font-size: 1.4rem;
-	border: 0;
-	padding-bottom: 0;
-}
-.button.is-large {
-	font-family: Brice-SemiBoldSemiExpanded;
-	color: #0a0a0a;
-	line-height: 29px;
-}
-.button.is-warning {
-	background-color: #ffdc00;
-}
-.button.is-warning:hover, .button.is-warning.is-hovered {
-  background-color: #f7d500;
-  border-color: transparent;
-  color: #fff;
-}
-.button.is-dark {
-  background-color: black;
-  border-color: transparent;
-  color: white;
-
-}
-.button.is-dark:hover {
-  background-color: #9600c8;
-  border-color: transparent;
-  color: white;
-}
-.button.is-dark[disabled]:hover {
-	background-color: #363636;
-	border-color: transparent;
-	box-shadow: none;
-}
-.logout {
-	padding-left: 1rem;
-}
-
-.button.is-primary {
-	background-color: #9600c8;
-	border-color: transparent;
-	color: #fff;
-}
-.button.is-primary:hover, .button.is-primary.is-hovered {
-	background-color: #ff78be;
-	border-color: transparent;
-	color: #fff;
-}
-.has-text-primary {
-	color: #9600c8 !important;
-}
-.button.is-success {
-		background-color: #32DC64;
-}
-// .buttons .button:not(:last-child) {
-//   margin-right: 2rem;
-// }
-.button.is-roxo {
-	background-color: #9600c8;
-	color: white
-
-}
-.button.is-roxo:hover {
-	background-color: black;
-	color: white
-}
-.button.is-black {
-	background-color: transparent;
-}
-.button.is-black:hover {
-	background-color: transparent;
 }
 
 //image
@@ -294,64 +93,10 @@ p.subtitle.cards span{
   height: auto;
   width: 200px;
 }
-//columns
-.column.is-2, .column.is-2-tablet {
-	flex: none;
-	width: 400px;
-	margin-right: -8vw;
-	margin-left: -19vw;
-	padding: 0 0px 0 90px;
-	margin-bottom: 40px;
-}
-.column.is-7 {
-	padding: 1.75rem;
-}
-.title:not(:last-child), .subtitle:not(:last-child) {
-	margin-bottom: 1.9rem;
-}
-.field.is-grouped {
-  display: table-caption;
-}
-//circle and square
-.fas.fa-circle{
-	color: #9600c8;
-}
-.fa-square-full {
-	color:#9600c8;
-}
+
 //video
 video {
 	max-width: 100%;
 	object-fit: cover;
 	max-height: 580px; //450px
-}
-.notification.is-primary {
-	background-color: #ff78be;
-	color: #fff;
-	font-family: Brice-SemiBoldSemiCondensed;
-}
-//column edit
-.hero.is-purple {
-	background-color:#9600c8;
-}
-.hero.is-primaryV  {
-	background-image: url("backgroundV.png");
-	position: relative;
-	background-size: cover; 
-  background-position: center;
-}
-
-.footer {
-  background-color: whitesmoke;
-  padding: 2rem 1.5rem 2rem;
-}
-
-.tag:not(body).is-warning {
-  background-color: transparent;
-}
-
-span.tag.is-warning.follow {
-	font-family: Brice-SemiBoldSemiCondensed;
-	margin-top: 3px;
-	color: black;
 }

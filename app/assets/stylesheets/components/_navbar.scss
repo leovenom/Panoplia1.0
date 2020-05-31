@@ -1,0 +1,77 @@
+//navba
+.navbar-item, .navbar-link {
+	color: #4a4a4a;
+	//display: block;
+	line-height: 1.5;
+	padding: 0.8rem 2rem;
+	margin: -1rem;
+	position: relative;
+}
+.navbar-item img {
+	max-height: 3.7rem;
+	margin: 12px 0 12px 5px;
+}
+.navbar-dropdown .navbar-item {
+  /* padding-left: 1.5rem; */
+  /* padding-right: 1.5rem; */
+}
+.navbar-dropdown a.navbar-item:hover {
+	background-color: transparent;
+}
+
+a.navbar-item:hover, a.navbar-item.is-active,
+a.navbar-link:hover,
+a.navbar-link.is-active {
+  background-color: white;
+  color: #ff78be;
+}
+.navbar {
+z-index: 99;
+position: relative;
+background-color: black;
+}
+.navbar-menu {
+	background-color: transparent;
+	box-shadow: none;
+	padding: 0.5rem 0;
+}
+a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link.is-active {
+	background-color: transparent;
+}
+.navbar-item {
+	background-color: transparent;
+}
+.navbar-dropdown {
+	background-color: black;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top: 1px solid black;
+	padding-left: 0.9rem;
+	padding-top: 0;
+	min-width: 100%;
+	top: 92%;
+}
+
+//navbar-burge
+.navbar-burger {
+  color: white;
+  cursor: pointer;
+  display: block;
+  height: 3.25rem;
+  position: relative;
+  width: 3.25rem;
+  margin-left: auto;
+  margin-top: .75rem;
+}
+.navbar-burger span {
+  background-color: currentColor;
+  display: block;
+  height: 2px;
+  left: calc(50% - 8px);
+  position: absolute;
+  transform-origin: center;
+  transition-duration: 86ms;
+  transition-property: background-color, opacity, transform;
+  transition-timing-function: ease-out;
+  width: 18px;
+}
