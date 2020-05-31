@@ -25,12 +25,43 @@
 .hero.is-warning.profile {
 	padding: 4rem;
 }
-.hero.is-primary{
-	background-image: url("background.png");
-	position: relative;
-	width: 100%;
-	background-size: cover; 
-  background-position: center;
+
+.warning .title {
+	padding: 7.5rem 0 0 0;
+}
+//sign-up page left
+.background-pink {
+	background-color: #ff64dc;
+	.title{
+		font-family: Brice-Bold;
+		font-size: 3rem;
+		color: white;
+		padding: 8rem 6rem 2rem;
+	}
+	.subtitle {
+		color: white;
+		font-family: Brice-SemiBoldSemiCondensed;
+		font-size: 1.5rem;
+		padding: 0 7rem;
+	}
+	img {
+		margin-bottom: -6px;
+	}
+}
+//sign-up page right
+.sign-up {
+	background-color: #ffdc00;
+	.title {
+		font-family: Brice-Bold;
+		color: black;
+		font-size: 2rem;
+		padding: 10.25rem 0 1rem 0;
+	}
+	.label {
+		font-family: Brice-SemiBoldSemiCondensed;
+		color: black;
+		font-size: 1rem;
+	}
 }
 
 .hero.is-small .hero-body {
@@ -45,4 +76,8 @@
 	position: relative;
 	background-size: cover; 
   background-position: center;
+}
+
+.control {
+  margin-bottom: 1em;
 }
