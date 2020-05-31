@@ -22,9 +22,18 @@
               </div>
             </div>
           <% end %>
-
+        <%# if user_signed_in?%>
           <nav class="level shot-analytics">
-            <div class="level-left"></div>
+            <div class="level-left">
+              <div class="level-item">
+                <div class="user-thumb">
+                  <%= cl_image_tag shot.user.avatar.key unless shot.user.avatar.blank? %> 
+                </div>
+                <div class="user-name"><%=link_to shot.user.name, shot.user %>
+                </div>
+              </div>
+            </div>
+            
             <div class="level-right">
               <div class="level-item views data">
                 <%= link_to shot do %>
@@ -62,12 +71,7 @@
               </div>
             </div>
           </nav>
-          </div>
-          <div class="user-data">
-            <div class="user-thumb">
-            <%= cl_image_tag shot.user.avatar.key unless shot.user.avatar.blank? %> 
-            </div>
-            <div class="user-name"><%=link_to shot.user.name, shot.user %></div>
+        <%# end %>
           </div>
         </div>
       <% end %>
