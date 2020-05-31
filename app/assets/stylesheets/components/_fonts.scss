@@ -1,0 +1,44 @@
+@font-face {
+  font-family: Brice;
+  src: url(font-path('Brice-Bold.otf'));
+	src: url(font-path('Brice-BoldCondensed.otf'));
+  src: url(font-path('Brice-BoldSemiCondensed.otf'));
+  src: url(font-path('Brice-LightSemiCondensed.otf'));
+	src: url(font-path('Brice-RegularSemiCondensed.otf'));
+  src: url(font-path('Brice-SemiBoldSemiCondensed.otf'));
+  src: url(font-path('Brice-SemiBoldSemiExpanded.otf'));
+  font-family: OhnoBlazeface;
+  src: url(font-path('OhnoBlazeface12Point.ttf'));
+}
+
+.title.profile {
+	font-family: Brice-SemiBoldSemiCondensed;
+}
+
+.title:not(:last-child), .subtitle:not(:last-child) {
+	margin-bottom: 1.9rem;
+}
+
+.tag:not(body).is-warning {
+  background-color: transparent;
+}
+
+span.tag.is-warning.follow {
+	font-family: OhnoBlazeface12Point;
+	margin-top: 3px;
+	color: black;
+}
+
+hr {
+	background-color: black;
+}
+
+p.subtitle.cards{
+	font-family: Brice-SemiBoldSemiCondensed;
+	color: black;
+	font-size: 2rem;
+}
+p.subtitle.cards span{
+
+	color: #9600c8;
+}
