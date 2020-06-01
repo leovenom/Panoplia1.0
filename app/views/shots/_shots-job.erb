@@ -1,35 +1,30 @@
-<%= render 'hero' %>
-
-<section class="section">
-  <div class="columns">
-
-    <div class="column">
-      <p class="subtitle cards" style="
-      margin-left: 25px;"
-      >BEST OF PANÓPLIA <span>EVER<span></p>
-        <div class="shots">
-          <% @shots.each do |shot| %>
+<div class="shot-job">
+          <% @entity_shots.each do |shot| %>
           <div class="shot-grid-item">
-            <div class="shot-wrapper">
+            <div class="shot-wrapper-job">
               
               <%= link_to shot, class: "shot" do %>
-              <%= cl_image_tag(shot.user_shot_url) %>
+              <%# if shot.user_shot_url.present?%>
+            <%#= cl_image_tag  shot.user_shot_url %>
+            <%# else %>
+            <label><%= shot.description %></label>
               <div class="shot-data">
-                <h3 class="shot-title"><%= shot.title %></h3>
-                <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
+                <%#= cl_image_tag  shot.user.avatar.key, class:'avatar' unless  shot.user.avatar.blank?  %>
+                <h3 class="shot-title"><%=  shot.title %></h3>
                 <div class="shot-time">
-                  <%= time_ago_in_words(shot.created_at) %>
+                  <%= time_ago_in_words( shot.created_at) %>
                 </div>
               </div>
-              <% end %>
+              <%# end %>
+              <% end%>
               <%# if user_signed_in?%>
               <nav class="level shot-analytics">
                 <div class="level-left">
                   <div class="level-item">
                     <div class="user-thumb">
-                      <%= cl_image_tag shot.user.avatar.key unless shot.user.avatar.blank? %> 
+                      <%= cl_image_tag  shot.user.avatar.key unless  shot.user.avatar.blank? %> 
                     </div>
-                    <div class="user-name"><%=link_to shot.user.name, shot.user %>
+                    <div class="user-name"><%=link_to  shot.user.name,  shot.user %>
                     </div>
                   </div>
                 </div>
@@ -38,13 +33,13 @@
                   <div class="level-item views data">
                     <%= link_to shot do %>
                     <span class="icon"><i class="fa fa-eye"></i></span>
-                    <%= shot.impressionist_count %>
+                    <%=  shot.impressionist_count %>
                     <% end %>
                   </div>
                   <div class="level-item comments data">
                     <%= link_to shot do %>
                     <span class="icon"><i class="fa fa-comment"></i></span>
-                    <%= shot.comments.count %>
+                    <%=  shot.comments.count %>
                     <% end %>
                   </div>
                   <div class="level-item likes">
@@ -53,18 +48,18 @@
                     <% if current_user.liked? shot %>
                     <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
                     <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
-                    <span class="vote_count"><%= shot.get_likes.size %></span>
+                    <span class="vote_count"><%=  shot.get_likes.size %></span>
                     <% end %>
                     <% else %>
                     <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
                     <span class="icon"><i class="fa fa-heart"></i></span>
-                    <span class="vote_count"><%= shot.get_likes.size %></span>
+                    <span class="vote_count"><%=  shot.get_likes.size %></span>
                     <% end %>
                     <% end %>
                     <% else %>
                     <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
                     <span class="icon"><i class="fa fa-heart"></i></span>
-                    <span class="vote_count"><%= shot.get_likes.size %></span>
+                    <span class="vote_count"><%=  shot.get_likes.size %></span>
                     <% end %>
                     <% end %>
 
@@ -76,14 +71,3 @@
           </div>
           <% end %>
         </div>
-      </div>
-      <%# job board colum %>
-      <div class="column is-4">
-        <p class="subtitle cards">JOB BOARD <span>REMOTE FRIENDLY<span></p>
-          <section>
-		        <%= render 'shots-job'%>
-          </section>
-      <%# job board colum end%>
-      </div>
-   </div>
- </section>
