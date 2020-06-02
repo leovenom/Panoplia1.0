@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_shots  = @user.shots
+    @user_shots  = @user.shots.order('shots.created_at DESC')
   end
 
   def edit

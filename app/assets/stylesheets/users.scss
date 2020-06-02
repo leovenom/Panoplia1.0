@@ -2,12 +2,4 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-
-
-h2.column.title.is-size-7 {
-  margin-bottom: 19px;
-  margin-top: 19px;
-  max-inline-size: max-content;
-}
+@import "users/show";

@@ -1,0 +1,40 @@
+.shot-container {
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+	border-radius: 2px;
+	padding: 40px;
+	background: white;
+	@media only screen and (max-width: 800px) {
+		padding: 10px;
+	}
+	.content,
+	.comments {
+		margin-top: 0;
+		padding: 20px;
+		@media only screen and (max-width: 800px) {
+			padding: 0;
+		}
+	}
+}
+
+.shot-full {
+	text-align: center;
+}
+
+.button.is-outlined.is-roxo.icon {
+  border-color:  #9600c8;
+  padding: 28px 66px;
+}
+
+.column.is-4.is-offset-1 {
+  padding: 28px;
+}
+
+.buttons.is-centered-shot-show {
+  justify-content: center;
+}
+
+.user-thumb.shot-show img {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}

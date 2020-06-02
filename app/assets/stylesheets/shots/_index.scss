@@ -1,0 +1,73 @@
+h3.shot-title.job {
+  text-align: left;
+	font-family: Brice-BoldSemiCondensed;
+	font-size: 1.5rem;
+	margin-bottom: -10px;
+}
+.user-name-job .shot-user-name {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Brice-LightSemiCondensed;
+}
+
+.shot-job {
+	position: relative;
+	display: block;
+	color: #333 !important;
+	.shot-data.job{
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 5px;
+		background: rgba(white, .9);
+		cursor: pointer;
+		.shot-title {
+			font-weight: bold;
+		}
+		.shot-description {
+			font-size: .9rem;
+		}
+		.shot-time {
+			font-size: .8rem;
+			padding-top: .1rem;
+		}
+	}
+}
+
+.shot-data.job:hover{
+	padding: 0;
+}
+
+
+
+.user-thumb-job {
+	display: inline-block;
+	img {
+		border-radius: 50%;
+		height: 45px;
+		width: 45px;
+	}
+}
+
+.user-name-job {
+	display: inline-block;
+	position: relative;
+	padding-left: 10px;
+}
+
+.shot-analytics-job {
+  text-align: left;
+}
+
+.level-item-job {
+  align-items: top;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+}
