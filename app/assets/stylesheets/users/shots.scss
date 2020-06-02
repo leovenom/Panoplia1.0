@@ -1,6 +1,10 @@
 // Place all the styles related to the Shots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "shots/index";
+
+
 .hero.is-dark {
 	background-color: #282828 !important;
 }
@@ -91,32 +95,7 @@
 	}
 }
 
-.shot-job {
-	position: relative;
-	display: block;
-	color: #333 !important;
-	.shot-data {
-		display: none;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		padding: 5px;
-		background: rgba(white, .9);
-		cursor: pointer;
-		.shot-title {
-			font-weight: bold;
-		}
-		.shot-description {
-			font-size: .9rem;
-		}
-		.shot-time {
-			font-size: .8rem;
-			padding-top: .1rem;
-		}
-	}
-}
+
 .user-data {
 	padding: 1rem 0 0 0;
 }
