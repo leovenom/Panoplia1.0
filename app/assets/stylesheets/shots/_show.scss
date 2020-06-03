@@ -1,11 +1,4 @@
 .shot-container {
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
-	border-radius: 2px;
-	padding: 40px;
-	background: white;
-	@media only screen and (max-width: 800px) {
-		padding: 10px;
-	}
 	.content,
 	.comments {
 		margin-top: 0;
@@ -25,16 +18,53 @@
   padding: 28px 66px;
 }
 
-.column.is-4.is-offset-1 {
-  padding: 28px;
+.column.is-5.is-offset-1 {
+  padding-top: 28px;
 }
 
 .buttons.is-centered-shot-show {
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .user-thumb.shot-show img {
   border-radius: 50%;
   height: 40px;
   width: 40px;
+}
+.user-thumb.shot-show {
+  margin-left: 20px;
+}
+
+.shot-analytics.shot {
+  display: flex;
+  //align-items: left;
+  font-size: 1.2rem;
+  bottom: 0rem;
+  top: 0rem;
+}
+.level-item.comments.data{
+  padding: 0 70px 0 70px;
+}
+
+.shot-contact {
+  p.subtitle  {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #9600c8;
+    font-family: Brice-SemiBoldSemiCondensed;
+  }
+  button {
+    width: 154%;
+  }
+}
+
+.shot-wrapper.shot {
+  p.subtitle {
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #9600c8;
+    font-family: Brice-SemiBoldSemiCondensed;
+  }
 }

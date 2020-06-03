@@ -1,7 +1,7 @@
 <div class="section">
 	<div class="container">
 		<div class="columns">
-			<div class="column is-12">
+			<div class="column is-8 is-offset-2">
 				<div class="shot-container">
 					<div class="shot-full">
 						 <%= cl_image_tag (@shot.user_shot_url) unless @shot.user_shot.blank? %>
@@ -28,7 +28,7 @@
 						</div>
 
 					<section class="comments">
-						<h3 class="subtitle is-5"><%= pluralize(@shot.comments.count, 'Comment') %></h3>
+						<h3 class="subtitle"><%= pluralize(@shot.comments.count, 'Comment') %></h3>
 							<%= render @shot.comments %>
 						<% if user_signed_in? %>
 							<div class="comment-form">
@@ -40,7 +40,7 @@
 						<% end %>
 					</section>
 			</div>
-			<div class="column is-4 is-offset-1">
+			<div class="column is-5 is-offset-1">
 							<div class="buttons is-centered-shot-show">
               <% if user_signed_in? && !current_user?(@shot.user)%>
               <% if current_user.following?(@shot.user) %>
@@ -49,25 +49,36 @@
               <%= button_to "+FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-outlined is-roxo"%>
               <%end%>
               <%end%>
+
 							  	<div class="level-item likes">
                     <% if user_signed_in? %>
                     
                     <% if current_user.liked? @shot %>
                     <%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
                     <span class="button is-outlined is-roxo icon"><i class="fa fa-heart has-text-primary"></i></span>
-                    <span class="vote_count"><%#= @shot.get_likes.size %></span>
                     <% end %>
                     <% else %>
                     <%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
                     <span class="button is-outlined is-roxo icon"><i class="fa fa-heart"></i></span>
-                    <span class="vote_count"><%#= @shot.get_likes.size %></span>
                     <% end %>
                     <% end %>
 										<% end %>
                   </div>
+							
+							<div class="shot-contact">
+							<p class="subtitle">This user is AVAILABLE for work</p>
+							<% if @shot.user.available? && !current_user?(@shot.user)%>
+              <button class="button is-roxo">+ CONTACT ME</button>
+              <% elsif !current_user?(@shot)%>
+              <%# só uma entidade pode contratar outra entidade %>
+              <%# if current_user.entity? %>
+              <button class="button is-dark" title="Disabled button" disabled>+ CONTACT ME</button>
+              <%#end%>
+              <% end%>
+							</div>
 
             </div>
-				      <nav class="level shot-analytics">
+				      <nav class="shot-analytics shot">
                   <div class="level-item views data">
                     <%= link_to @shot do %>
                     <span class="icon"><i class="fa fa-eye"></i></span>
@@ -103,9 +114,9 @@
                   </div>
               </nav>
 
-				<h2 class="title is-3">Inspiration</h2>
-				<div class="shot-wrapper">
-				<%= link_to @random_shot, class: "shot" do %>
+				<div class="shot-wrapper shot">
+								<p class="subtitle">More from others user</p>
+						<%= link_to @random_shot, class: "shot" do %>
 					<%= cl_image_tag @random_shot.user_shot_url %>
 						<div class="shot-data">
 								<div class="user-thumb avatar">
@@ -116,7 +127,6 @@
 						</div>
 				</div>
 				<% end%>
-
 
 			</div>
 		</div>
