@@ -1,12 +1,11 @@
-.shot-container {
-	.content,
-	.comments {
-		margin-top: 0;
-		padding: 20px;
-		@media only screen and (max-width: 800px) {
-			padding: 0;
-		}
-	}
+.shot-container .content,
+.shot-container .comments {
+  margin-top: 14px;
+  padding: 0;
+  p {
+    color: black;
+    font-family: Brice-SemiBoldSemiCondensed;
+  }
 }
 
 .shot-full {
@@ -54,9 +53,12 @@
     color: #9600c8;
     font-family: Brice-SemiBoldSemiCondensed;
   }
-  button {
-    width: 154%;
-  }
+}
+
+.button.button.is-dark {
+  justify-content: center;
+  padding-left: 110px;
+  padding-right: 110px;
 }
 
 .shot-wrapper.shot {
@@ -67,4 +69,12 @@
     color: #9600c8;
     font-family: Brice-SemiBoldSemiCondensed;
   }
+}
+
+.comments {
+  h3.subtitle {
+    color: black;
+    font-family: Brice-SemiBoldSemiCondensed;
+  }
+
 }

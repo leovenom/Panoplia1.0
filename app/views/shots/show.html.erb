@@ -32,7 +32,7 @@
 							<%= render @shot.comments %>
 						<% if user_signed_in? %>
 							<div class="comment-form">
-								<h4 class="subtitle is-3">Leave a reply</h4>
+								<h3 class="subtitle is-4">Leave a reply</h3>
 								<%= render 'comments/form' %>
 							</div>
 						<% else %>
@@ -40,7 +40,7 @@
 						<% end %>
 					</section>
 			</div>
-			<div class="column is-5 is-offset-1">
+			<div class="column is-5">
 							<div class="buttons is-centered-shot-show">
               <% if user_signed_in? && !current_user?(@shot.user)%>
               <% if current_user.following?(@shot.user) %>
@@ -70,10 +70,9 @@
 							<% if @shot.user.available? && !current_user?(@shot.user)%>
               <button class="button is-roxo">+ CONTACT ME</button>
               <% elsif !current_user?(@shot)%>
-              <%# só uma entidade pode contratar outra entidade %>
-              <%# if current_user.entity? %>
+              <% if current_user.entity? %>
               <button class="button is-dark" title="Disabled button" disabled>+ CONTACT ME</button>
-              <%#end%>
+              <% end%>
               <% end%>
 							</div>
 
@@ -115,16 +114,16 @@
               </nav>
 
 				<div class="shot-wrapper shot">
-								<p class="subtitle">More from others user</p>
+					<p class="subtitle">More from others user</p>
 						<%= link_to @random_shot, class: "shot" do %>
-					<%= cl_image_tag @random_shot.user_shot_url %>
-						<div class="shot-data">
+							<%= cl_image_tag @random_shot.user_shot_url %>
+								<div class="shot-data">
 								<div class="user-thumb avatar">
 									<%= cl_image_tag @random_shot.user.avatar.key, class:'avatar' unless @random_shot.user.avatar.blank?  %>
 									<h3 class="shot-user"><%= @random_shot.user.name %></h3>
 									<h3 class="shot-title"><%= @random_shot.title %></h3>
 								</div>
-						</div>
+							</div>
 				</div>
 				<% end%>
 
