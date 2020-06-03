@@ -2,6 +2,7 @@
 .shot-container .comments {
   margin-top: 14px;
   padding: 0;
+
   p {
     color: black;
     font-family: Brice-SemiBoldSemiCondensed;
@@ -15,6 +16,11 @@
 .button.is-outlined.is-roxo.icon {
   border-color:  #9600c8;
   padding: 28px 66px;
+}
+.column.is-5{
+  flex: none;
+  width: 41.6666666667%;
+  margin-top: 1rem;
 }
 
 .column.is-5.is-offset-1 {
@@ -30,9 +36,6 @@
   height: 40px;
   width: 40px;
 }
-.user-thumb.shot-show {
-  margin-left: 20px;
-}
 
 .shot-analytics.shot {
   display: flex;
@@ -43,12 +46,13 @@
 }
 .level-item.comments.data{
   padding: 0 70px 0 70px;
+  margin-top: 0;
 }
 
 .shot-contact {
   p.subtitle  {
     margin-bottom: 0px;
-    margin-top: 10px;
+    margin-top: 30px;
     font-size: 1rem;
     color: #9600c8;
     font-family: Brice-SemiBoldSemiCondensed;
@@ -64,7 +68,7 @@
 .shot-wrapper.shot {
   p.subtitle {
     margin-bottom: 0px;
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 1rem;
     color: #9600c8;
     font-family: Brice-SemiBoldSemiCondensed;
@@ -77,4 +81,9 @@
     font-family: Brice-SemiBoldSemiCondensed;
   }
 
+}
+
+.columns:not(.is-desktop) {
+  display: flex;
+  margin-top: 1.2rem;
 }
