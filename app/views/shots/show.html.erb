@@ -63,6 +63,7 @@
 								<% end %>
 							</div>
 
+								<% if user_signed_in? %>
 							<div class="shot-contact">
 								<% if @shot.user.available? && !current_user?(@shot.user)%>
 								<p class="subtitle">This user is AVAILABLE for work</p>
@@ -73,7 +74,7 @@
 								<% end%>
 								<% end%>
 							</div>
-
+							 <% end %>
            
 				      <nav class="shot-analytics shot">
                   <div class="level-item views data">
