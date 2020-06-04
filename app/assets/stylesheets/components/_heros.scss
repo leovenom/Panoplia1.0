@@ -81,6 +81,13 @@
   background-position: center;
 }
 
+.hero.is-primaryV  {
+	background-image: image-url("backgroundv.png");
+	position: relative;
+	background-size: cover; 
+  background-position: center;
+}
+
 .control {
   margin-bottom: 1em;
 }
