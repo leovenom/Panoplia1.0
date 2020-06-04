@@ -51,7 +51,7 @@
               <%end%>
 
 							  	<div class="level-item likes">
-                    <% if user_signed_in? %>
+                    <% if user_signed_in? && !current_user?(@shot.user) %>
                     
                     <% if current_user.liked? @shot %>
                     <%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
@@ -66,11 +66,12 @@
                   </div>
 							
 							<div class="shot-contact">
-							<p class="subtitle">This user is AVAILABLE for work</p>
+							
 							<% if @shot.user.available? && !current_user?(@shot.user)%>
+							<p class="subtitle">This user is AVAILABLE for work</p>
               <button class="button is-roxo">+ CONTACT ME</button>
-              <% elsif !current_user?(@shot)%>
-              <% if current_user.entity? %>
+              <%# elsif !current_user?(@shot.user)%>
+              <% if @shot.user.entity? %>
               <button class="button is-dark" title="Disabled button" disabled>+ CONTACT ME</button>
               <% end%>
               <% end%>
@@ -115,7 +116,7 @@
 
 				<div class="shot-wrapper shot">
 					<p class="subtitle">More from others user</p>
-						<%= link_to @random_shots, class: "shot" do %>
+						<%= link_to @random_shot, class: "shot" do %>
 								<%= cl_image_tag @random_shot.user_shot_url%>
 								<div class="shot-data">
 								<div class="user-thumb avatar">
