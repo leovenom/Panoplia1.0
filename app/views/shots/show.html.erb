@@ -7,12 +7,12 @@
 						 <%= cl_image_tag (@shot.user_shot_url) unless @shot.user_shot.blank? %>
 					</div>
 					<% if user_signed_in? && (current_user.id == @shot.user_id) %>		
-						<div class="buttons has-addons level-right">
+						<div class="buttons has-addons level-left">
 							<%= link_to 'Edit', edit_shot_path(@shot), class: "button" %>
 							<%= link_to 'Delete', shot_path, class: "button", method: :delete, data: { confirm: 'Are you sure you want to delete this shot?'} %>
 						</div>
 					<% end %>
-		<div class="columns is-desktop">
+		<div class="columns show-page is-desktop">
 			<div class="column is-7">
 						<div class="user-thumb shot-show">
 						<%= cl_image_tag @shot.user.avatar.key unless @shot.user.avatar.blank?%>
@@ -40,44 +40,41 @@
 						<% end %>
 					</section>
 			</div>
-			<div class="column is-5">
-							<div class="buttons is-centered-shot-show">
-              <% if user_signed_in? && !current_user?(@shot.user)%>
-              <% if current_user.following?(@shot.user) %>
-              <%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-outlined is-dark", method: :delete%>
-              <%else%>
-              <%= button_to "+FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-outlined is-roxo"%>
-              <%end%>
-              <%end%>
-
-							  	<div class="level-item likes">
-                    <% if user_signed_in? && !current_user?(@shot.user) %>
-                    
-                    <% if current_user.liked? @shot %>
-                    <%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
-                    <span class="button is-outlined is-roxo icon"><i class="fa fa-heart has-text-primary"></i></span>
-                    <% end %>
-                    <% else %>
-                    <%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
-                    <span class="button is-outlined is-roxo icon"><i class="fa fa-heart"></i></span>
-                    <% end %>
-                    <% end %>
-										<% end %>
-                  </div>
-							
-							<div class="shot-contact">
-							
-							<% if @shot.user.available? && !current_user?(@shot.user)%>
-							<p class="subtitle">This user is AVAILABLE for work</p>
-              <button class="button is-roxo">+ CONTACT ME</button>
-              <%# elsif !current_user?(@shot.user)%>
-              <% if @shot.user.entity? %>
-              <button class="button is-dark" title="Disabled button" disabled>+ CONTACT ME</button>
-              <% end%>
-              <% end%>
+			<div class="column is-5 is-desktop">
+							<div class="buttons two">
+								<% if user_signed_in? && !current_user?(@shot.user)%>
+								<% if current_user.following?(@shot.user) %>
+								<%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-outlined is-dark", method: :delete%>
+								<%else%>
+								<%= button_to "+FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-outlined is-roxo"%>
+								<%end%>
+								<%end%>
+ 								
+              	<% if user_signed_in? && !current_user?(@shot.user) %>
+              	<% if current_user.liked? @shot %>
+              	<%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
+              	<span class="button is-outlined is-roxo icon"><i class="fa fa-heart has-text-primary"></i></span>
+              	<% end %>
+              	<% else %>
+              	<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+              	<span class="button is-outlined is-roxo icon"><i class="fa fa-heart"></i></span>
+              	<% end %>
+              	<% end %>
+								<% end %>
 							</div>
 
-            </div>
+							<div class="shot-contact">
+								<% if @shot.user.available? && !current_user?(@shot.user)%>
+								<p class="subtitle">This user is AVAILABLE for work</p>
+								<button class="button is-roxo contact">+ CONTACT ME</button>
+								<% elsif !current_user?(@shot.user)%>
+								<% if @shot.user.entity? %>
+								<button class="button is-dark contact" title="Disabled button" disabled>+ CONTACT ME</button>
+								<% end%>
+								<% end%>
+							</div>
+
+           
 				      <nav class="shot-analytics shot">
                   <div class="level-item views data">
                     <%= link_to @shot do %>

@@ -18,15 +18,15 @@
   padding: 28px 66px;
 }
 .column.is-5{
-  flex: none;
-  width: 41.6666666667%;
+  //flex: none;
+  //width: 41.6666666667%;
 }
 
 .column.is-5.is-offset-1 {
   padding-top: 28px;
 }
 
-.buttons.is-centered-shot-show {
+.buttons.two {
   justify-content: space-between;
 }
 
@@ -51,17 +51,18 @@
 .shot-contact {
   p.subtitle  {
     margin-bottom: 0px;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 1rem;
     color: #9600c8;
     font-family: Brice-SemiBoldSemiCondensed;
   }
 }
 
-.button.button.is-dark {
+.button.contact{
   justify-content: center;
   padding-left: 110px;
   padding-right: 110px;
+  margin-bottom: 20px;
 }
 
 .shot-wrapper.shot {
@@ -84,4 +85,8 @@
 
 .columns:not(.is-desktop) {
   display: flex;
+}
+
+.columns.show-page {
+  margin-top: 30px;
 }

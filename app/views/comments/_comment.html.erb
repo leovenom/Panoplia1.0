@@ -2,7 +2,7 @@
   <article class="media">
     <figure class="media-left">
       <p class="image is-48x48 user-thumb">
-        <%= cl_image_tag comment.user.avatar.key %>
+        <%= cl_image_tag comment.user.avatar.key unless comment.user.avatar.key.blank? %>
       </p>
     </figure>
     <div class="media-content">
