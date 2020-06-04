@@ -44,20 +44,20 @@
 							<div class="buttons two">
 								<% if user_signed_in? && !current_user?(@shot.user)%>
 								<% if current_user.following?(@shot.user) %>
-								<%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-outlined is-dark", method: :delete%>
+								<%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-dark", method: :delete%>
 								<%else%>
-								<%= button_to "+FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-outlined is-roxo"%>
+								<%= button_to "+FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-roxo"%>
 								<%end%>
 								<%end%>
  								
               	<% if user_signed_in? && !current_user?(@shot.user) %>
               	<% if current_user.liked? @shot %>
               	<%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
-              	<span class="button is-outlined is-roxo icon"><i class="fa fa-heart has-text-primary"></i></span>
+              	<span class="button is-black icon"><i class="fa fa-heart has-text-primary"></i></span>
               	<% end %>
               	<% else %>
               	<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
-              	<span class="button is-outlined is-roxo icon"><i class="fa fa-heart"></i></span>
+              	<span class="button is-roxo icon"><i class="fa fa-heart"></i></span>
               	<% end %>
               	<% end %>
 								<% end %>

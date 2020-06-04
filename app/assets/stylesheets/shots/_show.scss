@@ -13,10 +13,26 @@
 	text-align: center;
 }
 
-.button.is-outlined.is-roxo.icon {
-  border-color:  #9600c8;
+.button.is-roxo.icon {
   padding: 28px 66px;
 }
+.button.is-black.icon {
+  background-color: black;
+  padding: 28px 66px;
+}
+.button.is-roxo.icon:hover {
+	background-color: black;
+  color: white;
+}
+
+.button.is-black.icon:hover {
+	background-color:black;;
+	color: white
+}
+.button.is-black.icon:active {
+  background-color: black;
+}
+
 .column.is-5{
   //flex: none;
   //width: 41.6666666667%;
