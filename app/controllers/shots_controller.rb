@@ -20,7 +20,8 @@ class ShotsController < ApplicationController
   # GET /shots/1
   # GET /shots/1.json
   def show
-    @user_shot = current_user.shots.all.order(created_at: 'DESC')
+    #@user_shot = current_user.shots.all.order(created_at: 'DESC')
+    #@random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
     @random_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: false}).order("RANDOM()").first
   end
 
