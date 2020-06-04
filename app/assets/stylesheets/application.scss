@@ -35,7 +35,16 @@ $link-hover: darken($primary, 20%);
  @import "components/notifications";
 
 
+#avatar {
+	display: none;
+}
+#email {
+	display: none;
+}
 
+#password {
+	display: none;
+}
 
 hr {
 	background-color: black;

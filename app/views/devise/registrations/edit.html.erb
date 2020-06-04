@@ -3,30 +3,32 @@
         <div class="column hero is-primaryvv is-hidden-mobile">
         </div>
         <div class="column hero is-purple is-hidden-mobile">
-          <%# <div class="field">
+          <div class="field" style="margin-top: 150px;">
             <div>
-              <a href="#avatar" class="title is-size-4 has-text-justified has-text-white">Profile Picture</a>
+              <a onclick="myFunctionAvatar()" class="title is-size-4 has-text-justified has-text-white">Profile Picture</a>
             </div>
             <div>
-              <a href="#public-profile" class="title is-size-4 has-text-justified has-text-white">Public Profile</a>
+              <a onclick="myFunctionProfile()" class="title is-size-4 has-text-justified has-text-white">Public Profile</a>
             </div>
             <div>
-              <a href="#email" class="title is-size-4 has-text-justified has-text-white">Email</a>
+              <a onclick="myFunctionEmail()" class="title is-size-4 has-text-justified has-text-white">Email</a>
             </div>
             <div>
-              <a href="#password" class="title is-size-4 has-text-justified has-text-white">Password</a>
+              <a onclick="myFunctionPassword()" class="title is-size-4 has-text-justified has-text-white">Password</a>
             </div>
-          </div> %>
+          </div>
         </div>
 
       <div class="column is-4 hero is-warning profile">
       <h1 class="title is-size-4">EDIT PROFILE</h1>
-      <p class="subtitle is-size-6">PUBLIC PROFILE</p>
+      <%# <p class="subtitle is-size-6">PUBLIC PROFILE</p> %>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
       <%# avatar profile %>
-        <div class="field" id="avatar" >
+      <div id="avatar">
+      <p class="subtitle is-size-6">PUBLIC PICTURE</p>
+        <div class="field">
           <div class="control">
               <%= cl_image_tag(resource.avatar.key) if resource.avatar.attached? %>
           </div>
@@ -36,9 +38,11 @@
             <%= f.file_field :avatar, as: :file, input_html: { class: "file"}, wrapper: false, label_html: { class: "label" } %>
           </div>
         </div>
-         <hr />
+        <hr />
+      </div>
       <%# public profile %>
       <div id="public-profile">
+        <p class="subtitle is-size-6">PUBLIC PROFILE</p>
         <div class="field">
           <div class="control">
             <%= f.input :username, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
@@ -78,20 +82,23 @@
           </div>
         </div>
         <% end %>
+        <hr />
       </div>
-       <hr />
+
         <%# email %>
         <div id="email">
+        <p class="subtitle is-size-6">EMAIL</p>
           <div class="field">
             <div class="control">
               <%= f.input :email, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
-        </div>
          <hr />
+         </div>
         <%# password %>
         
         <div id="password">
+          <p class="subtitle is-size-6">PASSWORD</p>
           <div class="field">
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -109,8 +116,8 @@
             <%= f.input :password_confirmation, required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
+          <hr />
         </div>
-         <hr />
         <%# password confirmation %>
           <div class="field">
             <div class="control">
@@ -134,3 +141,41 @@
     </div>
   </div>
 </section>
+
+<script>
+function myFunctionAvatar() {
+  var x = document.getElementById("avatar");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function myFunctionProfile() {
+  var y = document.getElementById("public-profile");
+  if (y.style.display === "none") {
+    y.style.display = "block";
+  } else {
+    y.style.display = "none";
+  }
+}
+
+function myFunctionEmail() {
+  var z = document.getElementById("email");
+  if (z.style.display === "none") {
+    z.style.display = "block";
+  } else {
+    z.style.display = "none";
+  }
+}
+
+function myFunctionPassword() {
+  var p = document.getElementById("password");
+  if (p.style.display === "none") {
+    p.style.display = "block";
+  } else {
+    p.style.display = "none";
+  }
+}
+</script>
