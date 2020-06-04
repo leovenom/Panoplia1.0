@@ -7,6 +7,9 @@
 	padding: 0 0px 0 90px;
 	margin-bottom: 40px;
 }
-.column.is-7 {
+
+@media only screen and (max-width: 500px) {
+	.column {
 	padding: 1.75rem;
+	}
 }
