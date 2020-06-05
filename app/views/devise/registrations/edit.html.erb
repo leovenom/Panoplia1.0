@@ -5,16 +5,16 @@
         <div class="column hero is-purple is-hidden-mobile">
           <div class="field" style="margin-top: 150px;">
             <div>
-              <a onclick="myFunctionAvatar()" class="title is-size-4 has-text-justified has-text-white">Profile Picture</a>
+              <a id="element1" onclick="myFunctionAvatar();javascript:changeTextAvatar(1)" class="title is-size-4 has-text-justified has-text-white">→ Profile Picture</a>
             </div>
             <div>
-              <a onclick="myFunctionProfile()" class="title is-size-4 has-text-justified has-text-white">Public Profile</a>
+              <a id="element2" onclick="myFunctionProfile();javascript:changeTextProfile(2)" class="title is-size-4 has-text-justified has-text-white">Public Profile</a>
             </div>
             <div>
-              <a onclick="myFunctionEmail()" class="title is-size-4 has-text-justified has-text-white">Email</a>
+              <a id="element3" onclick="myFunctionEmail();javascript:changeTextEmail(3)" class="title is-size-4 has-text-justified has-text-white">Email</a>
             </div>
             <div>
-              <a onclick="myFunctionPassword()" class="title is-size-4 has-text-justified has-text-white">Password</a>
+              <a id="element4" onclick="myFunctionPassword();javascript:changeTextPassword(4)" class="title is-size-4 has-text-justified has-text-white">Password</a>
             </div>
           </div>
         </div>
@@ -143,6 +143,10 @@
 </section>
 
 <script>
+
+
+
+
 function myFunctionAvatar() {
   var x = document.getElementById("avatar");
   if (x.style.display === "none") {
@@ -150,6 +154,15 @@ function myFunctionAvatar() {
   } else {
     x.style.display = "none";
   }
+}
+function changeTextAvatar(idElement) {
+    var element = document.getElementById('element' + idElement);
+    if (idElement === 1) {
+        if (element.innerHTML === 'Profile Picture') element.innerHTML = '→ Profile Picture';
+        else {
+            element.innerHTML = 'Profile Picture';
+        }
+    }
 }
 
 function myFunctionProfile() {
@@ -160,6 +173,15 @@ function myFunctionProfile() {
     y.style.display = "";
   }
 }
+function changeTextProfile(idElement) {
+    var element = document.getElementById('element' + idElement);
+    if (idElement === 2) {
+        if (element.innerHTML === '→ Public Profile') element.innerHTML = 'Public Profile';
+        else {
+            element.innerHTML = '→ Public Profile';
+        }
+    }
+}
 
 function myFunctionEmail() {
   var z = document.getElementById("email");
@@ -169,6 +191,15 @@ function myFunctionEmail() {
     z.style.display = "";
   }
 }
+function changeTextEmail(idElement) {
+    var element = document.getElementById('element' + idElement);
+    if (idElement === 3) {
+        if (element.innerHTML === '→ Email') element.innerHTML = 'Email';
+        else {
+            element.innerHTML = '→ Email';
+        }
+    }
+}
 
 function myFunctionPassword() {
   var p = document.getElementById("password");
@@ -177,5 +208,14 @@ function myFunctionPassword() {
   } else {
     p.style.display = "";
   }
+}
+function changeTextPassword(idElement) {
+    var element = document.getElementById('element' + idElement);
+    if (idElement === 4) {
+        if (element.innerHTML === '→ Password') element.innerHTML = 'Password';
+        else {
+            element.innerHTML = '→ Password';
+        }
+    }
 }
 </script>
