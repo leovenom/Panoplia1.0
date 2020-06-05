@@ -32,12 +32,41 @@
   color: white;
   font-size: 24px;
 }
-
-p.subtitle.edit {
+.subtitle.edit {
   font-family: Brice-SemiBoldSemiCondensed;
+  color: black;
+  font-size: 1rem;
 }
 
 .icon-arrow {
   background-image: image-url("arrow.png");
   height: 18px;
+}
+
+.field.element {
+  margin-left: 20px;
+  margin-top: 150px;
+}
+
+h1.title.edit {
+  font-size: 1.5rem;
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+
+.profile.edit  {
+  background-color: #ffdc00;
+	position: relative;
+	padding: 4rem;
+}
+
+h1.title.edit{
+  font-family: Brice-SemiBoldSemiExpanded;
+	color: #0a0a0a;
+}
+h3.title.edit.cancel {
+  margin-top: 25px;
+  font-size: 1rem;
+  margin-bottom: 0px;
 }

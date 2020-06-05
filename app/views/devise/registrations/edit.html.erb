@@ -2,8 +2,8 @@
     <div class="columns is-centered is-desktop">
         <div class="column hero is-primary-edit is-hidden-mobile">
         </div>
-        <div class="column hero is-purple is-hidden-mobile">
-          <div class="field" style="margin-top: 150px;">
+        <div class="column hero is-purple is-centered is-mobile">
+          <div class="field element">
             <div>
               <a id="element1" onclick="myFunctionAvatar();javascript:changeTextAvatar(1);changeFont1()" class="amatic">→ Profile Picture</a>
             </div>
@@ -19,15 +19,15 @@
           </div>
         </div>
 
-      <div class="column is-4 hero is-warning profile">
-      <h1 class="title is-size-4">EDIT PROFILE</h1>
+      <div class="column is-4 profile edit">
+      <h1 class="title edit">EDIT PROFILE</h1>
       <%# <p class="subtitle is-size-6">PUBLIC PROFILE</p> %>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
       <%# avatar profile %>
-      <div id="avatar">
-      <p class="subtitle is-size-6 edit">PUBLIC PICTURE</p>
+      <div id="avatar" class="avatar-edit">
+      <p class="subtitle edit">PUBLIC PICTURE</p>
         <div class="field">
           <div class="control">
               <%= cl_image_tag(resource.avatar.key) if resource.avatar.attached? %>
@@ -38,11 +38,11 @@
             <%= f.file_field :avatar, as: :file, input_html: { class: "file"}, wrapper: false, label_html: { class: "label" } %>
           </div>
         </div>
-        <hr />
+        
       </div>
       <%# public profile %>
-      <div id="public-profile">
-        <p class="subtitle is-size-6 edit">PUBLIC PROFILE</p>
+      <div id="public-profile" class="public-profile">
+        <p class="subtitle edit">PUBLIC PROFILE</p>
         <div class="field">
           <div class="control">
             <%= f.input :username, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
@@ -82,23 +82,23 @@
           </div>
         </div>
         <% end %>
-        <hr />
+        
       </div>
 
         <%# email %>
-        <div id="email">
-        <p class="subtitle is-size-6 edit">EMAIL</p>
+        <div id="email" class="email">
+        <p class="subtitle edit">EMAIL</p>
           <div class="field">
             <div class="control">
               <%= f.input :email, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
-         <hr />
+         
          </div>
         <%# password %>
         
-        <div id="password">
-          <p class="subtitle is-size-6 edit">PASSWORD</p>
+        <div id="password" class="password">
+          <p class="subtitle edit">PASSWORD</p>
           <div class="field">
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -116,7 +116,7 @@
             <%= f.input :password_confirmation, required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
-          <hr />
+          
         </div>
         <%# password confirmation %>
           <div class="field">
@@ -129,8 +129,8 @@
      
       <% end %>
 
-        <hr />
-        <h3 class="title is-size-6">Cancel my account</h3>
+        
+        <h3 class="title edit cancel">Cancel my account</h3>
         <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
    
       </div>
