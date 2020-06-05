@@ -34,6 +34,8 @@ $link-hover: darken($primary, 20%);
  @import "components/navbar";
  @import "components/notifications";
 
+ 
+
 
 hr {
 	background-color: black;
@@ -109,4 +111,3 @@ video {
 	object-fit: cover;
 	max-height: 580px; //450px
 }
-
