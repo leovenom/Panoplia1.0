@@ -5,16 +5,16 @@
         <div class="column hero is-purple is-hidden-mobile">
           <div class="field" style="margin-top: 150px;">
             <div>
-              <a id="element1" onclick="myFunctionAvatar();javascript:changeTextAvatar(1)" class="title is-size-4 has-text-justified has-text-white">→ Profile Picture</a>
+              <a id="element1" onclick="myFunctionAvatar();javascript:changeTextAvatar(1);changeFont1()" class="amatic title is-size-4 has-text-justified has-text-white">→ Profile Picture</a>
             </div>
             <div>
-              <a id="element2" onclick="myFunctionProfile();javascript:changeTextProfile(2)" class="title is-size-4 has-text-justified has-text-white">Public Profile</a>
+              <a id="element2" onclick="myFunctionProfile();javascript:changeTextProfile(2);changeFont2()" class="title is-size-4 has-text-justified has-text-white">Public Profile</a>
             </div>
             <div>
-              <a id="element3" onclick="myFunctionEmail();javascript:changeTextEmail(3)" class="title is-size-4 has-text-justified has-text-white">Email</a>
+              <a id="element3" onclick="myFunctionEmail();javascript:changeTextEmail(3);changeFont3()" class="title is-size-4 has-text-justified has-text-white">Email</a>
             </div>
             <div>
-              <a id="element4" onclick="myFunctionPassword();javascript:changeTextPassword(4)" class="title is-size-4 has-text-justified has-text-white">Password</a>
+              <a id="element4" onclick="myFunctionPassword();javascript:changeTextPassword(4);changeFont4()" class="title is-size-4 has-text-justified has-text-white">Password</a>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@
 
       <%# avatar profile %>
       <div id="avatar">
-      <p class="subtitle is-size-6">PUBLIC PICTURE</p>
+      <p class="subtitle is-size-6 edit">PUBLIC PICTURE</p>
         <div class="field">
           <div class="control">
               <%= cl_image_tag(resource.avatar.key) if resource.avatar.attached? %>
@@ -42,7 +42,7 @@
       </div>
       <%# public profile %>
       <div id="public-profile">
-        <p class="subtitle is-size-6">PUBLIC PROFILE</p>
+        <p class="subtitle is-size-6 edit">PUBLIC PROFILE</p>
         <div class="field">
           <div class="control">
             <%= f.input :username, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
@@ -87,7 +87,7 @@
 
         <%# email %>
         <div id="email">
-        <p class="subtitle is-size-6">EMAIL</p>
+        <p class="subtitle is-size-6 edit">EMAIL</p>
           <div class="field">
             <div class="control">
               <%= f.input :email, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
@@ -98,7 +98,7 @@
         <%# password %>
         
         <div id="password">
-          <p class="subtitle is-size-6">PASSWORD</p>
+          <p class="subtitle is-size-6 edit">PASSWORD</p>
           <div class="field">
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -143,79 +143,108 @@
 </section>
 
 <script>
-
-
-
-
-function myFunctionAvatar() {
-  var x = document.getElementById("avatar");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+  function myFunctionAvatar() {
+    var x = document.getElementById("avatar");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
   }
-}
-function changeTextAvatar(idElement) {
-    var element = document.getElementById('element' + idElement);
-    if (idElement === 1) {
-        if (element.innerHTML === 'Profile Picture') element.innerHTML = '→ Profile Picture';
-        else {
-            element.innerHTML = 'Profile Picture';
+  function changeTextAvatar(idElement) {
+      var element = document.getElementById('element' + idElement);
+      if (idElement === 1) {
+          if (element.innerHTML === 'Profile Picture') element.innerHTML = '→ Profile Picture';
+          else {
+              element.innerHTML = 'Profile Picture';
+          }
+      }
+  }
+  function changeFont1() {
+    var fon1 = document.getElementById("element1");
+    if (fon1.className == "roman") {
+      fon1.className = 'amatic';
+    } else {
+      fon1.className = 'roman';
+    }
+  }
+
+    function myFunctionProfile() {
+      var y = document.getElementById("public-profile");
+      if (y.style.display === "") {
+        y.style.display = "block";
+      } else {
+        y.style.display = "";
+      }
+    }
+    function changeTextProfile(idElement) {
+        var element = document.getElementById('element' + idElement);
+        if (idElement === 2) {
+            if (element.innerHTML === '→ Public Profile') element.innerHTML = 'Public Profile';
+            else {
+                element.innerHTML = '→ Public Profile';
+            }
         }
     }
-}
-
-function myFunctionProfile() {
-  var y = document.getElementById("public-profile");
-  if (y.style.display === "") {
-    y.style.display = "block";
-  } else {
-    y.style.display = "";
-  }
-}
-function changeTextProfile(idElement) {
-    var element = document.getElementById('element' + idElement);
-    if (idElement === 2) {
-        if (element.innerHTML === '→ Public Profile') element.innerHTML = 'Public Profile';
-        else {
-            element.innerHTML = '→ Public Profile';
-        }
+    function changeFont2() {
+      var fon2 = document.getElementById("element2");
+      if (fon2.className == "amatic") {
+        fon2.className = 'roman';
+      } else {
+        fon2.className = 'amatic';
+      }
     }
-}
 
-function myFunctionEmail() {
-  var z = document.getElementById("email");
-  if (z.style.display === "") {
-    z.style.display = "block";
-  } else {
-    z.style.display = "";
-  }
-}
-function changeTextEmail(idElement) {
-    var element = document.getElementById('element' + idElement);
-    if (idElement === 3) {
-        if (element.innerHTML === '→ Email') element.innerHTML = 'Email';
-        else {
-            element.innerHTML = '→ Email';
+      function myFunctionEmail() {
+        var z = document.getElementById("email");
+        if (z.style.display === "") {
+          z.style.display = "block";
+        } else {
+          z.style.display = "";
         }
-    }
-}
+      }
+      function changeTextEmail(idElement) {
+          var element = document.getElementById('element' + idElement);
+          if (idElement === 3) {
+              if (element.innerHTML === '→ Email') element.innerHTML = 'Email';
+              else {
+                  element.innerHTML = '→ Email';
+              }
+          }
+      }
+      function changeFont3() {
+        var fon3 = document.getElementById("element3");
+        if (fon3.className == "amatic") {
+          fon3.className = 'roman';
+        } else {
+          fon3.className = 'amatic';
+        }
+      }
 
-function myFunctionPassword() {
-  var p = document.getElementById("password");
-  if (p.style.display === "") {
-    p.style.display = "block";
-  } else {
-    p.style.display = "";
-  }
-}
-function changeTextPassword(idElement) {
-    var element = document.getElementById('element' + idElement);
-    if (idElement === 4) {
-        if (element.innerHTML === '→ Password') element.innerHTML = 'Password';
-        else {
-            element.innerHTML = '→ Password';
+        function myFunctionPassword() {
+          var p = document.getElementById("password");
+          if (p.style.display === "") {
+            p.style.display = "block";
+          } else {
+            p.style.display = "";
+          }
         }
-    }
-}
+        function changeTextPassword(idElement) {
+            var element = document.getElementById('element' + idElement);
+            if (idElement === 4) {
+                if (element.innerHTML === '→ Password') element.innerHTML = 'Password';
+                else {
+                    element.innerHTML = '→ Password';
+                }
+            }
+        }
+        function changeFont4() {
+          var fon4 = document.getElementById("element4");
+          if (fon4.className == "amatic") {
+            fon4.className = 'roman';
+          } else {
+            fon4.className = 'amatic';
+          }
+        }
+
 </script>

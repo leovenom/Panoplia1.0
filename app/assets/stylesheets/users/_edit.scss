@@ -1,5 +1,10 @@
 #public-profile {
   display: none;
+  .roman {
+    font-family: 'Brice-LightSemiCondensed';
+    color: white;
+    font-size: 24px;
+  }
 }
 #email {
 	display: none;
@@ -17,3 +22,17 @@
   min-height: 1100px;
 }
 
+.amatic {
+  font-family: 'Brice-BoldSemiCondensed';
+  color: white;
+  font-size: 24px;
+}
+.roman {
+  font-family: 'Brice-LightSemiCondensed';
+  color: white;
+  font-size: 24px;
+}
+
+p.subtitle.edit {
+  font-family: Brice-SemiBoldSemiCondensed;
+}
