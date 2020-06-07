@@ -1,6 +1,6 @@
 <section class="">
     <div class="columns is-centered is-desktop">
-        <div class="column hero is-primary-edit is-hidden-mobile">
+        <div class="column hero is-primary-edit is-hidden-media is-hidden-mobile">
         </div>
         <div class="column hero is-purple is-centered is-mobile">
           <div class="field element">
@@ -19,7 +19,7 @@
           </div>
         </div>
 
-      <div class="column is-4 profile edit">
+      <div class="column profile edit is-mobile">
       <h1 class="title edit">EDIT PROFILE</h1>
       <%# <p class="subtitle is-size-6">PUBLIC PROFILE</p> %>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
