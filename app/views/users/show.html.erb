@@ -3,13 +3,13 @@
     <section class="hero is-small is-warning">
       <div class="hero-body show">
         <div class="columns is-centered is-desktop">
-          <div class="column is-2 has-text-centered">
+          <div class="column is-2">
             <figure class="image is-inline-block">
               <%= cl_image_tag @user.avatar.key unless @user.avatar.blank? %>
             </figure>
           </div>
 
-          <div class="column is-7 has-text-centered">
+          <div class="column is-6 has-text-centered">
             <h1 class="title is-size-3-mobile is-size-1-fullhd">
               <%= @user.name.upcase %>
             </h1>
