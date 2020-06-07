@@ -2,11 +2,14 @@
 .hero.yellow {
 	background-color: #ffdc00;
 	.title {
-		font-family: Brice-SemiBoldSemiExpanded;
+		font-family: Brice-BoldSemiCondensed;
 		color: black;
+		font-size: 1.9rem;
 	}
 	.subtitle {
 		color: black;
+		font-size: 1rem;
+		font-family: Brice-LightSemiCondensed;
 	}
 }
 
@@ -95,10 +98,10 @@
 .fae {
 	margin-top: 15px;
 	margin-bottom: 30px;
-	height: 50px;
+	height: 40px;
 }
 
 .fah {
 	margin-bottom: 25px;
-	height: 70px;
+	height: 56px;
 }

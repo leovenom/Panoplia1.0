@@ -42,13 +42,19 @@ hr {
 }
 html, body {
 	min-height: 100vh;
-	background-color: #f4f4f4;
+	background-color: white;
   margin: 0;
   padding: 0;
 	overflow-x: hidden;
 }
-
-
+.section {
+  padding: 2.5rem 2.5rem;
+}
+.level {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
 
 #drop_zone {
 	position: relative;
