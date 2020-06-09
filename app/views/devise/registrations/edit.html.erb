@@ -45,31 +45,34 @@
         <p class="subtitle edit">PUBLIC PROFILE</p>
         <div class="field">
           <div class="control">
-            <%= f.input :username, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            <%= f.input :username, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
           </div>
         </div>
           <div class="field">
             <div class="control">
-              <%= f.input :name, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+              <%= f.input :name, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
       
 
         <div class="field">
           <div class="control">
-            <%= f.input :location, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            <%= f.input :location, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
           </div>
         </div>
 
         <div class="field">
           <div class="control">
-            <%= f.input :bio, required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            <%= f.input :bio, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
           </div>
         </div>
 
         <div class="field">
           <div class="control">
-            <%=  f.input :art, label: "Artist Area", required: true, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+          <div class="select is-multiple">
+          <label class="label">Select type</label>
+            <%=  f.input_field :art, collection: User::ARTS, autofocus: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }%>
+          </div>
           </div>
         </div>
         <% if @user.entity %>
@@ -90,7 +93,7 @@
         <p class="subtitle edit">EMAIL</p>
           <div class="field">
             <div class="control">
-              <%= f.input :email, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+              <%= f.input :email, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
          
@@ -121,7 +124,7 @@
         <%# password confirmation %>
           <div class="field">
             <div class="control">
-              <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+              <%= f.input :current_password, hint: "we need your current password to confirm your changes", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
         </div>
    

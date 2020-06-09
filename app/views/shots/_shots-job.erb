@@ -6,7 +6,7 @@
                 <div class="level-level-right">
                   <div class="level-item-job">
                     <div class="user-thumb-job">
-                      <%= cl_image_tag  shot.user.avatar.key unless  shot.user.avatar.blank? %> 
+                      <%=link_to cl_image_tag(shot.user.avatar.key), user_path(shot.user) unless shot.user.avatar.blank? %> 
                     </div>
                     <div class="user-name-job">
                     <h3 class="shot-title job"><%= shot.title %></h3>

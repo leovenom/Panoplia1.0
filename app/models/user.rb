@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :followings, through: :active_friendships, source: :followed
   has_many :followers, through: :passive_friendships, source: :follower
 
+
   #follow another user
   def follow(other_user)
     active_friendships.create(followed_id: other_user.id)
@@ -32,5 +33,6 @@ class User < ApplicationRecord
   # def entities
   #   Shot.where(use_type: "entity")
   # end
-  
+  ARTS = ["Illustrator", "Photographer", "Concept Artist", "Sculptor", "Graphic Designer", "Video Artist"]
+
 end
