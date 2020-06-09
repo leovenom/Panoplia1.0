@@ -66,7 +66,7 @@
                     <p class="navbar-item user">
                       <% if current_user.username? && current_user.avatar.attached?%>
                       <% link_to current_user.username.upcase, user_path(current_user), class:"button is-black" %>
-                      <%= link_to cl_image_tag (current_user.avatar.key), style:"border-radius: 50%;height: 40px;margin-bottom: 0.5rem;margin-right: 30px;",  class:"is-hidden-mobile" %>
+                      <%= link_to cl_image_tag(current_user.avatar.key), user_path(current_user), class:"is-hidden-mobile" %>
                       <% else%>
                       <%= link_to current_user.name.upcase, user_path(current_user), class:"button is-black" %>
                       <% end%>

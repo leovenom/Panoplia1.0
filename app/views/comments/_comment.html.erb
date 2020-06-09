@@ -2,13 +2,13 @@
   <article class="media">
     <figure class="media-left">
       <p class="image is-48x48 user-thumb">
-        <%= cl_image_tag comment.user.avatar.key unless comment.user.avatar.blank? %>
+        <%=link_to cl_image_tag(comment.user.avatar.key), user_path(comment.user)  unless comment.user.avatar.blank? %>
       </p>
     </figure>
     <div class="media-content">
       <div class="content">
         <p>
-          <strong><%= comment.user.name %></strong>
+          <strong><%=link_to comment.user.name, user_path(comment.user) %></strong>
           <div><%= comment.response %></div>
         </p>
       </div>

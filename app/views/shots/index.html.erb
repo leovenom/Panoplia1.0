@@ -28,7 +28,7 @@
                 <div class="level-left">
                   <div class="level-item">
                     <div class="user-thumb">
-                      <%= cl_image_tag shot.user.avatar.key unless shot.user.avatar.blank? %> 
+                      <%=link_to cl_image_tag(shot.user.avatar.key), user_path(shot.user)  unless shot.user.avatar.blank?%> 
                     </div>
                     <div class="user-name"><%=link_to shot.user.name, shot.user %>
                     </div>

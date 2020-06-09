@@ -15,7 +15,7 @@
 		<div class="columns show-page is-desktop">
 			<div class="column is-7">
 						<div class="user-thumb shot-show">
-						<%= cl_image_tag @shot.user.avatar.key unless @shot.user.avatar.blank?%>
+						<%=link_to cl_image_tag(@shot.user.avatar.key), user_path(@shot.user) unless @shot.user.avatar.blank?%>
 						</div>
 
 						<div class="user-name has-text-weight-bold">
