@@ -26,6 +26,11 @@
   background-color: #ffdc00;
 }
 
+.tag:not(body).is-primaryy{
+  background-color: #9600c8;
+  color: #fff;
+}
+
 p.subtitle.cards{
 	font-family: Brice-Bold;
 	color: black;

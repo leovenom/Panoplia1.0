@@ -19,7 +19,7 @@
               <%# if shot.user_shot_url.present?%>
             <%#= cl_image_tag  shot.user_shot_url %>
             <%# else %>
-            <label><%= shot.description %></label>
+            <label><%= sanitize(shot.description.truncate(100, separator: '</p>')) %></label>
               <div class="shot-data job">
                 <div class="shot-time">
                   <%= time_ago_in_words( shot.created_at) %>
