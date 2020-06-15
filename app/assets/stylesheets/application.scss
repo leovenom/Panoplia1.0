@@ -34,7 +34,28 @@ $link-hover: darken($primary, 20%);
  @import "components/navbar";
  @import "components/notifications";
 
- 
+ // *= require trix
+
+@import "functions";
+@import "jobs";
+
+.notification {
+  border-radius: 0;
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.hint {
+  font-size: small;
+}
+
+.tag {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 9px !important;
+}
 
 
 hr {

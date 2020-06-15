@@ -1,0 +1,19 @@
+<%= simple_form_for(@job) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :url %>
+    <%= f.input :job_type %>
+    <%= f.input :location %>
+    <%= f.input :job_author %>
+    <%= f.input :remote_ok %>
+    <%= f.input :apply_url %>
+    <%= f.input :art_type %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
