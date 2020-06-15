@@ -33,11 +33,8 @@ $link-hover: darken($primary, 20%);
  @import "components/icons";
  @import "components/navbar";
  @import "components/notifications";
-
- // *= require trix
-
-@import "functions";
-@import "jobs";
+ @import "components/functions";
+ @import "jobs";
 
 .notification {
   border-radius: 0;

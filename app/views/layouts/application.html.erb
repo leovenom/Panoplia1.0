@@ -56,6 +56,9 @@
         <div class="navbar-end">
               <% if user_signed_in? %>
               <p class="navbar-item">
+                <%= link_to 'JOBS', jobs_path, class: "button is-primary is-small mr3" %>
+                <%= link_to 'POST JOB', new_job_path, class: "button is-primary is-small mr3" %>
+
                 <%= link_to new_shot_path, class:"button is-primary is-small"  do %>
                   <span class="icon is-small"><i class="fa fa-upload"></i></span>
                   <span>NEW SHOT</span>

@@ -5,6 +5,17 @@
 .index-title {
   margin-bottom: 10px !important;
   a {
-    color: $dark;
+    color: hsl(0, 0%, 21%);
   }
+}
+
+
+p.title.jobs {
+  font-family: Brice-SemiBoldSemiExpanded;
+  margin: 20px 0 20px 0;
+}
+
+h1.title {
+  font-family: Brice-SemiBoldSemiExpanded;
+  color: black;
 }
