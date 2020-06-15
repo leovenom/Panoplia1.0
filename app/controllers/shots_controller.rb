@@ -12,8 +12,8 @@ class ShotsController < ApplicationController
     @shots = @all_shots.select { |shot| !shot.user.entity? }
     #@random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
     #@entity_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: true}).order('shots.created_at DESC').first
-    @entity_shots = @all_shots.select { |shot| shot.user.entity? }
-
+    #@entity_shots = @all_shots.select { |shot| shot.user.entity? }
+    @jobs = Job.all.order("created_at desc")
 
   end
 

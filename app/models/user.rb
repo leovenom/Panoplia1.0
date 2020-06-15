@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :followings, through: :active_friendships, source: :followed
   has_many :followers, through: :passive_friendships, source: :follower
 
+  has_many :jobs
 
   #follow another user
   def follow(other_user)

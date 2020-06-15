@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :jobs
+  
   resources :shots do 
   	resources :comments 
   	member do 

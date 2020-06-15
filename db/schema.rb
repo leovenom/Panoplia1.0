@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_25_164700) do
+ActiveRecord::Schema.define(version: 2020_06_15_145555) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -78,6 +81,22 @@ ActiveRecord::Schema.define(version: 2020_05_25_164700) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "url"
+    t.string "job_type"
+    t.string "location"
+    t.string "job_author"
+    t.boolean "remote_ok"
+    t.string "apply_url"
+    t.string "art_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "avatar"
+    t.integer "user_id"
+  end
+
   create_table "shots", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -108,11 +127,12 @@ ActiveRecord::Schema.define(version: 2020_05_25_164700) do
     t.string "type"
     t.boolean "available"
     t.boolean "entity", default: false, null: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "votes", force: :cascade do |t|
+  create_table "votes", id: :serial, force: :cascade do |t|
     t.string "votable_type"
     t.integer "votable_id"
     t.string "voter_type"
