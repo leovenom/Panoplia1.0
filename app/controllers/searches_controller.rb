@@ -3,7 +3,6 @@ class SearchesController < ApplicationController
     @shots = Shot.where(["title LIKE ?", "%#{params[:search]}%"])
     @jobs = Job.where(["title LIKE ?", "%#{params[:search]}%"])
     @users  = User.where(["name LIKE ?", "%#{params[:id]}%"])
-    redirect_to user_path(shot.user)
   end
 
   def new
