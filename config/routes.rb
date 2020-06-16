@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :jobs
+  resources :searches
   
   resources :shots do 
   	resources :comments 
