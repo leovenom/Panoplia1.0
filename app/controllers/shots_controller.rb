@@ -9,7 +9,8 @@ class ShotsController < ApplicationController
     #@shots = Shot.all.order('created_at DESC')
     @all_shots = Shot.includes(:user).where.not(id: @shot).order('created_at DESC')
     #@shots = Shot.includes(:user).where.not(id: @shot).where(users: { entity: false}).order('shots.created_at DESC')
-    @shots = @all_shots.select { |shot| !shot.user.entity? }
+    #@shots = @all_shots.select { |shot| !shot.user.entity? }
+    @shots = @all_shots
     #@random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
     #@entity_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: true}).order('shots.created_at DESC').first
     #@entity_shots = @all_shots.select { |shot| shot.user.entity? }
@@ -20,8 +21,8 @@ class ShotsController < ApplicationController
   # GET /shots/1.json
   def show
     #@user_shot = current_user.shots.all.order(created_at: 'DESC')
-    #@random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
-    @random_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: false}).order("RANDOM()").first
+    @random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
+    #@random_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: false}).order("RANDOM()").first
   end
 
   # GET /shots/new

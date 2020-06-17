@@ -1,9 +1,9 @@
 class SearchesController < ApplicationController
   def index
-    @shots = Shot.where(["title LIKE ?", "%#{params[:search]}%"])
+    @shot = Shot.where(["title LIKE ?", "%#{params[:search]}%"])
     @shots_description = Shot.where(["description LIKE ?", "%#{params[:search]}%"])
     @shots_user_shot = Shot.where(["user_shot LIKE ?", "%#{params[:search]}%"])
-    @shots = @shots_description + @shots_user_shot
+    @shots = @shots_description + @shots_user_shot + @shot
     @jobs = Job.where(["title LIKE ?", "%#{params[:search]}%"])
 
     # if params[:search].present? && params[:search][:query].present?
@@ -33,11 +33,11 @@ class SearchesController < ApplicationController
     @search = Seach.find(params[:id])
   end
 
-  def search
-    @shots = Search.create(search_params)
-    @user = Search.create(search_params)
-    @jobs = Search.create(search_params)
-  end
+  # def search
+  #   @shots = Search.create(search_params)
+  #   @user = Search.create(search_params)
+  #   @jobs = Search.create(search_params)
+  # end
 
 
 

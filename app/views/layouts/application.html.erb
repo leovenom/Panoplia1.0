@@ -47,6 +47,7 @@
           <div class="navbar-item">
             <div class="field has-addons">
               <div class="control mt3">
+              <% if user_signed_in? %>
                 <%#= link_to 'Shots', root_path , class:"button is-white" %>
                 <%= form_tag searches_path, :method => 'get', id: 'search-form' do %>
                   <%= text_field_tag :search, params[:search],  class:"input", type:"text",placeholder:"Search here"%>
@@ -54,7 +55,9 @@
                 <div class="control mt3">
                   <%= submit_tag "SEARCH", :name => nil, class: "button is-primary is-small" %>
                 <% end %>
+                <% end %>
               </div>
+              
             </div>
           </div>
         </div>
