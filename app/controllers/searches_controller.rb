@@ -4,7 +4,12 @@ class SearchesController < ApplicationController
     @shots_description = Shot.where(["description LIKE ?", "%#{params[:search]}%"])
     @shots_user_shot = Shot.where(["user_shot LIKE ?", "%#{params[:search]}%"])
     @shots = @shots_description + @shots_user_shot + @shot
-    @jobs = Job.where(["title LIKE ?", "%#{params[:search]}%"])
+    @jobs_title = Job.where(["title LIKE ?", "%#{params[:search]}%"])
+    @jobs_description = Job.where(["description LIKE ?", "%#{params[:search]}%"])
+    @jobs_job_type = Job.where(["job_type LIKE ?", "%#{params[:search]}%"])
+    @jobs_location = Job.where(["location LIKE ?", "%#{params[:search]}%"])
+    @jobs_art_type = Job.where(["art_type LIKE ?", "%#{params[:search]}%"])
+    @jobs = @jobs_title + @jobs_description + @jobs_job_type + @jobs_location + @jobs_art_type
 
     # if params[:search].present? && params[:search][:query].present?
     #   @shots = policy_scope(Shot).where("title ILIKE '%#{params[:search][:query]}%'")
