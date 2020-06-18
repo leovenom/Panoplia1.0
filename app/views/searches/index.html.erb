@@ -6,7 +6,7 @@
       margin-left: 25px;"
       >PANÓPLIA <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
       
-        <div class="shots">
+        <div class="shots-search">
           <% @shots.each do |shot| %>
           <div class="shot-grid-item">
             <div class="shot-wrapper">
@@ -119,5 +119,19 @@
           </section>
       <%# job board colum end%>
       </div>
+      <div class="column is-3">
+  <p class="subtitle cards">USER <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
+  <% @users.each do |user| %>
+    <div class="level-item-search">
+      <div class="user-thumb-job">
+        <%=link_to cl_image_tag(user.avatar.key), user_path(user) unless user.avatar.blank? %> 
+      </div>
+      <div class="user-name-job">
+        <h3 class="shot-title job"><%=link_to user.name, user %></h3>
+        <p> <%= user.location %> </p>
+      </div>
+    </div>
+  <%end%>
+</div>
    </div>
  </section>
