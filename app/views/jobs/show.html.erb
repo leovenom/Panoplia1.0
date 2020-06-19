@@ -21,7 +21,7 @@
     <%#= link_to 'Apply to this job', @job.apply_url, class:"button is-rounded is-large is-fullwidth is-link" %>
 
   </div>
-
+    <% if user_signed_in?%>
   <div class="column is-2 is-offset-1 has-text-centered">
 
     <h5 class="is-5 has-text-centered"><%= link_to @job.job_author, @job.url %></h5>
@@ -32,7 +32,17 @@
     <% end %>
     </div>
 
-    <%= link_to 'Apply to this job', @job.apply_url, class:"button is-rounded is-fullwidth is-link" %>
+     
+      <%= link_to 'Apply to this job', @job.apply_url, class:"button is-rounded is-fullwidth is-link" %>
+        <% else %>
+        <div><button class="button is-dark" title="Disabled button" disabled>Apply to this job</button>
+				<div>
+        <br/>
+        <%= link_to ' Sign in', new_user_session_path %> To apply to this job.</div>
+        </div>
+      <% end%>
+
+    <%#= link_to 'Apply to this job', @job.apply_url, class:"button is-rounded is-fullwidth is-link" %>
 
     <% if current_user.try(:admin) || job_author(@job) %>
       <ul class="pv3">
@@ -47,5 +57,6 @@
     <% end %>
   </div>
 </div>
-
+<div class="column">
 <%= link_to 'Back', jobs_path %>
+</div>

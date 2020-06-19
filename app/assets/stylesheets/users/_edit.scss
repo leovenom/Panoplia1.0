@@ -14,12 +14,13 @@
 	display: none;
 }
 
-.hero.is-primary-edit {
+.column.hero.is-primary-edit {
 	background-image: image-url("backgroundv.png");
 	position: relative;
 	background-size: cover; 
   background-position: center;
   min-height: 1602px;
+  flex: 0 0 263px;
 }
 
 .amatic {
