@@ -15,11 +15,16 @@
                   </div>
                 </div>
               </nav>
+               
               <%= link_to job, class: "shot" do %>
               <%# if shot.user_shot_url.present?%>
             <%#= cl_image_tag  shot.user_shot_url %>
             <%# else %>
+            <% if user_signed_in? %>
             <label><%= sanitize(job.description.truncate(100, separator: '</p>')) %></label>
+              <%else%>
+              <div><%= link_to ' Sign in', new_user_session_path %> to apply to this job.</div>
+              <% end%>
               <div class="shot-data job">
                 <div class="shot-time">
                   <%= time_ago_in_words( job.created_at) %>
