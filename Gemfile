@@ -44,6 +44,8 @@ gem 'gravatar_image_tag'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
+gem 'stripe', '~> 1.57', '>= 1.57.1'
+gem 'figaro', '~> 1.2'
 
 
 group :development, :test do
