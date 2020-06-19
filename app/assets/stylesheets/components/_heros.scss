@@ -76,6 +76,7 @@
 }
 .hero.is-purple {
 	background-color:#9600c8;
+	flex: 0 0 263px;
 }
 .hero.is-primaryv  {
 	background-image: image-url("background-yg.png");
@@ -84,11 +85,12 @@
   background-position: center;
 }
 
-.hero.is-primaryvv {
+.column.hero.is-primaryvv {
 	background-image: image-url("backgroundv.png");
 	position: relative;
 	background-size: cover; 
-  background-position: center;
+	background-position: center;
+	flex: 0 0 263px;
 }
 
 .control {
