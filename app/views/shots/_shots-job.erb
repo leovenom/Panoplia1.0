@@ -1,28 +1,28 @@
 <div class="shot-job">
-          <% @jobs.each do |shot| %>
+          <% @jobs.each do |job| %>
           <div class="shot-grid-item">
             <div class="shot-wrapper-job">
               <nav class="level shot-analytics-job">
                 <div class="level-level-right">
                   <div class="level-item-job">
                     <div class="user-thumb-job">
-                      <%=link_to cl_image_tag(shot.user.avatar.key), user_path(shot.user) unless shot.user.avatar.blank? %> 
+                      <%=link_to cl_image_tag(job.user.avatar.key), user_path(job.user) unless job.user.avatar.blank? %> 
                     </div>
                     <div class="user-name-job">
-                    <h3 class="shot-title job"><%= shot.title %></h3>
-                    <%=link_to shot.user.name, shot.user, class:"shot-user-name" %>
+                    <h3 class="shot-title job"><%= link_to job.title, job %></h3>
+                    <%=link_to job.user.name, job.user, class:"shot-user-name" %>
                     </div>
                   </div>
                 </div>
               </nav>
-              <%= link_to shot, class: "shot" do %>
+              <%= link_to job, class: "shot" do %>
               <%# if shot.user_shot_url.present?%>
             <%#= cl_image_tag  shot.user_shot_url %>
             <%# else %>
-            <label><%= sanitize(shot.description.truncate(100, separator: '</p>')) %></label>
+            <label><%= sanitize(job.description.truncate(100, separator: '</p>')) %></label>
               <div class="shot-data job">
                 <div class="shot-time">
-                  <%= time_ago_in_words( shot.created_at) %>
+                  <%= time_ago_in_words( job.created_at) %>
                 </div>
               </div>
               <%# end %>

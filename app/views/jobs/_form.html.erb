@@ -4,13 +4,14 @@
 
       <div class="field">
         <div class="control">
-        <%= f.input :title, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, placeholder: "Frontend Developer" %>
+        <%= f.input :title, required: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, placeholder: "Frontend Developer" %>
         </div>
       </div>
 
       <div class="field">
         <div class="control">
-          <%= f.input :apply_url, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }  %>
+          <label class="label">Apply url or E-mail</label>
+          <%= f.input :apply_url,label: false, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }  %>
         </div>
       </div>
 
@@ -45,7 +46,7 @@
 
         <div class="field">
           <div class="control">
-            <%= f.input :location, require: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, hint: 'Examples: "San Francisco, CA", "Seattle", "Anywhere"' %>
+            <%= f.input :location, require: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, hint: 'Examples: "San Francisco, CA", "Seattle", "Anywhere"' %>
           </div>
         </div>
 
@@ -62,7 +63,7 @@
 
       <div class="field">
         <div class="control">
-          <%= f.input :description, required: true, input_html: { class: "textarea" }, wrapper: false, label_html: { class: "label" } %>
+          <%= f.input :description, required: false, input_html: { class: "textarea" }, wrapper: false, label_html: { class: "label" } %>
         </div>
       </div>
 
@@ -71,13 +72,13 @@
 
       <div class="field column">
         <div class="control">
-          <%= f.input :job_author, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Company" %>
+          <%= f.input :job_author, required: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Company" %>
         </div>
       </div>
 
       <div class="field column">
         <div class="control">
-          <%= f.input :url, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Company Website", placeholder: "http://company.com" %>
+          <%= f.input :url, required: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Company Website", placeholder: "http://company.com" %>
         </div>
       </div>
     </div>
