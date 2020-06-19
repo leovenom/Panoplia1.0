@@ -14,7 +14,7 @@
             <div class="shot-wrapper">
               
               <%= link_to shot, class: "shot" do %>
-              <%= cl_image_tag(shot.user_shot_url) %>
+              <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
               <div class="shot-data">
                 <h3 class="shot-title"><%= shot.title %></h3>
                 <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
