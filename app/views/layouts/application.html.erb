@@ -56,7 +56,7 @@
                   <%= text_field_tag :search, params[:search],  class:"input", type:"text",placeholder:"Search here"%>
                 </div>
                 <div class="control mt3">
-                  <%= submit_tag "SEARCH", :name => nil, class: "button is-primary is-small" %>
+                  <%= submit_tag "SEARCH", :name => nil, class: "button is-black is-small" %>
                 <% end %>
                 <% end %>
               </div>
@@ -68,8 +68,8 @@
         <div class="navbar-end">
               <% if user_signed_in? %>
               <p class="navbar-item">
-                <%= link_to 'JOBS', jobs_path, class: "button is-primary is-small mr3" %>
-                <%= link_to 'POST JOB', new_job_path, class: "button is-primary is-small mr3" %>
+                <%= link_to 'JOBS', jobs_path, class: "button is-black is-small mr3" %>
+                <%= link_to 'POST JOB', new_job_path, class: "button is-black is-small mr3" %>
 
                 <%= link_to new_shot_path, class:"button is-primary is-small"  do %>
                   <span class="icon is-small"><i class="fa fa-upload"></i></span>

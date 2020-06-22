@@ -2,28 +2,27 @@
   <div class="card-image">
     <section class="hero is-small is-warning">
       <div class="hero-body show">
-        <div class="columns is-centered is-desktop">
-          <div class="column is-2 user">
+        <div class="columns is-desktop">
+          <div class="column is-5 user has-text-centered">
             <figure class="image is-inline-block">
               <%= cl_image_tag @user.avatar.key unless @user.avatar.blank? %>
             </figure>
           </div>
 
-          <div class="column is-6 has-text-centered">
+          <div class="column is-5 has-text-centered">
             <h1 class="title is-size-3-mobile is-size-1-fullhd">
               <%= @user.name.upcase %>
             </h1>
-            <h2 class="subtitle">
+            <p class="subtitle art">
               <%= @user.art %>
-            </h2>
-            <h2 class="subtitle">
+            </p>
+            <p class="subtitle bio">
               <%= @user.bio %>
-            </h2>
-            <br/>
-            <h2 class="title is-size-7">
+            </p>
+            <p class="subtitle location">
               <% if user_signed_in?%>
               <%= @user.location%>
-            </h2>
+            </p>
 
             <div class="buttons is-centered">
               <% if user_signed_in? && !current_user?(@user)%>
@@ -44,7 +43,7 @@
               <% end%>
 
               <% if @user.entity && !current_user?(@user)%>
-              <button class="button is-dark" title="Disabled button">I am a company
+              <button class="button is-dark" title="Disabled button">I am a Company
               </button>
               <%end%>
             </div>
@@ -53,13 +52,13 @@
             <% time_ago_in_words(@user.created_at) %>
             <div class="column is-centered">
               <div class="tag is-warning">
-                <span class="tag is-warning follow is-size-6">FOLLOWERS</span>
-                <span class="is-size-6"><%= @user.followers.count %></span>
+                <span class="follow">FOLLOWERS</span>
+                <span class="is-size-5"><%= @user.followers.count %></span>
               </div>
 
               <div class="tag is-warning">
-                <span class="tag is-warning follow is-size-6">FOLLOWINGS</span>
-                <span class="is-size-6"><%= @user.followings.count %></span>
+                <span class="follow">FOLLOWINGS</span>
+                <span class="is-size-5"><%= @user.followings.count %></span>
               </div>
             </div>
             <% end %>

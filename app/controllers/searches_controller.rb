@@ -1,21 +1,21 @@
 class SearchesController < ApplicationController
   def index
     
-    @shot = Shot.where(["title LIKE ?", "%#{params[:search]}%"])
-    @shots_description = Shot.where(["description LIKE ?", "%#{params[:search]}%"])
-    @shots = @shots_description + @shot
+    @shots = Shot.where(["title LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @shots_description = Shot.where(["description LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    #@shots = @shots_description + @shot
 
-    @jobs_title = Job.where(["title LIKE ?", "%#{params[:search]}%"])
-    @jobs_description = Job.where(["description LIKE ?", "%#{params[:search]}%"])
-    @jobs_job_type = Job.where(["job_type LIKE ?", "%#{params[:search]}%"])
-    @jobs_location = Job.where(["location LIKE ?", "%#{params[:search]}%"])
-    @jobs_art_type = Job.where(["art_type LIKE ?", "%#{params[:search]}%"])
-    @jobs = @jobs_title + @jobs_description + @jobs_job_type + @jobs_location + @jobs_art_type
+    @jobs = Job.where(["title LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @jobs_description = Job.where(["description LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @jobs_job_type = Job.where(["job_type LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @jobs_location = Job.where(["location LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @jobs_art_type = Job.where(["art_type LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    #@jobs = @jobs_title + @jobs_description + @jobs_job_type + @jobs_location + @jobs_art_type
     
-    @users = User.where(["name ILIKE ?", "%#{params[:search]}%"])
-    @users_bio = User.where(["bio ILIKE ?", "%#{params[:search]}%"])
-    @users_username = User.where(["username ILIKE ?", "%#{params[:search]}%"])
-    @users_location = User.where(["location ILIKE ?", "%#{params[:search]}%"])
+    @users = User.where(["name ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @users_bio = User.where(["bio ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @users_username = User.where(["username ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @users_location = User.where(["location ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
 
     #, :case_sensitive => false???
     # if params[:search].present? && params[:search][:query].present?
@@ -44,13 +44,6 @@ class SearchesController < ApplicationController
   def show
     @search = Seach.find(params[:id])
   end
-
-  # def search
-  #   @shots = Search.create(search_params)
-  #   @user = Search.create(search_params)
-  #   @jobs = Search.create(search_params)
-  # end
-
 
 
   private
