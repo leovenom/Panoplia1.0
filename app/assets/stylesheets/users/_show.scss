@@ -4,10 +4,13 @@ h2.column.title.is-size-7 {
   max-inline-size: max-content;
 }
 
-span.tag.is-warning.follow {
+span.follow {
 	font-family: Brice-SemiBoldSemiCondensed;
-	margin-top: 3px;
+	margin-top: 5px;
+	margin-right: 5px;
 	color: black;
+	background-color: transparent;
+	font-size: 0.9rem;
 }
 
 .title.profile {

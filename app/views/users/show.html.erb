@@ -13,17 +13,16 @@
             <h1 class="title is-size-3-mobile is-size-1-fullhd">
               <%= @user.name.upcase %>
             </h1>
-            <h2 class="subtitle">
+            <p class="subtitle">
               <%= @user.art %>
-            </h2>
-            <h2 class="subtitle">
+            </p>
+            <p class="subtitle">
               <%= @user.bio %>
-            </h2>
-            <br/>
-            <h2 class="title is-size-7">
+            </p>
+            <p class="title is-size-6">
               <% if user_signed_in?%>
               <%= @user.location%>
-            </h2>
+            </p>
 
             <div class="buttons is-centered">
               <% if user_signed_in? && !current_user?(@user)%>
@@ -44,7 +43,7 @@
               <% end%>
 
               <% if @user.entity && !current_user?(@user)%>
-              <button class="button is-dark" title="Disabled button">I am a company
+              <button class="button is-dark" title="Disabled button">I am a Company
               </button>
               <%end%>
             </div>
@@ -53,13 +52,13 @@
             <% time_ago_in_words(@user.created_at) %>
             <div class="column is-centered">
               <div class="tag is-warning">
-                <span class="tag is-warning follow is-size-6">FOLLOWERS</span>
-                <span class="is-size-6"><%= @user.followers.count %></span>
+                <span class="follow">FOLLOWERS</span>
+                <span class="is-size-5"><%= @user.followers.count %></span>
               </div>
 
               <div class="tag is-warning">
-                <span class="tag is-warning follow is-size-6">FOLLOWINGS</span>
-                <span class="is-size-6"><%= @user.followings.count %></span>
+                <span class="follow">FOLLOWINGS</span>
+                <span class="is-size-5"><%= @user.followings.count %></span>
               </div>
             </div>
             <% end %>
