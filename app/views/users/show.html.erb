@@ -10,16 +10,16 @@
           </div>
 
           <div class="column is-6 has-text-centered">
-            <h1 class="title is-size-3-mobile is-size-1-fullhd">
+            <h1 class="title is-size-3-mobile is-size-2-fullhd">
               <%= @user.name.upcase %>
             </h1>
-            <p class="subtitle">
+            <p class="subtitle art">
               <%= @user.art %>
             </p>
-            <p class="subtitle">
+            <p class="subtitle bio">
               <%= @user.bio %>
             </p>
-            <p class="title is-size-6">
+            <p class="subtitle location">
               <% if user_signed_in?%>
               <%= @user.location%>
             </p>
