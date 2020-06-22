@@ -35,7 +35,7 @@
               <%end%>
               
               <% if @user.available? && !current_user?(@user)%>
-              <button class="button is-roxo">+ CONTACT ME</button>
+              <%= mail_to @user.email,"+ CONTACT ME", class:'button is-roxo' %>
               <% elsif !current_user?(@user)%>
               <%# só uma entidade pode contratar outra entidade %>
               <%# if current_user.entity? %>
