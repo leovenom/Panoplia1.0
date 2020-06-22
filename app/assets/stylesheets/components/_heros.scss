@@ -86,11 +86,10 @@
 }
 
 .column.hero.is-primaryvv {
-	background-image: image-url("backgroundv.png");
+	background-image: asset-url('backgroundv.png');
 	position: relative;
 	background-size: cover; 
-	background-position: center;
-	flex: 0 0 263px;
+  background-position: center;
 }
 
 .control {

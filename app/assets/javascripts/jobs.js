@@ -1,4 +1,3 @@
-
 document.addEventListener("turbolinks:load", function() {
 
   var instrumentImage = document.querySelector('.job-avatar');

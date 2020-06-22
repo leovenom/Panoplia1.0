@@ -35,6 +35,7 @@ $link-hover: darken($primary, 20%);
  @import "components/notifications";
  @import "components/functions";
  @import "jobs";
+ @import "stripe";
 
 .notification {
   border-radius: 0;
