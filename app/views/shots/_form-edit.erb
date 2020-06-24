@@ -1,14 +1,15 @@
 <%= simple_form_for @shot, html: { multipart: true }  do |f| %>
   <%= f.error_notification %>
-        <div class="columns is-centered is-desktop">
+        <div class="columns">
 
-          <div class="column is-background is-hidden-mobile">
+          <div class="column is-background is-hidden-touch">
           </div>
           <div class="column hero is-purple is-hidden-mobile">
 
           </div>
 
-            <div class="column hero is-4 is-warning profile">
+            <div class="column hero is-warning profile">
+            <div class="column is-warning is-narrow" style="width: 390px;">
               <p class="title is-size-3 has-text-centered">Editing Shot</p>
             <% unless @shot.user_shot.blank? %>
             <%= cl_image_tag @shot.user_shot_url, id: "previewImage" %>
@@ -37,14 +38,11 @@
                 <%= f.button :submit, class:"button is-primary" %>
               </div>
             </div>
+          </div>
           <br/>
 				  <br/>
           <br/>
           <br/>
         </div> 
                   
-          <div class="column hero is-warning is-hidden-mobile">
-          </div>
-          <div class="column hero is-warning is-hidden-mobile">
-          </div>
 <% end %>

@@ -14,8 +14,8 @@
 	display: none;
 }
 
-.column.hero.is-primary-edit {
-	background-image: image-url("backgroundv.png");
+.column.hero.is-background-edit {
+	background-image: url('https://res.cloudinary.com/pinoplia/image/upload/v1592992193/backgroundv_gjjok1.png');
 	position: relative;
 	background-size: cover; 
   background-position: center;
@@ -70,4 +70,9 @@ h3.title.edit.cancel {
   margin-top: 25px;
   font-size: 1rem;
   margin-bottom: 0px;
+}
+#user_bio{
+max-width: 283px;
+height: 132px;
+max-height: 300px;
 }

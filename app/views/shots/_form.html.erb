@@ -1,50 +1,47 @@
 <%= simple_form_for @shot, html: { multipart: true }  do |f| %>
   <%= f.error_notification %>
-        <div class="columns is-centered is-desktop">
+        <div class="columns">
 
-          <div class="column is-background is-hidden-mobile">
+          <div class="column hero is-background is-hidden-touch">
           </div>
           <div class="column hero is-purple is-hidden-mobile">
-
           </div>
 
-            <div class="column hero is-4 is-warning profile">
+            <div class="column hero is-warning profile">
+            <div class="column is-warning is-narrow" style="width: 390px;">
               <p class="title is-size-3 has-text-centered">What are you working on?</p>
-            <% unless @shot.user_shot.blank? %>
-            <%= cl_image_tag @shot.user_shot.key, id: "previewImage" %>
-            <% end %>
+              <% unless @shot.user_shot.blank? %>
+              <%= cl_image_tag @shot.user_shot.key, id: "previewImage" %>
+              <% end %>
 
-            <output id="list"></output>
-            <div id="drop_zone">Drag your shot here</div>
-            <br />
+              <output id="list"></output>
+              <div id="drop_zone">Drag your shot here</div>
+              <br />
 
-            <%= f.input :user_shot, label: false, wrapper: false, label_html: { class: "file-label" } %>
+              <%= f.input :user_shot, label: false, wrapper: false, label_html: { class: "file-label" } %>
 
-            <div class="field">
-              <div class="control">
-                <%= f.input :title, label: "Title", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :title, label: "Title", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <%= f.input :description, input_html: { class: "textarea"}, wrapper: false, label_html: { class: "label" } %>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <%= f.button :submit, class:"button is-primary" %>
+                </div>
               </div>
             </div>
-
-            <div class="field">
-              <div class="control">
-                <%= f.input :description, input_html: { class: "textarea"}, wrapper: false, label_html: { class: "label" } %>
-              </div>
-            </div>
-
-            <div class="field">
-              <div class="control">
-                <%= f.button :submit, class:"button is-primary" %>
-              </div>
-            </div>
+            </div> 
           <br/>
 				  <br/>
           <br/>
           <br/>
         </div> 
-                  
-          <div class="column hero is-warning is-hidden-mobile">
-          </div>
-          <div class="column hero is-warning is-hidden-mobile">
-          </div>
 <% end %>
