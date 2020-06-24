@@ -71,16 +71,15 @@
                 <%= link_to 'EVENTS', jobs_path, class: "button is-black is-small mr3 is-static" %>
                 <%= link_to 'STORE', jobs_path, class: "button is-black is-small mr3 is-static" %>
                 <%= link_to 'ABOUT', jobs_path, class: "button is-black is-small mr3 is-static" %>
-                <% end %>
+                
                 </p>
                   <div class="navbar-item has-dropdown is-hoverable">
                     <a class="is-arrowless">
                       <p class="navbar-item user">
-                        <% if current_user.username? && current_user.avatar.attached?%>
-                        <% link_to current_user.username.upcase, user_path(current_user), class:"button is-black" %>
+                        <% if current_user.avatar.attached? %>
                         <%= link_to cl_image_tag(current_user.avatar.key), user_path(current_user), class:"is-hidden-mobile" %>
                         <% else%>
-                        <%= link_to current_user.name.upcase, user_path(current_user), class:"button is-black" %>
+                        <%= link_to image_tag('panoplia-logo.png'), user_path(current_user), class:"button is-black" %>
                         <% end%>
                       </p>
                     </a>
@@ -97,6 +96,7 @@
                       </div>
                     </div>
                   </div>
+                  <% end %>
                 <p class="navbar-item">
                 <% if user_signed_in? %>
                 <%= link_to 'POST JOB', new_job_path, class: "button is-primary is-small mr3" %>
