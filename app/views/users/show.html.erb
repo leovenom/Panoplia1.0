@@ -5,7 +5,11 @@
         <div class="columns is-desktop">
           <div class="column is-5 user has-text-centered">
             <figure class="image is-inline-block">
-              <%= cl_image_tag @user.avatar.key unless @user.avatar.blank? %>
+          <% if @user.avatar.attached? %>
+            <%= cl_image_tag @user.avatar.key %>
+          <% else %>
+            <%= image_tag 'panoplia-logo.png' %>
+          <% end %>
             </figure>
           </div>
 
