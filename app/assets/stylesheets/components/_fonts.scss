@@ -1,14 +1,14 @@
 @font-face {
   font-family: Brice;
-  src: url(font-path('Brice-Bold.otf'));
-	src: url(font-path('Brice-BoldCondensed.otf'));
-  src: url(font-path('Brice-BoldSemiCondensed.otf'));
-  src: url(font-path('Brice-LightSemiCondensed.otf'));
-	src: url(font-path('Brice-RegularSemiCondensed.otf'));
-  src: url(font-path('Brice-SemiBoldSemiCondensed.otf'));
-  src: url(font-path('Brice-SemiBoldSemiExpanded.otf'));
+  src: font-url(font-path('Brice-Bold.otf'));
+	src: font-url(font-path('Brice-BoldCondensed.otf'));
+  src: font-url(font-path('Brice-BoldSemiCondensed.otf'));
+  src: font-url(font-path('Brice-LightSemiCondensed.otf'));
+	src: font-url(font-path('Brice-RegularSemiCondensed.otf'));
+  src: font-url(font-path('Brice-SemiBoldSemiCondensed.otf'));
+  src: font-url(font-path('Brice-SemiBoldSemiExpanded.otf'));
   font-family: OhnoBlazeface;
-  src: url(font-path('OhnoBlazeface12Point.ttf'));
+  src: font-url(font-path('OhnoBlazeface12Point.ttf'));
 }
 
 .title.profile {
