@@ -68,37 +68,44 @@
               <% if user_signed_in? %>
               <p class="navbar-item">
                 <%= link_to 'JOBS', jobs_path, class: "button is-black is-small mr3" %>
-                <%= link_to 'POST JOB', new_job_path, class: "button is-black is-small mr3" %>
-
-                <%= link_to new_shot_path, class:"button is-primary is-small"  do %>
-                  <span class="icon is-small"><i class="fa fa-upload"></i></span>
-                  <span>NEW SHOT</span>
-              <% end %>
-              </p>
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="is-arrowless">
-                    <p class="navbar-item user">
-                      <% if current_user.username? && current_user.avatar.attached?%>
-                      <% link_to current_user.username.upcase, user_path(current_user), class:"button is-black" %>
-                      <%= link_to cl_image_tag(current_user.avatar.key), user_path(current_user), class:"is-hidden-mobile" %>
-                      <% else%>
-                      <%= link_to current_user.name.upcase, user_path(current_user), class:"button is-black" %>
-                      <% end%>
-                    </p>
-                  </a>
-                  <div class="navbar-dropdown is-right">
-                    <div class="navbar-item">
-                      <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black" %>
-                    </div>
-                    <div class="navbar-item">
-                      <%= link_to 'PROFILE', user_path(current_user), class:"button is-black" %>
-                    </div>
-                    <hr class="navbar-divider">
-                    <div class="navbar-item logout">
-                      <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
+                <%= link_to 'EVENTS', jobs_path, class: "button is-black is-small mr3 is-static" %>
+                <%= link_to 'STORE', jobs_path, class: "button is-black is-small mr3 is-static" %>
+                <%= link_to 'ABOUT', jobs_path, class: "button is-black is-small mr3 is-static" %>
+                <% end %>
+                </p>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="is-arrowless">
+                      <p class="navbar-item user">
+                        <% if current_user.username? && current_user.avatar.attached?%>
+                        <% link_to current_user.username.upcase, user_path(current_user), class:"button is-black" %>
+                        <%= link_to cl_image_tag(current_user.avatar.key), user_path(current_user), class:"is-hidden-mobile" %>
+                        <% else%>
+                        <%= link_to current_user.name.upcase, user_path(current_user), class:"button is-black" %>
+                        <% end%>
+                      </p>
+                    </a>
+                    <div class="navbar-dropdown is-right">
+                      <div class="navbar-item">
+                        <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black" %>
+                      </div>
+                      <div class="navbar-item">
+                        <%= link_to 'PROFILE', user_path(current_user), class:"button is-black" %>
+                      </div>
+                      <hr class="navbar-divider">
+                      <div class="navbar-item logout">
+                        <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
+                      </div>
                     </div>
                   </div>
-                </div>
+                <p class="navbar-item">
+                <% if user_signed_in? %>
+                <%= link_to 'POST JOB', new_job_path, class: "button is-primary is-small mr3" %>
+                <%= link_to new_shot_path, class:"button is-primary is-small"  do %>
+                <span class="icon is-small"><i class="fa fa-upload"></i></span>
+                <span>NEW SHOT</span>
+              <% end %>
+              </p>
+
 
               <div class="navbar-item logout">
                 <% link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
