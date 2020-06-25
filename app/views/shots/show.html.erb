@@ -115,7 +115,7 @@
 				<div class="shot-wrapper shot">
 					<p class="subtitle">More from others users</p>
 						<%= link_to @random_shot, class: "shot" do %>
-								<%= cl_image_tag @random_shot.user_shot_url%>
+								<%= cl_image_tag @random_shot.user_shot_url unless @random_shot.user_shot_url.blank? %>
 								<div class="shot-data">
 								<div class="user-thumb avatar">
 									<%= cl_image_tag @random_shot.user.avatar.key, class:'avatar' unless @random_shot.user.avatar.blank?  %>
