@@ -12,17 +12,17 @@
  *
  *= require_tree .
  *= require_self
- *= require_fonts
+ *= require fonts
  */
  @font-face {
   font-family: 'Brice';
-		src: font-url('Brice-Bold.otf');
-		src: font-url('Brice-BoldCondensed.otf');
-		src: font-url('Brice-BoldSemiCondensed.otf');
-		src: font-url('Brice-LightSemiCondensed.otf');
-		src: font-url('Brice-RegularSemiCondensed.otf');
-		src: font-url('Brice-SemiBoldSemiCondensed.otf');
-		src: font-url('Brice-SemiBoldSemiExpanded.otf');
+		src: font-url('Brice-Bold.ttf');
+		src: font-url('Brice-BoldCondensed.ttf');
+		src: font-url('Brice-BoldSemiCondensed.ttf');
+		src: font-url('Brice-LightSemiCondensed.ttf');
+		src: font-url('Brice-RegularSemiCondensed.ttf');
+		src: font-url('Brice-SemiBoldSemiCondensed.ttf');
+		src: font-url('Brice-SemiBoldSemiExpanded.ttf');
   font-family: 'OhnoBlazeface';
 		src: font-url('OhnoBlazeface12Point.ttf');
 }
