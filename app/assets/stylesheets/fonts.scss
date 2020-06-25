@@ -1,22 +1,61 @@
+// @font-face {
+//   font-family: 'Brice';
+// 		src: font-url('Brice-Bold.ttf') format('truetype');
+// 		src: font-url( asset-path('Brice-Bold.ttf') );
+// 		src: font-url('Brice-BoldCondensed.ttf') format('truetype');
+// 		src: font-url( asset-path('Brice-BoldCondensed.ttf') );
+// 		src: font-url('Brice-BoldSemiCondensed.ttf') format('truetype');
+// 		src: font-url( asset-path('Brice-BoldSemiCondensed.ttf') );
+// 		src: font-url('Brice-LightSemiCondensed.ttf') format('truetype');
+// 		src: font-url( asset-path('Brice-LightSemiCondensed.ttf') );
+// 		src: font-url('Brice-RegularSemiCondensed.ttf') format('truetype');
+// 		src: font-url( asset-path('Brice-RegularSemiCondensed.ttf') );
+// 		src: font-url('Brice-SemiBoldSemiCondensed.ttf') format('truetype');
+// 		src: font-url( asset-path('Brice-SemiBoldSemiCondensed.ttf') );
+// 		src: font-url('Brice-SemiBoldSemiExpanded.ttf') format('truetype');
+// 		src: font-url( asset-path('Brice-SemiBoldSemiExpanded.ttf') );
+//   font-family: 'OhnoBlazeface';
+// 		src: font-url('OhnoBlazeface12Point.ttf') format('truetype');
+// 		src: font-url( asset-path('OhnoBlazeface12Point.ttf') );
+// }
 @font-face {
-  font-family: 'Brice-SemiBoldSemiCondensed';
-		src: font-url('Brice-Bold.ttf') format('truetype');
-		src: font-url( asset-path('Brice-Bold.ttf') );
-		src: font-url('Brice-BoldCondensed.ttf') format('truetype');
-		src: font-url( asset-path('Brice-BoldCondensed.ttf') );
-		src: font-url('Brice-BoldSemiCondensed.ttf') format('truetype');
-		src: font-url( asset-path('Brice-BoldSemiCondensed.ttf') );
-		src: font-url('Brice-LightSemiCondensed.ttf') format('truetype');
-		src: font-url( asset-path('Brice-LightSemiCondensed.ttf') );
-		src: font-url('Brice-RegularSemiCondensed.ttf') format('truetype');
-		src: font-url( asset-path('Brice-RegularSemiCondensed.ttf') );
-		src: font-url('Brice-SemiBoldSemiCondensed.ttf') format('truetype');
-		src: font-url( asset-path('Brice-SemiBoldSemiCondensed.ttf') );
-		src: font-url('Brice-SemiBoldSemiExpanded.ttf') format('truetype');
-		src: font-url( asset-path('Brice-SemiBoldSemiExpanded.ttf') );
-  font-family: 'OhnoBlazeface12Point';
-		src: font-url('OhnoBlazeface12Point.ttf') format('truetype');
-		src: font-url( asset-path('OhnoBlazeface12Point.ttf') );
+	font-family: 'BriceBold';
+	src: url('Brice-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'BriceBold_Condensed';
+	src: url('Brice-BoldCondensed.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'BriceBold_SemiCondensed';
+	src: url('Brice-BoldSemiCondensed.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Bricelight_SemiCondensed';
+	src: url('Brice-lightSemiCondensed.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'BriceRegular_SemiCondensed';
+	src: url('Brice-RegularSemiCondensed.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'BriceSemiBold_SemiCondensed';
+	src: url('Brice-SemiBoldSemiCondensed.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'BriceSemiBold_SemiExpanded';
+	src: url('Brice-SemiBoldSemiExpanded.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Ohno_Blazeface12_point';
+	src: url('OhnoBlazeface12point.ttf') format('truetype');
 }
 
 
