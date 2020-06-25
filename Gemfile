@@ -46,6 +46,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 gem 'stripe', '~> 1.57', '>= 1.57.1'
 gem 'figaro', '~> 1.2'
+gem 'rack-cors', '~> 0.4.0'
 
 
 group :development, :test do
