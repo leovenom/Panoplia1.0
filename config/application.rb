@@ -18,3 +18,4 @@ module DribbbleClone
   end
 end
 
+config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
