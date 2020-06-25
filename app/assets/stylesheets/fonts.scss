@@ -1,12 +1,51 @@
 @font-face {
   font-family: 'Brice';
-		src: local('Brice-Bold.ttf') format('truetype');
-		src: local('Brice-BoldCondensed.ttf') format('truetype');
-		src: local('Brice-BoldSemiCondensed.ttf') format('truetype');
-		src: local('Brice-LightSemiCondensed.ttf') format('truetype');
-		src: local('Brice-RegularSemiCondensed.ttf') format('truetype');
-		src: local('Brice-SemiBoldSemiCondensed.ttf') format('truetype');
-		src: local('Brice-SemiBoldSemiExpanded.ttf') format('truetype');
+		src: font-url('Brice-Bold.ttf') format('truetype');
+		src: font-url( asset-path('Brice-Bold.ttf') );
+		src: font-url('Brice-BoldCondensed.ttf') format('truetype');
+		src: font-url( asset-path('Brice-BoldCondensed.ttf') );
+		src: font-url('Brice-BoldSemiCondensed.ttf') format('truetype');
+		src: font-url( asset-path('Brice-BoldSemiCondensed.ttf') );
+		src: font-url('Brice-LightSemiCondensed.ttf') format('truetype');
+		src: font-url( asset-path('Brice-LightSemiCondensed.ttf') );
+		src: font-url('Brice-RegularSemiCondensed.ttf') format('truetype');
+		src: font-url( asset-path('Brice-RegularSemiCondensed.ttf') );
+		src: font-url('Brice-SemiBoldSemiCondensed.ttf') format('truetype');
+		src: font-url( asset-path('Brice-SemiBoldSemiCondensed.ttf') );
+		src: font-url('Brice-SemiBoldSemiExpanded.ttf') format('truetype');
+		src: font-url( asset-path('Brice-SemiBoldSemiExpanded.ttf') );
   font-family: 'OhnoBlazeface';
-		src: local('OhnoBlazeface12Point.ttf') format('truetype');
+		src: font-url('OhnoBlazeface12Point.ttf') format('truetype');
+		src: font-url( asset-path('OhnoBlazeface12Point.ttf') );
+}
+
+
+.title.profile {
+	font-family: 'Brice-SemiBoldSemiCondensed';
+}
+
+.title:not(:last-child), .subtitle:not(:last-child) {
+	margin-bottom: 1.9rem;
+}
+
+.tag:not(body).is-warning {
+  background-color: transparent;
+}
+.tag:not(body).is-warningi {
+  background-color: #ffdc00;
+}
+
+.tag:not(body).is-primaryy{
+  background-color: #9600c8;
+  color: #fff;
+}
+
+p.subtitle.cards{
+	font-family: 'Brice-Bold';
+	color: black;
+	font-size: 1.5rem;
+}
+p.subtitle.cards span{
+  color: #9600c8;
+  font-family: 'Brice-BoldSemiCondensed';
 }
