@@ -14,6 +14,19 @@
  *= require_self
  */
 
+ @font-face {
+  font-family: 'Brice';
+  src: font-url('Brice-Bold.otf') format('opentype');
+	src: font-url('Brice-BoldCondensed.otf') format('opentype');
+  src: font-url('Brice-BoldSemiCondensed.otf') format('opentype');
+  src: font-url('Brice-LightSemiCondensed.otf') format('opentype');
+	src: font-url('Brice-RegularSemiCondensed.otf') format('opentype');
+  src: font-url('Brice-SemiBoldSemiCondensed.otf') format('opentype');
+  src: font-url('Brice-SemiBoldSemiExpanded.otf') format('opentype');
+  font-family: 'OhnoBlazeface';
+  src: font-url('OhnoBlazeface12Point.ttf') format('truetype');
+}
+
 $pink: #ea4c89;
 $pink-invert: #fff;
 
