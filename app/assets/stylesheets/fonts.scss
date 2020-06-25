@@ -10,3 +10,15 @@
   font-family: 'OhnoBlazeface';
 		src: font-url('OhnoBlazeface12Point.ttf') format('truetype');
 }
+
+
+@font-face {
+  font-family: 'Brice';
+  src: font-url('Brice-Bold.ttf');
+  src: font-url('Brice-Bold.ttf?#iefix') format('truetype'),
+  font-url('Brice-Bold.ttf') format('truetype'),
+  font-url('Brice-Bold.ttf') format('truetype'),
+  font-url('Brice-Bold.ttf#Brice-Bold') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
