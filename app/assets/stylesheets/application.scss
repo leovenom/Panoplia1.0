@@ -14,6 +14,7 @@
  *= require_self
  *= require fonts
  */
+
 $pink: #ea4c89;
 $pink-invert: #fff;
 
@@ -35,6 +36,37 @@ $link-hover: darken($primary, 20%);
  @import "components/functions";
  @import "jobs";
  @import "stripe";
+ @import "fonts";
+
+.title.profile {
+	font-family: 'Brice-SemiBoldSemiCondensed';
+}
+
+.title:not(:last-child), .subtitle:not(:last-child) {
+	margin-bottom: 1.9rem;
+}
+
+.tag:not(body).is-warning {
+  background-color: transparent;
+}
+.tag:not(body).is-warningi {
+  background-color: #ffdc00;
+}
+
+.tag:not(body).is-primaryy{
+  background-color: #9600c8;
+  color: #fff;
+}
+
+p.subtitle.cards{
+	font-family: Brice-Bold;
+	color: black;
+	font-size: 1.5rem;
+}
+p.subtitle.cards span{
+  color: #9600c8;
+  font-family: 'Brice-BoldSemiCondensed';
+}
 
 .notification {
   border-radius: 0;
