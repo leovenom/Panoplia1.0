@@ -2064,7 +2064,7 @@ h1.title.name {
 
 
  */
-@font-face {
+/* @font-face {
   font-family: 'Brice';
   src: url(/assets/Brice-Bold-4f03320199167ea909fbc44c6313f65d6eacfc9931c71ad2f293dbdb269dca49.ttf);
   src: url(/assets/Brice-BoldCondensed-f6b83b427834ebf5b628ce74c76c5f5edf816f17752cdebcad73bb7ae08e2885.ttf);
@@ -2075,6 +2075,56 @@ h1.title.name {
   src: url(/assets/Brice-SemiBoldSemiExpanded-7a652fd3716b75b5c829108f53b23d909d800dd5c53ff9f11d19f7585814e5fc.ttf);
   font-family: 'OhnoBlazeface';
   src: url(/assets/OhnoBlazeface12Point-fbd16769e74c266afd7b02e1f8538f8ae9735e019ca7200c780684ba591dd0f8.ttf);
+} */
+@font-face {
+	font-family: OhnoBlazeface;
+	src: font-url('OhnoBlazeface12Point.ttf') format('truetype'),
+			 font-url('OhnoBlazeface12Point.woff') format('woff'),
+			 font-url('OhnoBlazeface12Point.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: Brice-Bold;
+  font-weight: bold;
+	src: font-url('Brice-Bold.ttf') format('truetype'),
+			 font-url('Brice-Bold.woff') format('woff'),
+			 font-url('Brice-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Brice-BoldCondensed;
+	src: font-url('Brice-BoldCondensed.ttf') format('truetype'),
+			 font-url('Brice-BoldCondensed.woff') format('woff'),
+			 font-url('Brice-BoldCondensed.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: Brice-LightSemiCondensed;
+	font-weight: lighter;
+	src: font-url('Brice-LightSemiCondensed.ttf') format('truetype'),
+			 font-url('Brice-LightSemiCondensed.woff') format('woff'),
+			 font-url('Brice-LightSemiCondensed.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: Brice-RegularSemiCondensed;
+	src: font-url('Brice-RegularSemiCondensed.ttf') format('truetype'),
+			 font-url('Brice-RegularSemiCondensed.woff') format('woff'),
+			 font-url('Brice-RegularSemiCondensed.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: Brice-SemiBoldSemiCondensed;
+	src: font-url('Brice-SemiBoldSemiCondensed.ttf') format('truetype'),
+			 font-url('Brice-SemiBoldSemiCondensed.woff') format('woff'),
+			 font-url('Brice-SemiBoldSemiCondensed.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: Brice-SemiBoldSemiExpanded;
+	src: font-url('Brice-SemiBoldSemiExpanded.ttf') format('truetype'),
+			 font-url('Brice-SemiBoldSemiExpanded.woff') format('woff'),
+			 font-url('Brice-SemiBoldSemiExpanded.woff2') format('woff2');
 }
 /*! bulma.io v0.8.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
