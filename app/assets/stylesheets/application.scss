@@ -27,16 +27,14 @@ $link-hover: darken($primary, 20%);
 
  @import "components/avatar";
  @import "components/buttons";
- @import "components/columns";
  @import "components/footer";
  @import "components/heros";
- @import "components/icons";
  @import "components/navbar";
  @import "components/notifications";
  @import "components/functions";
  @import "jobs";
  @import "stripe";
- @import "fonts";
+ //@import "fonts";
 
 .title.profile {
 	font-family: Brice-SemiBoldSemiCondensed;
