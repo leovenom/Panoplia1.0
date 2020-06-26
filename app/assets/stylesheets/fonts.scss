@@ -22,6 +22,14 @@
 }
 
 @font-face {
+	font-family: Brice-BoldSemiCondensed;
+	src: font-url('Brice-BoldSemiCondensed.ttf') format('truetype'),
+			 font-url('Brice-BoldSemiCondensed.woff') format('woff'),
+			 font-url('Brice-BoldSemiCondensed.woff2') format('woff2');
+}
+
+
+@font-face {
 	font-family: Brice-LightSemiCondensed;
 	font-weight: lighter;
 	src: font-url('Brice-LightSemiCondensed.ttf') format('truetype'),
