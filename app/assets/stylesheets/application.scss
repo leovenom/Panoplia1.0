@@ -34,7 +34,7 @@ $link-hover: darken($primary, 20%);
  @import "components/functions";
  @import "jobs";
  @import "stripe";
- //@import "fonts";
+ @import "fonts";
 
 .title.profile {
 	font-family: Brice-SemiBoldSemiCondensed;
