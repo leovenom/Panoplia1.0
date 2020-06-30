@@ -168,7 +168,6 @@
           </div>
           <% end %>
           <% end%>
- 
           <% if user_signed_in?%>
           <nav class="level shot-analytics">
                             <div class="level-left">
@@ -222,4 +221,21 @@
     </section>
     <% end %>
   </div>
+</section>
+
+<section class="section user">
+ <div class="column is-3" style="margin-left: 25px;">
+  <p class="subtitle cards">Followings <span>USERS</span><i class="fas fa-sort-down"></i></p>
+  <% @user.feed.each do |show| %>
+    <div class="level-item-search">
+      <div class="user-thumb-job">
+        <%=link_to cl_image_tag(show.user.avatar.key), user_path(show.user) unless show.user.avatar.blank? %> 
+      </div>
+      <div class="user-name-job">
+        <h3 class="shot-title job"><%=link_to show.user.name, show.user %></h3>
+        <p> <%= show.user.location %> </p>
+      </div>
+    </div>
+  <%end%>
+</div>
 </section>

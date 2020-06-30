@@ -32,15 +32,10 @@ class User < ApplicationRecord
   end
 
   def feed
-    following_ids = "SELECT followed_id FROM Friendships
-                     WHERE  follower_id = :user_id"
-    Shot.where("user_id IN (#{following_ids})
-                     OR user_id = :user_id", user_id: id)
+    following_ids = "SELECT followed_id FROM Friendships WHERE follower_id = :user_id"
+    Shot.where("user_id IN (#{following_ids})", user_id: id)
   end
   
-  # def entities
-  #   Shot.where(use_type: "entity")
-  # end
   ARTS = ["Illustrator", "Photographer", "Concept Artist", "Sculptor", "Graphic Designer", "Video Artist"]
 
 end
