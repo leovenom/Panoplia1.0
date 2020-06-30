@@ -3,6 +3,7 @@ class ShotsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :like, :unlike]
   impressionist :actions=> [:show, :index]
 
+
   # GET /shots
   # GET /shots.json
   def index

@@ -30,6 +30,13 @@ class User < ApplicationRecord
   def following?(other_user)
     following_ids.include?(other_user.id)
   end
+
+  def feed
+    following_ids = "SELECT followed_id FROM Friendships
+                     WHERE  follower_id = :user_id"
+    Shot.where("user_id IN (#{following_ids})
+                     OR user_id = :user_id", user_id: id)
+  end
   
   # def entities
   #   Shot.where(use_type: "entity")
