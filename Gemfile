@@ -39,7 +39,7 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'carrierwave', '~> 1.2', '>= 1.2.1'
 gem 'simple_form', '~> 5.0'
 gem "mini_magick"
-gem 'impressionist', '~> 1.6'
+gem 'impressionist'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'gravatar_image_tag'
 gem 'acts_as_votable', '~> 0.11.1'
