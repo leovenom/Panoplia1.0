@@ -38,7 +38,7 @@ gem 'bulma-rails', '~> 0.8.2'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'carrierwave', '~> 1.2', '>= 1.2.1'
 gem 'simple_form', '~> 5.0'
-gem "mini_magick"
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'impressionist'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'gravatar_image_tag'
