@@ -5,6 +5,11 @@
 				<div class="shot-container">
 					<div class="shot-full">
 						 <%= cl_image_tag(@shot.user_shot_url) unless @shot.user_shot.blank? %>
+						 	
+							 <%#= (0...@shot.user_shot_url.count).each do |image| %>
+								<%#= cl_image_tag(@shot.user_shot_url[image]) %>
+							 <%# end %>
+
 					</div>
 					<% if user_signed_in? && (current_user.id == @shot.user_id) %>		
 						<div class="buttons has-addons level-left">
