@@ -33,7 +33,7 @@ class User < ApplicationRecord
 
   def feed
     following_ids = "SELECT followed_id FROM Friendships WHERE follower_id = :user_id"
-    Shot.where("user_id IN (#{following_ids})", user_id: id)
+    Shot.where("user_id IN (#{following_ids})", user_id: id).order('created_at DESC')
   end
   
   ARTS = ["Illustrator", "Photographer", "Concept Artist", "Sculptor", "Graphic Designer", "Video Artist"]
