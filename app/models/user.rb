@@ -4,10 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one_attached :avatar
-
+  
   has_many :shots, dependent: :destroy
   has_many :comments, dependent: :destroy
   acts_as_voter
+  
 
   has_many :active_friendships, class_name: "Friendship", foreign_key: "follower_id", dependent: :destroy
   has_many :passive_friendships, class_name: "Friendship", foreign_key: "followed_id", dependent: :destroy
@@ -29,11 +30,6 @@ class User < ApplicationRecord
   #Is following a other_user?
   def following?(other_user)
     following_ids.include?(other_user.id)
-  end
-
-  def feed
-    following_ids = "SELECT followed_id FROM Friendships WHERE follower_id = :user_id"
-    Shot.where("user_id IN (#{following_ids})", user_id: id).order('created_at DESC')
   end
   
   ARTS = ["Illustrator", "Photographer", "Concept Artist", "Sculptor", "Graphic Designer", "Video Artist"]
