@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<% @videos.each do |video| %>
+<div class="user-name-job">
+  <h3 class="shot-title job"><%= link_to video.title, video %></h3>
+    <%=link_to video.user, video.user, class:"shot-user-name" %>
+</div>
+
+<% if @video.url.present?%>
+<video src="<%= @video.url %>" controls></video>
+<%end%>
+
+
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>
+
+<%end%>
+
+<div class="section">
+	<div class="container">
+		<div class="columns">
+			<div class="column is-8 is-offset-2">
+				<div class="shot-container">
+					<div class="shot-full">
+						 <%= cl_image_tag(@video.user_video_url) unless @video.user_video.blank? %>
+					</div>
+					<% if user_signed_in? && (current_user.id == @video.user_id) %>		
+						<div class="buttons has-addons level-left">
+							<%= link_to 'Edit', edit_video_path(@video), class: "button" %>
+							<%= link_to 'Delete', video_path, class: "button", method: :delete, data: { confirm: 'Are you sure you want to delete this shot?'} %>
+						</div>
+					<% end %>
+		<div class="columns show-page is-desktop">
+			<div class="column is-7">
+						<div class="user-thumb shot-show">
+						<%#=link_to cl_image_tag(@video.user.avatar.key, :quality=>"auto:good"), user_path(@video.user) unless @video.user.avatar.blank?%>
+						</div>
+
+						<div class="user-name has-text-weight-bold">
+							<h3 class="shot-title"><%= @video.title %></h3>
+							<span class="by has-text-grey-light">by </span><%#=link_to @video.user.name, @video.user %>
+						</div>
+
+						<div class="content">
+							<%= @video.description %>
+						</div>
+
+					<section class="comments">
+						<h3 class="subtitle"><%= pluralize(@video.comments.count, 'Comment') %></h3>
+							<%= render @video.comments %>
+						<% if user_signed_in? %>
+							<div class="comment-form">
+								<h3 class="subtitle is-4">Leave a reply</h3>
+								<%#= render 'comments/form_video' %>
+							</div>
+						<% else %>
+							<div class="content"><%= link_to 'Sign in', new_user_session_path %> to leave a comment.</div>
+						<% end %>
+					</section>
+			</div>
+		</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -98,6 +98,8 @@
                   <% end %>
                 <p class="navbar-item">
                 <% if user_signed_in? %>
+                <%= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
+                <%= link_to 'videos', videos_path, class: "button is-black is-small mr3" %>
                 <%= link_to 'POST JOB', new_job_path, class: "button is-primary is-small mr3" %>
                 <%= link_to new_shot_path, class:"button is-primary is-small"  do %>
                 <span class="icon is-small"><i class="fa fa-upload"></i></span>

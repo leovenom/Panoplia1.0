@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_shots  = @user.shots.order('shots.created_at DESC')
+    @user_videos = @user.videos.order('videos.created_at DESC')
+    @video = Video.find_by(id: params[:id])
   end
 
   def edit
