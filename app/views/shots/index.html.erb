@@ -97,13 +97,11 @@
 <% @videos.each  do | video | %>
   <%= link_to video, class: "video" do %>
     <% if video.video.present?%>
-  <%= cl_video_tag(url_for(video.video), :width => 450, :height => 300, 
-  :crop => :pad, :background => "blue", 
-  :preload => "none", :controls => true,
-  :fallback_content => "Your browser does not support HTML5 video tags" )%>
-    <%= video.description %>
-    <%= video.title %>
-    <% else%>
+    <video src="<%= video.url %>" controls></video>
+    <div>
+      <%= video.description %>
+      <%= video.title %>
+    <div>
 <%end%>
 <%end%>
 <%end%>

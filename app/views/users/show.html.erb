@@ -73,24 +73,6 @@
 </div>
 </div>
 
-<section class="section user">
-<p class="subtitle cards" style="
-      margin-left: 25px;"
-      >My<span> videos </span><i class="fas fa-sort-down"></i></p>
-<% @user_videos.each  do | video | %>
-  <%= link_to video, class: "video" do %>
-  <% if video.video.present?%>
-  <%= cl_video_tag(url_for(video.video), :width => 450, :height => 300, 
-  :crop => :pad, :background => "blue", 
-  :preload => "none", :controls => true,
-  :fallback_content => "Your browser does not support HTML5 video tags" ) %>
-    <%= video.description %>
-    <%= video.title %>
-<%end%>
-<%end%>
-<%end%>
-<section>
-
 
 <section class="section user">
 <p class="subtitle cards" style="
@@ -162,6 +144,21 @@
     <% end %>
   </div>
 </section>
+
+<section class="section user">
+<p class="subtitle cards" style="
+      margin-left: 25px;"
+      >My<span> videos </span><i class="fas fa-sort-down"></i></p>
+<% @user_videos.each  do | video | %>
+  <%= link_to video, class: "video" do %>
+  <% if video.video.present?%>
+  <video src="<%= video.url %>" controls></video>
+<%end%>
+<%end%>
+<%end%>
+<section>
+
+
 
 <section class="section user">
  <div class="column is-5" style="margin-left: 25px;">
