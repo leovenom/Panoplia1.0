@@ -4,6 +4,9 @@
   <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
   <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
+    <% if @video.url.present?%>
+    <video src="<%= @video.url %>" controls></video>
+    <% else %>
 <% @videos.each do |video| %>
 <div class="user-name-job">
                     <h3 class="shot-title job"><%= link_to video.title, video %></h3>
@@ -19,6 +22,7 @@
     height="264"
     data-setup="{}"
   >
+
     <source src="<%= url_for(@video.video) %>" type="video/mp4" />
   </video> 
 
@@ -28,6 +32,7 @@
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
 <script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
+<%end%>
 
 <div class="section">
 	<div class="container">

@@ -1,11 +1,11 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
-  impressionist :actions=> [:show, :index]
   # GET /videos
   # GET /videos.json
   def index
     @videos = Video.all
     @all_videoss = Video.includes(:user).where.not(id: @Video).order('created_at DESC')
+
   end
 
   # GET /videos/1
@@ -13,12 +13,15 @@ class VideosController < ApplicationController
   def show
     @videos = Video.all
     @random_video = Video.where.not(id: @video).order("RANDOM()").first
+    @video = Video.find_by(id: params[:id])
+		@comments = @video.comments
+
   end
 
   # GET /videos/new
   def new
-    #@video = Video.new
-    @video = current_user.videos.build
+    @video = Video.new
+    #@video = current_user.videos.build
   end
 
   # GET /videos/1/edit
@@ -90,6 +93,6 @@ class VideosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def video_params
-      params.require(:video).permit(:title, :description, :video, :user_video)
+      params.require(:video).permit(:title, :description, :video, :user_video, :url)
     end
 end
