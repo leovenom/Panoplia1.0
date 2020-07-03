@@ -88,3 +88,16 @@
       </div>
    </div>
  </section>
+
+ <section class="section user">
+<p class="subtitle cards" style="
+      margin-left: 25px;"
+      >My<span> videos </span><i class="fas fa-sort-down"></i></p>
+<% @videos.each  do | video | %>
+  <%= link_to video, class: "video" do %>
+  <%= cl_video_tag(url_for(video.video)) %>
+    <%= video.description %>
+    <%= video.title %>
+<%end%>
+<%end%>
+<section>

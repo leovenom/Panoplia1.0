@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   
   has_many :shots, dependent: :destroy
+  has_many :videos, dependent: :destroy
   has_many :comments, dependent: :destroy
   acts_as_voter
   
