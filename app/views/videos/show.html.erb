@@ -1,20 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<% @videos.each do |video| %>
-<div class="user-name-job">
-  <h3 class="shot-title job"><%= link_to video.title, video %></h3>
-    <%=link_to video.user, video.user, class:"shot-user-name" %>
+<div class="shot-full">
+	<video src="<%= @video.url %>" controls></video>
 </div>
 
-<% if @video.url.present?%>
-<video src="<%= @video.url %>" controls></video>
-<%end%>
-
-
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
-
+<% @videos.each do |video| %>
 <%end%>
 
 <div class="section">
@@ -65,3 +53,4 @@
 		</div>
 	</div>
 </div>
+<%= link_to 'Back', videos_path %>

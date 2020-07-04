@@ -152,7 +152,7 @@
 <% @user_videos.each  do | video | %>
   <%= link_to video, class: "video" do %>
   <% if video.video.present?%>
-  <video src="<%= video.url %>" controls></video>
+  <video src="<%= video.url %>" controls ></video>
 <%end%>
 <%end%>
 <%end%>
