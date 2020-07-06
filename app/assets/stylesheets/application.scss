@@ -160,6 +160,12 @@ html, body {
 
 //video
 video {
+	max-width: 100%;
+	object-fit: cover;
+	max-height: 580px; //450px
+}
+
+.video-card {
 	width: 350px;
 	object-fit: cover;
 	height: 200px; //450px

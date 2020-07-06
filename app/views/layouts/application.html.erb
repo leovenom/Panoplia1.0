@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Panóplia</title>
+    <meta charset="UTF-8">
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Panóplia 〰 Plataforma de empoderamento e divulgação de artistas 〰</title>
@@ -13,6 +14,15 @@
     <%= javascript_include_tag 'application', "https://js.stripe.com/v2/", "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
     <%= tag :meta, name: "stripe-public-key", content: Figaro.env.stripe_publishable_key %>
     <script src="https://kit.fontawesome.com/344aab95fd.js" crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171697725-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-171697725-1');
+    </script>
   </head>
 
   <body>
@@ -50,11 +60,11 @@
               <div class="control mt3">
               <% if user_signed_in? %>
                 <%#= link_to 'Shots', root_path , class:"button is-white" %>
-                <%= form_tag searches_path, :method => 'get', id: 'search-form' do %>
-                  <%= text_field_tag :search, params[:search],  class:"input", type:"text",placeholder:"Search here"%>
+                <%= form_tag(searches_path, :method => 'get') do %>
+                  <%= text_field_tag :search, params[:search],  class:"input", type:"text",placeholder:"Search...",name:"search", onkeydown:'clickSubmit();'%>
                 </div>
                 <div class="control mt3">
-                  <%= submit_tag "SEARCH", :name => nil, class: "button is-black is-small" %>
+                  <%= submit_tag "SEARCH", :name => nil, class: "button is-black is-small", id:'search-form' %>
                 <% end %>
                 <% end %>
               </div>
@@ -131,5 +141,11 @@
     </p>
   </div>
 </footer>
+
+  <script>
+    function clickSubmit() {
+      $(#search-form).trigger("click")
+    }
+  <script>
   </body>
 </html>

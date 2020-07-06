@@ -95,12 +95,15 @@
       <% @videos.each  do | video | %>
       <%= link_to video, class: "video" do %>
         <% if video.video.present?%>
-        <div>
+        <div class="video-card"> 
           <video src="<%= video.url %>" controls></video>
-          
-              <%=link_to video.user.name, video.user %>
-              <%= video.description %>
-              <%= video.title %>
+          </div>
+          <div class="user-thumb-job">
+            <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
+          </div>
+          <div class="user-name-job">
+            <h3 class="video-title job"><%= video.title %></h3>
+          <%=link_to video.user.name, video.user, class:"shot-user-name" %>
           </div>
       <%end%>
       <%end%>
