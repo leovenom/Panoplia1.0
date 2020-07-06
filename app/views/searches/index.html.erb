@@ -86,7 +86,7 @@
                 <%= link_to video, class: "video" do %>
                   <% if video.video.present?%>
                   <div>
-                    <video src="<%= video.url %>" controls></video>
+                    <video src="<%= video.url %>" class="video-card" controls></video>
                   </div>
                   <div class="user-thumb-job">
                     <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
