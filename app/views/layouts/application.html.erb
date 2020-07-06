@@ -60,11 +60,11 @@
               <div class="control mt3">
               <% if user_signed_in? %>
                 <%#= link_to 'Shots', root_path , class:"button is-white" %>
-                <%= form_tag searches_path, :method => 'get', id: 'search-form' do %>
-                  <%= text_field_tag :search, params[:search],  class:"input", type:"text",placeholder:"Search here"%>
+                <%= form_tag(searches_path, :method => 'get') do %>
+                  <%= text_field_tag :search, params[:search],  class:"input", type:"text",placeholder:"Search...",name:"search", onkeydown:'clickSubmit();'%>
                 </div>
                 <div class="control mt3">
-                  <%= submit_tag "SEARCH", :name => nil, class: "button is-black is-small" %>
+                  <%= submit_tag "SEARCH", :name => nil, class: "button is-black is-small", id:'search-form' %>
                 <% end %>
                 <% end %>
               </div>
@@ -141,5 +141,11 @@
     </p>
   </div>
 </footer>
+
+  <script>
+    function clickSubmit() {
+      $(#search-form).trigger("click")
+    }
+  <script>
   </body>
 </html>

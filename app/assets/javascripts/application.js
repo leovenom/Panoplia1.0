@@ -17,7 +17,6 @@
 //= require_tree
 //= require cloudinary
 
-
 //notification delete button
 
 document.addEventListener('DOMContentLoaded', () => {

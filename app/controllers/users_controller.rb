@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :check_authorization, only: [:edit, :update]
   before_action :set_user
-
+  
   def show
     @user = User.find(params[:id])
     @user_shots  = @user.shots.order('shots.created_at DESC')
@@ -25,5 +25,4 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end 
-
 end

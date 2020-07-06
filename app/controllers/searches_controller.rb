@@ -1,22 +1,24 @@
 class SearchesController < ApplicationController
   def index
     
-    @shots = Shot.where(["title LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
-    @shots_description = Shot.where(["description LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @shots = Shot.where(["title ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @shots_description = Shot.where(["description ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
     #@shots = @shots_description + @shot
 
-    @jobs = Job.where(["title LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
-    @jobs_description = Job.where(["description LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
-    @jobs_job_type = Job.where(["job_type LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
-    @jobs_location = Job.where(["location LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
-    @jobs_art_type = Job.where(["art_type LIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    # @jobs = Job.where(["title ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    # @jobs_description = Job.where(["description ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    # @jobs_job_type = Job.where(["job_type ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    # @jobs_location = Job.where(["location ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    # @jobs_art_type = Job.where(["art_type ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
     #@jobs = @jobs_title + @jobs_description + @jobs_job_type + @jobs_location + @jobs_art_type
     
-    @users = User.where(["name ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
-    @users_bio = User.where(["bio ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
-    @users_username = User.where(["username ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
-    @users_location = User.where(["location ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @users = User.where(["name ILIKE ? OR location ILIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"]).order('created_at DESC')
+    #@users_bio = User.where(["bio ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    #@users_username = User.where(["username ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    #@users_location = User.where(["location ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
 
+    @videos = Video.where(["videos.title ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @videos = Video.where(["videos.description ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
     #, :case_sensitive => false???
     # if params[:search].present? && params[:search][:query].present?
     #   @shots = policy_scope(Shot).where("title ILIKE '%#{params[:search][:query]}%'")
