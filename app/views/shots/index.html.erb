@@ -8,82 +8,21 @@
       margin-left: 25px;"
       >BEST OF PANÓPLIA <span>EVER </span><i class="fas fa-sort-down"></i></p>
       
-        <div class="shots">
+        <div class="shots" id="shots">
           <% @shots.each do |shot| %>
-          <div class="shot-grid-item">
-            <div class="shot-wrapper">
-              
-              <%= link_to shot, class: "shot" do %>
-              <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
-              <div class="shot-data">
-                <h3 class="shot-title"><%= shot.title %></h3>
-                <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
-                <div class="shot-time">
-                  <%= time_ago_in_words(shot.created_at) %>
-                </div>
-              </div>
-              <% end %>
-              <%# if user_signed_in?%>
-              <nav class="level shot-analytics">
-                <div class="level-left">
-                  <div class="level-item">
-                    <div class="user-thumb">
-                      <%=link_to cl_image_tag(shot.user.avatar.key), user_path(shot.user)  unless shot.user.avatar.blank?%> 
-                    </div>
-                    <div class="user-name"><%=link_to shot.user.name, shot.user %>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="level-right index">
-                  <div class="level-item views data">
-                    <%= link_to shot do %>
-                    <span class="icon"><i class="fa fa-eye"></i></span>
-                    <%= shot.impressionist_count %>
-                    <% end %>
-                  </div>
-                  <div class="level-item comments data" style="margin-right: 1.75rem;">
-                    <%= link_to shot do %>
-                    <span class="icon"><i class="fa fa-comment"></i></span>
-                    <%= shot.comments.count %>
-                    <% end %>
-                  </div>
-                  <div class="level-item likes">
-                    <% if user_signed_in? %>
-                    
-                    <% if current_user.liked? shot %>
-                    <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
-                    <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
-                    <span class="vote_count"><%= shot.get_likes.size %></span>
-                    <% end %>
-                    <% else %>
-                    <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
-                    <span class="icon"><i class="fa fa-heart"></i></span>
-                    <span class="vote_count"><%= shot.get_likes.size %></span>
-                    <% end %>
-                    <% end %>
-                    <% else %>
-                    <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
-                    <span class="icon"><i class="fa fa-heart"></i></span>
-                    <span class="vote_count"><%= shot.get_likes.size %></span>
-                    <% end %>
-                    <% end %>
-
-                  </div>
-                </div>
-              </nav>
-              <%# end %>
-            </div>
-          </div>
+             <%= render shot %>
           <% end %>
         </div>
+        <%= will_paginate @shots%>
     </div>
+    
       <%# job board colum %>
       <div class="column is-4">
         <p class="subtitle cards">JOB BOARD <span>REMOTE FRIENDLY </span><i class="fas fa-sort-down"></i></p>
           <section>
 		        <%= render 'shots-job'%>
           </section>
+          <%#= will_paginate @jobs %>
       <%# job board colum end%>
       </div>
    </div>
@@ -109,4 +48,5 @@
       <%end%>
         <%end%>
       </div>
+      <%#= will_paginate @videos %>
   <section>

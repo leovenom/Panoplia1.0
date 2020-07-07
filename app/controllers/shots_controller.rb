@@ -8,15 +8,20 @@ class ShotsController < ApplicationController
   # GET /shots.json
   def index
     #@shots = Shot.all.order('created_at DESC')
-    @all_shots = Shot.includes(:user).where.not(id: @shot).order('created_at DESC')
+    @all_shots = Shot.includes(:user).where.not(id: @shot).order('created_at DESC').paginate(:page => params[:page], per_page:4)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
     #@shots = Shot.includes(:user).where.not(id: @shot).where(users: { entity: false}).order('shots.created_at DESC')
     #@shots = @all_shots.select { |shot| !shot.user.entity? }
     @shots = @all_shots
     #@random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
     #@entity_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: true}).order('shots.created_at DESC').first
     #@entity_shots = @all_shots.select { |shot| shot.user.entity? }
-    @jobs = Job.all.order("created_at desc")
-    @videos = Video.all.order("created_at desc")
+    @jobs = Job.all.order("created_at desc").paginate(page: params[:page], per_page:6)
+    @videos = Video.all.order("created_at desc").paginate(page: params[:page], per_page:6)
   end
 
   # GET /shots/1

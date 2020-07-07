@@ -47,7 +47,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 gem 'stripe', '~> 1.57', '>= 1.57.1'
 gem 'figaro', '~> 1.2'
-
+gem 'will_paginate', '~> 3.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
