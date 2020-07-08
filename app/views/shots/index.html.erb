@@ -30,13 +30,12 @@
  </section>
 
   <section class="section user">
-    <p class="subtitle cards" style="margin-left: 25px;">My<span> videos </span><i class="fas fa-sort-down"></i></p>
+    <p class="subtitle cards" style="margin-left: 25px;">BEST OF PANÓPLIA<span> VIDEOS </span><i class="fas fa-sort-down"></i></p>
       <div class="">
-      <% @videos.each  do | video | %>
+      <% @videos.each do |video| %>
       <%= link_to video, class: "video" do %>
-        <% if video.video.present?%>
         <div class="video-card"> 
-          <video src="<%= video.url %>" controls></video>
+          <%= get_video_iframe(video.url) %>
           </div>
           <div class="user-thumb-job">
             <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
@@ -47,6 +46,5 @@
           </div>
       <%end%>
       <%end%>
-        <%end%>
       </div>
   <section>

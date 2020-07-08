@@ -1,5 +1,5 @@
 <div class="shot-full video-card">
-	<video src="<%= @video.url %>" controls></video>
+	<%= get_video_iframe(@video.url) %>
 </div>
 
 <% @videos.each do |video| %>

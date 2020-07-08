@@ -8,11 +8,12 @@
     <div>	
 	<label for="video-url">URL</label>
 	<br>
-	<input id="video-url" type="text" name="video[url]">
+	<%# <input id="video-url" type="text" name="video[url]"> %>
+    <%= f.text_field :url, id:"video-url", name:"video[url]" %>
   </div>
 
   <div class="field">
-    <%= f.file_field :video, id: :video_video %>
+    <%#= f.file_field :video, id: :video_video %>
   </div>
 
   <div class="form-actions">

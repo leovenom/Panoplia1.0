@@ -149,11 +149,9 @@
   <p class="subtitle cards" style="margin-left: 25px;">My<span> videos </span><i class="fas fa-sort-down"></i></p>
     <% @user_videos.each  do | video | %>
       <%= link_to video, class: "video" do %>
-        <% if video.video.present?%>
           <div class="video-card">
-            <video src="<%= video.url %>" controls ></video>
+            <%= get_video_iframe(video.url) %>
           </div>
-        <%end%>
       <%end%>
     <%end%>
 <section>
