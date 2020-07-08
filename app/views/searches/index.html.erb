@@ -6,7 +6,7 @@
       margin-left: 25px;"
       >PANÓPLIA <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
       
-        <div class="shots-search">
+        <div class="shots-search" id="scroll-content">
           <% @shots.each do |shot| %>
           <div class="shot-grid-item">
             <div class="shot-wrapper">
@@ -76,18 +76,16 @@
           <% end %>
         </div>
       </div>
-      <%= will_paginate @shots %>
       <%# Video board colum %>
 
       <div class="column is-4">
         <p class="subtitle cards">VIDEO <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
           <section>
-		        <div class="shot-job">
+		        <div class="shot-job" id="scroll-content">
               <% @videos.each  do | video | %>
                 <%= link_to video, class: "video" do %>
-                  <% if video.video.present?%>
                   <div>
-                    <video src="<%= video.url %>" class="video-card" controls></video>
+                    <%= get_video_iframe(video.url) %>
                   </div>
                   <div class="user-thumb-job">
                     <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
@@ -96,17 +94,16 @@
                     <h3 class="video-title job"><%=link_to video.title, video %></h3>
                       <%=link_to video.user.name, video.user, class:"shot-user-name" %>
                   </div>
-                  <%end%>
                 <%end%>
               <%end%>
             </div>
           </section>
-          <%= will_paginate @videos %>
       </div>
       
       <%# video board colum end%>
       <div class="column is-3">
         <p class="subtitle cards">USER <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
+        <div id="scroll-content">
         <% @users.each do |user| %>
           <div class="level-item-search">
             <div class="user-thumb-job">
@@ -118,7 +115,7 @@
             </div>
           </div>
         <%end%>
-           <%= will_paginate @users %>
+        </div>
       </div>
    </div>
 
