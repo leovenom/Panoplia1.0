@@ -3,53 +3,55 @@
 <section class="section">
   <div class="columns is-desktop">
 
-    <div class="column">
-      <p class="subtitle cards" style="
-      margin-left: 25px;"
+    <div class="column is-7">
+      <p class="subtitle cards" style="margin-left: 25px;"
       >BEST OF PANÓPLIA <span>EVER </span><i class="fas fa-sort-down"></i></p>
       <div id="scroll-content">
         <div class="shots">
-             <%@resources.each do |video, shot|%>
-  <%= render shot %>
-  <%= link_to video, class: "video" do %>
-          <div class="video-card"> 
-          <%= get_video_iframe(video.url) %>
-          </div>
-<%end%>
+          <% @shots.each do |shot| %>
+             <%= render shot %>
           <% end %>
         </div>
       </div>  
     </div>
-    
-      <%# job board colum %>
-      <div class="column is-4">
+
+          <%# job board colum %>
+      <div class="column is-3">
+        <p class="subtitle cards">BEST OF<span> VIDEOS </span><i class="fas fa-sort-down"></i></p>
+          <div id="scroll-content">
+            <div class="videos">
+            <% @videos.each do |video| %>
+            <div class="shot-grid-item">
+              <div class="shot-wrapper">
+                <%= link_to video, class: "video" do %>
+                  <%= get_video_iframe(video.url) %>
+                <%end%>
+                    <nav class="level shot-analytics">
+                      <div class="level-left">
+                        <div class="level-item">
+                          <div class="user-thumb">
+                            <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
+                          </div>
+                          <div class="user-name"><%=link_to video.user.name, video.user %>
+                          </div>
+                        </div>
+                      </div>
+                    </nav>
+              </div>
+            </div>
+            <%end%>
+            </div>
+          </div>
+      </div>
+
+      <div class="column">
         <p class="subtitle cards">JOB BOARD <span>REMOTE FRIENDLY </span><i class="fas fa-sort-down"></i></p>
           <div id="scroll-content">
           <section>
 		        <%= render 'shots-job'%>
           </section>
           </div>
-      <%# job board colum end%>
-      </div>
-   </div>
- </section>
-
-  <section class="section user">
-    <p class="subtitle cards" style="margin-left: 25px;">BEST OF PANÓPLIA<span> VIDEOS </span><i class="fas fa-sort-down"></i></p>
-      <div class="" id="scroll-content">
-      <% @videos.each do |video| %>
-      <%= link_to video, class: "video" do %>
-        <div class="video-card"> 
-          <%= get_video_iframe(video.url) %>
-          </div>
-          <div class="user-thumb-job">
-            <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
-          </div>
-          <div class="user-name-job">
-            <h3 class="video-title job"><%= video.title %></h3>
-          <%=link_to video.user.name, video.user, class:"shot-user-name" %>
-          </div>
-      <%end%>
-      <%end%>
-      </div>
-  <section>
+      <div>
+      
+  </div>
+</section>
