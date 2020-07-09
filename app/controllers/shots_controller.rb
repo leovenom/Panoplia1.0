@@ -17,6 +17,7 @@ class ShotsController < ApplicationController
     #@entity_shots = @all_shots.select { |shot| shot.user.entity? }
     @jobs = Job.all.order("created_at desc")
     @videos = Video.all.order("created_at desc")
+    #@resources = @videos.zip(@shots)
   end
 
   # GET /shots/1

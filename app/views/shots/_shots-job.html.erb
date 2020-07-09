@@ -2,7 +2,7 @@
           <% @jobs.each do |job| %>
           <div class="shot-grid-item">
             <div class="shot-wrapper-job">
-              <nav class="level shot-analytics-job">
+              <nav class="shot-analytics-job">
                 <div class="level-level-right">
                   <div class="level-item-job">
                     <div class="user-thumb-job">
@@ -18,7 +18,7 @@
                
               <%= link_to job, class: "shot" do %>
             <% if user_signed_in? %>
-            <label><%= sanitize(job.description.truncate(100, separator: '</p>')) %></label>
+            <label><%= sanitize(job.description.truncate(80, separator: '</p>')) %></label>
               <%else%>
               <div><%= link_to ' Sign in', new_user_session_path %> to apply to this job.</div>
               <% end%>

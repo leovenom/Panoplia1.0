@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <%= get_video_iframe(video.url) %>
+    <% @videos.each do |video| %>
       <tr>
         <td><%= video.title %></td>
         <td><%= video.description %></td>

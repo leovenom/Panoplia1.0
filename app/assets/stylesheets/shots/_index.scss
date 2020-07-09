@@ -1,7 +1,7 @@
 h3.shot-title.job {
   text-align: left;
 	font-family: Brice-BoldSemiCondensed;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	margin-bottom: -10px;
 }
 .user-name-job .shot-user-name {
@@ -55,8 +55,8 @@ h3.shot-title.job {
 	display: inline-block;
 	img {
 		border-radius: 50%;
-		height: 45px;
-		width: 45px;
+		max-height: 45px;
+		max-width: 45px;
 	}
 }
 
