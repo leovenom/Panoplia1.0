@@ -9,12 +9,12 @@ class CommentsController < ApplicationController
 
 		redirect_to shot_path(@shot)
 		
-		@video = Video.find(params[:video_id]) # finds the video with the associated video_id
-  	@comment_video = @video.comments.create(comment_params) # creates the comment on the video passing in params 
-  	@comment_video.user_id = current_user.id if current_user # assigns logged in user's ID to comment
-  	@comment_video.save!
+		# @video = Video.find(params[:video_id]) # finds the video with the associated video_id
+  	# @comment_video = @video.comments.create(comment_params) # creates the comment on the video passing in params 
+  	# @comment_video.user_id = current_user.id if current_user # assigns logged in user's ID to comment
+  	# @comment_video.save!
 
-  	redirect_to video_path(@video)
+  	# redirect_to video_path(@video)
 
 	end
 	
@@ -25,10 +25,10 @@ class CommentsController < ApplicationController
   	@comment.destroy
 		redirect_to shot_path(@shot)
 		
-		@video = Video.find(params[:video_id])
-  	@comment_video = @video.comments.find(params[:id])
-  	@comment_video.destroy
-  	redirect_to video_path(@video)
+		# @video = Video.find(params[:video_id])
+  	# @comment_video = @video.comments.find(params[:id])
+  	# @comment_video.destroy
+  	# redirect_to video_path(@video)
 	end
 
 

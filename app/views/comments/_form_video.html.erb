@@ -1,4 +1,4 @@
-<%= simple_form_for([@video, @video.comments]) do |f| %>
+<%= simple_form_for([@video, @video.comments.build]) do |f| %>
   <%= f.error_notification %>
 
 	<div class="field">
