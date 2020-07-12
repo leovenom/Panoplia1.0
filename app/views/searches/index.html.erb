@@ -6,11 +6,12 @@
       margin-left: 25px;"
       >PANÓPLIA <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
       
-        <div class="shots-search" id="scroll-content">
+        <div class="shots" id="scroll-content">
           <% @shots.each do |shot| %>
+
           <div class="shot-grid-item">
             <div class="shot-wrapper">
-              
+
               <%= link_to shot, class: "shot" do %>
               <%= cl_image_tag(shot.user_shot_url) %>
               <div class="shot-data">
@@ -78,7 +79,7 @@
       </div>
       <%# Video board colum %>
 
-      <div class="column is-4">
+      <div class="column is-3">
         <p class="subtitle cards">VIDEO <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
           <section>
 		        <div class="shot-job" id="scroll-content">
@@ -101,7 +102,7 @@
       </div>
       
       <%# video board colum end%>
-      <div class="column is-3">
+      <div class="column is-3" style="width: 19%;">
         <p class="subtitle cards">USER <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
         <div id="scroll-content">
         <% @users.each do |user| %>
