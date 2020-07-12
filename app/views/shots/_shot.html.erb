@@ -18,7 +18,7 @@
                     <div class="user-thumb">
                       <%=link_to cl_image_tag(shot.user.avatar.key), user_path(shot.user)  unless shot.user.avatar.blank?%> 
                     </div>
-                    <div class="user-name"><%=link_to shot.user.name, shot.user %>
+                    <div class="user-name"><%=link_to shot.title, shot %>
                     </div>
                   </div>
                 </div>

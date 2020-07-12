@@ -1,23 +1,42 @@
 <%= simple_form_for @video do |f| %>
   <%= f.error_notification %>
+  <div class="columns" style="height: 660px;">
+    <div class="column hero is-background is-hidden-touch">
+    </div>
+    <div class="column hero is-purple is-hidden-mobile">
+    </div>
+      <div class="column hero is-warning profile">
+        <div class="column is-warning is-narrow" style="width: 390px;">
+          
+          <div class="field">
+            <div class="control">
+              <%= f.input :title, label: "Title", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-  </div>
-    <div>	
-	<label for="video-url">URL</label>
-	<br>
-	<%# <input id="video-url" type="text" name="video[url]"> %>
-    <%= f.text_field :url, id:"video-url", name:"video[url]" %>
-  </div>
+          <div class="field">
+            <div class="control">
+              <%= f.input :description, label: "Description", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+          </div>
 
-  <div class="field">
-    <%#= f.file_field :video, id: :video_video %>
-  </div>
+          <div class="field">
+          <label for="video-url" class="text optional label">URL</label>
+            <div class="control">
+              <%= f.text_field :url, id:"video-url", name:"video[url]", class:"string optional input"%>            
+            </div>
+          </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+          <div class="form-actions">
+            <%= f.button :submit, class:"button is-primary" %>
+          </div>
+        </div>
+        <%= link_to 'Back', videos_path, class:"text optional label" %>
+      </div> 
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      </div> 
 <% end %>
-  
+
