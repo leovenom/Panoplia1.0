@@ -158,6 +158,13 @@ html, body {
   width: 350px;
 }
 
+.comment img{
+	border-radius: 50%;
+	display: block;
+  max-height: 48px;
+  width: 48px;
+}
+
 //video
 video {
 	max-width: 100%;

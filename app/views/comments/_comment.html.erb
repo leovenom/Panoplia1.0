@@ -1,7 +1,7 @@
 <div class="boxe">
   <article class="media">
     <figure class="media-left">
-      <p class="image is-48x48 user-thumb">
+      <p class="comment">
         <%= link_to cl_image_tag(comment.user.avatar.key), user_path(comment.user)  unless comment.user.avatar.blank? %>
       </p>
     </figure>
