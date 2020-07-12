@@ -108,13 +108,27 @@
                   <% end %>
                 <p class="navbar-item">
                 <% if user_signed_in? %>
-                <%= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
-                <%= link_to 'videos', videos_path, class: "button is-black is-small mr3" %>
+                <%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
+                <%#= link_to 'videos', videos_path, class: "button is-black is-small mr3" %>
                 <%= link_to 'POST JOB', new_job_path, class: "button is-primary is-small mr3" %>
-                <%= link_to new_shot_path, class:"button is-primary is-small"  do %>
-                <span class="icon is-small"><i class="fa fa-upload"></i></span>
-                <span>NEW SHOT</span>
-              <% end %>
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <p class="navbar-item">
+                  <%= link_to new_shot_path, class:"button is-black is-small"  do %>
+                  <span class="icon is-small"><i class="fa fa-upload" style="color:#9600c8;"></i></span>
+                    <span>UPLOADS</span>
+                      <% end %> </p>
+                <div class="navbar-dropdown is-right">
+                  <div class="navbar-item">
+                    <%= link_to 'POST VIDEO', new_video_path, class: "button is-black is-small mr3" %>
+                  </div>
+                  <div class="navbar-item">
+                    <%= link_to new_shot_path, class:"button is-black is-small"  do %>
+                    <%# <span class="icon is-small"><i class="fa fa-upload"></i></span> %>
+                    <span>POST SHOT</span>
+                    <% end %> 
+                  </div>
+              </div>
+
               </p>
 
 
