@@ -14,8 +14,8 @@
           <ul>
             <li><%= link_to job.job_author, job.url %></li>
           </ul>
-        <div class="pv2 f6">
-          <%= sanitize(job.description.truncate(200, separator: '</p>')) %>
+        <div class="pv2 f6 index-title">
+          <%= link_to sanitize(job.description.truncate(200, separator: '</p>')), job %>
         </div>
 
         <% if current_user.try(:admin) || job_author(job) %>
