@@ -12,6 +12,13 @@
 .shot-full {
 	text-align: center;
 }
+.video-full {
+  text-align: center;
+}
+.url.iframe  {
+  width: 800px;
+  height: 600px;
+}
 
 .button.is-roxo.icon {
   padding: 28px 66px;
@@ -27,7 +34,7 @@
 
 .button.is-black.icon:hover {
 	background-color:black;;
-	color: white
+	color: white;
 }
 .button.is-black.icon:active {
   background-color: black;
