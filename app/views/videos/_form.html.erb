@@ -31,7 +31,10 @@
             <%= f.button :submit, class:"button is-primary" %>
           </div>
         </div>
-        <%= link_to 'Back', videos_path, class:"text optional label" %>
+        <div style="display: flex;">
+          <%= link_to 'Show', @video, class:"text optional label"  %> | 
+          <%= link_to 'Back', videos_path, class:"text optional label" %>
+        </div> 
       </div> 
       <br/>
       <br/>
