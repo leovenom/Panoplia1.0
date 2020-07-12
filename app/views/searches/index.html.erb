@@ -107,7 +107,11 @@
         <% @users.each do |user| %>
           <div class="level-item-search">
             <div class="user-thumb-job">
-              <%=link_to cl_image_tag(user.avatar.key), user_path(user) unless user.avatar.blank? %> 
+              <% if user.avatar.attached? %>
+              <%= link_to cl_image_tag(user.avatar.key), user_path(user) %>
+              <% else%>
+              <%= link_to image_tag('panoplia-logo.png'), user_path(user) %>
+              <% end%>
             </div>
             <div class="user-name-job">
               <h3 class="shot-title job"><%= link_to user.name, user %></h3>
