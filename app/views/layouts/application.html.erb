@@ -96,14 +96,14 @@
               </a>
               <div class="navbar-dropdown is-right">
                 <div class="navbar-item">
-                  <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black" %>
+                  <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black is-small" %>
                 </div>
                 <div class="navbar-item">
-                  <%= link_to 'PROFILE', user_path(current_user), class:"button is-black" %>
+                  <%= link_to 'PROFILE', user_path(current_user), class:"button is-black is-small" %>
                 </div>
                 <hr class="navbar-divider">
                 <div class="navbar-item logout">
-                  <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
+                  <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black is-small" %>
                 </div>
               </div>
             </div>
@@ -115,8 +115,8 @@
             <%= link_to 'POST JOB', new_job_path, class: "button is-primary is-small mr3" %>
               <div class="navbar-item has-dropdown is-hoverable">
                   <p class="navbar-item">
-                  <%= link_to new_shot_path, class:"button is-black is-small"  do %>
-                  <span class="icon is-small"><i class="fa fa-upload" style="color:#9600c8;"></i></span>
+                  <%= link_to new_shot_path, class:"button is-primary is-small"  do %>
+                  <span class="icon is-small"><i class="fa fa-upload" style="color:#fff;"></i></span>
                     <span>UPLOADS</span>
                       <% end %> 
                   </p>
