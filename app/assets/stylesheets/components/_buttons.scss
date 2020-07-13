@@ -43,12 +43,25 @@
 	border-color: transparent;
 	color: #fff;
 }
+
+.button.is-primarye {
+	background-color: #9600c8;
+	border-color: transparent;
+	color: #fff;
+	height: 22px;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+}
 .button.is-primary:hover, .button.is-primary.is-hovered {
 	background-color: #ff78be;
 	border-color: transparent;
 	color: #fff;
 }
 
+.button .icon:first-child:not(:last-child) {
+  margin-left: calc(-0.25em - 1px);
+  margin-right: 0.25em;
+}
 
 .has-text-primary {
 	color: #ff78be !important;
@@ -76,6 +89,22 @@
 }
 
 .button.is-small {
-	border-radius: 2px;
+	border-radius: 5px;
 	font-size: 1rem;
+}
+
+.is-prime {
+	background-color: #9600c8;
+	border-color: transparent;
+	color: #fff;
+	height: 26px;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+	padding-top: 1px;
+}
+
+.is-prime:hover{
+	background-color: #ff78be;
+	border-color: transparent;
+	color: #fff;
 }
