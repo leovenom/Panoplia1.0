@@ -54,82 +54,84 @@
 
       <div id="navbar" class="navbar-menu">
 
-        <div class="navbar-start">
-          <div class="navbar-item">
-            <div class="field has-addons">
-              <div class="control mt3">
-              <% if user_signed_in? %>
-                <%#= link_to 'Shots', root_path , class:"button is-white" %>
-                <%= form_tag(searches_path, :method => 'get') do %>
-                  <%= text_field_tag :search, params[:search],  class:"input", type:"text",placeholder:"Search...",name:"search", onkeydown:'clickSubmit();'%>
-                </div>
-                <div class="control mt3">
-                  <%= submit_tag "SEARCH", :name => nil, class: "button is-black is-small", id:'search-form' %>
-                <% end %>
-                <% end %>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-
         <div class="navbar-end">
-              <% if user_signed_in? %>
-              <p class="navbar-item">
-                <%= link_to 'JOBS', jobs_path, class: "button is-black is-small mr3" %>
-                <%= link_to 'EVENTS', jobs_path, class: "button is-black is-small mr3 is-static" %>
-                <%= link_to 'STORE', jobs_path, class: "button is-black is-small mr3 is-static" %>
-                <%= link_to 'ABOUT', jobs_path, class: "button is-black is-small mr3 is-static" %>
-                
-                </p>
-                  <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="is-arrowless">
-                      <p class="navbar-item user">
-                        <% if current_user.avatar.attached? %>
-                        <%= link_to cl_image_tag(current_user.avatar.key), user_path(current_user), class:"is-hidden-mobile" %>
-                        <% else%>
-                        <%= link_to image_tag('panoplia-logo.png'), user_path(current_user), class:"button is-black" %>
-                        <% end%>
-                      </p>
-                    </a>
-                    <div class="navbar-dropdown is-right">
-                      <div class="navbar-item">
-                        <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black" %>
+          <% if user_signed_in? %>
+            <p class="navbar-item">
+              <%= link_to 'JOBS', jobs_path, class: "button is-black is-small mr3" %>
+              <%= link_to 'EVENTS', jobs_path, class: "button is-black is-small mr3 is-static" %>
+              <%= link_to 'STORE', jobs_path, class: "button is-black is-small mr3 is-static" %>
+              <%= link_to 'ABOUT', jobs_path, class: "button is-black is-small mr3 is-static" %>
+            </p>
+
+            <div class="navbar-start">
+              <div class="navbar-item">
+                <div class="field has-addons">
+                  <div class="control mt3">
+                    <% if user_signed_in? %>
+                      <%#= link_to 'Shots', root_path , class:"button is-white" %>
+                      <%= form_tag(searches_path, :method => 'get') do %>
+                        <%= text_field_tag :search, params[:search],  class:"input search", type:"text",placeholder:"Search...",name:"search", onkeydown:'clickSubmit();'%>
                       </div>
-                      <div class="navbar-item">
-                        <%= link_to 'PROFILE', user_path(current_user), class:"button is-black" %>
-                      </div>
-                      <hr class="navbar-divider">
-                      <div class="navbar-item logout">
-                        <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
-                      </div>
-                    </div>
+                      <div class="control mt3">
+                        <%= button_tag type: 'submit', class: "button is-black is-small", id: "search-form" do %>
+                          <i class="fas fa-search" aria-hidden="true"></i>
+                        <% end %>
+                      <% end %>
+                      <% end %>
                   </div>
-                  <% end %>
-                <p class="navbar-item">
-                <% if user_signed_in? %>
-                <%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
-                <%#= link_to 'videos', videos_path, class: "button is-black is-small mr3" %>
-                <%= link_to 'POST JOB', new_job_path, class: "button is-primary is-small mr3" %>
+                </div>
+                <div class="line"></div>
+              </div>
+            </div>
+            
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="is-arrowless">
+                <p class="navbar-item user">
+                  <% if current_user.avatar.attached? %>
+                  <%= link_to cl_image_tag(current_user.avatar.key), user_path(current_user), class:"is-hidden-mobile" %>
+                  <% else%>
+                  <%= link_to image_tag('panoplia-logo.png'), user_path(current_user), class:"button is-black" %>
+                  <% end%>
+                </p>
+              </a>
+              <div class="navbar-dropdown is-right">
+                <div class="navbar-item">
+                  <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black" %>
+                </div>
+                <div class="navbar-item">
+                  <%= link_to 'PROFILE', user_path(current_user), class:"button is-black" %>
+                </div>
+                <hr class="navbar-divider">
+                <div class="navbar-item logout">
+                  <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+            <p class="navbar-item">
+            <% if user_signed_in? %>
+            <%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
+            <%#= link_to 'videos', videos_path, class: "button is-black is-small mr3" %>
+            <%= link_to 'POST JOB', new_job_path, class: "button is-primary is-small mr3" %>
               <div class="navbar-item has-dropdown is-hoverable">
                   <p class="navbar-item">
                   <%= link_to new_shot_path, class:"button is-black is-small"  do %>
                   <span class="icon is-small"><i class="fa fa-upload" style="color:#9600c8;"></i></span>
                     <span>UPLOADS</span>
-                      <% end %> </p>
-                <div class="navbar-dropdown is-right">
-                  <div class="navbar-item">
-                    <%= link_to 'POST VIDEO', new_video_path, class: "button is-black is-small mr3" %>
+                      <% end %> 
+                  </p>
+                  <div class="navbar-dropdown is-right">
+                    <div class="navbar-item">
+                      <%= link_to 'POST VIDEO', new_video_path, class: "button is-black is-small mr3" %>
+                    </div>
+                    <div class="navbar-item">
+                      <%= link_to new_shot_path, class:"button is-black is-small"  do %>
+                      <%# <span class="icon is-small"><i class="fa fa-upload"></i></span> %>
+                      <span>POST SHOT</span>
+                      <% end %> 
+                    </div>
                   </div>
-                  <div class="navbar-item">
-                    <%= link_to new_shot_path, class:"button is-black is-small"  do %>
-                    <%# <span class="icon is-small"><i class="fa fa-upload"></i></span> %>
-                    <span>POST SHOT</span>
-                    <% end %> 
-                  </div>
-              </div>
-
-              </p>
+            </p>
 
 
               <div class="navbar-item logout">
