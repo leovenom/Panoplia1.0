@@ -177,3 +177,20 @@ video {
 	object-fit: cover;
 	height: 200px; //450px
 }
+
+input#search.input.search {
+	background-color: transparent;
+	color: white;
+	border-radius: 0px;
+	box-shadow: 0 0 0 0;
+	border-bottom: solid 1.2px white;
+	border-top: 0 none;
+  border-left: 0 none;
+  border-right: 0 none;
+}
+
+.line {
+	border-right: solid 1px white;
+	height: 45px;
+	border-radius: 0px;
+}
