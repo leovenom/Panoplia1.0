@@ -57,7 +57,7 @@
                 <span class="is-size-5"><%= @user.followers.count %></span>
               </div>
 
-              <div class="tag is-warning">
+              <div class="tag is-warning" id="pop" style="cursor:pointer;">
                 <span class="follow">FOLLOWINGS</span>
                 <span class="is-size-5"><%= @user.followings.count %></span>
               </div>
@@ -73,7 +73,8 @@
 </div>
 </div>
 
-
+<div class="columns is-desktop">
+<div class="column">
 <section class="section user">
 <p class="subtitle cards" style="
       margin-left: 25px;"
@@ -155,12 +156,11 @@
       <%end%>
     <%end%>
 <section>
+</div>
 
-
-
+<div class="info" id="info">
 <section class="section user">
- <div class="column is-5" style="margin-left: 25px;">
-  <p class="subtitle cards">Followings <span>USERS</span><i class="fas fa-sort-down"></i></p>
+  <p class="subtitle cards">Followings<i class="fas fa-sort-down"></i></p>
   <% @user.followings.each do |user| %>
     <div class="level-item-search">
       <div class="user-thumb-job">
@@ -174,3 +174,14 @@
   <%end%>
 </div>
 </section>
+</div>
+
+<script> 
+$('#info').hide(); 
+
+    $(document).ready(function() {
+        $('#pop').click(function() {
+                $('#info').slideToggle("slow");
+        });
+    });
+</script>
