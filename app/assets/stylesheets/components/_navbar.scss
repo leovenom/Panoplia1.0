@@ -1,9 +1,8 @@
 //navba
 .navbar-item, .navbar-link {
 	color: #4a4a4a;
-	//display: block;
 	line-height: 1.5;
-	padding: 0.8rem 2rem;
+	padding: 0px 30px;
 	margin: -1rem;
 	position: relative;
 }
@@ -12,8 +11,8 @@
 	margin: 12px 0 12px 5px;
 }
 .navbar-dropdown .navbar-item {
-  /* padding-left: 1.5rem; */
-  /* padding-right: 1.5rem; */
+  padding-left: 0.5rem;
+  padding-right: 1rem;
 }
 .navbar-dropdown a.navbar-item:hover {
 	background-color: transparent;
@@ -45,11 +44,11 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 	background-color: black;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
-	border-top: 1px solid black;
+	border-top: none;
 	padding-left: 0.9rem;
 	padding-top: 0;
 	min-width: 100%;
-	top: 92%;
+	top: 90%;
 }
 
 //navbar-burge
@@ -95,4 +94,8 @@ input#search.input.search {
 
 .fas.fa-search {
   height: 0px;
+}
+
+hr.navbar-divider {
+  margin-left: -14px;
 }

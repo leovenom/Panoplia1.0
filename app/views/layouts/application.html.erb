@@ -60,7 +60,7 @@
               <%= link_to 'JOBS', jobs_path, class: "button is-black is-small mr3" %>
               <%= link_to 'EVENTS', jobs_path, class: "button is-black is-small mr3 is-static" %>
               <%= link_to 'STORE', jobs_path, class: "button is-black is-small mr3 is-static" %>
-              <%= link_to 'ABOUT', jobs_path, class: "button is-black is-small mr3 is-static" %>
+              <%= link_to 'ABOUT', jobs_path, class: "button is-black is-small is-static" %>
             </p>
 
             <div class="navbar-start">
@@ -112,10 +112,10 @@
             <% if user_signed_in? %>
             <%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
             <%#= link_to 'videos', videos_path, class: "button is-black is-small mr3" %>
-            <%= link_to 'POST JOB', new_job_path, class: "button is-primary is-small mr3" %>
+            <%= link_to 'POST JOB', new_job_path, class: "button is-primarye is-small mr3" %>
               <div class="navbar-item has-dropdown is-hoverable">
                   <p class="navbar-item">
-                  <%= link_to new_shot_path, class:"button is-primary is-small"  do %>
+                  <%= link_to new_shot_path, class:"button is-primarye is-small"  do %>
                   <span class="icon is-small"><i class="fa fa-upload" style="color:#fff;"></i></span>
                     <span>UPLOADS</span>
                       <% end %> 
