@@ -7,7 +7,7 @@ class User < ApplicationRecord
   
   has_many :shots, dependent: :destroy
   has_many :videos, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
   acts_as_voter
   
 

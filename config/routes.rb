@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :videos
+  resources :videos do 
+  	resources :comments 
+  	member do 
+  		put 'like', to: "shots#like"
+  		put 'unlike', to: "shots#unlike"
+    end
+  end
+  
   resources :jobs
   resources :searches
   

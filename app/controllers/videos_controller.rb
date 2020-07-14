@@ -14,7 +14,7 @@ class VideosController < ApplicationController
     @videos = Video.all
     @random_video = Video.where.not(id: @video).order("RANDOM()").first
     @video = Video.find_by(id: params[:id])
-		@comments = @video.comments
+		#@comments = @video.comments
 
   end
 
