@@ -5,6 +5,7 @@ class VideosController < ApplicationController
   def index
     @videos = Video.all
     @all_videoss = Video.includes(:user).where.not(id: @Video).order('created_at DESC')
+    @shots = Shot.all
     
   end
 
