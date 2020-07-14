@@ -39,7 +39,7 @@
 						<% if user_signed_in? %>
 							<div class="comment-form">
 								<h3 class="subtitle is-4">Leave a reply</h3>
-								<%#= render 'comments/form' %>
+								<%= render 'comments/form_video' %>
 							</div>
 						<% else %>
 							<div class="content"><%= link_to 'Sign in', new_user_session_path %> to leave a comment.</div>

@@ -5,6 +5,7 @@ class VideosController < ApplicationController
   def index
     @videos = Video.all
     @all_videoss = Video.includes(:user).where.not(id: @Video).order('created_at DESC')
+    @shots = Shot.all
     
   end
 
@@ -14,7 +15,7 @@ class VideosController < ApplicationController
     @videos = Video.all
     @random_video = Video.where.not(id: @video).order("RANDOM()").first
     @video = Video.find_by(id: params[:id])
-		@comments = @video.comments
+		#@comments = @video.comments
 
   end
 
