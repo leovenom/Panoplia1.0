@@ -25,6 +25,26 @@
 
 }
 
+.videos-user {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	@media only screen and (min-width: 1600px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@media only screen and (max-width: 1300px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@media only screen and (max-width: 1100px) { 
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media only screen and (max-width: 800px) {
+		grid-template-columns: 1fr;
+	}
+	@media only screen and (max-width: 400px) {
+		grid-template-columns: 1fr;
+	}
+}
+
 iframe {
   background: black;
 }

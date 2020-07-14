@@ -147,33 +147,38 @@
 </section>
 
 <section class="section user">
-  <p class="subtitle cards" style="margin-left: 25px;">My<span> videos </span><i class="fas fa-sort-down"></i></p>
-    <% @user_videos.each  do | video | %>
-      <%= link_to video, class: "video" do %>
-          <div class="video-card">
-            <%= get_video_iframe(video.url) %>
-          </div>
-      <%end%>
-    <%end%>
-<section>
+        <p class="subtitle cards" style="margin-left: 25px;">BEST OF<span> VIDEOS </span><i class="fas fa-sort-down"></i></p>
+          <div id="scroll-content">
+            <div class="videos-user">
+              <% @user_videos.each do |video| %>
+                <section class="section">
+                  <%= link_to video, class: "video" do %>
+                  <%= get_video_iframe(video.url, '410px', '300px') %>
+                  <%end%>
+                </section>
+              <%end%>
+            </div>
+          </div>  
+</section>
 </div>
 
-<div class="info" id="info">
-<section class="section user">
-  <p class="subtitle cards">Followings<i class="fas fa-sort-down"></i></p>
-  <% @user.followings.each do |user| %>
-    <div class="level-item-search">
-      <div class="user-thumb-job">
-        <%=link_to cl_image_tag(user.avatar.key), user_path(user) unless user.avatar.blank? %> 
-      </div>
-      <div class="user-name-job">
-        <h3 class="shot-title job"><%=link_to user.name, user %></h3>
-        <p> <%= user.location %> </p>
-      </div>
-    </div>
-  <%end%>
-</div>
-</section>
+  <div class="info" id="info">
+    <section class="section user">
+      <p class="subtitle cards">Followings<i class="fas fa-sort-down"></i></p>
+      <% @user.followings.each do |user| %>
+        <div class="level-item-search">
+          <div class="user-thumb-job">
+            <%=link_to cl_image_tag(user.avatar.key), user_path(user) unless user.avatar.blank? %> 
+          </div>
+          <div class="user-name-job">
+            <h3 class="shot-title job"><%=link_to user.name, user %></h3>
+            <p> <%= user.location %> </p>
+          </div>
+        </div>
+      <%end%>
+  </div>
+    </section>
+
 </div>
 
 <script> 

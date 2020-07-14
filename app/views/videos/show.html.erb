@@ -3,38 +3,53 @@
 		<div class="columns">
 			<div class="column is-8 is-offset-2">
 				<div class="shot-container">
+
+					<div class="columns show-page is-desktop">
+						<div class="column is-7">
+							<div class="user-thumb-job">
+							<%=link_to cl_image_tag(@video.user.avatar.key), user_path(@video.user) unless @video.user.avatar.blank? %> 
+							</div>
+
+							<div class="user-name has-text-weight-bold">
+								<h3 class="video-title job"><%=link_to @video.title, @video %></h3>
+								<span class="by has-text-grey-light">by </span><%=link_to @video.user.name, @video.user, class:"shot-user-name" %>
+							</div>
+
+							<div class="content">
+								<%= @video.description %>
+							</div>
+
+						</div>
+					</div>
 		
 					<div class="video-full">
-						<%= get_video_iframe(@video.url) unless @video.url.blank? %>
+						<%= get_video_iframe(@video.url, '800px', '600px') unless @video.url.blank? %>
 					</div>
 
-						<% if user_signed_in? && (current_user.id == @video.user_id) %>		
-							<div class="buttons has-addons level-left">
-								<%= link_to 'Edit', edit_video_path(@video), class: "button" %>
-								<%= link_to 'Delete', video_path, class: "button", method: :delete, data: { confirm: 'Are you sure you want to delete this shot?'} %>
-							</div>
-						<% end %>
-
-						<div class="columns show-page is-desktop">
-							<div class="column is-7">
-								<div class="user-thumb-job">
-								<%=link_to cl_image_tag(@video.user.avatar.key), user_path(@video.user) unless @video.user.avatar.blank? %> 
-								</div>
-
-								<div class="user-name has-text-weight-bold">
-									<h3 class="video-title job"><%=link_to @video.title, @video %></h3>
-									<span class="by has-text-grey-light">by </span><%=link_to @video.user.name, @video.user, class:"shot-user-name" %>
-								</div>
-
-								<div class="content">
-									<%= @video.description %>
-								</div>
-
-							</div>
+					<% if user_signed_in? && (current_user.id == @video.user_id) %>		
+						<div class="buttons has-addons level-left">
+							<%= link_to 'Edit', edit_video_path(@video), class: "button" %>
+							<%= link_to 'Delete', video_path, class: "button", method: :delete, data: { confirm: 'Are you sure you want to delete this shot?'} %>
 						</div>
+					<% end %>
+
+					<section class="comments">
+						<h3 class="subtitle"><%= pluralize(@video.comments.count, 'Comment') %></h3>
+							<%= render @video.comments %>
+						<% if user_signed_in? %>
+							<div class="comment-form">
+								<h3 class="subtitle is-4">Leave a reply</h3>
+								<%#= render 'comments/form' %>
+							</div>
+						<% else %>
+							<div class="content"><%= link_to 'Sign in', new_user_session_path %> to leave a comment.</div>
+						<% end %>
+					</section>
+
+
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<%= link_to 'Back', videos_path, class:"text optional label"  %>
+<%= link_to 'Back', videos_path, class:"text optional label" %>
