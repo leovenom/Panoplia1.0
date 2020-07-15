@@ -1,8 +1,9 @@
+<div class="section">
+	<div class="container is-centered">
 
+<h1 class="title is-4">VIDEOS</h1>
 
-<h1>Videos</h1>
-
-<table>
+<table class="table is-striped is-hoverable">
   <thead>
     <tr>
       <th>Title</th> 
@@ -14,6 +15,7 @@
   <tbody>
     <% @videos.each do |video| %>
       <tr>
+      <% if user_signed_in? && (current_user.id == video.user_id) %>		
         <td><%= video.title %></td>
         <td><%= video.description %></td>
         <td><%#= video.user_id %></td>
@@ -21,19 +23,19 @@
         <td><%= link_to 'Show', video %></td>
         <td><%= link_to 'Edit', edit_video_path(video) %></td>
         <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
 <%= link_to 'New Video', new_video_path %>
 
+<br/>
+<br/>
+<br/>
+<h1 class="title is-4" >SHOTS</h1>
 
-<h1>Videos</h1>
-
-<table>
+<table class="table is-striped is-hoverable">
   <thead>
     <tr>
       <th>Title</th> 
@@ -41,10 +43,10 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-<%# if user_signed_in? && (current_user.id == @shot.user_id) %>
   <tbody>
     <% @shots.each do |shot| %>
       <tr>
+      <% if user_signed_in? && (current_user.id == shot.user_id) %>	
         <td><%= shot.title %></td>
         <td><%= shot.description %></td>
         <td><%#= shot.user_id %></td>
@@ -52,11 +54,13 @@
         <td><%= link_to 'Show', shot %></td>
         <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
         <td><%= link_to 'Destroy', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%# end %>
-<br>
 
-<%= link_to 'New Video', new_shot_path %>
+<%= link_to 'New Shot', new_shot_path %>
+
+</div>
+</div>

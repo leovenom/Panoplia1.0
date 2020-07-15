@@ -41,14 +41,20 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 	background-color: transparent;
 }
 .navbar-dropdown {
-	background-color: black;
+	background-color: #161616;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 	border-top: none;
-	padding-left: 0.9rem;
-	padding-top: 0;
+	padding-left: 21px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	min-width: 100%;
-	top: 90%;
+	top: 83%;
+	right: -14px;
+	left: -20px;
+
 }
 
 //navbar-burge
@@ -97,5 +103,15 @@ input#search.input.search {
 }
 
 hr.navbar-divider {
-  margin-left: -14px;
+  margin-left: -21px;
+}
+
+.triangle{
+  position: absolute;
+  top: -7px;
+  left: 47px;
+  width: 0;
+  border-bottom: solid 12px #161616;
+  border-right: solid 12px transparent;
+  border-left: solid 12px transparent;
 }
