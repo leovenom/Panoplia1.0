@@ -40,7 +40,7 @@ a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link
 .navbar-item {
 	background-color: transparent;
 }
-.navbar-dropdown {
+.navbar-dropdown.profile{
 	background-color: #161616;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
@@ -114,4 +114,34 @@ hr.navbar-divider {
   border-bottom: solid 12px #161616;
   border-right: solid 12px transparent;
   border-left: solid 12px transparent;
+}
+
+.navbar-dropdown.post {
+	background-color: #161616;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top: none;
+	padding-left: 16px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 0px;
+	top: 83%;
+	left: 6px;
+}
+
+.navbar-dropdown {
+	background-color: white;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	border-top: 2px solid #dbdbdb;
+	box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
+	display: none;
+	font-size: 0.875rem;
+	left: 0;
+	min-width: 75%;
+	position: absolute;
+	top: 100%;
+	z-index: 20;
 }
