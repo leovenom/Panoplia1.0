@@ -27,7 +27,7 @@
 					<% end %>
 
 		<div class="columns show-page is-desktop">
-			<div class="column is-7">
+			<div class="column is-7 pt3">
 							<div class="buttons two">
 								<% if user_signed_in? && !current_user?(@shot.user)%>
 								<% if current_user.following?(@shot.user) %>
@@ -67,7 +67,7 @@
 						<% end %>
 					</section>
 			</div>
-			<div class="column is-5 is-desktop">
+			<div class="column is-5 is-desktop pt0">
 
 
 								<% if user_signed_in? %>
