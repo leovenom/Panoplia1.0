@@ -2,15 +2,23 @@
 .shot-container .comments {
   margin-top: 14px;
   padding: 0;
+  color: black;
+  font-family: Brice-LightSemiCondensed;
+}
 
-  p {
-    color: black;
-    font-family: Brice-SemiBoldSemiCondensed;
-  }
+.description {
+  margin-top: 14px;
+  padding: 0;
+  color: black;
+  font-family: Brice-SemiBoldSemiCondensed;
 }
 
 .shot-full {
-	text-align: center;
+  text-align: center;
+  img {
+    height: auto;
+    width: 100%;
+  }
 }
 .video-full {
   text-align: center;
@@ -20,17 +28,8 @@
   height: 600px;
 }
 
-.button.is-roxo.icon {
-  padding: 28px 66px;
-}
-.button.is-black.icon {
-  background-color: black;
-  padding: 28px 66px;
-}
-.button.is-roxo.icon:hover {
-	background-color: black;
-  color: white;
-}
+
+
 
 .button.is-black.icon:hover {
 	background-color:black;;
@@ -50,7 +49,7 @@
 }
 
 .buttons.two {
-  justify-content: space-between;
+  justify-content: start;
 }
 
 .user-thumb.shot-show img {

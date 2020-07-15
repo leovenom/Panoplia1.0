@@ -9,14 +9,9 @@
 								<div class="user-thumb shot-show">
 								<%=link_to cl_image_tag(@shot.user.avatar.key, :quality=>"auto:good"), user_path(@shot.user) unless @shot.user.avatar.blank?%>
 								</div>
-
 								<div class="user-name">
 									<h3 class="title-title"><%= @shot.title %></h3>
 									<span class="by">By </span><%=link_to @shot.user.name, @shot.user %>
-								</div>
-
-								<div class="content">
-									<%= @shot.description %>
 								</div>
 							</div>
 						</div>
@@ -33,6 +28,31 @@
 
 		<div class="columns show-page is-desktop">
 			<div class="column is-7">
+							<div class="buttons two">
+								<% if user_signed_in? && !current_user?(@shot.user)%>
+								<% if current_user.following?(@shot.user) %>
+								<%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-dark outlined", method: :delete%>
+								<%else%>
+								<%= button_to "+FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-roxo outlined icon"%>
+								<%end%>
+								<%end%>
+ 								
+              	<% if user_signed_in? && !current_user?(@shot.user) %>
+              	<% if current_user.liked? @shot %>
+              	<%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
+              	<span class="button is-black icon"><i class="fa fa-heart has-text-primary"></i></span>
+              	<% end %>
+              	<% else %>
+              	<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+              	<span class="button is-roxo icon"><i class="fa fa-heart"></i> like</span>
+              	<% end %>
+              	<% end %>
+								<% end %>
+							</div>
+							
+								<div class="description">
+									<%= @shot.description %>
+								</div>
 
 					<section class="comments">
 						<h3 class="subtitle"><%= pluralize(@shot.comments.count, 'Comment') %></h3>
@@ -48,27 +68,7 @@
 					</section>
 			</div>
 			<div class="column is-5 is-desktop">
-							<div class="buttons two">
-								<% if user_signed_in? && !current_user?(@shot.user)%>
-								<% if current_user.following?(@shot.user) %>
-								<%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-dark", method: :delete%>
-								<%else%>
-								<%= button_to "+FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-roxo"%>
-								<%end%>
-								<%end%>
- 								
-              	<% if user_signed_in? && !current_user?(@shot.user) %>
-              	<% if current_user.liked? @shot %>
-              	<%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
-              	<span class="button is-black icon"><i class="fa fa-heart has-text-primary"></i></span>
-              	<% end %>
-              	<% else %>
-              	<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
-              	<span class="button is-roxo icon"><i class="fa fa-heart"></i></span>
-              	<% end %>
-              	<% end %>
-								<% end %>
-							</div>
+
 
 								<% if user_signed_in? %>
 							<div class="shot-contact">

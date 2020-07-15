@@ -22,7 +22,6 @@
   background-color: black;
   border-color: transparent;
   color: white;
-
 }
 .button.is-dark:hover {
   background-color: #9600c8;
@@ -74,13 +73,48 @@
 // }
 .button.is-roxo {
 	background-color: #9600c8;
-	color: white
-
+	color: white;
 }
 .button.is-roxo:hover {
 	background-color: black;
 	color: white
 }
+
+.button.is-roxo.outlined.icon {
+	padding: 0px 66px;
+  background-color: transparent;
+  border: solid 2px #9600c8;
+  color: #9600c8;
+  height: fit-content;
+}
+.button.is-roxo.outlined.icon:hover {
+	background-color: #9600c8;
+	color: white;
+}
+.button.is-dark.outlined {
+  background-color: black;
+  border-color: transparent;
+	color: white;
+	padding: 0px 11px;
+	height: 40px;
+}
+
+.button.is-roxo.icon {
+	padding: 18px 66px;
+  background-color: transparent;
+	border: solid 2px #9600c8;
+	color: #9600c8;
+}
+.button.is-roxo.icon:hover {
+	background-color: #9600c8;
+  color: white;
+}
+.button.is-black.icon {
+  background-color: black;
+  padding: 20px 66px;
+}
+
+
 .button.is-black {
 	background-color: transparent;
 }
@@ -100,7 +134,7 @@
 	height: 26px;
 	padding-left: 0.7em;
 	padding-right: 0.7em;
-	padding-top: 2px;
+	padding-top: px;
 }
 
 .is-prime:hover{
