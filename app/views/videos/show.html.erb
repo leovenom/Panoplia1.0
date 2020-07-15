@@ -23,7 +23,7 @@
 					</div>
 		
 					<div class="video-full">
-						<%= get_video_iframe(@video.url, '800px', '600px') unless @video.url.blank? %>
+						<%= get_video_iframe(@video.url, '888px', '666px') unless @video.url.blank? %>
 					</div>
 
 					<% if user_signed_in? && (current_user.id == @video.user_id) %>		
