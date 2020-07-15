@@ -1,5 +1,7 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+  impressionist :actions=> [:show, :index]
+  
   # GET /videos
   # GET /videos.json
   def index
