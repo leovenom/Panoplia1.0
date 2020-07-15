@@ -95,7 +95,7 @@
                 </p>
               </a>
               
-              <div class="navbar-dropdown">
+              <div class="navbar-dropdown profile">
               <span class="triangle"></span>
                 <div class="navbar-item">
                   <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black is-small" %>
@@ -104,7 +104,7 @@
                   <%= link_to 'PROFILE', user_path(current_user), class:"button is-black is-small" %>
                 </div>
                 <div class="navbar-item">
-                <%= link_to 'CONTENTS', videos_path, class: "button is-black is-small mr3" %>
+                <%= link_to 'CONTENTS', videos_path, class: "button is-black is-small" %>
                 </div>
                 <hr class="navbar-divider">
                 <div class="navbar-item logout">
@@ -124,10 +124,10 @@
                     <span>UPLOADS</span>
                       <% end %> 
                   </p>
-                  <div class="navbar-dropdown is-right">
+                  <div class="navbar-dropdown post">
                   <span class="triangle"></span>
                     <div class="navbar-item">
-                      <%= link_to 'POST VIDEO', new_video_path, class: "button is-black is-small mr3" %>
+                      <%= link_to 'POST VIDEO', new_video_path, class: "button is-black is-small" %>
                     </div>
                     <div class="navbar-item">
                       <%= link_to new_shot_path, class:"button is-black is-small"  do %>
