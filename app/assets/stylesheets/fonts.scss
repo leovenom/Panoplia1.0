@@ -57,3 +57,13 @@
 			 font-url('Brice-SemiBoldSemiExpanded.woff') format('woff'),
 			 font-url('Brice-SemiBoldSemiExpanded.woff2') format('woff2');
 }
+
+.table thead th  {
+	font-family: Brice-BoldSemiCondensed;
+	color: black;
+	font-size: 18px;
+}
+td {
+	font-family: Brice-LightSemiCondensed;
+	color: #101010;
+}
