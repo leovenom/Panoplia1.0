@@ -31,7 +31,7 @@
 				<div class="buttons two">
 					<% if user_signed_in? && !current_user?(@shot.user)%>
 					<% if current_user.following?(@shot.user) %>
-					<%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-dark outlined", method: :delete%>
+					<%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-darkn outlined", method: :delete%>
 					<%else%>
 					<%= button_to "+ FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-roxo outlined icon"%>
 					<%end%>
@@ -78,7 +78,7 @@
 						<% elsif !current_user?(@shot.user)%>
 						<%# if @shot.user.entity? %>
 						<p class="subtitle">This user is UNAVAILABLE for work</p>
-						<button class="button is-dark contact" title="Disabled button" disabled>HIRE ME</button>
+						<button class="button is-darkn contact" title="Disabled button" disabled>HIRE ME</button>
 						<%# end%>
 						<% end%>
 					</div>
