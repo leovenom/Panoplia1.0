@@ -34,7 +34,7 @@
   font-size: 24px;
 }
 .subtitle.edit {
-  font-family: Brice-SemiBoldSemiCondensed;
+  font-family: Brice-BoldSemiCondensed;
   color: black;
   font-size: 1rem;
 }
@@ -53,8 +53,8 @@ h1.title.edit {
   font-size: 1.5rem;
   margin-top: 25px;
   margin-bottom: 0px;
+  
 }
-
 
 .profile.edit  {
   background-color: #ffdc00;
@@ -63,7 +63,7 @@ h1.title.edit {
 }
 
 h1.title.edit{
-  font-family: Brice-SemiBoldSemiExpanded;
+  font-family: Brice-Bold;
 	color: #0a0a0a;
 }
 h3.title.edit.cancel {
@@ -75,4 +75,23 @@ h3.title.edit.cancel {
 max-width: 283px;
 height: 132px;
 max-height: 300px;
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+  font-family: Brice-BoldSemiCondensed;
+}
+
+.label:not(:last-child) {
+  margin-bottom: 0.5em;
+  color: black;
+  font-family: Brice-BoldSemiCondensed;
+}
+
+.text.optional.label {
+  color: black;
+  font-family: Brice-BoldSemiCondensed;
 }
