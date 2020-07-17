@@ -27,13 +27,13 @@
 					<% end %>
 
 		<div class="columns show-page is-desktop">
-			<div class="column is-7 pt3">
+			<div class="column is-8 pt3">
 							<div class="buttons two">
 								<% if user_signed_in? && !current_user?(@shot.user)%>
 								<% if current_user.following?(@shot.user) %>
 								<%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-dark outlined", method: :delete%>
 								<%else%>
-								<%= button_to "+FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-roxo outlined icon"%>
+								<%= button_to "+ FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-roxo outlined icon"%>
 								<%end%>
 								<%end%>
  								
@@ -44,7 +44,7 @@
               	<% end %>
               	<% else %>
               	<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
-              	<span class="button is-roxo icon"><i class="fa fa-heart"></i> like</span>
+              	<span class="button is-roxo icon"><i class="fa fa-heart"></i>LIKE</span>
               	<% end %>
               	<% end %>
 								<% end %>
@@ -67,17 +67,17 @@
 						<% end %>
 					</section>
 			</div>
-			<div class="column is-5 is-desktop pt0">
+			<div class="column is-4 pt0">
 
 
 								<% if user_signed_in? %>
 							<div class="shot-contact">
 								<% if @shot.user.available? && !current_user?(@shot.user)%>
 								<p class="subtitle">This user is AVAILABLE for work</p>
-								<%= mail_to @shot.user.email,"+ CONTACT ME", class:'button is-roxo contact' %>
+								<%= mail_to @shot.user.email,"HIRE ME", class:'button is-roxo contact' %>
 								<% elsif !current_user?(@shot.user)%>
 								<% if @shot.user.entity? %>
-								<button class="button is-dark contact" title="Disabled button" disabled>+ CONTACT ME</button>
+								<button class="button is-dark contact" title="Disabled button" disabled>HIRE ME</button>
 								<% end%>
 								<% end%>
 							</div>

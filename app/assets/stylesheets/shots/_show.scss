@@ -39,17 +39,8 @@
   background-color: black;
 }
 
-.column.is-5{
-  //flex: none;
-  //width: 41.6666666667%;
-}
-
 .column.is-5.is-offset-1 {
   padding-top: 28px;
-}
-
-.buttons.two {
-  justify-content: start;
 }
 
 .user-thumb.shot-show img {
@@ -66,25 +57,17 @@
   top: 0rem;
 }
 .level-item.comments.data.icons{
-  padding: 0 70px 0 70px;
+  padding: 0 45px 0 45px;
   margin-top: 0;
 }
 
 .shot-contact {
   p.subtitle  {
-    margin-bottom: 0px;
-    //margin-top: 20px;
+    margin-bottom: 7px;
     font-size: 1rem;
     color: #9600c8;
     font-family: Brice-SemiBoldSemiCondensed;
   }
-}
-
-.button.contact{
-  justify-content: center;
-  padding-left: 110px;
-  padding-right: 110px;
-  margin-bottom: 20px;
 }
 
 .shot-wrapper.shot {
