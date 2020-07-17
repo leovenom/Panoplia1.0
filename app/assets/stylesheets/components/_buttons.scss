@@ -18,7 +18,7 @@
   border-color: transparent;
   color: #fff;
 }
-.button.is-dark {
+.button.is-darkn {
   background-color: black;
   border-color: transparent;
 	color: white;
@@ -26,9 +26,14 @@
   height: 35px;
 }
 .button.is-dark:hover {
-  background-color: #9600c8;
+  background-color: #363636;
   border-color: transparent;
-  color: white;
+	color: white;
+}
+.button.is-dark {
+  background-color: black;
+  border-color: transparent;
+	color: white;
 }
 .button.is-dark[disabled]:hover {
 	background-color: #363636;
@@ -190,11 +195,11 @@
 	height: 40px;
 	width: 100%;
 }
-.button.contact:hover{
-	background-color: white;
-	color: #9600c8;
-	border: solid 2px #9600c8;
-}
+// .button.contact:hover{
+// 	background-color: white;
+// 	color: #9600c8;
+// 	border: solid 2px #9600c8;
+// }
 //delete button
 .button.is-danger {
   background-color: #f14668;
