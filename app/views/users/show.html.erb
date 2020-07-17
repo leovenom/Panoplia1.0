@@ -11,20 +11,22 @@
             <%= image_tag 'panoplia-logo.png' %>
           <% end %>
             </figure>
-              <% if @user.entity  %>
-              <p class="title">I am a Company</p>
-              <% else %>
-              <p class="title">I am an Artist</p>
-              <%end%>
           </div>
 
           <div class="column is-6 has-text-centered">
             <h1 class="title name is-size-3-mobile is-size-2-fullhd">
               <%= @user.name.upcase %>
             </h1>
-            <p class="subtitle art">
+            <div style="display: inline-flex;">
+              <% if @user.entity  %>
+                <p class="about">I am a Company</p>
+              <% else %>
+                <p class="about">I am an Artist</p>
+              <%end%>
+            <p class="subtitle art">•
               <%= @user.art %>
             </p>
+            </div>
             <p class="subtitle bio">
               <%= @user.bio %>
             </p>
@@ -79,7 +81,9 @@
 <p class="subtitle cards" style="
       margin-left: 25px;"
       >My<span> PROJECTS </span><i class="fas fa-sort-down"></i></p>
+  <div id="scroll-content">
   <div class="shots user">
+  
     <% @user_shots.each do|shot|%>
     <section class="section">
       <div class="shot-grid-item">
@@ -100,16 +104,19 @@
           <% end%>
 
           <% if user_signed_in?%>
-          <nav class="level shot-analytics">
-            <div class="level-left"></div>
-            <div class="level-right">
-              <div class="level-item views data">
+          <nav class="level shot-analytics image">
+            <div class="level-left ml3">
+            <div class="user-name"><%=link_to shot.title, shot %>
+            </div>
+            </div>
+            <div class="level-right mr4">
+              <div class="level-item views data image">
                 <%= link_to shot do %>
                 <span class="icon"><i class="fa fa-eye"></i></span>
                 <%= shot.impressionist_count %>
                 <% end %>
               </div>
-              <div class="level-item comments data">
+              <div class="level-item comments data image">
                 <%= link_to shot do %>
                 <span class="icon"><i class="fa fa-comment"></i></span>
                 <%= shot.comments.count %>
@@ -144,23 +151,71 @@
     </section>
     <% end %>
   </div>
+  </div>
 </section>
 
 <section class="section user">
-        <p class="subtitle cards" style="margin-left: 25px;">BEST OF<span> VIDEOS </span><i class="fas fa-sort-down"></i></p>
+        <p class="subtitle cards" style="margin-left: 25px;">My<span> VIDEOS </span><i class="fas fa-sort-down"></i></p>
           <div id="scroll-content">
             <div class="videos-user">
               <% @user_videos.each do |video| %>
                 <section class="section">
                   <%= link_to video, class: "video" do %>
-                  <%= get_video_iframe(video.url, '410px', '300px') %>
+                  <%= get_video_iframe(video.url, '410.6px', '300px') %>
                   <%end%>
+                    <nav class="level shot-analytics video">
+                      <div class="level-left ml3">
+                        <div class="level-item">
+                          <div class="user-name"><%=link_to video.title, video %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="level-right index video mr4">
+                        <div class="level-item views data video">
+                          <%= link_to video do %>
+                          <span class="icon"><i class="fa fa-eye"></i></span>
+                          <%= video.impressionist_count %>
+                          <% end %>
+                        </div>
+                        <div class="level-item comments data video">
+                          <%= link_to video do %>
+                          <span class="icon"><i class="fa fa-comment"></i></span>
+                          <%= video.comments.count %>
+                          <% end %>
+                        </div>
+                        <div class="level-item likes">
+                          <% if user_signed_in? %>
+                          
+                          <% if current_user.liked? video %>
+                          <%= link_to unlike_shot_path(video), method: :put, class: "unlike_video" do %>
+                          <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+                          <span class="vote_count"><%= video.get_likes.size %></span>
+                          <% end %>
+                          <% else %>
+                          <%= link_to like_shot_path(video), method: :put, class: "like_video" do %>
+                          <span class="icon"><i class="fa fa-heart"></i></span>
+                          <span class="vote_count"><%= video.get_likes.size %></span>
+                          <% end %>
+                          <% end %>
+                          <% else %>
+                          <%= link_to like_shot_path(video), method: :put, class: "like_video" do %>
+                          <span class="icon"><i class="fa fa-heart"></i></span>
+                          <span class="vote_count"><%= video.get_likes.size %></span>
+                          <% end %>
+                          <% end %>
+
+                        </div>
+                      </div>
+                    </nav>
                 </section>
               <%end%>
             </div>
-          </div>  
+          </div>
+    
 </section>
 </div>
+
+
 
   <div class="info" id="info">
     <section class="section user">
