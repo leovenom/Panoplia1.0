@@ -32,6 +32,7 @@
 	background-color: #363636;
 	border-color: transparent;
 	box-shadow: none;
+	color: white;
 }
 .logout {
 	padding-left: 1rem;
@@ -51,6 +52,20 @@
 	padding-left: 0.7em;
 	padding-right: 0.7em;
 }
+.button.is-primarye:hover {
+	background-color: #ff78be;
+	border-color: transparent;
+	color: #fff;
+}
+.button.is-primarye.is-large {
+	height: 35px;
+}
+.button.is-primarye.is-large:hover {
+	background-color: #ff78be;
+	border-color: transparent;
+	color: #fff;
+}
+
 .button.is-primary:hover, .button.is-primary.is-hovered {
 	background-color: #ff78be;
 	border-color: transparent;
@@ -134,10 +149,17 @@
 .button.is-black:hover {
 	background-color: transparent;
 }
+
 .button.is-small {
 	border-radius: 5px;
+	font-size: 16px;
+	height: 26px;
+	padding-top: 0px;
+}
+.button.is-small.nav {
+	border-radius: 5px;
 	font-size: 14px;
-  height: 33px;
+  height: 23px;
 }
 
 //buttons prime

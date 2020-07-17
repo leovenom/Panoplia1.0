@@ -30,16 +30,13 @@
           <div class="form-actions">
             <%= f.button :submit, class:"button is-prime is-small" %>
           </div>
-        </div>
-        <div style="display: flex;">
-          <%= link_to 'Show', @video, class:"text optional label"  %> | 
-          <%= link_to 'Back', videos_path, class:"text optional label" %>
+          <div style="display: flex;">
+            <%= link_to 'SHOW ', @video, class:"text optional label mt3"  %>
+            <span class=" mt3"> | </span>
+            <%= link_to ' BACK', videos_path, class:"text optional label mt3" %>
         </div> 
+        </div>
       </div> 
-      <br/>
-      <br/>
-      <br/>
-      <br/>
       </div> 
 <% end %>
 

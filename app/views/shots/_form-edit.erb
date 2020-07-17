@@ -33,15 +33,15 @@
                       <div class="control">
                         <%= f.button :submit, class:"button is-prime is-small" %>
                       </div>
+                      <div style="display: flex;">
+                        <%= link_to 'Show', @shot, class:"text optional label mt3" %> | 
+                        <%= link_to 'Back', shots_path, class:"text optional label mt3" %>
+                      </div> 
                     </div>
         </div>
                   <br/>
                   <br/>
                   <br/>
                   <br/>
-                    <div style="display: flex;">
-                      <%= link_to 'Show', @shot, class:"text optional label"  %> | 
-                      <%= link_to 'Back', shots_path, class:"text optional label" %>
-                    </div> 
     </div>           
 <% end %>
