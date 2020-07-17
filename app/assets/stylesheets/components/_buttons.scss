@@ -2,7 +2,7 @@
 
 .button {
 	font-family: Brice-SemiBoldSemiCondensed;
-	font-size: 1.4rem;
+	//font-size: 1.4rem;
 	border: 0;
 }
 .button.is-large {
@@ -82,13 +82,20 @@
 	color: white
 }
 
+//buttons - shot show outlin
+.buttons.two {
+	justify-content: start;
+	padding-top: 11px;
+}
+
 //buttons - show page shot outlin
 .button.is-roxo.outlined.icon {
 	padding: 2px 66px;
   background-color: transparent;
   border: solid 2px #9600c8;
   color: #9600c8;
-  height: fit-content;
+	height: 40px;
+	margin-right: 20px;
 }
 .button.is-roxo.outlined.icon:hover {
 	background-color: #9600c8;
@@ -116,6 +123,9 @@
   background-color: black;
   padding: 20px 66px;
 }
+.fa-heart:before {
+	margin-right: 4px;
+}
 
 //buttons - show page shot outlin icon clicked
 .button.is-black {
@@ -124,24 +134,49 @@
 .button.is-black:hover {
 	background-color: transparent;
 }
-
 .button.is-small {
 	border-radius: 5px;
-	font-size: 0.9rem;
+	font-size: 14px;
+  height: 33px;
 }
 
+//buttons prime
 .is-prime {
 	background-color: #9600c8;
 	border-color: transparent;
 	color: #fff;
-	height: 26px;
+	//height: 26px;
 	padding-left: 0.7em;
 	padding-right: 0.7em;
-	padding-top: px;
 }
 
 .is-prime:hover{
 	background-color: #ff78be;
 	border-color: transparent;
 	color: #fff;
+}
+
+//buttons large contact shot show
+.button.contact{
+  justify-content: center;
+  margin-bottom: 20px;
+	height: 40px;
+	width: 100%;
+}
+.button.contact:hover{
+	background-color: white;
+	color: #9600c8;
+	border: solid 2px #9600c8;
+}
+//delete button
+.button.is-danger {
+  background-color: #f14668;
+  border-color: transparent;
+  color: #fff;
+  height: 30px;
+}
+.button.is-danger:hover, .button.is-danger.is-hovered {
+  background-color: #d92549;
+  border-color: transparent;
+  color: #fff;
 }
