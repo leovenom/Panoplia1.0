@@ -28,31 +28,31 @@
 
 		<div class="columns show-page is-desktop">
 			<div class="column is-8 pt3">
-							<div class="buttons two">
-								<% if user_signed_in? && !current_user?(@shot.user)%>
-								<% if current_user.following?(@shot.user) %>
-								<%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-dark outlined", method: :delete%>
-								<%else%>
-								<%= button_to "+ FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-roxo outlined icon"%>
-								<%end%>
-								<%end%>
- 								
-              	<% if user_signed_in? && !current_user?(@shot.user) %>
-              	<% if current_user.liked? @shot %>
-              	<%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
-              	<span class="button is-black icon"><i class="fa fa-heart has-text-primary"></i></span>
-              	<% end %>
-              	<% else %>
-              	<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
-              	<span class="button is-roxo icon"><i class="fa fa-heart"></i>LIKE</span>
-              	<% end %>
-              	<% end %>
-								<% end %>
-							</div>
-							
-								<div class="description">
-									<%= @shot.description %>
-								</div>
+				<div class="buttons two">
+					<% if user_signed_in? && !current_user?(@shot.user)%>
+					<% if current_user.following?(@shot.user) %>
+					<%= button_to "UNFOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-dark outlined", method: :delete%>
+					<%else%>
+					<%= button_to "+ FOLLOW", friendships_path(user_id: @shot.user.id), class:"button is-roxo outlined icon"%>
+					<%end%>
+					<%end%>
+					
+					<% if user_signed_in? && !current_user?(@shot.user) %>
+					<% if current_user.liked? @shot %>
+					<%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
+					<span class="button is-black icon"><i class="fa fa-heart has-text-primary"></i></span>
+					<% end %>
+					<% else %>
+					<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+					<span class="button is-roxo icon"><i class="fa fa-heart"></i>LIKE</span>
+					<% end %>
+					<% end %>
+					<% end %>
+				</div>
+				
+				<div class="description">
+					<%= @shot.description %>
+				</div>
 
 					<section class="comments">
 						<h3 class="subtitle"><%= pluralize(@shot.comments.count, 'Comment') %></h3>
@@ -70,54 +70,55 @@
 			</div>
 			<div class="column is-4 pt0">
 
-								<% if user_signed_in? %>
-							<div class="shot-contact">
-								<% if @shot.user.available? && !current_user?(@shot.user)%>
-								<p class="subtitle">This user is AVAILABLE for work</p>
-								<%= mail_to @shot.user.email,"HIRE ME", class:'button is-roxo contact' %>
-								<% elsif !current_user?(@shot.user)%>
-								<% if @shot.user.entity? %>
-								<button class="button is-dark contact" title="Disabled button" disabled>HIRE ME</button>
-								<% end%>
-								<% end%>
-							</div>
-							 <% end %>
+				<% if user_signed_in? %>
+					<div class="shot-contact">
+						<% if @shot.user.available? && !current_user?(@shot.user)%>
+						<p class="subtitle">This user is AVAILABLE for work</p>
+						<%= mail_to @shot.user.email,"HIRE ME", class:'button is-roxo contact' %>
+						<% elsif !current_user?(@shot.user)%>
+						<%# if @shot.user.entity? %>
+						<p class="subtitle">This user is UNAVAILABLE for work</p>
+						<button class="button is-dark contact" title="Disabled button" disabled>HIRE ME</button>
+						<%# end%>
+						<% end%>
+					</div>
+				<% end %>
            
-				      <nav class="shot-analytics shot">
-                  <div class="level-item views data">
-                    <%= link_to @shot do %>
-                    <span class="icon"><i class="fa fa-eye"></i></span>
-                    <%= @shot.impressionist_count %>
-                    <% end %>
-                  </div>
-                  <div class="level-item comments data icons">
-                    <%= link_to @shot do %>
-                    <span class="icon"><i class="fa fa-comment"></i></span>
-                    <%= @shot.comments.count %>
-                    <% end %>
-                  </div>
-                  <div class="level-item likes">
-                    <% if user_signed_in? %>
-                    
-                    <% if current_user.liked? @shot %>
-                    <%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
-                    <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
-                    <span class="vote_count"><%= @shot.get_likes.size %></span>
-                    <% end %>
-                    <% else %>
-                    <%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
-                    <span class="icon"><i class="fa fa-heart"></i></span>
-                    <span class="vote_count"><%= @shot.get_likes.size %></span>
-                    <% end %>
-                    <% end %>
-                    <% else %>
-                    <%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
-                    <span class="icon"><i class="fa fa-heart"></i></span>
-                    <span class="vote_count"><%= @shot.get_likes.size %></span>
-                    <% end %>
-                    <% end %>
-                  </div>
-              </nav>
+				<nav class="shot-analytics shot">
+					<div class="level-item views data">
+						<%= link_to @shot do %>
+						<span class="icon"><i class="fa fa-eye"></i></span>
+						<%= @shot.impressionist_count %>
+						<% end %>
+					</div>
+					<div class="level-item comments data icons">
+						<%= link_to @shot do %>
+						<span class="icon"><i class="fa fa-comment"></i></span>
+						<%= @shot.comments.count %>
+						<% end %>
+					</div>
+					<div class="level-item likes">
+						<% if user_signed_in? %>
+						
+						<% if current_user.liked? @shot %>
+						<%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
+						<span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+						<span class="vote_count"><%= @shot.get_likes.size %></span>
+						<% end %>
+						<% else %>
+						<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+						<span class="icon"><i class="fa fa-heart"></i></span>
+						<span class="vote_count"><%= @shot.get_likes.size %></span>
+						<% end %>
+						<% end %>
+						<% else %>
+						<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+						<span class="icon"><i class="fa fa-heart"></i></span>
+						<span class="vote_count"><%= @shot.get_likes.size %></span>
+						<% end %>
+						<% end %>
+					</div>
+				</nav>
 
 							<div class="shot-wrapper shot">
 								<p class="subtitle">More from others users</p>
