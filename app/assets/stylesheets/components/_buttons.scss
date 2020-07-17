@@ -21,7 +21,9 @@
 .button.is-dark {
   background-color: black;
   border-color: transparent;
-  color: white;
+	color: white;
+	width: 102px;
+  height: 35px;
 }
 .button.is-dark:hover {
   background-color: #9600c8;
@@ -91,7 +93,10 @@
 .button.is-roxo {
 	background-color: #9600c8;
 	color: white;
+	width: 102px;
+  height: 35px;
 }
+
 .button.is-roxo:hover {
 	background-color: black;
 	color: white
