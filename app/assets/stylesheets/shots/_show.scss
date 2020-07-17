@@ -16,8 +16,9 @@
 .shot-full {
   text-align: center;
   img {
-    height: auto;
-    width: 100%;
+    height: 888px;
+    width: 888px;
+    object-fit: cover;
   }
 }
 .video-full {
@@ -58,6 +59,14 @@
 }
 .level-item.comments.data.icons{
   padding: 0 45px 0 45px;
+  margin-top: 0;
+}
+.level-item.comments.data{
+  padding: 0 30px 0 30px;
+  margin-top: 0;
+}
+.level-item.comments.data.video{
+  padding: 0 20px 0 20px;
   margin-top: 0;
 }
 
