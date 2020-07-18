@@ -17,11 +17,10 @@ class JobsController < ApplicationController
     #@jobs = Job.where(["description ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
 
     #@jobs = Job.where(["title ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
-    
+
     # @jobs = Job.where(["art_type ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
-
   end
-
+  
   # GET /jobs/1
   # GET /jobs/1.json
   def show
