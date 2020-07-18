@@ -1,7 +1,14 @@
 <nav class="">
   <p class="title jobs text-uppercase has-text-centered pv1 f6">JOB BOARD</p>
+    
+    <div class="control mt3">
+    <%= form_tag(jobs_path, :method => 'get') do %>
+      <%= text_field_tag :search, params[:search],  class:"input search", type:"text",placeholder:"Search...",name:"search"%>
+    <% end %>
+    </div>
 
   <ul class="mb3 pa0">
+  
     <li class="pv1">
       <%= link_to 'All', jobs_path, class: "button is-fullwidth is-dark" %>
     </li>
@@ -21,6 +28,5 @@
     <li class="pv1">
       <%= link_to 'Contract', jobs_path(job_type: "Contract"), class: "button is-fullwidth is-info" %>
     </li>
-    
   </ul>
 </nav>

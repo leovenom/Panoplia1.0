@@ -32,6 +32,9 @@ class SearchesController < ApplicationController
     #   if params[:search].present? && params[:search][:query].present?
     #   @jobs = policy_scope(JOB).where(["title ILIKE ?", "%#{params[:search]}%"])
     #   end
+    #@jobs = Job.where(["title ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+
+
   end
 
   def new
