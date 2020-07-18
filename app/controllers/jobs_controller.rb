@@ -6,9 +6,20 @@ class JobsController < ApplicationController
   def index
     if(params.has_key?(:job_type))
       @jobs = Job.where(job_type: params[:job_type]).order("created_at desc")
+    elsif
+      @jobs = Job.where(["location ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
     else
       @jobs = Job.all.order("created_at desc")
     end
+
+    #@jobs = Job.where(["location ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+
+    #@jobs = Job.where(["description ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+
+    #@jobs = Job.where(["title ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    
+    # @jobs = Job.where(["art_type ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+
   end
 
   # GET /jobs/1
@@ -102,6 +113,6 @@ class JobsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def job_params
-      params.require(:job).permit(:title, :description, :url, :job_type, :location, :job_author, :remote_ok, :apply_url, :art_type, :avatar)
+      params.require(:job).permit(:title, :description, :url, :job_type, :location, :job_author, :remote_ok, :apply_url, :art_type, :avatar, :search)
     end
 end
