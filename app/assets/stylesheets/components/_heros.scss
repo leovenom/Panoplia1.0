@@ -27,7 +27,7 @@
 	padding-bottom: 4rem;
 }
 .hero.is-warning.profile {
-	padding: 4rem;
+	padding: 4rem 4rem 4rem 1rem;
 }
 
 .warning .title {
@@ -86,7 +86,7 @@
 }
 
 .column.is-background {
-	background-image: url('https://res.cloudinary.com/pinoplia/image/upload/v1592992193/backgroundv_gjjok1.png');
+	background-image: image-url("background-upload-JPG.jpg");
 	position: relative;
 	background-size: cover; 
 	background-position: center;

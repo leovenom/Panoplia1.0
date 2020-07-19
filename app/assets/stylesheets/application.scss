@@ -105,8 +105,8 @@ html, body {
 
 #drop_zone {
 	position: relative;
-	padding: 3rem 0;
-	border: 2px dashed #ccc;
+	padding: 14rem 0;
+	border: 2px dashed #9600c8;
 	text-align: center;
 	border-radius: 6px;
 	background-color: #f8f8trf8;
@@ -138,6 +138,31 @@ html, body {
 	}
 }
 
+.title-drag {
+	font-family: Brice-Bold;
+	color: black;
+}
+
+.file-label, .file-name {
+	font-family: Brice-BoldSemiCondensed;
+}
+
+.file.is-primary .file-cta {
+  background-color: #9600c8;
+  border-color: transparent;
+  color: #fff;
+}
+
+.file.is-primary:hover .file-cta:hover {
+  background-color: #ff78be;
+  border-color: transparent;
+  color: #fff;
+}
+
+.is-warning.drag {
+
+	padding-left: 4rem;
+}
 
 .field.is-grouped {
   display: table-caption;
