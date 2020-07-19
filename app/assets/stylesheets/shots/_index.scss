@@ -86,6 +86,15 @@ h3.shot-title.job {
   justify-content: center;
 }
 
+.level-item-jobz {
+  align-items: top;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: right;
+}
+
 .fas.fa-sort-down {
 	font-size: 16px;
 	color: #9600c8;
