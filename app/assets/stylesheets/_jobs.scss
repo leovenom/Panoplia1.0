@@ -6,9 +6,12 @@
   margin-bottom: 10px !important;
   a {
     color: hsl(0, 0%, 21%);
+    font-family: Brice-LightSemiCondensed;
   }
 }
-
+.index-title a:hover {
+  color: hsl(0, 0%, 21%);
+}
 
 p.title.jobs {
   font-family: Brice-Bold;
@@ -22,15 +25,60 @@ h1.title {
   color: black;
 }
 
-.jobs-show {
-  @media screen and (max-width: 800px) {
-    
-  }
-}
+
 .job-board {
   background-color: #ffdc00;
+  height: 662px;
 }
 
 .board {
   padding: 0px 10px 0px 20px;
+}
+
+.job-description {
+  padding-right: 2rem;
+}
+
+.jobz {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  padding-left: 80px;
+	margin: 0 1.5rem 0 1.5rem;
+	@media only screen and (min-width: 1600px) {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media only screen and (max-width: 1300px) {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media only screen and (max-width: 1100px) { 
+		grid-template-columns: 1fr 1fr;
+	}
+	@media only screen and (max-width: 800px) {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media only screen and (max-width: 650px) {
+		grid-template-columns: 1fr;
+	}
+
+}
+
+.columns.job:not(:last-child) {
+  margin-bottom: 0;
+}
+
+p.job-art-type {
+  margin: 0 10px;
+  background-color: #bfbfbf;
+  border-radius: 4px;
+  font-family: Brice-SemiBoldSemiCondensed;
+  color: white;
+  align-items: center;
+  display: inline-flex;
+  font-size: 9px;
+  height: 2.5em;
+  justify-content: center;
+  line-height: 1.5;
+  white-space: nowrap;
+  padding: 6.5px;
 }
