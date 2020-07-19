@@ -18,13 +18,13 @@
           <%= link_to image_tag('panoplia-logo.png'), user_path(job.user) %>
         <% end %> 
       </div>
-      <div class="user-name-job">
+      <div class="user-name-jobz">
         <h3 class="shot-title job"><%= link_to job.title, job %></h3>
-        <%=link_to job.user.name, job.user, class:"shot-user-name" %>
+        <%=link_to job.user.name, job.user, class:"job-user-name" %>
       </div>
     </div>
         <ul>
-          <li><%= link_to job.job_author, job.url %></li>
+          <li><%#= link_to job.job_author, job.url %></li>
         </ul>
         <div class="pv2 f6 index-title">
           <%= link_to sanitize(job.description.truncate(200, separator: '</p>')), job %>
