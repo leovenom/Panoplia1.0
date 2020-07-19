@@ -82,3 +82,21 @@ p.job-art-type {
   white-space: nowrap;
   padding: 6.5px;
 }
+.job-user-name {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Brice-LightSemiCondensed;
+  font-size: 15px;
+}
+
+.shot-title.job a{
+  font-family: Brice-BoldSemiCondensed;
+  color: black;
+  font-size: 1.2rem;
+}
+.user-name-jobz {
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+}
