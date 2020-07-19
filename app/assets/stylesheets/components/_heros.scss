@@ -27,7 +27,12 @@
 	padding-bottom: 4rem;
 }
 .hero.is-warning.profile {
-	padding: 4rem 4rem 4rem 1rem;
+	padding: 4rem 4rem 0 1rem;
+}
+
+.textarea:not([rows]) {
+  max-height: 288px;
+  min-height: 8em;
 }
 
 .warning .title {
@@ -75,7 +80,7 @@
   padding-top: 0rem;
 }
 .hero.is-purple {
-	background-color:#9600c8;
+	background-color:#ffdc00;
 	flex: 0 0 263px;
 }
 .hero.is-primaryv  {
