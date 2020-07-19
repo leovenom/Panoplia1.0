@@ -3,7 +3,7 @@
     
     <div class="control mt3">
     <%= form_tag(jobs_path, :method => 'get') do %>
-      <%= text_field_tag :search, params[:search],  class:"input search x", type:"text",placeholder:"Search...",name:"search"%>
+      <%= text_field_tag :search, params[:search],  class:"input search x", type:"text",placeholder:"Search job",name:"search"%>
     <% end %>
     </div>
 
@@ -30,3 +30,10 @@
     </li>
   </ul>
 </nav>
+
+<%= form_tag(jobs_path, method: "get") do %>
+<select  name=jobs[:role], class="form-control">
+  <option value="None">__Select__</option>
+  <option value="Full-time">Full-time</option>
+</select>
+<%end%>
