@@ -1,4 +1,4 @@
-<div class="columns border-top is-desktop">
+<div class="columns job">
 
   <div class="column is-2 job-board">
     <div class="board">
@@ -6,10 +6,10 @@
     </div>
   </div>
 
-  <div class="column is-9 pl6 pt3 jobs-show" id="scroll-content">
+  <div class="column jobs-show jobz pt5" id="scroll-content">
     <% @jobs.each do |job| %>
-    <div class="columns border-bottom pt4">
-      <div class="column is-8">
+    <div class="columns">
+      <div class="column job-description">
         <h3 class="shot-title job title is-4 index-title"><%= link_to job.title, job %></h3>
           <ul>
             <li><%= link_to job.job_author, job.url %></li>
@@ -29,13 +29,13 @@
               <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-outlined pb3' %></li>
           </ul>
         <% end %>
-
-        </div>
-        <div class="column has-text-right">
+          <div style="display: flex;">
           <%= job_type(job.job_type) %>
-          <p class="pt2 f6"><%= job.art_type %></p>
-          <p class="pt2 f6"><%= job.location %></p>
+          <p class="f6 job-art-type"> <%= job.art_type %> </p>
+          <p class="f6"><%= job.location %></p>
         </div>
+        </div>
+
       </div>
     <% end %>
   </div>

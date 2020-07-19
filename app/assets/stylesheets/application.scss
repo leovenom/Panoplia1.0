@@ -47,7 +47,8 @@ $link-hover: darken($primary, 20%);
   background-color: transparent;
 }
 .tag:not(body).is-warningi {
-  background-color: #ffdc00;
+	background-color: #ffdc00;
+	height: 2.5em;
 }
 
 .tag:not(body).is-primaryy{
