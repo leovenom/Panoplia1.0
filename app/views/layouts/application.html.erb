@@ -66,13 +66,13 @@
             <div class="navbar-start">
               <div class="navbar-item">
                 <div class="field has-addons">
-                  <div class="control mt3">
+                  <div class="control">
                     <% if user_signed_in? %>
                       <%#= link_to 'Shots', root_path , class:"button is-white" %>
                       <%= form_tag(searches_path, :method => 'get') do %>
                         <%= text_field_tag :search, params[:search],  class:"input search", type:"text",placeholder:"Search...",name:"search", onkeydown:'clickSubmit();'%>
                       </div>
-                      <div class="control mt3">
+                      <div class="control">
                         <%= button_tag type: 'submit', class: "button is-black", id: "search-form" do %>
                           <i class="fas fa-search" aria-hidden="true"></i>
                         <% end %>
