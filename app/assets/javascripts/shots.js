@@ -229,6 +229,8 @@ document.addEventListener("turbolinks:load", function() {
         //   });
         // }
 
+        //scroll-content
+
         document.getElementById("scroll-content").addEventListener("scroll", function (event) {
           var newDiv = document.createElement("div");
              document.getElementById("scroll-content").appendChild(newDiv);

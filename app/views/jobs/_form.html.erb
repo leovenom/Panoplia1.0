@@ -1,7 +1,6 @@
-
 <%= simple_form_for @job, html: { multipart: true } do |f| %>
   <%= f.error_notification %>
-
+  <div class="column is-warning is-narrow" style="width: 650px;">
       <div class="field">
         <div class="control">
         <%= f.input :title, required: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, placeholder: "Frontend Developer" %>
@@ -29,7 +28,7 @@
             </span>
           </div>
         </div>
-         <div class="control">
+         <div class="control mt2">
           <label class="label">Art Type:</label>
           <div class="control has-icons-left">
             <span class="select">
@@ -89,3 +88,4 @@
 <% end %>
 
 <%= link_to 'BACK', jobs_path, class:"text optional label mt3" %>
+  </div> 

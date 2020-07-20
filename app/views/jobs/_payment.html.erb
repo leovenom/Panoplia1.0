@@ -1,5 +1,5 @@
 <% if !@job.persisted? %>
-  <h4 class="subtitle is-4">Buy me a coffee ☕️</h4>
+  <h4 class="label is-4">Buy me a coffee ☕️</h4>
 
   <div class="notification is-light has-text-centered">
     <i class="fa fa-credit-card"></i>
@@ -8,7 +8,7 @@
   </div>
 
   <div class="form-row">
-    <label for="card-element" class="label">
+    <label for="card-element" class="label mt2">
       Enter credit or debit card
     </label>
 
@@ -21,7 +21,7 @@
 
   <% if current_user.stripe_id.present? %>
     <div class="last-card bg-light pa4 border-radius-3 mt4">
-      <h5 class="is-6 title pt2">Previously used card</h5>
+      <h5 class="title-pay pt2">Previously used card</h5>
       <table class="table is-narrow bg-light is-fullwidth">
         <thead>
           <th>Card Brand</th>

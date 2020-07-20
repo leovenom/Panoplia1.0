@@ -1,15 +1,12 @@
 <%= simple_form_for @video do |f| %>
   <%= f.error_notification %>
   <div class="columns" style="height: 686px;">
-    <div class="column hero is-background is-hidden-touch">
-    </div>
-    <div class="column hero is-purple is-hidden-mobile">
-    </div>
+    <div class="column hero is-background is-hidden-touch"></div>
+    <div class="column hero is-amarelo is-hidden-mobile"></div>
       <div class="column hero is-warning profile">
         <div class="column is-warning is-narrow" style="width: 390px;">
-
           <div class="field">
-          <label for="video-url" class="text optional label">URL</label>
+            <label for="video-url" class="text optional label">URL</label>
             <div class="control">
               <%= f.text_field :url, id:"video-url", name:"video[url]", class:"string optional input"%>            
             </div>
@@ -32,11 +29,11 @@
           </div>
           <div style="display: flex;">
             <%= link_to 'SHOW ', @video, class:"text optional label mt3"  %>
-            <span class="space"> | </span>
+              <span class="space"> | </span>
             <%= link_to ' BACK', videos_path, class:"text optional label mt3" %>
-        </div> 
+          </div> 
         </div>
       </div> 
-      </div> 
+  </div> 
 <% end %>
 

@@ -34,6 +34,9 @@ background-color: black;
 	box-shadow: none;
 	padding: 0.5rem 0;
 }
+.navbar {
+	min-height: 4.25rem;
+}
 a.navbar-item:hover, a.navbar-item.is-active, a.navbar-link:hover, a.navbar-link.is-active {
 	background-color: transparent;
 }
@@ -89,7 +92,8 @@ input#search.input.search {
 	border-bottom: solid 1.2px white;
 	border-top: 0 none;
   border-left: 0 none;
-  border-right: 0 none;
+	border-right: 0 none;
+	padding-bottom: 0;
 }
 input#search.input.search.x {
 	background-color: transparent;

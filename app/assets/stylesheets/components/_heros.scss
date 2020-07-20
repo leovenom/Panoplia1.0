@@ -18,6 +18,12 @@
 	font-size: 2.2rem;
 	color: #0a0a0a;
 }
+.hero.is-warning .title-pay {
+  font-family: Brice-SemiBoldSemiExpanded;
+  font-size: 1.2rem;
+	color: #0a0a0a;
+	margin-bottom: 1.5rem;
+}
 .hero.is-warning {
 	background-color: #ffdc00;
 	position: relative;
@@ -77,9 +83,13 @@
   padding-bottom: 0rem;
   padding-top: 0rem;
 }
-.hero.is-purple {
+.hero.is-amarelo {
 	background-color:#ffdc00;
 	flex: 0 0 263px;
+}
+.hero.is-amarelo-job {
+	background-color:#ffdc00;
+	flex: 0 0 20px;
 }
 .hero.is-primaryv  {
 	background-image: image-url("background-yg.png");
@@ -95,6 +105,15 @@
 	background-position: center;
 	flex: 0 0 263px;
 }
+
+.column.is-background-roxo {
+	background-image: image-url("fundo-r-a.jpg");
+	position: relative;
+	background-size: cover; 
+	background-position: center;
+	flex: 0 0 263px;
+}
+fundo-r-a
 
 .control {
   margin-bottom: 1em;
