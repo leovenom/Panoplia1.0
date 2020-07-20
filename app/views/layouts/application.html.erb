@@ -116,23 +116,23 @@
             <p class="navbar-item">
             <% if user_signed_in? %>
             <%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
-            <%= link_to 'POST JOB', new_job_path, class: "button is-primarye mr3" %>
+            <%= link_to 'POST A JOB', new_job_path, class: "button is-primarye mr3" %>
               <div class="navbar-item has-dropdown is-hoverable">
                   <p class="navbar-item">
                   <%= link_to new_shot_path, class:"button is-primarye"  do %>
                   <span class="icon is-small"><i class="fa fa-upload" style="color:#fff;"></i></span>
-                    <span>UPLOADS</span>
+                    <span>UPLOAD</span>
                       <% end %> 
                   </p>
                   <div class="navbar-dropdown post">
                   <span class="triangle"></span>
                     <div class="navbar-item">
-                      <%= link_to 'POST VIDEO', new_video_path, class: "button is-black" %>
+                      <%= link_to 'VIDEO', new_video_path, class: "button is-black" %>
                     </div>
                     <div class="navbar-item">
                       <%= link_to new_shot_path, class:"button is-black"  do %>
                       <%# <span class="icon is-small"><i class="fa fa-upload"></i></span> %>
-                      <span>POST SHOT</span>
+                      <span>PHOTO</span>
                       <% end %> 
                     </div>
                   </div>

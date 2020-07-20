@@ -1,24 +1,27 @@
 <%= simple_form_for @job, html: { multipart: true } do |f| %>
   <%= f.error_notification %>
   <div class="column is-warning is-narrow" style="width: 650px;">
-      <div class="field">
+    
+    <div class="columns mt2">
+      <div class="field column is-6">
         <div class="control">
         <%= f.input :title, required: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, placeholder: "Frontend Developer" %>
         </div>
       </div>
 
-      <div class="field">
+      <div class="field column is-6">
         <div class="control">
           <label class="label">Apply url or E-mail</label>
           <%= f.input :apply_url,label: false, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }  %>
         </div>
       </div>
+    </div>
 
 
     <div class="columns">
       <div class="field column is-4">
         <div class="control">
-          <label class="label">Job Type:</label>
+          <label class="label">Job Type</label>
           <div class="control has-icons-left">
             <span class="select">
               <%= f.input_field :job_type, collection: Job::JOB_TYPES, prompt: "Select a job type" %>
@@ -29,7 +32,7 @@
           </div>
         </div>
          <div class="control mt2">
-          <label class="label">Art Type:</label>
+          <label class="label">Art Type</label>
           <div class="control has-icons-left">
             <span class="select">
               <%= f.input_field :art_type, collection: Job::ART_TYPES, prompt: "Select a art type" %>
