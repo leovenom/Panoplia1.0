@@ -2,7 +2,21 @@
   <%= f.error_notification %>
   <div class="column is-warning is-narrow" style="width: 650px;">
     
-    <div class="columns mt2">
+    <div class="columns">
+      <div class="field column">
+        <div class="control">
+          <%= f.input :job_author, required: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Company Name" %>
+        </div>
+      </div>
+
+      <div class="field column">
+        <div class="control">
+          <%= f.input :url, required: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Company Website", placeholder: "http://company.com" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns ">
       <div class="field column is-6">
         <div class="control">
         <%= f.input :title, required: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, placeholder: "Frontend Developer" %>
@@ -16,7 +30,6 @@
         </div>
       </div>
     </div>
-
 
     <div class="columns">
       <div class="field column is-4">
@@ -68,22 +81,6 @@
           <%= f.input :description, required: false, input_html: { class: "textarea" }, wrapper: false, label_html: { class: "label" } %>
         </div>
       </div>
-
-
-    <div class="columns">
-
-      <div class="field column">
-        <div class="control">
-          <%= f.input :job_author, required: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Company" %>
-        </div>
-      </div>
-
-      <div class="field column">
-        <div class="control">
-          <%= f.input :url, required: false, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: "Company Website", placeholder: "http://company.com" %>
-        </div>
-      </div>
-    </div>
     
     <%= render 'payment' %>
 
