@@ -37,7 +37,7 @@
           <label class="label">Job Type</label>
           <div class="control has-icons-left">
             <span class="select">
-              <%= f.input_field :job_type, collection: Job::JOB_TYPES, prompt: "Select a job type" %>
+              <%= f.input_field :job_type, required: true, collection: Job::JOB_TYPES, prompt: "Select a job type" %>
             </span>
             <span class="icon is-small is-left">
               <i class="fa fa-briefcase"></i>
@@ -48,7 +48,7 @@
           <label class="label">Art Type</label>
           <div class="control has-icons-left">
             <span class="select">
-              <%= f.input_field :art_type, collection: Job::ART_TYPES, prompt: "Select a art type" %>
+              <%= f.input_field :art_type, required: true, collection: Job::ART_TYPES, prompt: "Select a art type" %>
             </span>
             <span class="icon is-small is-left">
               <i class="fa fa-briefcase"></i>

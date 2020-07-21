@@ -6,14 +6,14 @@
     </div>
   </div>
 
-  <div class="column jobs-show jobz pt5" id="scroll-content">
+  <div class="column jobs-show jobz pt5">
     <% @jobs.each do |job| %>
     <div class="columns">
       <div class="column job-description">
       <div class="level-item-jobz">
       <div class="user-thumb-job">
         <% if job.user.avatar.attached? %>
-        <%= link_to cl_image_tag(job.user.avatar.key), user_path(job.user) %>      
+        <%= link_to cl_image_tag(job.user.avatar.key, :quality=>"auto:good"), user_path(job.user) %>      
         <% else %>
           <%= link_to image_tag('panoplia-logo.png'), user_path(job.user) %>
         <% end %> 
@@ -34,16 +34,16 @@
           <ul class="pv3">
             <li class="inline-block f6">Admin controls: </li>
             <li class="inline-block">
-              <%= link_to 'View', job, class: 'button is-small is-outlined pb3' %></li>
+              <%= link_to 'View', job, class: 'button is-small' %></li>
             <li class="inline-block">
-              <%= link_to 'Edit', edit_job_path(job), class: 'button is-small is-outlined pb3' %></li>
+              <%= link_to 'Edit', edit_job_path(job), class: 'button is-small' %></li>
             <li class="inline-block">
-              <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-outlined pb3' %></li>
+              <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small' %></li>
           </ul>
         <% end %>
           <div style="display: flex;">
           <%= job_type(job.job_type) %>
-          <p class="f6 job-art-type"> <%= job.art_type %> </p>
+          <span class="tag job-art-type"> <%= job.art_type %> </span>
           <p class="f6"><%= job.location %></p>
         </div>
         </div>

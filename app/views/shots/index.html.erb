@@ -1,6 +1,7 @@
 <%= render 'hero' %>
+<% if user_signed_in? %>
 	<%= image_tag 'fundo.png', class:"fahvm"%>
-
+<%end%>
 <section class="section">
   <div class="columns is-desktop">
 
@@ -31,7 +32,7 @@
                       <div class="level-left">
                         <div class="level-item">
                           <div class="user-thumb">
-                            <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
+                            <%=link_to cl_image_tag(video.user.avatar.key, :quality=>"auto:good"), user_path(video.user) unless video.user.avatar.blank? %> 
                           </div>
                           <div class="user-name"><%=link_to video.title, video %>
                           </div>

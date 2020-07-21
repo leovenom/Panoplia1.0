@@ -3,20 +3,13 @@
               
               <%= link_to shot, class: "shot" do %>
               <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
-              <div class="shot-data">
-                <h3 class="shot-title"><%= shot.title %></h3>
-                <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
-                <div class="shot-time">
-                  <%= time_ago_in_words(shot.created_at) %>
-                </div>
-              </div>
               <% end %>
               <%# if user_signed_in?%>
               <nav class="level shot-analytics">
                 <div class="level-left">
                   <div class="level-item">
                     <div class="user-thumb">
-                      <%=link_to cl_image_tag(shot.user.avatar.key), user_path(shot.user)  unless shot.user.avatar.blank?%> 
+                      <%=link_to cl_image_tag(shot.user.avatar.key, :quality=>"auto:good"), user_path(shot.user)  unless shot.user.avatar.blank?%> 
                     </div>
                     <div class="user-name"><%=link_to shot.title, shot %>
                     </div>
