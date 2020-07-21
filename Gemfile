@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.6.5'
+gem 'rubygems-update', '~> 3.1', '>= 3.1.4'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -44,7 +44,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'gravatar_image_tag'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'cloudinary'
+gem 'cloudinary', '~> 1.16', '>= 1.16.1'
 gem 'stripe', '~> 1.57', '>= 1.57.1'
 gem 'figaro', '~> 1.2'
 
