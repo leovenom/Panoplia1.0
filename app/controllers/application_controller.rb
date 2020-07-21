@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   default_form_builder BulmaFormBuilder
   protect_from_forgery with: :exception
+  impressionist :actions=> [:show, :index]
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 

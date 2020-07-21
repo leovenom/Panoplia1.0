@@ -67,21 +67,13 @@ h1.title {
   margin-bottom: 0;
 }
 
-p.job-art-type {
-  margin: 0 10px;
+
+.tag:not(body).job-art-type {
   background-color: #bfbfbf;
-  border-radius: 4px;
-  font-family: Brice-SemiBoldSemiCondensed;
   color: white;
-  align-items: center;
-  display: inline-flex;
-  font-size: 9px;
-  height: 2.5em;
-  justify-content: center;
-  line-height: 1.5;
-  white-space: nowrap;
-  padding: 6.5px;
+  margin: 0 10px;
 }
+
 .job-user-name {
   color: black;
   cursor: pointer;
@@ -111,4 +103,8 @@ p.job-art-type {
   font-family: Brice-Bold;
   color: black;
   margin: 0 12px 0 12px;
+}
+
+.shot.job-index{
+  padding-top: 10px;
 }

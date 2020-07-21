@@ -7,7 +7,7 @@
                   <div class="level-item-job">
                     <div class="user-thumb-job">
                       <% if job.user.avatar.attached? %>
-                      <%= link_to cl_image_tag(job.user.avatar.key), user_path(job.user) %>      
+                      <%= link_to cl_image_tag(job.user.avatar.key, :quality=>"auto:good"), user_path(job.user) %>      
                       <% else %>
                         <%= link_to image_tag('panoplia-logo.png'), user_path(job.user) %>
                       <% end %> 
@@ -20,9 +20,13 @@
                 </div>
               </nav>
                
-              <%= link_to job, class: "shot" do %>
+              <%= link_to job, class: "shot job-index" do %>
             <% if user_signed_in? %>
-            <label><%= sanitize(job.description.truncate(80, separator: '</p>')) %></label>
+              <div style="display: flex;">
+                <%= job_type(job.job_type) %>
+                <span class="tag job-art-type"> <%= job.art_type %> </span>
+              </div>
+            <label><%= sanitize(job.location.truncate(80, separator: '</p>')) %></label>
               <%else%>
               <div><%= link_to ' Sign in', new_user_session_path %> to apply to this job.</div>
               <% end%>

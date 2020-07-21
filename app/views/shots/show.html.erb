@@ -7,7 +7,7 @@
 						<div class="columns show-page is-desktop">
 							<div class="column is-7">
 								<div class="user-thumb shot-show">
-								<%=link_to cl_image_tag(@shot.user.avatar.key), user_path(@shot.user) unless @shot.user.avatar.blank?%>
+								<%=link_to cl_image_tag(@shot.user.avatar.key, :quality=>"auto:good"), user_path(@shot.user) unless @shot.user.avatar.blank?%>
 								</div>
 								<div class="user-name">
 									<h3 class="title-title"><%= @shot.title %></h3>
@@ -123,10 +123,10 @@
 							<div class="shot-wrapper shot">
 								<p class="subtitle">More from others users</p>
 									<%= link_to @random_shot, class: "shot" do %>
-											<%= cl_image_tag @random_shot.user_shot_url unless @random_shot.user_shot_url.blank? %>
+											<%= cl_image_tag(@random_shot.user_shot_url, :quality=>"auto:good") unless @random_shot.user_shot_url.blank? %>
 											<div class="shot-data">
 											<div class="user-thumb avatar">
-												<%= cl_image_tag @random_shot.user.avatar.key, class:'avatar' unless @random_shot.user.avatar.blank?  %>
+												<%= cl_image_tag(@random_shot.user.avatar.key, :quality=>"auto:good"), class:'avatar' unless @random_shot.user.avatar.blank?  %>
 												<h3 class="shot-user"><%= @random_shot.user.name %></h3>
 												<h3 class="shot-title"><%= @random_shot.title %></h3>
 											</div>

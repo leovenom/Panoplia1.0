@@ -6,14 +6,14 @@
     </div>
   </div>
 
-  <div class="column jobs-show jobz pt5" id="scroll-content">
+  <div class="column jobs-show jobz pt5">
     <% @jobs.each do |job| %>
     <div class="columns">
       <div class="column job-description">
       <div class="level-item-jobz">
       <div class="user-thumb-job">
         <% if job.user.avatar.attached? %>
-        <%= link_to cl_image_tag(job.user.avatar.key), user_path(job.user) %>      
+        <%= link_to cl_image_tag(job.user.avatar.key, :quality=>"auto:good"), user_path(job.user) %>      
         <% else %>
           <%= link_to image_tag('panoplia-logo.png'), user_path(job.user) %>
         <% end %> 
@@ -43,7 +43,7 @@
         <% end %>
           <div style="display: flex;">
           <%= job_type(job.job_type) %>
-          <p class="f6 job-art-type"> <%= job.art_type %> </p>
+          <span class="tag job-art-type"> <%= job.art_type %> </span>
           <p class="f6"><%= job.location %></p>
         </div>
         </div>
