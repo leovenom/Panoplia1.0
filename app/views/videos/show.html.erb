@@ -126,7 +126,7 @@
 						<div class="shot-wrapper shot">
 							<p class="subtitle">More from others users</p>
 								<%= link_to @random_video, class: "video" do %>
-									<%= get_video_iframe(@random_video.url, '300px', '300px')%>
+									<%#= get_video_iframe(@random_video.url, '300px', '300px')%>
 									<div class="shot-data">
 										<div class="user-thumb avatar">
 											<%= cl_image_tag @random_video.user.avatar.key, class:'avatar' unless @random_video.user.avatar.blank?  %>
