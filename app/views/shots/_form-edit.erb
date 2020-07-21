@@ -15,9 +15,25 @@
                   <div id="drop_zone">Drag your shot here
                   </div>
                   <br/>
-                    <%= f.input :user_shot, label: false, multiple: true, wrapper: false, label_html: { class: "file-label" } %>
+                    <%#= f.input :user_shot, label: false, multiple: true, wrapper: false, label_html: { class: "file-label" } %>
+                    <div id="file-js-example" class="file has-name">
+                      <label class="file is-primary has-name is-small">
+                        <%= f.file_field :user_shot, class: 'file-input' %>
+                        <span class="file-cta">
+                          <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                          </span>
+                          <span class="file-label">
+                            Choose a file…
+                          </span>
+                        </span>
+                        <span class="file-name">
+                          No file uploaded
+                        </span>
+                      </label>
+                    </div>
 
-                    <div class="field">
+                    <div class="field mt2">
                       <div class="control">
                         <%= f.input :title, label: "Title", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
                       </div>
@@ -34,7 +50,8 @@
                         <%= f.button :submit, class:"button is-prime is-small" %>
                       </div>
                       <div style="display: flex;">
-                        <%= link_to 'Show', @shot, class:"text optional label mt3" %> | 
+                        <%= link_to 'Show', @shot, class:"text optional label mt3" %>
+                        <span class="space"> | </span>
                         <%= link_to 'Back', shots_path, class:"text optional label mt3" %>
                       </div> 
                     </div>
@@ -45,3 +62,13 @@
                   <br/>
     </div>           
 <% end %>
+
+<script>
+  const fileInput = document.querySelector('#file-js-example input[type=file]');
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector('#file-js-example .file-name');
+      fileName.textContent = fileInput.files[0].name;
+    }
+  }
+</script>
