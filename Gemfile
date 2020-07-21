@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-gem 'rubygems-update', '~> 3.1', '>= 3.1.4'
+ruby '3.1.4'
+
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -39,7 +40,7 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'carrierwave', '~> 1.2', '>= 1.2.1'
 gem 'simple_form', '~> 5.0'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
-gem 'impressionist'
+gem 'impressionist', '~> 2.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'gravatar_image_tag'
 gem 'acts_as_votable', '~> 0.11.1'
@@ -47,6 +48,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16', '>= 1.16.1'
 gem 'stripe', '~> 1.57', '>= 1.57.1'
 gem 'figaro', '~> 1.2'
+gem 'rubygems-update', '~> 3.1', '>= 3.1.4'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
