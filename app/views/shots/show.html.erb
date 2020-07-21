@@ -17,7 +17,7 @@
 						</div>
 
 					<div class="shot-full">
-						 <%= cl_image_tag(@shot.user_shot_url, :quality=>"auto:good") unless @shot.user_shot.blank? %>
+						 <%= cl_image_tag(@shot.user_shot_url, :quality=>"auto:best") unless @shot.user_shot.blank? %>
 					</div>
 					<% if user_signed_in? && (current_user.id == @shot.user_id) %>		
 						<div class="buttons has-addons level-left">
@@ -123,10 +123,10 @@
 							<div class="shot-wrapper shot">
 								<p class="subtitle">More from others users</p>
 									<%= link_to @random_shot, class: "shot" do %>
-											<%= cl_image_tag(@random_shot.user_shot_url, :quality=>"auto:good") unless @random_shot.user_shot_url.blank? %>
+											<%= cl_image_tag(@random_shot.user_shot_url, :quality=>"auto:best") unless @random_shot.user_shot_url.blank? %>
 											<div class="shot-data">
 											<div class="user-thumb avatar">
-												<%= cl_image_tag(@random_shot.user.avatar.key, :quality=>"auto:good"), class:'avatar' unless @random_shot.user.avatar.blank?  %>
+												<%= cl_image_tag @random_shot.user.avatar.key, class:'avatar' unless @random_shot.user.avatar.blank?  %>
 												<h3 class="shot-user"><%= @random_shot.user.name %></h3>
 												<h3 class="shot-title"><%= @random_shot.title %></h3>
 											</div>
