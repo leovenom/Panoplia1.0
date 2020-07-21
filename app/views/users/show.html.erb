@@ -83,7 +83,7 @@
     <section class="section user">
       <p class="subtitle cards">Followings<i class="fas fa-sort-down"></i></p>
       <% @user.followings.each do |user| %>
-        <div class="level-item-search">
+        <div class="level-item-search-f">
           <div class="user-thumb-job">
           <% if user.avatar.attached? %>
             <%=link_to cl_image_tag(user.avatar.key, :quality=>"auto:good"), user_path(user) unless user.avatar.blank? %> 
