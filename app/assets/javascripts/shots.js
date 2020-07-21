@@ -248,5 +248,3 @@ document.addEventListener("turbolinks:load", function() {
              checkForNewDiv();
          }
      };
-     
-     checkForNewDiv();
