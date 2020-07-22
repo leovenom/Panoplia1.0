@@ -11,7 +11,7 @@
 							</div>
 
 							<div class="user-name">
-								<h3 class="title-title"><%= @video.titleize %></h3>
+								<h3 class="title-title"><%= @video.title.titleize %></h3>
 								<span class="by">By </span><%= link_to @video.user.name.upcase, @video.user, class:"shot-user-name" %>
 							</div>
 						</div>
@@ -131,7 +131,7 @@
 										<div class="user-thumb avatar">
 											<%= cl_image_tag @random_video.user.avatar.key, class:'avatar' unless @random_video.user.avatar.blank?  %>
 											<h3 class="shot-user"><%= @random_video.user.name.upcase %></h3>
-											<h3 class="shot-title"><%= @random_video.titleize %></h3>
+											<h3 class="shot-title"><%= @random_video.title.titleize %></h3>
 										</div>
 									</div>
 						</div>
