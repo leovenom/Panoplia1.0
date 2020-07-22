@@ -130,41 +130,41 @@
                       <div class="user-name"><%=link_to shot.title.titleize, shot %>
                       </div>
                     </div>
-                  <div class="level-right mr4">
-                    <div class="level-item views data image">
-                      <%= link_to shot do %>
-                        <span class="icon"><i class="fa fa-eye"></i></span>
-                        <%= shot.impressionist_count %>
-                      <% end %>
-                    </div>
-                    <div class="level-item comments data image">
-                      <%= link_to shot do %>
-                        <span class="icon"><i class="fa fa-comment"></i></span>
-                        <%= shot.comments.count %>
-                      <% end %>
-                    </div>
-
-                    <div class="level-item likes">
-                      <% if user_signed_in? %>
-                      <% if current_user.liked? shot %>
-                        <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
-                          <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
-                          <span class="vote_count"><%= shot.get_likes.size %></span>
+                    <div class="level-right mr4">
+                      <div class="level-item views data image">
+                        <%= link_to shot do %>
+                          <span class="icon"><i class="fa fa-eye"></i></span>
+                          <%= shot.impressionist_count %>
                         <% end %>
-                      <% else %>
-                        <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
-                          <span class="icon"><i class="fa fa-heart"></i></span>
-                          <span class="vote_count"><%= shot.get_likes.size %></span>
-                      <% end %>
-                      <% end %>
+                      </div>
+                      <div class="level-item comments data image">
+                        <%= link_to shot do %>
+                          <span class="icon"><i class="fa fa-comment"></i></span>
+                          <%= shot.comments.count %>
+                        <% end %>
+                      </div>
+
+                      <div class="level-item likes">
+                        <% if user_signed_in? %>
+                        <% if current_user.liked? shot %>
+                          <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
+                            <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+                            <span class="vote_count"><%= shot.get_likes.size %></span>
+                          <% end %>
                         <% else %>
                           <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
                             <span class="icon"><i class="fa fa-heart"></i></span>
                             <span class="vote_count"><%= shot.get_likes.size %></span>
-                          <% end %>
                         <% end %>
+                        <% end %>
+                          <% else %>
+                            <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+                              <span class="icon"><i class="fa fa-heart"></i></span>
+                              <span class="vote_count"><%= shot.get_likes.size %></span>
+                            <% end %>
+                          <% end %>
+                      </div>
                     </div>
-                  </div>
                   </nav>
                 <%end%>
               </div>
@@ -184,6 +184,7 @@
                 <%= link_to video, class: "video" do %>
                 <%= get_video_iframe(video.url, '410.6px', '300px') %>
                 <%end%>
+                <% if user_signed_in? %>
                   <nav class="level shot-analytics video">
                     <div class="level-left ml3">
                       <div class="level-item">
@@ -191,6 +192,7 @@
                         </div>
                       </div>
                     </div>
+
                     <div class="level-right index video mr4">
                       <div class="level-item views data video">
                         <%= link_to video do %>
@@ -206,7 +208,6 @@
                       </div>
                       <div class="level-item likes">
                         <% if user_signed_in? %>
-                        
                         <% if current_user.liked? video %>
                         <%= link_to unlike_shot_path(video), method: :put, class: "unlike_video" do %>
                         <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
@@ -224,10 +225,10 @@
                         <span class="vote_count"><%= video.get_likes.size %></span>
                         <% end %>
                         <% end %>
-
                       </div>
                     </div>
                   </nav>
+                  <%end%>
               </section>
             <%end%>
           </div>
