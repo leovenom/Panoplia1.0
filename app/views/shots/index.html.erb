@@ -34,7 +34,7 @@
                           <div class="user-thumb">
                             <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
                           </div>
-                          <div class="user-name"><%=link_to video.title, video %>
+                          <div class="user-name"><%=link_to video.title.titleize, video %>
                           </div>
                         </div>
                       </div>

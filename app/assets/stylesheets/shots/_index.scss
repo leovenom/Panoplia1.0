@@ -12,6 +12,15 @@ h3.shot-title.job {
 	font-size: 15px;
 }
 
+.shot-user-name-index {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+	font-family: Brice-LightSemiCondensed;
+	font-size: 14px;
+}
+
+
 .user-name-search {
   color: black;
   cursor: pointer;
@@ -63,15 +72,13 @@ h3.shot-title.job {
 }
 
 .user-name-job {
-	display: inline-block;
+	display: inline-grid;
 	position: relative;
 	padding-left: 10px;
 }
 
-.level-item-search-f {
-	margin: 10px 10px 10px;
-	display: contents;
-}
+
+
 .level-item-search {
 	margin: 10px 10px 10px;
 }
