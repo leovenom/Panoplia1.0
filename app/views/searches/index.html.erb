@@ -29,7 +29,7 @@
                     <div class="user-thumb">
                       <%=link_to cl_image_tag(shot.user.avatar.key), user_path(shot.user)  unless shot.user.avatar.blank?%> 
                     </div>
-                    <div class="user-name"><%=link_to shot.user.name.upcase, shot.user %>
+                    <div class="user-name"><%=link_to sanitize(shot.user.name.upcase.truncate(14)), shot.user %>
                     </div>
                   </div>
                 </div>
@@ -80,46 +80,90 @@
       <%# Video board colum %>
 
       <div class="column is-3">
-        <p class="subtitle cards">VIDEO <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
-          <section>
-		        <div class="shot-job" id="scroll-content">
-              <% @videos.each  do | video | %>
+        <p class="subtitle cards">BEST OF<span> VIDEOS </span><i class="fas fa-sort-down"></i></p>
+          <div id="scroll-content">
+            <div class="videos">
+            <% @videos.each do |video| %>
+            <div class="shot-grid-item">
+              <div class="shot-wrapper">
                 <%= link_to video, class: "video" do %>
-                  <div>
-                    <%= get_video_iframe(video.url) %>
-                  </div>
-                  <div class="user-thumb-job">
-                    <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
-                  </div>
-                  <div class="user-name-job">
-                    <h3 class="video-title job"><%=link_to video.title.titleize, video %></h3>
-                      <%=link_to video.user.name.upcase, video.user, class:"shot-user-name" %>
-                  </div>
+                  <%= get_video_iframe(video.url) %>
                 <%end%>
-              <%end%>
+                    <nav class="level shot-analytics">
+                      <div class="level-left">
+                        <div class="level-item">
+                          <div class="user-thumb">
+                            <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
+                          </div>
+                          <div class="user-name"><%=link_to sanitize(video.title.titleize.truncate(16)), video %>
+                          
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="level-right index video">
+                        <div class="level-item views data">
+                          <%= link_to video do %>
+                          <span class="icon"><i class="fa fa-eye"></i></span>
+                          <%= video.impressionist_count %>
+                          <% end %>
+                        </div>
+                        <div class="level-item comments data video">
+                          <%= link_to video do %>
+                          <span class="icon"><i class="fa fa-comment"></i></span>
+                          <%= video.comments.count %>
+                          <% end %>
+                        </div>
+                        <div class="level-item likes">
+                          <% if user_signed_in? %>
+                          
+                          <% if current_user.liked? video %>
+                          <%= link_to unlike_shot_path(video), method: :put, class: "unlike_video" do %>
+                          <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+                          <span class="vote_count"><%= video.get_likes.size %></span>
+                          <% end %>
+                          <% else %>
+                          <%= link_to like_shot_path(video), method: :put, class: "like_video" do %>
+                          <span class="icon"><i class="fa fa-heart"></i></span>
+                          <span class="vote_count"><%= video.get_likes.size %></span>
+                          <% end %>
+                          <% end %>
+                          <% else %>
+                          <%= link_to like_shot_path(video), method: :put, class: "like_video" do %>
+                          <span class="icon"><i class="fa fa-heart"></i></span>
+                          <span class="vote_count"><%= video.get_likes.size %></span>
+                          <% end %>
+                          <% end %>
+
+                        </div>
+                      </div>
+                    </nav>
+              </div>
             </div>
-          </section>
+            <%end%>
+            </div>
+          </div>
       </div>
       
       <%# video board colum end%>
       <div class="column is-3" style="width: 19%;">
         <p class="subtitle cards">USER <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
         <div id="scroll-content">
-        <% @users.each do |user| %>
-          <div class="level-item-search">
-            <div class="user-thumb-job">
-              <% if user.avatar.attached? %>
-              <%= link_to cl_image_tag(user.avatar.key), user_path(user) %>
-              <% else%>
-              <%= link_to image_tag('panoplia-logo.png'), user_path(user) %>
-              <% end%>
+          <% @users.each do |user| %>
+            <div class="level-item-search">
+              <div class="user-thumb-job">
+                <% if user.avatar.attached? %>
+                  <%= link_to cl_image_tag(user.avatar.key), user_path(user) %>
+                <% else%>
+                  <%= link_to image_tag('panoplia-logo.png'), user_path(user) %>
+                <% end%>
+              </div>
+              <div class="user-name-job">
+                <h3 class="shot-title job search"><%= link_to user.name.upcase, user %></h3>
+                <p> <%= user.location %> </p>
+              </div>
             </div>
-            <div class="user-name-job">
-              <h3 class="shot-title job"><%= link_to user.name.upcase, user %></h3>
-              <p> <%= user.location %> </p>
-            </div>
-          </div>
-        <%end%>
+          <%end%>
         </div>
       </div>
    </div>
