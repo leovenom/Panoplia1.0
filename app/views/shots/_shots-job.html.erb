@@ -13,8 +13,8 @@
                       <% end %> 
                     </div>
                     <div class="user-name-job">
-                    <h3 class="shot-title job-page"><%= link_to job.title, job %></h3>
-                    <%=link_to job.user.name, job.user, class:"shot-user-name" %>
+                    <h3 class="shot-title job-page"><%= link_to job.title.titleize, job %></h3>
+                    <%=link_to sanitize(job.user.name.upcase.truncate(22, separator: '</p>')), job.user, class:"shot-user-name-index" %>
                     </div>
                   </div>
                 </div>

@@ -15,7 +15,7 @@
               <%= link_to shot, class: "shot" do %>
               <%= cl_image_tag(shot.user_shot_url) %>
               <div class="shot-data">
-                <h3 class="shot-title"><%= shot.title %></h3>
+                <h3 class="shot-title"><%= shot.title.titleize %></h3>
                 <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
                 <div class="shot-time">
                   <%= time_ago_in_words(shot.created_at) %>
@@ -29,7 +29,7 @@
                     <div class="user-thumb">
                       <%=link_to cl_image_tag(shot.user.avatar.key), user_path(shot.user)  unless shot.user.avatar.blank?%> 
                     </div>
-                    <div class="user-name"><%=link_to shot.user.name, shot.user %>
+                    <div class="user-name"><%=link_to shot.user.name.upcase, shot.user %>
                     </div>
                   </div>
                 </div>
@@ -92,8 +92,8 @@
                     <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
                   </div>
                   <div class="user-name-job">
-                    <h3 class="video-title job"><%=link_to video.title, video %></h3>
-                      <%=link_to video.user.name, video.user, class:"shot-user-name" %>
+                    <h3 class="video-title job"><%=link_to video.title.titleize, video %></h3>
+                      <%=link_to video.user.name.upcase, video.user, class:"shot-user-name" %>
                   </div>
                 <%end%>
               <%end%>
@@ -115,7 +115,7 @@
               <% end%>
             </div>
             <div class="user-name-job">
-              <h3 class="shot-title job"><%= link_to user.name, user %></h3>
+              <h3 class="shot-title job"><%= link_to user.name.upcase, user %></h3>
               <p> <%= user.location %> </p>
             </div>
           </div>

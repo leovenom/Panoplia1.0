@@ -19,8 +19,8 @@
         <% end %> 
       </div>
       <div class="user-name-jobz">
-        <h3 class="shot-title job"><%= link_to job.title, job %></h3>
-        <%=link_to job.user.name, job.user, class:"job-user-name" %>
+        <h3 class="shot-title job"><%= link_to job.title.titleize, job %></h3>
+        <%=link_to job.user.name.upcase, job.user, class:"job-user-name" %>
       </div>
     </div>
         <ul>

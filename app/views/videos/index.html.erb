@@ -14,7 +14,7 @@
           <% @videos.each do |video| %>
             <tr>
             <% if user_signed_in? && (current_user.id == video.user_id) %>		
-              <td><%= video.title %></td>
+              <td><%= video.title.titleize %></td>
               <td><%= video.description %></td>
               <td><%#= video.user_id %></td>
               <td><%#= video.user_video %></td>
@@ -42,7 +42,7 @@
           <% @shots.each do |shot| %>
             <tr>
             <% if user_signed_in? && (current_user.id == shot.user_id) %>	
-              <td><%= shot.title %></td>
+              <td><%= shot.title.titleize %></td>
               <td><%= shot.description %></td>
               <td><%#= shot.user_id %></td>
               <td><%#= shot.user_shot %></td>

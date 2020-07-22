@@ -12,7 +12,7 @@
     <div class="media-content">
       <div class="content">
         <p>
-          <strong><%= link_to comment.user.name, user_path(comment.user) %></strong>
+          <strong><%= link_to comment.user.name.upcase, user_path(comment.user) %></strong>
           <div><%= comment.response %></div>
         </p>
       </div>
