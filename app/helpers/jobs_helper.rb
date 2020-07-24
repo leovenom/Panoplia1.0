@@ -6,7 +6,7 @@ module JobsHelper
     elsif job_type == "Part-time"
       content_tag :span, "#{job_type}", class: "tag is-link"
     elsif job_type == "Freelance"
-      content_tag :span, "#{job_type}", class: "tag is-warningi"
+      content_tag :span, "#{job_type}", class: "tag is-green"
     elsif job_type == "Contract"
       content_tag :span, "#{job_type}", class: "tag is-info"
     else

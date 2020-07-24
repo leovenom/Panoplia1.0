@@ -49,7 +49,10 @@ $link-hover: darken($primary, 20%);
 .tag:not(body).is-warningi {
 	background-color: #ffdc00;
 }
-
+.tag:not(body).is-green {
+	background-color: #46d06e;
+	color: #fff;
+}
 .tag:not(body).is-primaryy{
   background-color: #9600c8;
   color: #fff;

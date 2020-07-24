@@ -59,6 +59,18 @@
 	color: #fff;
 }
 
+.button.is-green {
+	background-color: #46d06e;
+	border-color: transparent;
+	color: #fff;
+}
+
+.button.is-green:hover, .button.is-green.is-hovered {
+  background-color: #3eb25f;
+  border-color: transparent;
+  color: #fff;
+}
+
 .button.is-primarye {
 	background-color: #9600c8;
 	border-color: transparent;
