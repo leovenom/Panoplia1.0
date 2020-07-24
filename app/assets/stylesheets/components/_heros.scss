@@ -98,6 +98,13 @@
   background-position: center;
 }
 
+.hero.is-form  {
+	background-image: image-url("fundo.png");
+	position: relative;
+	background-size: cover; 
+  background-position: center;
+}
+
 .column.is-background {
 	background-image: image-url("background-upload-JPG.jpg");
 	position: relative;
