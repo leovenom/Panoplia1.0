@@ -30,6 +30,12 @@
           <%= link_to sanitize(job.description.truncate(200, separator: '</p>')), job %>
         </div>
 
+        <div style="display: flex;">
+          <%= job_type(job.job_type) %>
+          <span class="tag job-art-type"> <%= job.art_type %> </span>
+          <p class="f6"><%= job.location %></p>
+        </div>
+
         <% if current_user.try(:admin) || job_author(job) %>
           <ul class="pv3">
             <li class="inline-block f6">Admin controls: </li>
@@ -41,11 +47,7 @@
               <%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small' %></li>
           </ul>
         <% end %>
-          <div style="display: flex;">
-          <%= job_type(job.job_type) %>
-          <span class="tag job-art-type"> <%= job.art_type %> </span>
-          <p class="f6"><%= job.location %></p>
-        </div>
+
         </div>
 
       </div>
