@@ -4,12 +4,21 @@
       <%= link_to 'Back', jobs_path, class:"button is-light text optional label", style:"width: 120px;height:32px;line-height: 22px;"%>
     </div>
   </div>
-  <div class="column is-6 is-offset-1">
 
+  <div class="column is-6 is-offset-1">
     <p class="f7"><i class="fa fa-clock"></i> Posted <%= time_ago_in_words(@job.created_at) %> ago</p>
     <br/>
-    <h1 class="title is-2"><%= @job.title.titleize %></h1>
+
+    <div class="level">
+      <div class="level-left">
+        <h1 class="title is-2"><%= @job.title.titleize %></h1>
+      </div>
     <% if user_signed_in?%>
+      <div class="level-right">
+        <%= link_to 'APPLY NOW', @job.apply_url, class:"button is-primarye job" %>
+      </div>
+    </div>
+
     <ul class="pb3">
       <li class="inline-block f6 pr2"><%= job_type(@job.job_type) %></li>
       <li class="inline-block f6 pr2"><%= @job.art_type %></li>
@@ -25,40 +34,34 @@
 
     <%#= link_to 'Apply to this job', @job.apply_url, class:"button is-rounded is-large is-fullwidth is-link" %>
 
-  </div>
+
     
-  <div class="column is-2 is-offset-1 has-text-centered">
-
+  <div class="has-text-centered">
     <h5 class="is-5 has-text-centered"><%= link_to @job.job_author, @job.url %></h5>
-
-    <div class="mt2 mb4">
-    <%= link_to @job.url do %>
-      <i class="fa fa-globe"></i>
-    <% end %>
-    </div>
-
-     
-      <%= link_to 'Apply to this job', @job.apply_url, class:"button is-rounded is-fullwidth is-link" %>
+    <br/>
+    <div class="level-left">
+      <%= link_to 'APPLY NOW', @job.apply_url, class:"button is-primarye job" %>
         <% else %>
-        <div><button class="button is-dark" title="Disabled button" disabled>Apply to this job</button>
-				<div>
-        <br/>
-        <%= link_to ' Sign in', new_user_session_path %> To apply to this job.</div>
-        </div>
+          <div><button class="button is-dark" title="Disabled button" disabled>Apply to this job</button>
+            <br/>
+            <%= link_to ' Sign in', new_user_session_path %> To apply to this job.</div>
+          </div>
+    
       <% end%>
 
     <%#= link_to 'Apply to this job', @job.apply_url, class:"button is-rounded is-fullwidth is-link" %>
-
+    </div>
     <% if current_user.try(:admin) || job_author(@job) %>
       <ul class="pv3">
         <li class="pv1 f6">Admin controls: </li>
         <li class="pv1 inline-block">
-          <%= link_to 'View', @job, class: 'button is-small is-link is-outlined' %></li>
+          <%= link_to 'View', @job, class: 'button is-small adm is-link is-outlined' %></li>
         <li class="pv1 inline-block">
-          <%= link_to 'Edit', edit_job_path(@job), class: 'button is-small is-link is-outlined' %></li>
+          <%= link_to 'Edit', edit_job_path(@job), class: 'button is-small adm is-link is-outlined' %></li>
         <li class="pv1 inline-block">
-          <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
+          <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small adm is-link is-outlined' %></li>
       </ul>
     <% end %>
   </div>
+    </div>
 </div>
