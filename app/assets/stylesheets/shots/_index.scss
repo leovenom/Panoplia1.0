@@ -70,6 +70,15 @@ h3.shot-title.job {
 		//object-fit: cover;
 	}
 }
+.user-thumb-job-view {
+	display: block;
+	img {
+		border-radius: 50%;
+		height: 60px;
+		width: 60px;
+		//object-fit: cover;
+	}
+}
 
 .user-name-job {
 	display: inline-grid;

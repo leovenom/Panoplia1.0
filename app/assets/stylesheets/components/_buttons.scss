@@ -33,6 +33,12 @@
   width: 102px;
   height: 35px;
 }
+.button.is-lightr{
+	background-color: #eeeeee;
+	padding: 0.3em 2.5em;
+	display: inline;
+	font-size: 14px;
+}
 .button.is-dark:hover {
   background-color: #363636;
   border-color: transparent;
@@ -139,9 +145,6 @@
 .button.is-success {
 		background-color: #32DC64;
 }
-// .buttons .button:not(:last-child) {
-//   margin-right: 2rem;
-// }
 
 //show page user normal button
 .button.is-roxo {
@@ -250,11 +253,7 @@
 	height: 40px;
 	width: 100%;
 }
-// .button.contact:hover{
-// 	background-color: white;
-// 	color: #9600c8;
-// 	border: solid 2px #9600c8;
-// }
+
 //delete button
 .button.is-danger {
   background-color: #f14668;
