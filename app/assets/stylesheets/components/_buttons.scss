@@ -84,6 +84,20 @@
 	border-color: transparent;
 	color: #fff;
 }
+.button.is-primarye.nav {
+	background-color: #9600c8;
+	border-color: transparent;
+	color: #fff;
+	height: 22px;
+	font-size: 0.9em;
+	padding-left: 0.7em;
+	padding-right: 0.7em;
+}
+.button.is-primarye.nav:hover {
+	background-color: #ff78be;
+	border-color: transparent;
+	color: #fff;
+}
 .button.is-primarye.is-large {
 	height: 35px;
 }
@@ -94,6 +108,21 @@
 }
 
 .button.is-primary:hover, .button.is-primary.is-hovered {
+	background-color: #ff78be;
+	border-color: transparent;
+	color: #fff;
+}
+
+.button.is-primarye.job {
+	background-color: #9600c8;
+	border-color: transparent;
+	color: #fff;
+	height: 25px;
+	font-size: 12px;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+}
+.button.is-primarye.job:hover {
 	background-color: #ff78be;
 	border-color: transparent;
 	color: #fff;
@@ -190,6 +219,12 @@
 	border-radius: 5px;
 	font-size: 14px;
   height: 23px;
+}
+.button.is-small.adm {
+	border-radius: 5px;
+  font-size: 16px;
+	height: 22px;
+	padding-top: 5px;
 }
 
 //buttons prime
