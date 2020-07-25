@@ -1,7 +1,21 @@
 <div class="columns pt4 pb7">
-  <div class="colum">
-    <div class="ml5">
-      <%= link_to 'Back', jobs_path, class:"button is-light text optional label", style:"width: 120px;height:32px;line-height: 22px;"%>
+  <div class="column is-2 ml4 has-text-centered">
+    <div>
+      <%= link_to 'Back', jobs_path, class:"button is-lightr"%>
+    </div>
+    <div class="user-thumb-job-view mt5">
+      <% if @job.user.avatar.attached? %>
+        <%= link_to cl_image_tag(@job.user.avatar.key, :quality=>"auto:good"), user_path(@job.user) %>      
+      <% else %>
+        <%= link_to image_tag('panoplia-logo.png'), user_path(@job.user) %>
+      <% end %> 
+    </div>
+
+    <div class="shot-title job-page has-text-centered mt1">
+      <%=link_to @job.user.name.upcase, @job.user, class:"job-user-name" %>
+    </div>
+    <div class="pv2 f6 index-title has-text-centered">
+      <%= link_to sanitize(@job.description.truncate(200, separator: '</p>')), @job %>
     </div>
   </div>
 
