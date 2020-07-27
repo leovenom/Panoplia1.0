@@ -1,14 +1,14 @@
 <%= simple_form_for @shot, html: { multipart: true }  do |f| %>
-  <%= f.error_notification %>
+  
     <div class="columns">
 
       <div class="column hero is-background is-hidden-touch">
       </div>
       <div class="column hero is-warning drag">
-          <% unless @shot.user_shot.blank? %>
+          <% unless @shot.user_shot.blank? || @shot.user_shot.size > 2.megabytes %>
           <%= cl_image_tag @shot.user_shot.key, id: "previewImage" %>
           <% end %>
-
+          
           <output id="list"></output>
           <div id="drop_zone" class="title-drag is-size-5">DRAG AN DROP AN IMAGE <p class="subtitle cards is-size-6">or <span>browse</span> to choose a file</p></div>
           <br />
@@ -16,7 +16,7 @@
           <%#= f.input :user_shot, label: false, multiple: true, wrapper: false, label_html: { class: "file-label" } %>
           <div id="file-js-example" class="file has-name">
             <label class="file is-primary has-name is-small">
-              <%= f.file_field :user_shot, class: 'file-input' %>
+              <%= f.file_field :user_shot, class: 'file-input', onchange: "validateFiles(this);", data: { max_file_size: 2.megabytes }%>
               <span class="file-cta">
                 <span class="file-icon">
                   <i class="fas fa-upload"></i>
@@ -30,7 +30,7 @@
               </span>
             </label>
           </div>
-
+                  <%= f.error_notification message: 'Max size 2MB' %>
       </div>
 
         <div class="column is-4 hero is-warning profile">
