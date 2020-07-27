@@ -8,7 +8,7 @@
         <div class="column hero is-warning profile">
           <div class="column is-warning is-narrow" style="width: 390px;">
             <p class="title is-size-3 has-text-centered">Editing Shot</p>
-              <% unless @shot.user_shot.blank? %>
+              <% unless @shot.user_shot.blank?  || @shot.user_shot.size > 2.megabytes %>
                 <%= cl_image_tag @shot.user_shot_url, id: "previewImage" %>
               <% end %>
                 <output id="list"></output>
@@ -18,7 +18,7 @@
                     <%#= f.input :user_shot, label: false, multiple: true, wrapper: false, label_html: { class: "file-label" } %>
                     <div id="file-js-examples" class="file has-name">
                       <label class="file is-primary has-name is-small">
-                        <%= f.file_field :user_shot, class: 'file-input' %>
+                        <%= f.file_field :user_shot, class: 'file-input', onchange: "validateFiles(this);", data: { max_file_size: 2.megabytes } %>
                         <span class="file-cta">
                           <span class="file-icon">
                             <i class="fas fa-upload"></i>
@@ -32,6 +32,7 @@
                         </span>
                       </label>
                     </div>
+                    <%= f.error_notification message: 'Max size 2MB' %>
 
                     <div class="field mt2">
                       <div class="control">
