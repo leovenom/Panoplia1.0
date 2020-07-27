@@ -210,13 +210,12 @@ document.addEventListener("turbolinks:load", function() {
           }
         }
 
-
-        document.getElementById("scroll-content").addEventListener("scroll", function (event) {
-          var newDiv = document.createElement("div");
-             document.getElementById("scroll-content").appendChild(newDiv);
+    //scroll-content
+  
+    document.getElementById("scroll-content").addEventListener("scroll", function (event){
+        var newDiv = document.createElement("div");
+            document.getElementById("scroll-content").appendChild(newDiv);
      });
-     
-     
      var checkForNewDiv = function () {
          var lastDiv = document.querySelector("#scroll-content > div:last-child");
          var maindiv = document.querySelector("#scroll-content");
