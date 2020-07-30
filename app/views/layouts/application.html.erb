@@ -57,7 +57,8 @@
         <div class="navbar-end">
           <% if user_signed_in? %>
             <p class="navbar-item">
-              <%= link_to 'JOBS', jobs_path, class: "button is-black mr3" %>
+              <%= link_to 'JOBS', jobs_path, class: "button is-black mr3 is-static" %>
+              <%= link_to 'MASTERCLASS', jobs_path, class: "button is-black mr3 is-static" %>
               <%= link_to 'EVENTS', jobs_path, class: "button is-black mr3 is-static" %>
               <%= link_to 'STORE', jobs_path, class: "button is-black mr3 is-static" %>
               <%= link_to 'ABOUT', jobs_path, class: "button is-black is-static" %>
@@ -84,7 +85,7 @@
               </div>
             </div>
             
-            <div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-item">
               <a class="is-arrowless">
                 <p class="navbar-item user">
                   <% if current_user.avatar.attached? %>
@@ -94,52 +95,35 @@
                   <% end%>
                 </p>
               </a>
-              
-            <div class="navbar-dropdown profile">
-            <span class="triangle"></span>
-              <div class="navbar-item">
-                <%= link_to 'EDIT', edit_user_registration_path, class:"button is-black" %>
-              </div>
-              <div class="navbar-item">
-                <%= link_to 'PROFILE', user_path(current_user), class:"button is-black" %>
-              </div>
-              <div class="navbar-item">
-              <%= link_to 'CONTENTS', videos_path, class: "button is-black" %>
-              </div>
-              <hr class="navbar-divider">
-              <div class="navbar-item logout">
-                <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
-              </div>
-            </div>
           </div>
           <% end %>
-          <p class="navbar-item">
-          <% if user_signed_in? %>
-          <%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
-          <%= link_to 'POST A JOB', new_job_path, class: "button is-primarye nav mr3" %>
+
+            <% if user_signed_in? %>
+            <%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
+            <%#= link_to 'POST A JOB', new_job_path, class: "button is-primarye nav mr3 is-static" %>
             <div class="navbar-item has-dropdown is-hoverable">
               <p class="navbar-item">
-              <%= link_to new_shot_path, class:"button is-primarye nav"  do %>
-              <span class="icon is-small"><i class="fa fa-upload" style="color:#fff;"></i></span>
-                <span>UPLOAD</span>
-                  <% end %> 
+                <%= link_to new_shot_path, class:"button is-primarye nav"  do %>
+                  <span class="icon is-small"><i class="fa fa-upload" style="color:#fff;"></i></span>
+                    <span>UPLOAD</span>
+                <% end %> 
               </p>
               <div class="navbar-dropdown post">
-              <span class="triangle"></span>
-                <div class="navbar-item x">
-                  <%= link_to 'VIDEO', new_video_path, class: "button is-black" %>
-                </div>
-                <div class="navbar-item x">
-                  <%= link_to new_shot_path, class:"button is-black"  do %>
-                  <%# <span class="icon is-small"><i class="fa fa-upload"></i></span> %>
-                  <span>PHOTO</span>
-                  <% end %> 
-                </div>
+                <span class="triangle"></span>
+                  <div class="navbar-item x">
+                    <%= link_to 'VIDEO', new_video_path, class: "button is-black" %>
+                  </div>
+                  <div class="navbar-item x">
+                    <%= link_to new_shot_path, class:"button is-black"  do %>
+                    <span>PHOTO</span>
+                    <% end %> 
+                  </div>
+              </div>
             </div>
-          </p>
+
 
           <div class="navbar-item logout">
-            <% link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
+            <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
           </div>
           <% else %>
           <p class="navbar-item">

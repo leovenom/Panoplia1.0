@@ -16,8 +16,11 @@ class ShotsController < ApplicationController
     #@entity_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: true}).order('shots.created_at DESC').first
     #@entity_shots = @all_shots.select { |shot| shot.user.entity? }
     @jobs = Job.all.order("created_at desc")
-    @videos = Video.all.order("created_at desc")
+    #@videos = Video.all.order("created_at desc")
     #@resources = @videos.zip(@shots)
+    @videos = Video.all.order("created_at desc")
+    #@shots = Shot.includes(:user).where.not(id: @shot).order('created_at DESC')
+    @resources = @videos.zip(@shots)
   end
 
   # GET /shots/1

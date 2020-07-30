@@ -49,6 +49,15 @@
               <% elsif !current_user?(@user)%>
                 <button class="button is-dark" title="Disabled button" disabled>HIRE ME</button>
               <% end%>
+
+              <div class="">
+                <%= link_to 'EDIT', edit_user_registration_path, class:"button is-roxo" %>
+              </div>
+
+                <%#= link_to 'PROFILE', user_path(current_user), class:"button is-roxo" %>
+
+                <%#= link_to 'CONTENTS', videos_path, class:"button is-roxo" %>
+
             </div>
 
             <% time_ago_in_words(@user.created_at) %>
