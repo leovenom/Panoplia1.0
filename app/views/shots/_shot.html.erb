@@ -2,7 +2,9 @@
             <div class="shot-wrapper">
               
               <%= link_to shot, class: "shot" do %>
+              
               <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
+              
               <% end %>
               <% if user_signed_in? %>
               <nav class="level shot-analytics">
