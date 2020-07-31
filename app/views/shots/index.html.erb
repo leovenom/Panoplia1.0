@@ -5,16 +5,18 @@
   <section class="section">
     <div class="column is-desktop">
 
-     
+
         <p class="subtitle cards" style="margin-left: 25px;">BEST OF PANÓPLIA <span>EVER </span><i class="fas fa-sort-down"></i></p>
         <div id="scroll-content">
           <div class="shots">
+            
 
-
-              <% @resources.each do |video, shot| %>
-              <%= render @shots %>
+              <% @videos.zip(@shots) do |video, shot| %>
+              <%= render shot %>
+ 
               
-              <div class="videos">
+
+                <div class="videos">
                 <div class="shot-grid-item">
                   <div class="shot-wrapper">
                   <%= link_to video, class: "video" do %>
@@ -74,7 +76,7 @@
               <% end %>
           </div>
         </div>  
-   
+
 
       <%# video board colum %>
 
@@ -89,3 +91,25 @@
         
     </div>
   </section>
+
+  <script>
+        //scroll-content
+  
+    document.getElementById("scroll-content").addEventListener("scroll", function (event){
+        var newDiv = document.createElement("div");
+            document.getElementById("scroll-content").appendChild(newDiv);
+     });
+     var checkForNewDiv = function () {
+         var lastDiv = document.querySelector("#scroll-content > div:last-child");
+         var maindiv = document.querySelector("#scroll-content");
+         var lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight;
+         var pageOffset = maindiv.offsetTop + maindiv.clientHeight;   
+         if (pageOffset > lastDivOffset - 10) {
+             var newDiv = document.createElement("div");
+             document.getElementById("scroll-content").appendChild(newDiv);
+             checkForNewDiv();
+         }
+     };
+     
+     checkForNewDiv();
+  </script> 
