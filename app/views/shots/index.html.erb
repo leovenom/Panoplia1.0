@@ -11,16 +11,20 @@
           <div class="shots">
             
 
-              <% @videos.zip(@shots) do |video, shot| %>
-              <%= render shot %>
- 
-              
+              <%# @resources.each do |video, shot| %>
 
+              <% @shots.each do |shot |%>
+              <%= render shot %>
+                <% end %>
+              
+              <% @videos.each do |video |%>
                 <div class="videos">
                 <div class="shot-grid-item">
                   <div class="shot-wrapper">
                   <%= link_to video, class: "video" do %>
+                  
                     <%= get_video_iframe(video.url) %>
+
                     <% end %>
 
                       <nav class="level shot-analytics">

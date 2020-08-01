@@ -20,7 +20,7 @@ class ShotsController < ApplicationController
     #@resources = @videos.zip(@shots)
     @videos = Video.all.order("created_at desc")
     #@shots = Shot.includes(:user).where.not(id: @shot).order('created_at DESC')
-    @resources = @videos.zip(@shots)
+    #@resources = @videos.zip(@shots)
     #@resources = (@videos + @shots).sort_by { |element| element.created_at }
 
   end
