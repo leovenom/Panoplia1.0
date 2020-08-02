@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user_shots  = @user.shots.order('shots.created_at DESC')
     @user_videos = @user.videos.order('videos.created_at DESC')
     @video = Video.find_by(id: params[:id])
+    @resources = (@user_shots + @user_videos).sort {|a,b| b.created_at <=> a.created_at }
   end
 
   def edit

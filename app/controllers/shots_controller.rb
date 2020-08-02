@@ -8,7 +8,7 @@ class ShotsController < ApplicationController
   # GET /shots.json
   def index
     #@shots = Shot.all.order('created_at DESC')
-    @all_shots = Shot.includes(:user).where.not(id: @shot).order('created_at DESC')
+    @all_shots = Shot.includes(:user).where.not(id: @shot).order('created_at DESC').limit(12).all
     #@shots = Shot.includes(:user).where.not(id: @shot).where(users: { entity: false}).order('shots.created_at DESC')
     #@shots = @all_shots.select { |shot| !shot.user.entity? }
     @shots = @all_shots
@@ -18,7 +18,7 @@ class ShotsController < ApplicationController
     @jobs = Job.all.order("created_at desc")
     #@videos = Video.all.order("created_at desc")
     #@resources = @videos.zip(@shots)
-    @videos = Video.all.order("created_at desc")
+    @videos = Video.all.order("created_at desc").limit(12).all
     #@shots = Shot.includes(:user).where.not(id: @shot).order('created_at DESC')
     #@resources = @videos.zip(@shots)
     #@resources = (@videos + @shots).sort_by { |element| element.created_at }
