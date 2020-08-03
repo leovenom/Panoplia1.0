@@ -19,7 +19,7 @@
       <% if user_signed_in?%>
         <nav class="level shot-analytics image">
           <div class="level-left ml3">
-            <div class="user-name"><%=link_to shot.title.titleize, shot %>
+            <div class="user-name"><%=link_to sanitize(shot.title.titleize.truncate(25)), shot %>
             </div>
           </div>
           <div class="level-right mr4">
