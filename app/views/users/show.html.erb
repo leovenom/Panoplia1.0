@@ -6,7 +6,7 @@
           <div class="column is-5 user has-text-centered">
             <figure class="image is-inline-block">
               <% if @user.avatar.attached? %>
-                <%= cl_image_tag(@user.avatar.key, :quality=>"auto:best") %>
+                <%= cl_image_tag(@user.avatar.key, :quality=>"auto:good") %>
               <% else %>
                 <%= image_tag 'panoplia-logo.png' %>
               <% end %>
@@ -47,7 +47,8 @@
               <% if @user.available? && !current_user?(@user)%>
                 <%= mail_to @user.email,"HIRE ME", class:'button is-roxo' %>
               <% elsif !current_user?(@user)%>
-                <button class="button is-dark" title="Disabled button" disabled>HIRE ME</button>
+                <button class="button is-dark" title="Disabled button" style="
+    height: 35px;" disabled>HIRE ME</button>
               <% end%>
 
               <div class="">

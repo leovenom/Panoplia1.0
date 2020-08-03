@@ -183,14 +183,16 @@ html, body {
 	border-radius: 50%;
 	display: block;
   height: 350px;
-  width: 350px;
+	width: 350px;
+	object-fit: cover;
 }
 
 .comment img{
 	border-radius: 50%;
 	display: block;
   max-height: 48px;
-  width: 48px;
+	width: 48px;
+	object-fit: cover;
 }
 
 //video
