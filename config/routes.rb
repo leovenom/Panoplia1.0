@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   	end
   end
  
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations', confirmable: 'confirmables' }
   root 'shots#index'
   get ':user_name', to: 'profiles#show', as: :profile
 
