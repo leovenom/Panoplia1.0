@@ -7,3 +7,4 @@ ActionMailer::Base.smtp_settings = {
   :password             =>  'svuxovxw3025',
   :domain               =>  'panoplia.heroku.com',
   :enable_starttls_auto  =>  true
+}
