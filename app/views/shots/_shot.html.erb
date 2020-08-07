@@ -13,7 +13,7 @@
           <div class="user-thumb">
             <%=link_to cl_image_tag(shot.user.avatar.key, :quality=>"auto:good"), user_path(shot.user)  unless shot.user.avatar.blank?%> 
           </div>
-          <div class="user-name"><%=link_to sanitize(shot.title.titleize.truncate(14)), shot %>
+          <div class="user-name"><%=link_to sanitize(shot.title.titleize.truncate(13)), shot %>
           
           </div>
         </div>

@@ -29,7 +29,7 @@
                     <div class="user-thumb">
                       <%=link_to cl_image_tag(shot.user.avatar.key), user_path(shot.user)  unless shot.user.avatar.blank?%> 
                     </div>
-                    <div class="user-name"><%=link_to sanitize(shot.user.name.upcase.truncate(14)), shot.user %>
+                    <div class="user-name"><%= link_to sanitize(shot.user.name.upcase.truncate(13)), shot.user %>
                     </div>
                   </div>
                 </div>
@@ -95,7 +95,7 @@
                           <div class="user-thumb">
                             <%=link_to cl_image_tag(video.user.avatar.key, :quality=>"auto:good"), user_path(video.user) unless video.user.avatar.blank? %> 
                           </div>
-                          <div class="user-name"><%=link_to sanitize(video.title.titleize.truncate(16)), video %>
+                          <div class="user-name"><%=link_to sanitize(video.title.titleize.truncate(15)), video %>
                           
                           </div>
                         </div>
@@ -159,7 +159,7 @@
                 <% end%>
               </div>
               <div class="user-name-job">
-                <h3 class="shot-title job search"><%= link_to user.name.upcase, user %></h3>
+                <h3 class="shot-title job search"><%= link_to sanitize(user.name.upcase.truncate(13)), user %></h3>
                 <p> <%= user.location %> </p>
               </div>
             </div>

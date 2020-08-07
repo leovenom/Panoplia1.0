@@ -11,7 +11,7 @@
               <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
             </div>
             <div class="user-name">
-              <%= link_to sanitize(video.title.titleize.truncate(14)), video %>
+              <%= link_to sanitize(video.title.titleize.truncate(13)), video %>
             </div>
           </div>
         </div>
