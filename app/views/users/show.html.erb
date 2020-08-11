@@ -1,9 +1,9 @@
 <div class="card">
   <div class="card-image">
-    <section class="hero is-small is-warning">
+    <section class="hero">
       <div class="hero-body show">
-        <div class="columns is-desktop">
-          <div class="column is-5 user has-text-centered">
+        <div class="column user has-text-centered">
+     
             <figure class="image is-inline-block">
               <% if @user.avatar.attached? %>
                 <%= cl_image_tag(@user.avatar.key, :quality=>"auto:good") %>
@@ -11,9 +11,8 @@
                 <%= image_tag 'panoplia-logo.png' %>
               <% end %>
             </figure>
-          </div>
-
-          <div class="column is-6 has-text-centered">
+       
+          
             <h1 class="title name is-size-3-mobile is-size-2-fullhd">
               <%= @user.name.upcase %>
             </h1>
@@ -43,17 +42,16 @@
               <% if @user.available? && !current_user?(@user)%>
                 <%= mail_to @user.email,"HIRE ME", class:'button is-roxo' %>
               <% elsif !current_user?(@user)%>
-                <button class="button is-dark" title="Disabled button" style="
-    height: 35px;" disabled>HIRE ME</button>
+                <button class="button is-dark" title="Disabled button" style="height: 35px;" disabled>HIRE ME</button>
               <% end%>
-
+              
+              <% if user_signed_in? && current_user?(@user)%>
               <div class="">
                 <%= link_to 'EDIT', edit_user_registration_path, class:"button is-roxo" %>
               </div>
-
-                <%#= link_to 'PROFILE', user_path(current_user), class:"button is-roxo" %>
-
                 <%= link_to 'CONTENTS', videos_path, class:"button is-roxo" %>
+              <%end%>
+                <%#= link_to 'PROFILE', user_path(current_user), class:"button is-roxo" %>
 
             </div>
 
@@ -74,7 +72,7 @@
               </div>
             </div>
               <% end %>
-          </div>
+          
 
         </div>
       </div>
