@@ -3,9 +3,9 @@
     <div class="columns is-centered is-desktop">
 
       <div class="column hero drag">
-          <%= link_to 'BACK', shots_path, class:"text optional label" %>
+        <%= link_to 'BACK', shots_path, class:"text optional label" %>
           <% unless @shot.user_shot.blank? || @shot.user_shot.size > 2.megabytes %>
-          <%= cl_image_tag @shot.user_shot.key, id: "previewImage" %>
+            <%= cl_image_tag @shot.user_shot.key, id: "previewImage" %>
           <% end %>
           
           <output id="list"></output>
@@ -29,13 +29,13 @@
               </span>
             </label>
           </div>
-                  <%= f.error_notification message: 'Max size 2MB' %>
+          <%= f.error_notification message: 'Max size 2MB' %>
       </div>
 
-        <div class="column hero is-warning profile">
-    
+      <div class="column hero is-warning profile">
+        <div>
         <p class="subtitle cards">UPLOAD A PHOTO</p>
-      
+
           <div class="field">
             <div class="control">
               <%= f.input :title, label: "Title", required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
@@ -53,13 +53,10 @@
               <%= f.button :submit, "PUBLISH", class:"button is-prime is-small" %>
             </div>
           </div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-  
-<% end %>
-    </div> 
+          
+        </div>
+      </div> 
+    <% end %>
 
 <script>
   const fileInput = document.querySelector('#file-js-example input[type=file]');
