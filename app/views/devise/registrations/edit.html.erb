@@ -1,19 +1,20 @@
 <section class="">
     <div class="columns is-centered is-desktop">
-        <div class="column hero is-background-edit is-hidden-media is-hidden-mobile">
+        <div class="column hero is-primary is-hidden-media is-hidden-mobile">
           <%= link_to ' BACK', videos_path, class:"text optional label ml3" %>
           <div id="slideout">
             <p> Usuario</p>
           </div>
         </div>
+
         <div class="column hero is-purple is-centered is-mobile">
           <div class="field element">
-            <div>
+            <%# <div>
               <a id="element1" onclick="myFunctionAvatar();javascript:changeTextAvatar(1);changeFont1()" class="amatic">→ Profile Picture</a>
-            </div>
-            <div>
-              <a id="element2" onclick="myFunctionProfile();javascript:changeTextProfile(2);changeFont2()" class="roman">Public Profile</a>
-            </div>
+            </div> %>
+            <%# <div>
+              <a id="element2" onclick="myFunctionProfile();javascript:changeTextProfile(2);changeFont2()" class="roman">→ Public Profile</a>
+            </div> %>
             <div>
               <a id="element3" onclick="myFunctionEmail();javascript:changeTextEmail(3);changeFont3()" class="roman">Email</a>
             </div>
@@ -24,42 +25,14 @@
         </div>
 
       <div class="column profile edit is-mobile">
-      <h1 class="title edit">EDIT PROFILE</h1>
-      <%# <p class="subtitle is-size-6">PUBLIC PROFILE</p> %>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= f.error_notification %>
+        <h1 class="title edit">EDIT PROFILE</h1>
+        <%# <p class="subtitle is-size-6">PUBLIC PROFILE</p> %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.error_notification %>
 
-      <%# avatar profile %>
-      <div id="avatar" class="avatar-edit">
-      <p class="subtitle edit">PUBLIC PICTURE</p>
-        <div class="field">
-          <div class="control">
-              <%= cl_image_tag(resource.avatar.key, :quality=>"auto:good") if resource.avatar.attached? %>
-          </div>
-         </div>
-         
 
-          <div id="file-js-examplez" class="file has-name">
-            <label class="file is-primary has-name is-small">
-              <%= f.file_field :avatar, as: :file, class: 'file-input', onchange: "validateFiles(this);", data: { max_file_size: 2.megabytes } %>
-              <span class="file-cta">
-                <span class="file-icon">
-                  <i class="fas fa-upload"></i>
-                </span>
-                <span class="file-label">
-                  Choose a file…
-                </span>
-              </span>
-              <span class="file-name">
-                No file uploaded
-              </span>
-            </label>
-          </div>
-          <%= f.error_notification message: 'Max size 2MB' %>
-      <br />
-      </div>
       <%# public profile %>
-      <div id="public-profile" class="public-profile">
+      <div id="#public-profile" class="public-profile">
         <p class="subtitle edit">PUBLIC PROFILE</p>
         <div class="field">
           <div class="control">
@@ -106,7 +79,57 @@
         
       </div>
 
-        <%# email %>
+
+        <%# password confirmation %>
+          <div class="field">
+            <div class="control">
+              <%#= f.input :current_password, hint: "we need your current password to confirm your changes", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+            </div>
+        </div>
+   
+        <%= f.button :submit, "SAVE PROFILE INFO", class:"button is-prime is-small" %>
+     
+     
+
+        
+        <h3 class="title edit cancel">Cancel my account</h3>
+        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+   
+      </div>
+
+      <%# avatar profile %>
+      <div class="column hero is-warning">
+        <div class="pr5">
+        <div id="avatar" class="avatar-edit">
+          <p class="subtitle edit pt4 has-text-centered">PUBLIC PICTURE</p>
+
+          <div class="field">
+            <div class="control has-text-centered">
+                <%= cl_image_tag(resource.avatar.key, :quality=>"auto:good") if resource.avatar.attached? %>
+            </div>
+          </div>
+
+          <div id="file-js-examplez" class="file has-name is-centered">
+            <label class="file is-primary has-name is-small">
+              <%= f.file_field :avatar, as: :file, class: 'file-input', onchange: "validateFiles(this);", data: { max_file_size: 2.megabytes } %>
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                  Choose a file…
+                </span>
+              </span>
+              <span class="file-name">
+                No file uploaded
+              </span>
+            </label>
+          </div>
+            <%= f.error_notification message: 'Max size 2MB' %>
+            <br />
+        </div>
+
+                <%# email %>
         <div id="email" class="email">
         <p class="subtitle edit">EMAIL</p>
           <div class="field">
@@ -137,28 +160,11 @@
             <%= f.input :password_confirmation, required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
-          
         </div>
-        <%# password confirmation %>
-          <div class="field">
-            <div class="control">
-              <%#= f.input :current_password, hint: "we need your current password to confirm your changes", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-            </div>
         </div>
-   
-        <%= f.button :submit, "SAVE PROFILE INFO", class:"button is-prime is-small" %>
-     
-      <% end %>
-
-        
-        <h3 class="title edit cancel">Cancel my account</h3>
-        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-   
       </div>
-        <div class="column hero is-warning is-hidden-mobile">
-        </div>
-        <div class="column hero is-warning is-hidden-mobile">
-        </div>
+      
+      <% end %>
     </div>
   </div>
 </section>
