@@ -132,11 +132,14 @@
           </div>
             <%= f.error_notification message: 'Max size 2MB' %>
             <br />
+            <div class="has-text-centered">
+            <%= f.button :submit, "UPLOAD NEW AVATAR", class:"button is-prime is-small" %>
+            </div>
         </div>
 
         <%# email %>          
         
-        <div>
+        <div class="pt5">
           <a id="element3" onclick="myFunctionEmail();javascript:changeTextEmail(3);changeFont3()" class="roman">Email</a>
         </div>
 
