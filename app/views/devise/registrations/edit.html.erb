@@ -1,20 +1,20 @@
 <section class="">
     <div class="columns is-centered is-desktop">
-        <div class="column hero is-primary is-hidden-media is-hidden-mobile">
+        <div class="column is-6 hero is-primary is-hidden-media is-hidden-mobile">
           <%= link_to ' BACK', videos_path, class:"text optional label ml3" %>
           <div id="slideout">
             <p> Usuario</p>
           </div>
         </div>
 
-        <div class="column hero is-purple is-centered is-mobile">
+        <%# <div class="column hero is-purple is-centered is-mobile">
           <div class="field element">
-            <%# <div>
+            <div>
               <a id="element1" onclick="myFunctionAvatar();javascript:changeTextAvatar(1);changeFont1()" class="amatic">→ Profile Picture</a>
-            </div> %>
-            <%# <div>
+            </div>
+            <div>
               <a id="element2" onclick="myFunctionProfile();javascript:changeTextProfile(2);changeFont2()" class="roman">→ Public Profile</a>
-            </div> %>
+            </div>
             <div>
               <a id="element3" onclick="myFunctionEmail();javascript:changeTextEmail(3);changeFont3()" class="roman">Email</a>
             </div>
@@ -22,7 +22,7 @@
               <a id="element4" onclick="myFunctionPassword();javascript:changeTextPassword(4);changeFont4()" class="roman">Password</a>
             </div>
           </div>
-        </div>
+        </div> %>
 
       <div class="column profile edit is-mobile">
         <h1 class="title edit">EDIT PROFILE</h1>
@@ -46,9 +46,13 @@
           </div>
       
 
-        <div class="field">
-          <div class="control">
+        <div class="columns" style="margin-bottom:0">
+          <div class=" column control" style="margin-bottom:0">
             <%= f.input :location, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+          </div>
+          <div class="column select is-multiple" style="margin-bottom:0">
+            <label class="label">Select type</label>
+            <%=  f.input_field :art, collection: User::ARTS, autofocus: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, style:"width: 100%" %>
           </div>
         </div>
 
@@ -58,34 +62,35 @@
           </div>
         </div>
 
-        <div class="field">
+        <%# <div class="field">
           <div class="control">
-          <div class="select is-multiple">
-          <label class="label">Select type</label>
-            <%=  f.input_field :art, collection: User::ARTS, autofocus: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }%>
+            <div class="select is-multiple">
+              <label class="label">Select type</label>
+              <%=  f.input_field :art, collection: User::ARTS, autofocus: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }%>
+          <%#  </div>
           </div>
+        </div> %>
+
+        <%# if @user.entity %>
+          <%# else %>
+          <div class="field">
+            <div class="control">
+              <label class="label">Looking for a job?</label>
+              <%= f.check_box :available %>
+              <%= f.label :available, "I am avaiable for a job.", autofocus: true, wrapper: false, label_html: { class: "label" } %>
+            </div>
           </div>
-        </div>
-        <% if @user.entity %>
-        <% else %>
-        <div class="field">
-          <div class="control">
-            <label class="label">Looking for a job?</label>
-            <%= f.check_box :available %>
-            <%= f.label :available, "I am avaiable for a job.", autofocus: true, wrapper: false, label_html: { class: "label" } %>
-          </div>
-        </div>
-        <% end %>
+        <%# end %>
         
       </div>
 
 
         <%# password confirmation %>
-          <div class="field">
-            <div class="control">
-              <%#= f.input :current_password, hint: "we need your current password to confirm your changes", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-            </div>
-        </div>
+        <%# <div class="field">
+          <div class="control">
+            <%= f.input :current_password, hint: "we need your current password to confirm your changes", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+        <%# </div>
+        </div> %>
    
         <%= f.button :submit, "SAVE PROFILE INFO", class:"button is-prime is-small" %>
      
@@ -129,38 +134,48 @@
             <br />
         </div>
 
-                <%# email %>
+        <%# email %>          
+        
+        <div>
+          <a id="element3" onclick="myFunctionEmail();javascript:changeTextEmail(3);changeFont3()" class="roman">Email</a>
+        </div>
+
         <div id="email" class="email">
-        <p class="subtitle edit">EMAIL</p>
-          <div class="field">
-            <div class="control">
-              <%= f.input :email, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+          <%# <p class="subtitle edit">EMAIL</p> %>
+            <div class="field">
+              <div class="control">
+                <%= f.input :email, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+              </div>
             </div>
-          </div>
-         
+         <%= f.button :submit, "SAVE PROFILE INFO", class:"button is-prime is-small" %>
          </div>
         <%# password %>
-        
-        <div id="password" class="password">
-          <p class="subtitle edit">PASSWORD</p>
-          <div class="field">
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-          <% end %>
-          </div>
-
-          <div class="field">
-            <div class="control">
-            <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="control">
-            <%= f.input :password_confirmation, required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-            </div>
-          </div>
+        <div>
+          <a id="element4" onclick="myFunctionPassword();javascript:changeTextPassword(4);changeFont4()" class="roman">Password</a>
         </div>
+
+        <div id="password" class="password">
+          <%# <p class="subtitle edit">PASSWORD</p> %>
+            <div class="field">
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+            <% end %>
+            </div>
+
+            <div class="field">
+              <div class="control">
+              <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+              <%= f.input :password_confirmation, required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+              </div>
+            </div>
+            <%= f.button :submit, "SAVE PROFILE INFO", class:"button is-prime is-small" %>
+        </div>
+
         </div>
       </div>
       
