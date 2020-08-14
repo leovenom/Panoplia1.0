@@ -169,9 +169,9 @@ document.addEventListener("turbolinks:load", function() {
       function changeTextEmail(idElement) {
           var element = document.getElementById('element' + idElement);
           if (idElement === 3) {
-              if (element.innerHTML === '→ Email') element.innerHTML = 'Email';
+              if (element.innerHTML === '→Edit Email') element.innerHTML = 'Email';
               else {
-                  element.innerHTML = '→ Email';
+                  element.innerHTML = '→Edit Email';
               }
           }
       }
@@ -195,9 +195,9 @@ document.addEventListener("turbolinks:load", function() {
         function changeTextPassword(idElement) {
             var element = document.getElementById('element' + idElement);
             if (idElement === 4) {
-                if (element.innerHTML === '→ Password') element.innerHTML = 'Password';
+                if (element.innerHTML === '→Edit Password') element.innerHTML = 'Password';
                 else {
-                    element.innerHTML = '→ Password';
+                    element.innerHTML = '→Edit Password';
                 }
             }
         }
