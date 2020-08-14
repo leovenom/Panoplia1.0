@@ -33,6 +33,7 @@ class SearchesController < ApplicationController
     #   @jobs = policy_scope(JOB).where(["title ILIKE ?", "%#{params[:search]}%"])
     #   end
     #@jobs = Job.where(["title ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
+    @resources = (@shots + @videos).sort {|a,b| b.created_at <=> a.created_at }
 
 
   end
