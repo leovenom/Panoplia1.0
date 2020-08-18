@@ -2,7 +2,7 @@
 
     <div class="columns is-centered is-desktop">
 
-      <div class="column hero drag">
+      <div class="column hero white drag">
         <%= link_to 'Back', shots_path, class:"text optional label" %>
           <% unless @shot.user_shot.blank?  || @shot.user_shot.size > 2.megabytes %>
             <%= cl_image_tag @shot.user_shot_url, id: "previewImage" %>
