@@ -102,7 +102,7 @@
                 <p class="subtitle art"><%= user.art %></p>
               </div>
             </div>
-            <div class="shots-following">
+            <div class="shots-following is-hidden-mobile">
               <% user.shots.limit(4).each do|shot|%>
                 <%= link_to shot, class: "shot" do %>
                   <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
