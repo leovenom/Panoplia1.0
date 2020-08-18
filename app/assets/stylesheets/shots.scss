@@ -216,12 +216,34 @@ overflow:auto;
 
 .follow-grid {
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
+	grid-template-columns: repeat(1fr);
   grid-gap: 10px;
 	margin: 0 1.5rem 0 1.5rem;
 	@media only screen and (max-width: 650px) {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 	}
+	.shot img {
+		height: 150px;
+		width: 150px;
+		object-fit: cover;
+	}
+}
+.shots-following {
+	display: inline-flex;
+  grid-gap: 15px;
+}
+
+.level-item-search-f{
+	align-items: center;
+	justify-content: center;
+  display: flex;
+}
+.user-thumb-following img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+	object-fit: cover;
+	margin: 1rem;
 }
 
 .follow-search-grid {
@@ -236,9 +258,8 @@ overflow:auto;
 
 .user-name-follow {
   display: inline-block;
-	position: relative;
-  padding-left: 0px;
-  padding-right: 24px;
+  position: relative;
+  padding: 2rem;
 }
 
 #slideout {
