@@ -1,5 +1,5 @@
 <section class="section">
-  <div class="columns is-desktop">
+  <%# <div class="columns is-desktop">
 
     <div class="column">
       <p class="subtitle cards" style="margin-left: 25px;"
@@ -7,32 +7,45 @@
       
         <div class="shots-search">
             <% @resources.each do |resource| %>
-              <% if resource.is_a?(Video) %>
-                <%= render partial: "video", locals: {video: resource} %>
-              <% else %>
-                <%= render partial: "shot", locals: {shot: resource} %>
-              <% end %>
-            <% end %>
-        </div>
-    </div>
-      <%# video board colum end%>
-      <div class="column is-3">
+              <%# <% if resource.is_a?(Video) %>
+                <%#= render partial: "video", locals: {video: resource} %>
+              <%# else %>
+                <%#= render partial: "shot", locals: {shot: resource} %>
+              <%# end %>
+            <%# end %>
+        <%#</div>
+    </div> %>
+
+      <div class="column">
         <p class="subtitle cards" style="margin-left: 25px;">USER <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
-        <div class="follow-search-grid">
+        <div class="follow-grid">
           <% @users.each do |user| %>
-            <div class="level-item-search">
-              <div class="user-thumb-job">
+            <div class="level-item-search-f">
+              <div class="user-thumb-following">
                 <% if user.avatar.attached? %>
                   <%= link_to cl_image_tag(user.avatar.key, :quality=>"auto:good"), user_path(user) %>
                 <% else%>
                   <%= link_to image_tag('panoplia-logo.png'), user_path(user) %>
                 <% end%>
               </div>
-              <div class="user-name-job">
+              <div class="user-name-follow">
                 <h3 class="shot-title job search"><%= link_to sanitize(user.name.upcase.truncate(20)), user %></h3>
-                <p> <%= user.location %> </p>
+                <p style="margin-top: 5px;"> 
+                <%= user.location %> </p>
+              <div style="display:flex">
+                <p class="about">Artist</p>
+                <p class="subtitle art"><%= user.art %></p>
               </div>
+              </div>
+              <div class="shots-following is-hidden-mobile">
+              <% user.shots.limit(4).each do|shot|%>
+                <%= link_to shot, class: "shot" do %>
+                  <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
+                <%end%>
+              <%end%>
             </div>
+            </div>
+            
           <%end%>
 
         </div>
