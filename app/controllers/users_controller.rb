@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @video = Video.find_by(id: params[:id])
     @resources = (@user_shots + @user_videos).sort {|a,b| b.created_at <=> a.created_at }
     @all_shots = Shot.includes(:user).where.not(id: @shot).order('created_at DESC').limit(4).all
-    @shots = Shot.all.limit(4)
+    #@shots = Shot.all.limit(4)
   end
 
   def edit

@@ -34,8 +34,6 @@ class SearchesController < ApplicationController
     #   end
     #@jobs = Job.where(["title ILIKE ?", "%#{params[:search]}%"]).order('created_at DESC')
     @resources = (@shots + @videos).sort {|a,b| b.created_at <=> a.created_at }
-
-
   end
 
   def new
