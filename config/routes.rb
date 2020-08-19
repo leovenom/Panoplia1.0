@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations', confirmations: 'confirmations' }
   root 'shots#index'
   get ':user_name', to: 'profiles#show', as: :profile
+  get 'home/about'
 
   get '/users/:id', to: 'users#show'
   resources :users, only: %i[show edit update]
