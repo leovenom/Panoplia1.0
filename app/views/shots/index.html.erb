@@ -1,22 +1,22 @@
 <%= render 'hero' %>
-  <% if user_signed_in? %>
-    <%= image_tag 'fundo.png', class:"fahvm"%>
-  <%end%>
-  <section class="section">
-    <div class="column is-desktop">
+<% if user_signed_in? %>
+<%= image_tag 'fundo.png', class:"fahvm"%>
+<%end%>
+<section class="section">
+	<div class="column is-desktop">
 
-        <p class="subtitle cards" style="margin-left: 25px;">BEST OF PANÓPLIA <span>EVER </span><i class="fas fa-sort-down"></i></p>
-        <div id="">
-          <div class="shots">
-            <% @resources.each do |resource| %>
-              <% if resource.is_a?(Video) %>
-                <%= render partial: "video", locals: {video: resource} %>
-              <% else %>
-                <%= render partial: "shot", locals: {shot: resource} %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+		<p class="subtitle cards" style="margin-left: 25px;">BEST OF PANÓPLIA <span>EVER </span><i class="fas fa-sort-down"></i></p>
+		<div id="">
+			<div class="shots">
+				<% @resources.each do |resource| %>
+				<% if resource.is_a?(Video) %>
+				<%= render partial: "video", locals: {video: resource} %>
+				<% else %>
+				<%= render partial: "shot", locals: {shot: resource} %>
+				<% end %>
+				<% end %>
+			</div>
+		</div>
 
-    </div>
-  </section>
+	</div>
+</section>

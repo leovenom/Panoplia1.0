@@ -1,45 +1,45 @@
 <%= simple_form_for @video do |f| %>
-  <%= f.error_notification %>
-  <div class="columns is-centered is-desktop" style="height: 686px;">
-  
-    <div class="background-pink">
-      <%= link_to ' BACK', videos_path, class:"text optional label ml5 mt5" %>
+	<%= f.error_notification %>
+	<div class="columns is-centered is-desktop" style="height: 686px;">
 
-      					<p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p>
-			<%= image_tag ("background-log.jpg")%>
+		<div class="background-pink">
+			<%= link_to ' BACK', videos_path, class:"text optional label ml5 mt5" %>
+
+			<p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p>
+			 <%= image_tag ("background-log.jpg")%>
+		 </div>
+
+		 <div class="column is-6 hero is-warning profile">
+			<div class="column is-warning is-narrow" style="">
+				<p class="subtitle cards">UPLOAD A VIDEO</p>
+				<div class="field">
+					<label for="video-url" class="text optional label">URL</label>
+					<div class="control">
+						<%= f.text_field :url, required: true, id:"video-url", name:"video[url]", class:"string optional input"%>            
+					</div>
+				</div>
+
+				<div class="field">
+					<div class="control">
+						<%= f.input :title, required: true, label: "Title", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+					</div>
+				</div>
+
+				<div class="field">
+					<div class="control">
+						<%= f.input :description, required: true, label: "Description", input_html: { class: "textarea"}, wrapper: false, label_html: { class: "label" } %>
+					</div>
+				</div>
+
+				<div class="form-actions">
+					<%= f.button :submit, class:"button is-prime is-small" %>
+				</div>
+				<div style="display: flex;">
+					<%= link_to 'SHOW ', @video, class:"text optional label mt3"  %>
+				</div> 
+			</div>
 		</div>
-    
-
-      <div class="column is-6 hero is-warning profile">
-        <div class="column is-warning is-narrow" style="">
-          <p class="subtitle cards">UPLOAD A VIDEO</p>
-          <div class="field">
-            <label for="video-url" class="text optional label">URL</label>
-            <div class="control">
-              <%= f.text_field :url, required: true, id:"video-url", name:"video[url]", class:"string optional input"%>            
-            </div>
-          </div>
-          
-          <div class="field">
-            <div class="control">
-              <%= f.input :title, required: true, label: "Title", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="control">
-              <%= f.input :description, required: true, label: "Description", input_html: { class: "textarea"}, wrapper: false, label_html: { class: "label" } %>
-            </div>
-          </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, class:"button is-prime is-small" %>
-          </div>
-          <div style="display: flex;">
-            <%= link_to 'SHOW ', @video, class:"text optional label mt3"  %>
-          </div> 
-        </div>
-      </div> 
-  </div> 
+		
+	</div> 
 <% end %>
 
