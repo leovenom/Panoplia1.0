@@ -1,173 +1,173 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Panóplia</title>
-    <meta charset="UTF-8">
-    <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Panóplia 〰 Plataforma de empoderamento e divulgação de artistas 〰</title>
-    <meta name="description" content="𝚙𝚘𝚛𝚚𝚞𝚎 𝚑á 𝚙𝚎𝚜𝚜𝚘𝚊𝚜 𝚚𝚞𝚎 𝚏𝚊𝚣𝚎𝚖 𝚌𝚘𝚒𝚜𝚊𝚜 𝚒𝚗𝚌𝚛í𝚟𝚎𝚒𝚜">
-    <meta property="og:title" content="〰 Plataforma de empoderamento e divulgação de artistas 〰">
-    <%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
-    <%= javascript_include_tag 'application', "https://js.stripe.com/v2/", "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
-    <%#= tag :meta, name: "stripe-public-key", content: Figaro.env.stripe_publishable_key %>
-    <script src="https://kit.fontawesome.com/344aab95fd.js" crossorigin="anonymous"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171697725-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+	<head>
+		<title>Panóplia</title>
+		<meta charset="UTF-8">
+		<%= csrf_meta_tags %>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Panóplia 〰 Plataforma de empoderamento e divulgação de artistas 〰</title>
+		<meta name="description" content="𝚙𝚘𝚛𝚚𝚞𝚎 𝚑á 𝚙𝚎𝚜𝚜𝚘𝚊𝚜 𝚚𝚞𝚎 𝚏𝚊𝚣𝚎𝚖 𝚌𝚘𝚒𝚜𝚊𝚜 𝚒𝚗𝚌𝚛í𝚟𝚎𝚒𝚜">
+		<meta property="og:title" content="〰 Plataforma de empoderamento e divulgação de artistas 〰">
+		<%= favicon_link_tag 'favicon.ico' %>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+		<%= javascript_include_tag 'application', "https://js.stripe.com/v2/", "https://js.stripe.com/v3/", 'data-turbolinks-track': 'reload' %>
+		<%#= tag :meta, name: "stripe-public-key", content: Figaro.env.stripe_publishable_key %>
+		<script src="https://kit.fontawesome.com/344aab95fd.js" crossorigin="anonymous"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171697725-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
-      gtag('config', 'UA-171697725-1');
-    </script>
-  </head>
+			gtag('config', 'UA-171697725-1');
+		</script>
+	</head>
 
-  <body>
-  	<% if flash[:notice] %>
-    	<div class="notification is-primary global-notification">
-  	  	<p class="notice"><%= notice %></p>
-        <button class="delete"></button>
-    	</div>
-   	<% end %>
-    <% if flash[:alert] %>
-    <div class="notification is-danger global-notification">
-      <p class="alert"><%= alert %></p>
-      <button class="delete"></button>
-    </div>
-    <% end %>
-     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <%= link_to root_path, class:"navbar-item" do %>
-        <div class="image-logo">
-          <%= image_tag 'panoplia-logo.png' %>
-        </div>
-        <% end  %>
-        <div class="navbar-burger burger is-hidden-desktop" data-target="navbar">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
+	<body>
+		<% if flash[:notice] %>
+			<div class="notification is-primary global-notification">
+				<p class="notice"><%= notice %></p>
+				<button class="delete"></button>
+			</div>
+		<% end %>
+		<% if flash[:alert] %>
+		<div class="notification is-danger global-notification">
+			<p class="alert"><%= alert %></p>
+			<button class="delete"></button>
+		</div>
+		<% end %>
+		 <nav class="navbar" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<%= link_to root_path, class:"navbar-item" do %>
+				<div class="image-logo">
+					<%= image_tag 'panoplia-logo.png' %>
+				</div>
+				<% end  %>
+				<div class="navbar-burger burger is-hidden-desktop" data-target="navbar">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
 
-      <div id="navbar" class="navbar-menu">
+			<div id="navbar" class="navbar-menu">
 
-        <div class="navbar-end">
-          <% if user_signed_in? %>
-            <p class="navbar-item">
-              <%#= link_to 'JOBS', jobs_path, class: "button is-black mr3 is-static" %>
-              <%= link_to 'MASTERCLASS', jobs_path, class: "button is-black mr3 is-static" %>
-              <%= link_to 'EVENTS', jobs_path, class: "button is-black mr3 is-static" %>
-              <%= link_to 'STORE', jobs_path, class: "button is-black mr3 is-static" %>
-              <%= link_to 'ABOUT', home_about_path, class: "button is-black" %>
-            </p>
+				<div class="navbar-end">
+					<% if user_signed_in? %>
+						<p class="navbar-item">
+							<%#= link_to 'JOBS', jobs_path, class: "button is-black mr3 is-static" %>
+							<%= link_to 'MASTERCLASS', jobs_path, class: "button is-black mr3 is-static" %>
+							<%= link_to 'EVENTS', jobs_path, class: "button is-black mr3 is-static" %>
+							<%= link_to 'STORE', jobs_path, class: "button is-black mr3 is-static" %>
+							<%= link_to 'ABOUT', home_about_path, class: "button is-black" %>
+						</p>
 
-            <div class="navbar-start">
-              <div class="navbar-item">
-                <div class="field has-addons">
-                  <div class="control-search">
-                    <% if user_signed_in? %>
-                    <%#= link_to 'Shots', root_path , class:"button is-white" %>
-                    <%= form_tag(searches_path, :method => 'get') do %>
-                    <%= text_field_tag :search, params[:search],  class:"input search", type:"text",placeholder:"Search...",name:"search", onkeydown:'clickSubmit();'%>
-                  </div>
-                  <div class="control-search">
-                    <%= button_tag type: 'submit', class: "button is-black", id: "search-form" do %>
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                    <% end %>
-                    <% end %>
-                    <% end %>
-                  </div>
-                </div>
-                <div class="line"></div>
-              </div>
-            </div>
-            
-            <div class="navbar-item">
-              <a class="is-arrowless">
-                <p class="navbar-item user">
-                  <% if current_user.avatar.attached? %>
-                  <%= link_to cl_image_tag(current_user.avatar.key, :quality=>"auto:best"), user_path(current_user), class:"is-hidden-mobile" %>
-                  <% else%>
-                  <%= link_to image_tag('panoplia-logo.png'), user_path(current_user), class:"button is-black" %>
-                  <% end%>
-                </p>
-              </a>
-          </div>
-          <% end %>
+						<div class="navbar-start">
+							<div class="navbar-item">
+								<div class="field has-addons">
+									<div class="control-search">
+										<% if user_signed_in? %>
+										<%#= link_to 'Shots', root_path , class:"button is-white" %>
+										<%= form_tag(searches_path, :method => 'get') do %>
+										<%= text_field_tag :search, params[:search],  class:"input search", type:"text",placeholder:"Search...",name:"search", onkeydown:'clickSubmit();'%>
+									</div>
+									<div class="control-search">
+										<%= button_tag type: 'submit', class: "button is-black", id: "search-form" do %>
+										<i class="fas fa-search" aria-hidden="true"></i>
+										<% end %>
+										<% end %>
+										<% end %>
+									</div>
+								</div>
+								<div class="line"></div>
+							</div>
+						</div>
+						
+						<div class="navbar-item">
+							<a class="is-arrowless">
+								<p class="navbar-item user">
+									<% if current_user.avatar.attached? %>
+									<%= link_to cl_image_tag(current_user.avatar.key, :quality=>"auto:best"), user_path(current_user), class:"is-hidden-mobile" %>
+									<% else%>
+									<%= link_to image_tag('panoplia-logo.png'), user_path(current_user), class:"button is-black" %>
+									<% end%>
+								</p>
+							</a>
+					</div>
+					<% end %>
 
-            <% if user_signed_in? %>
-            <%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
-            <%#= link_to 'POST A JOB', new_job_path, class: "button is-primarye nav mr3 is-static" %>
-            <div class="navbar-item has-dropdown is-hoverable">
-              <p class="navbar-item">
-                <%= link_to new_shot_path, class:"button is-primarye nav"  do %>
-                  <span class="icon is-small"><i class="fa fa-upload" style="color:#fff;"></i></span>
-                    <span>UPLOAD</span>
-                <% end %> 
-              </p>
-              <div class="navbar-dropdown post">
-                <span class="triangle"></span>
-                  <div class="navbar-item x">
-                    <%= link_to 'VIDEO', new_video_path, class: "button is-black" %>
-                  </div>
-                  <div class="navbar-item x">
-                    <%= link_to new_shot_path, class:"button is-black"  do %>
-                    <span>PHOTO</span>
-                    <% end %> 
-                  </div>
-              </div>
-            </div>
+						<% if user_signed_in? %>
+						<%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
+						<%#= link_to 'POST A JOB', new_job_path, class: "button is-primarye nav mr3 is-static" %>
+						<div class="navbar-item has-dropdown is-hoverable">
+							<p class="navbar-item">
+								<%= link_to new_shot_path, class:"button is-primarye nav"  do %>
+									<span class="icon is-small"><i class="fa fa-upload" style="color:#fff;"></i></span>
+										<span>UPLOAD</span>
+								<% end %> 
+							</p>
+							<div class="navbar-dropdown post">
+								<span class="triangle"></span>
+									<div class="navbar-item x">
+										<%= link_to 'VIDEO', new_video_path, class: "button is-black" %>
+									</div>
+									<div class="navbar-item x">
+										<%= link_to new_shot_path, class:"button is-black"  do %>
+										<span>PHOTO</span>
+										<% end %> 
+									</div>
+							</div>
+						</div>
 
 
-          <div class="navbar-item logout">
-            <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
-          </div>
-          <% else %>
-          <p class="navbar-item">
-            <%= link_to "LOG IN", new_user_session_path, class:"button is-primarye" %>
-          </p>
-          <% end %>
-        </div>
-      </div>
-    </nav> 
-  
-    <%= yield %>
-    
-    <footer class="footer">
-      <div class="content has-text-centered ">
-        <div class="columns is-variable is-1-mobile is-0-tablet is-0-desktop is-0-widescreen is-2-fullhd">
-          <div class="column">
-            <%= link_to "ABOUT", home_about_path%>
-          </div>
-          <div class="column">
-            <a>ASSOCIATION </a>
-          </div>
-          <div class="column">
-            <a>PRIVACY POLICY </a>
-          </div>
-          <div class="column is-3">
-            <p><strong>Panóplia</strong> is developed with 💜 by <a href="https://www.linkedin.com/in/leonardtlauenstein/">LEONARDT</a></p>
-          </div>
-          <div class="column">
-            <a>TERMS </a>
-          </div>
-          <div class="column">
-            <a>COMMUNITY PLEDGE </a>
-          </div>
-          <div class="column">
-            <a href="mailto:panoplia@outlook.pt">CONTACT US </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+					<div class="navbar-item logout">
+						<%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
+					</div>
+					<% else %>
+					<p class="navbar-item">
+						<%= link_to "LOG IN", new_user_session_path, class:"button is-primarye" %>
+					</p>
+					<% end %>
+				</div>
+			</div>
+		</nav> 
+	
+		<%= yield %>
+		
+		<footer class="footer">
+			<div class="content has-text-centered ">
+				<div class="columns is-variable is-1-mobile is-0-tablet is-0-desktop is-0-widescreen is-2-fullhd">
+					<div class="column">
+						<%= link_to "ABOUT", home_about_path%>
+					</div>
+					<div class="column">
+						<a>ASSOCIATION </a>
+					</div>
+					<div class="column">
+						<a>PRIVACY POLICY </a>
+					</div>
+					<div class="column is-3">
+						<p><strong>Panóplia</strong> is developed with 💜 by <a href="https://www.linkedin.com/in/leonardtlauenstein/">LEONARDT</a></p>
+					</div>
+					<div class="column">
+						<a>TERMS </a>
+					</div>
+					<div class="column">
+						<a>COMMUNITY PLEDGE </a>
+					</div>
+					<div class="column">
+						<a href="mailto:panoplia@outlook.pt">CONTACT US </a>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-    <script>
-      function clickSubmit() {
-        $(#search-form).trigger("click")
-      }
-    <script>
-  </body>
+		<script>
+			function clickSubmit() {
+				$(#search-form).trigger("click")
+			}
+		<script>
+	</body>
 </html>

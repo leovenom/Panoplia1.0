@@ -1,43 +1,43 @@
 <section class="">
-    <div class="columns is-centered">
-        <div class="column hero is-primaryV">
-        </div>
-        <div class="column hero is-purple">
+  <div class="columns is-centered">
+    <div class="column hero is-primaryV">
+    </div>
+    <div class="column hero is-purple">
 
       <div class="column is-4 hero is-warning profile">
-      <h1 class="title is-size-4">EDIT PROFILE</h1>
-      <p class="subtitle is-size-6">Account Setings</p>
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <h1 class="title is-size-4">EDIT PROFILE</h1>
+        <p class="subtitle is-size-6">Account Setings</p>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
 
         <%# account setings %>
-          <div class="field">
-            <div class="control">
-              <%= f.input :email, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-            </div>
+        <div class="field">
+          <div class="control">
+            <%= f.input :email, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
           </div>
+        </div>
         
         <%# password confirmation %>
-          <div class="field">
-            <div class="control">
-              <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-            </div>
+        <div class="field">
+          <div class="control">
+            <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+          </div>
         </div>
-                
+        
         <%= f.button :submit, "Update", class:"button is-primary" %>
-     
-      <% end %>
+        
+        <% end %>
 
         <hr />
         <h3 class="title is-size-6">Cancel my account</h3>
         <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-   
+        
       </div>
-        <div class="column hero is-warning">
-        </div>
-        <div class="column hero is-warning">
-        </div>
+      <div class="column hero is-warning">
+      </div>
+      <div class="column hero is-warning">
+      </div>
     </div>
   </div>
 </section>

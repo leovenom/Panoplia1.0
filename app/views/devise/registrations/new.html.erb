@@ -1,17 +1,17 @@
 <section>
-    <div class="columns is-desktop">
-			<div class="background-pink">
-					<p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p>
-					<p class="subtitle has-text-centered">This is a space for artists to promote their work<span> and be found by entities looking for the most<span> creative minds available in the market.</p>
+	<div class="columns is-desktop">
+		<div class="background-pink">
+			<p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p>
+				<p class="subtitle has-text-centered">This is a space for artists to promote their work<span> and be found by entities looking for the most<span> creative minds available in the market.</p>
 					<%= image_tag("background-log.jpg")%>
-			</div>
+				</div>
 
 				<div class="column is-6 sign-up">
-				<div class="column is-8 is-offset-2">
-					<h2 class="title has-text-centered">SIGN UP TO PANÓPLIA</h2>
-				
+					<div class="column is-8 is-offset-2">
+						<h2 class="title has-text-centered">SIGN UP TO PANÓPLIA</h2>
+						
 						<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-							<%= f.error_notification %>
+						<%= f.error_notification %>
 
 						<div class="field-body">
 							<div class="field">
@@ -26,40 +26,40 @@
 								</div>
 							</div>
 						</div>
-							
-							<div class="field">
-								<div class="control">
+						
+						<div class="field">
+							<div class="control">
 								<%= f.input :email, label: "E-mail adress", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-								</div>
 							</div>
+						</div>
 
-							<div class="field">
-								<div class="control">
+						<div class="field">
+							<div class="control">
 								<%= f.input :password, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-								</div>
 							</div>
-							<div class="field">
-								<div class="control">
+						</div>
+						<div class="field">
+							<div class="control">
 								<%#= f.input :password_confirmation, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-								</div>
-							</div>	
-
-							<div class="field">
-								<div class="control">
-									<label class="checkbox">
-										<input type="checkbox">
-										I agree to the <a href="#">terms and conditions</a>
-									</label>
-								</div>
 							</div>
+						</div>	
+
+						<div class="field">
+							<div class="control">
+								<label class="checkbox">
+									<input type="checkbox">
+									I agree to the <a href="#">terms and conditions</a>
+								</label>
+							</div>
+						</div>
 
 						<%= f.button :submit, "CREATE ACCOUNT", class:"button is-prime is-small" %>
-							
+						
 						<% end %>
 						<br/>
 						<%= render "devise/shared/links" %>
-					
+						
+					</div>
 				</div>
-				</div>
-		</div>
-</section>
+			</div>
+		</section>
