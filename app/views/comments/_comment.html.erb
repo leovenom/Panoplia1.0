@@ -19,7 +19,7 @@
     </div>
     <% if (user_signed_in? && (current_user.id == comment.user_id)) %>
        <%= link_to 'Delete', [comment.commentable, comment],
-                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+        method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
     <% end %>
   </article>
 </div>

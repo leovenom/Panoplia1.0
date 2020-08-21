@@ -1,60 +1,60 @@
 <div class="section">
 	<div class="container">
     <h1 class="title is-4">VIDEOS</h1>
-      <table class="table is-striped is-hoverable">
-        <thead>
-          <tr>
-            <th>Title</th> 
-            <th>Description</th>
-            <th colspan="5"></th>
-          </tr>
-        </thead>
+    <table class="table is-striped is-hoverable">
+      <thead>
+        <tr>
+          <th>Title</th> 
+          <th>Description</th>
+          <th colspan="5"></th>
+        </tr>
+      </thead>
 
-        <tbody>
-          <% @videos.each do |video| %>
-            <tr>
-            <% if user_signed_in? && (current_user.id == video.user_id) %>		
-              <td><%= video.title %></td>
-              <td><%= video.description %></td>
-              <td><%#= video.user_id %></td>
-              <td><%#= video.user_video %></td>
-              <td><%= link_to 'Show', video %></td>
-              <td><%= link_to 'Edit', edit_video_path(video) %></td>
-              <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <% end %>
-            </tr>
+      <tbody>
+        <% @videos.each do |video| %>
+        <tr>
+          <% if user_signed_in? && (current_user.id == video.user_id) %>		
+          <td><%= video.title %></td>
+          <td><%= video.description %></td>
+          <td><%#= video.user_id %></td>
+          <td><%#= video.user_video %></td>
+          <td><%= link_to 'Show', video %></td>
+          <td><%= link_to 'Edit', edit_video_path(video) %></td>
+          <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
-        </tbody>
-      </table>
-      <%= link_to 'New Video', new_video_path %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New Video', new_video_path %>
 
-      <h1 class="title is-4 mt5" >SHOTS</h1>
+    <h1 class="title is-4 mt5" >SHOTS</h1>
 
-      <table class="table is-striped is-hoverable">
-        <thead>
-          <tr>
-            <th>Title</th> 
-            <th>Description</th>
-            <th colspan="5"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @shots.each do |shot| %>
-            <tr>
-            <% if user_signed_in? && (current_user.id == shot.user_id) %>	
-              <td><%= shot.title %></td>
-              <td><%= shot.description %></td>
-              <td><%#= shot.user_id %></td>
-              <td><%#= shot.user_shot %></td>
-              <td><%= link_to 'Show', shot %></td>
-              <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
-              <td><%= link_to 'Destroy', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
-            </tr>
+    <table class="table is-striped is-hoverable">
+      <thead>
+        <tr>
+          <th>Title</th> 
+          <th>Description</th>
+          <th colspan="5"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @shots.each do |shot| %>
+        <tr>
+          <% if user_signed_in? && (current_user.id == shot.user_id) %>	
+          <td><%= shot.title %></td>
+          <td><%= shot.description %></td>
+          <td><%#= shot.user_id %></td>
+          <td><%#= shot.user_shot %></td>
+          <td><%= link_to 'Show', shot %></td>
+          <td><%= link_to 'Edit', edit_shot_path(shot) %></td>
+          <td><%= link_to 'Destroy', shot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
-        </tbody>
-      </table>
-      <%= link_to 'New Shot', new_shot_path %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New Shot', new_shot_path %>
 
   </div>
 </div>

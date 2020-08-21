@@ -1,64 +1,64 @@
 <section class="section">
-  <div class="shot-grid-item">
-    <div class="shot-wrapper">
-      <%= link_to shot, class: "shot" do %>
-        <% if shot.user_shot_url.present?%>
-          <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
-        <% else %>
-        <label><%= shot.description %></label>
-        <div class="shot-data">
-          <h3 class="shot-title"><%= shot.title.titleize %></h3>
-            <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
-              <div class="shot-time">
-                <%= time_ago_in_words(shot.created_at) %>
-              </div>
-        </div>
-        <% end %>
-      <% end%>
+	<div class="shot-grid-item">
+		<div class="shot-wrapper">
+			<%= link_to shot, class: "shot" do %>
+			<% if shot.user_shot_url.present?%>
+			<%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
+			<% else %>
+			<label><%= shot.description %></label>
+			<div class="shot-data">
+				<h3 class="shot-title"><%= shot.title.titleize %></h3>
+				<div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
+				<div class="shot-time">
+					<%= time_ago_in_words(shot.created_at) %>
+				</div>
+			</div>
+			<% end %>
+			<% end%>
 
-      <% if user_signed_in?%>
-        <nav class="level shot-analytics image">
-          <div class="level-left ml3">
-            <div class="user-name"><%=link_to sanitize(shot.title.titleize.truncate(25)), shot %>
-            </div>
-          </div>
-          <div class="level-right mr4">
-            <div class="level-item views data image">
-              <%= link_to shot do %>
-                <span class="icon"><i class="fa fa-eye"></i></span>
-                <%= shot.impressionist_count %>
-              <% end %>
-            </div>
-            <div class="level-item comments data image">
-              <%= link_to shot do %>
-                <span class="icon"><i class="fa fa-comment"></i></span>
-                <%= shot.comments.count %>
-              <% end %>
-            </div>
+			<% if user_signed_in?%>
+			<nav class="level shot-analytics image">
+				<div class="level-left ml3">
+					<div class="user-name"><%=link_to sanitize(shot.title.titleize.truncate(25)), shot %>
+					</div>
+				</div>
+				<div class="level-right mr4">
+					<div class="level-item views data image">
+						<%= link_to shot do %>
+						<span class="icon"><i class="fa fa-eye"></i></span>
+						<%= shot.impressionist_count %>
+						<% end %>
+					</div>
+					<div class="level-item comments data image">
+						<%= link_to shot do %>
+						<span class="icon"><i class="fa fa-comment"></i></span>
+						<%= shot.comments.count %>
+						<% end %>
+					</div>
 
-            <div class="level-item likes">
-              <% if user_signed_in? %>
-              <% if current_user.liked? shot %>
-                <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
-                  <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
-                  <span class="vote_count"><%= shot.get_likes.size %></span>
-                <% end %>
-              <% else %>
-                <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
-                  <span class="icon"><i class="fa fa-heart"></i></span>
-                  <span class="vote_count"><%= shot.get_likes.size %></span>
-              <% end %>
-              <% end %>
-                <% else %>
-                  <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
-                    <span class="icon"><i class="fa fa-heart"></i></span>
-                    <span class="vote_count"><%= shot.get_likes.size %></span>
-                  <% end %>
-                <% end %>
-            </div>
-          </div>
-        </nav>
-      <%end%>
-    </div>
-  </div> 
+					<div class="level-item likes">
+						<% if user_signed_in? %>
+						<% if current_user.liked? shot %>
+						<%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
+						<span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+						<span class="vote_count"><%= shot.get_likes.size %></span>
+						<% end %>
+						<% else %>
+						<%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+						<span class="icon"><i class="fa fa-heart"></i></span>
+						<span class="vote_count"><%= shot.get_likes.size %></span>
+						<% end %>
+						<% end %>
+						<% else %>
+						<%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+						<span class="icon"><i class="fa fa-heart"></i></span>
+						<span class="vote_count"><%= shot.get_likes.size %></span>
+						<% end %>
+						<% end %>
+					</div>
+				</div>
+			</nav>
+			<%end%>
+		</div>
+	</div> 
 </section>

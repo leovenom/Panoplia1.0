@@ -3,73 +3,73 @@
     <section class="hero white">
       <div class="hero-body show">
         <div class="column user has-text-centered">
-     
-            <figure class="image is-inline-block">
-              <% if @user.avatar.attached? %>
-                <%= cl_image_tag(@user.avatar.key, :quality=>"auto:good") %>
-              <% else %>
-                <%= image_tag 'panoplia-logo.png' %>
-              <% end %>
-            </figure>
-       
+         
+          <figure class="image is-inline-block">
+            <% if @user.avatar.attached? %>
+            <%= cl_image_tag(@user.avatar.key, :quality=>"auto:good") %>
+            <% else %>
+            <%= image_tag 'panoplia-logo.png' %>
+            <% end %>
+          </figure>
           
-            <h1 class="title name is-size-3-mobile is-size-2-fullhd">
-              <%= @user.name.upcase %>
-            </h1>
-            <div style="display: inline-flex;">
-              <p class="about">I am an Artist</p>
-              <p class="subtitle art">• <%= @user.art %></p>
+          
+          <h1 class="title name is-size-3-mobile is-size-2-fullhd">
+            <%= @user.name.upcase %>
+          </h1>
+          <div style="display: inline-flex;">
+            <p class="about">I am an Artist</p>
+            <p class="subtitle art">• <%= @user.art %></p>
+          </div>
+          <p class="subtitle bio">
+            <%= @user.bio %>
+          </p>
+          <p class="subtitle location">
+            <% if user_signed_in?%>
+            <%= @user.location%>
+          </p>
+
+          <div class="buttons is-centered">
+            <% if user_signed_in? && !current_user?(@user)%>
+            <% if current_user.following?(@user) %>
+            <%= button_to "UNFOLLOW", friendships_path(user_id: @user.id), class:"button is-darkn-user", method: :delete%>
+            <%else%>
+            <%= button_to "FOLLOW", friendships_path(user_id: @user.id), class:"button is-roxo"%>
+            <%end%>
+            <%end%>
+            
+            <% if @user.available? && !current_user?(@user)%>
+            <%= mail_to @user.email,"HIRE ME", class:'button is-roxo' %>
+            <% elsif !current_user?(@user)%>
+            <button class="button is-dark" title="Disabled button" style="height: 35px;" disabled>HIRE ME</button>
+            <% end%>
+            
+            <% if user_signed_in? && current_user?(@user)%>
+            <div class="">
+              <%= link_to 'EDIT', edit_user_registration_path, class:"button is-roxo" %>
             </div>
-            <p class="subtitle bio">
-              <%= @user.bio %>
-            </p>
-            <p class="subtitle location">
-              <% if user_signed_in?%>
-                <%= @user.location%>
-            </p>
+            <%= link_to 'CONTENTS', videos_path, class:"button is-roxo" %>
+            <%end%>
+            <%#= link_to 'PROFILE', user_path(current_user), class:"button is-roxo" %>
 
-            <div class="buttons is-centered">
-              <% if user_signed_in? && !current_user?(@user)%>
-              <% if current_user.following?(@user) %>
-                <%= button_to "UNFOLLOW", friendships_path(user_id: @user.id), class:"button is-darkn-user", method: :delete%>
-              <%else%>
-                <%= button_to "FOLLOW", friendships_path(user_id: @user.id), class:"button is-roxo"%>
-              <%end%>
-              <%end%>
-              
-              <% if @user.available? && !current_user?(@user)%>
-                <%= mail_to @user.email,"HIRE ME", class:'button is-roxo' %>
-              <% elsif !current_user?(@user)%>
-                <button class="button is-dark" title="Disabled button" style="height: 35px;" disabled>HIRE ME</button>
-              <% end%>
-              
-              <% if user_signed_in? && current_user?(@user)%>
-              <div class="">
-                <%= link_to 'EDIT', edit_user_registration_path, class:"button is-roxo" %>
-              </div>
-                <%= link_to 'CONTENTS', videos_path, class:"button is-roxo" %>
-              <%end%>
-                <%#= link_to 'PROFILE', user_path(current_user), class:"button is-roxo" %>
+          </div>
 
+          <% time_ago_in_words(@user.created_at) %>
+          <div class="column is-centered">
+            <div class="tag is-warning">
+              <span class="follow">FOLLOWERS</span>
+              <span class="counting"><%= @user.followers.count %></span>
             </div>
 
-            <% time_ago_in_words(@user.created_at) %>
-            <div class="column is-centered">
-              <div class="tag is-warning">
-                <span class="follow">FOLLOWERS</span>
-                <span class="counting"><%= @user.followers.count %></span>
-              </div>
-
-              <div class="tag is-warning" id="pop" style="cursor:pointer;">
-                <span class="follow">FOLLOWINGS</span>
-                <span class="counting"><%= @user.followings.count %></span>
-              </div>
-              <div class="tag is-warning">
-                <span class="follow">PANÓPLIA WORKS</span>
-                <span class="counting"><%= @user.shots.count + @user.videos.count  %></span>
-              </div>
+            <div class="tag is-warning" id="pop" style="cursor:pointer;">
+              <span class="follow">FOLLOWINGS</span>
+              <span class="counting"><%= @user.followings.count %></span>
             </div>
-              <% end %>
+            <div class="tag is-warning">
+              <span class="follow">PANÓPLIA WORKS</span>
+              <span class="counting"><%= @user.shots.count + @user.videos.count  %></span>
+            </div>
+          </div>
+          <% end %>
           
 
         </div>
@@ -81,69 +81,69 @@
 <div class="info" id="info" style="margin-left: 25px;">
   <div class="section user">
     <p class="subtitle cards">Followings<i class="fas fa-sort-down"></i></p>
-      <div class="follow-grid">
-        <% @user.followings.each do |user| %>
-          <div class="level-item-search-f">
-            <div class="user-thumb-following">
-              <% if user.avatar.attached? %>
-                <%=link_to cl_image_tag(user.avatar.key, :quality=>"auto:good"), user_path(user) unless user.avatar.blank? %> 
-              <% else %>
-                <%= link_to image_tag('panoplia-logo.png'), user_path(user) %>
-              <% end %> 
-            </div>
-            <div class="user-name-follow">
-              <h3 class="shot-title job"><%=link_to user.name.upcase, user %></h3>
-              <p style="margin-top: 5px;"> 
-                <%= user.location %> </p>
-              <div style="display:flex">
-                <p class="about">Artist</p>
-                <p class="subtitle art"><%= user.art %></p>
-              </div>
-            </div>
-            <div class="shots-following is-hidden-mobile">
-              <% user.shots.limit(4).each do|shot|%>
-                <%= link_to shot, class: "shot" do %>
-                  <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
-                <%end%>
-              <%end%>
-            </div>
-          <div>
-          
-              
-              
+    <div class="follow-grid">
+      <% @user.followings.each do |user| %>
+      <div class="level-item-search-f">
+        <div class="user-thumb-following">
+          <% if user.avatar.attached? %>
+          <%=link_to cl_image_tag(user.avatar.key, :quality=>"auto:good"), user_path(user) unless user.avatar.blank? %> 
+          <% else %>
+          <%= link_to image_tag('panoplia-logo.png'), user_path(user) %>
+          <% end %> 
+        </div>
+        <div class="user-name-follow">
+          <h3 class="shot-title job"><%=link_to user.name.upcase, user %></h3>
+          <p style="margin-top: 5px;"> 
+            <%= user.location %> </p>
+            <div style="display:flex">
+              <p class="about">Artist</p>
+              <p class="subtitle art"><%= user.art %></p>
             </div>
           </div>
+          <div class="shots-following is-hidden-mobile">
+            <% user.shots.limit(4).each do|shot|%>
+            <%= link_to shot, class: "shot" do %>
+            <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
+            <%end%>
+            <%end%>
+          </div>
+          <div>
+            
+            
+            
+          </div>
+        </div>
         <%end%>
       </div>
+    </div>
   </div>
-</div>
 
-<div class="columns is-desktop">
-  <div class="column">
-    <section class="section user">
-      <p class="subtitle cards" style="margin-left: 25px;">My<span> PROJECTS </span><i class="fas fa-sort-down"></i></p>
+  <div class="columns is-desktop">
+    <div class="column">
+      <section class="section user">
+        <p class="subtitle cards" style="margin-left: 25px;">My<span> PROJECTS </span><i class="fas fa-sort-down"></i></p>
         <div class="shots user">
-            
+          
           <% @resources.each do |resource| %>
-            <% if resource.is_a?(Video) %>
-              <%= render partial: "video", locals: {video: resource} %>
-            <% else %>
-              <%= render partial: "shot", locals: {shot: resource} %>
-            <% end %>
+          <% if resource.is_a?(Video) %>
+          <%= render partial: "video", locals: {video: resource} %>
+          <% else %>
+          <%= render partial: "shot", locals: {shot: resource} %>
+          <% end %>
           <% end %>
 
         </div>
-    </section>
+      </section>
 
+    </div>
   </div>
-</div>
 
-<script> 
-$('#info').hide(); 
+  <script> 
+    $('#info').hide(); 
 
     $(document).ready(function() {
-        $('#pop').click(function() {
-                $('#info').slideToggle("slow");
-        });
+      $('#pop').click(function() {
+        $('#info').slideToggle("slow");
+      });
     });
-</script>
+  </script>

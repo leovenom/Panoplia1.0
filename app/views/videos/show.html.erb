@@ -7,7 +7,7 @@
 					<div class="columns show-page is-desktop">
 						<div class="column is-7">
 							<div class="user-thumb-job">
-							<%=link_to cl_image_tag(@video.user.avatar.key), user_path(@video.user) unless @video.user.avatar.blank? %> 
+								<%=link_to cl_image_tag(@video.user.avatar.key), user_path(@video.user) unless @video.user.avatar.blank? %> 
 							</div>
 
 							<div class="user-name">
@@ -16,64 +16,64 @@
 							</div>
 						</div>
 					</div>
-		
+					
 					<div class="video-full">
 						<%= get_video_iframe(@video.url, '888px', '666px') unless @video.url.blank? %>
 					</div>
 
 					<% if user_signed_in? && (current_user.id == @video.user_id) %>		
-						<div class="buttons has-addons level-left">
-							<%= link_to 'Edit', edit_video_path(@video), class: "button" %>
-							<%= link_to 'Delete', video_path, class: "button", method: :delete, data: { confirm: 'Are you sure you want to delete this shot?'} %>
-						</div>
+					<div class="buttons has-addons level-left">
+						<%= link_to 'Edit', edit_video_path(@video), class: "button" %>
+						<%= link_to 'Delete', video_path, class: "button", method: :delete, data: { confirm: 'Are you sure you want to delete this shot?'} %>
+					</div>
 					<% end %>
 
-				<div class="columns show-page is-desktop">
-					<div class="column is-8 pt3">
-						<div class="buttons two">
-					<% if user_signed_in? && !current_user?(@video.user)%>
-					<% if current_user.following?(@video.user) %>
-					<%= button_to "UNFOLLOW", friendships_path(user_id: @video.user.id), class:"button is-darkn outlined", method: :delete%>
-					<%else%>
-					<%= button_to "+ FOLLOW", friendships_path(user_id: @video.user.id), class:"button is-roxo outlined icon"%>
-					<%end%>
-					<%end%>
-					
-					<% if user_signed_in? && !current_user?(@video.user) %>
-					<% if current_user.liked? @video %>
-					<%= link_to unlike_shot_path(@video), method: :put, class: "unlike_shot" do %>
-					<span class="button is-black icon"><i class="fa fa-heart has-text-primary"></i></span>
-					<% end %>
-					<% else %>
-					<%= link_to like_shot_path(@video), method: :put, class: "like_shot" do %>
-					<span class="button is-roxo icon"><i class="fa fa-heart"></i>LIKE</span>
-					<% end %>
-					<% end %>
-					<% end %>
-						</div>
+					<div class="columns show-page is-desktop">
+						<div class="column is-8 pt3">
+							<div class="buttons two">
+								<% if user_signed_in? && !current_user?(@video.user)%>
+								<% if current_user.following?(@video.user) %>
+								<%= button_to "UNFOLLOW", friendships_path(user_id: @video.user.id), class:"button is-darkn outlined", method: :delete%>
+								<%else%>
+								<%= button_to "+ FOLLOW", friendships_path(user_id: @video.user.id), class:"button is-roxo outlined icon"%>
+								<%end%>
+								<%end%>
+								
+								<% if user_signed_in? && !current_user?(@video.user) %>
+								<% if current_user.liked? @video %>
+								<%= link_to unlike_shot_path(@video), method: :put, class: "unlike_shot" do %>
+								<span class="button is-black icon"><i class="fa fa-heart has-text-primary"></i></span>
+								<% end %>
+								<% else %>
+								<%= link_to like_shot_path(@video), method: :put, class: "like_shot" do %>
+								<span class="button is-roxo icon"><i class="fa fa-heart"></i>LIKE</span>
+								<% end %>
+								<% end %>
+								<% end %>
+							</div>
 
-						<div class="description">
+							<div class="description">
 								<%= @video.description %>
-						</div>
+							</div>
 
-						<section class="comments">
-							<h3 class="subtitle"><%= pluralize(@video.comments.count, 'Comment') %></h3>
+							<section class="comments">
+								<h3 class="subtitle"><%= pluralize(@video.comments.count, 'Comment') %></h3>
 								<%= render @video.comments %>
-							<% if user_signed_in? %>
+								<% if user_signed_in? %>
 								<div class="comment-form">
 									<h3 class="subtitle is-4">Leave a reply</h3>
 									<%= render 'comments/form_video' %>
 								</div>
-							<% else %>
+								<% else %>
 								<div class="content"><%= link_to 'Sign in', new_user_session_path %> to leave a comment.</div>
-							<% end %>
-						</section>
-						<%= link_to 'BACK', videos_path, class:"text optional label mt3" %>
-					</div>
+								<% end %>
+							</section>
+							<%= link_to 'BACK', videos_path, class:"text optional label mt3" %>
+						</div>
 
-					<div class="column is-4 pt0">
+						<div class="column is-4 pt0">
 
-						<% if user_signed_in?%>
+							<% if user_signed_in?%>
 							<div class="shot-contact">
 								<% if @video.user.available?%>
 								<p class="subtitle">This user is AVAILABLE for work</p>
@@ -85,57 +85,57 @@
 								<%# end%>
 								<% end%>
 							</div>
-						<% end %>
-           
-						<nav class="shot-analytics shot">
-							<div class="level-item views data">
-								<%= link_to @video do %>
-								<span class="icon"><i class="fa fa-eye"></i></span>
-								<%= @video.impressionist_count %>
-								<% end %>
-							</div>
-							<div class="level-item comments data icons">
-								<%= link_to @video do %>
-								<span class="icon"><i class="fa fa-comment"></i></span>
-								<%= @video.comments.count %>
-								<% end %>
-							</div>
-							<div class="level-item likes">
-								<% if user_signed_in? %>
-								
-								<% if current_user.liked? @video %>
-								<%= link_to unlike_shot_path(@video), method: :put, class: "unlike_shot" do %>
-								<span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
-								<span class="vote_count"><%= @video.get_likes.size %></span>
-								<% end %>
-								<% else %>
-								<%= link_to like_shot_path(@video), method: :put, class: "like_shot" do %>
-								<span class="icon"><i class="fa fa-heart"></i></span>
-								<span class="vote_count"><%= @video.get_likes.size %></span>
-								<% end %>
-								<% end %>
-								<% else %>
-								<%= link_to like_shot_path(@video), method: :put, class: "like_shot" do %>
-								<span class="icon"><i class="fa fa-heart"></i></span>
-								<span class="vote_count"><%= @video.get_likes.size %></span>
-								<% end %>
-								<% end %>
-							</div>
-						</nav>
+							<% end %>
+							
+							<nav class="shot-analytics shot">
+								<div class="level-item views data">
+									<%= link_to @video do %>
+									<span class="icon"><i class="fa fa-eye"></i></span>
+									<%= @video.impressionist_count %>
+									<% end %>
+								</div>
+								<div class="level-item comments data icons">
+									<%= link_to @video do %>
+									<span class="icon"><i class="fa fa-comment"></i></span>
+									<%= @video.comments.count %>
+									<% end %>
+								</div>
+								<div class="level-item likes">
+									<% if user_signed_in? %>
+									
+									<% if current_user.liked? @video %>
+									<%= link_to unlike_shot_path(@video), method: :put, class: "unlike_shot" do %>
+									<span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+									<span class="vote_count"><%= @video.get_likes.size %></span>
+									<% end %>
+									<% else %>
+									<%= link_to like_shot_path(@video), method: :put, class: "like_shot" do %>
+									<span class="icon"><i class="fa fa-heart"></i></span>
+									<span class="vote_count"><%= @video.get_likes.size %></span>
+									<% end %>
+									<% end %>
+									<% else %>
+									<%= link_to like_shot_path(@video), method: :put, class: "like_shot" do %>
+									<span class="icon"><i class="fa fa-heart"></i></span>
+									<span class="vote_count"><%= @video.get_likes.size %></span>
+									<% end %>
+									<% end %>
+								</div>
+							</nav>
 
-						<div class="shot-wrapper shot">
-							<p class="subtitle">More from others users</p>
+							<div class="shot-wrapper shot">
+								<p class="subtitle">More from others users</p>
 								<%= link_to @random_video, class: "video" do %>
-									<%= get_video_iframe(@random_video.url, '300px', '300px') unless @video.url.blank? %>
-									<div class="shot-data">
-										<div class="user-thumb avatar">
-											<%= cl_image_tag @random_video.user.avatar.key, class:'avatar' unless @random_video.user.avatar.blank?  %>
-											<h3 class="shot-user"><%= @random_video.user.name.upcase %></h3>
-											<h3 class="shot-title"><%= @random_video.title.titleize %></h3>
-										</div>
+								<%= get_video_iframe(@random_video.url, '300px', '300px') unless @video.url.blank? %>
+								<div class="shot-data">
+									<div class="user-thumb avatar">
+										<%= cl_image_tag @random_video.user.avatar.key, class:'avatar' unless @random_video.user.avatar.blank?  %>
+										<h3 class="shot-user"><%= @random_video.user.name.upcase %></h3>
+										<h3 class="shot-title"><%= @random_video.title.titleize %></h3>
 									</div>
-						</div>
-								<% end%>
+								</div>
+							</div>
+							<% end%>
 						</div>
 					</div>
 				</div>
