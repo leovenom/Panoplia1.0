@@ -131,15 +131,14 @@
             </label>
           </div>
           <%= f.error_notification message: 'Max size 2MB' %>
-          <br />
           <div class="has-text-centered">
-            <%= f.button :submit, "UPLOAD NEW AVATAR", class:"button is-prime is-small" %>
+            <%# f.button :submit, "UPLOAD NEW AVATAR", class:"button is-prime is-small" %>
           </div>
         </div>
 
         <%# email %>          
         
-        <div class="pt5">
+        <div class="pt4">
           <a id="element3" onclick="myFunctionEmail();javascript:changeTextEmail(3);changeFont3()" class="roman">Email</a>
         </div>
 
@@ -150,7 +149,7 @@
               <%= f.input :email, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
-          <%= f.button :submit, "SAVE PROFILE INFO", class:"button is-prime is-small" %>
+          <%#= f.button :submit, "SAVE PROFILE INFO", class:"button is-prime is-small" %>
         </div>
         <%# password %>
         <div>
@@ -176,17 +175,18 @@
               <%= f.input :password_confirmation, required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
-          <%= f.button :submit, "SAVE PROFILE INFO", class:"button is-prime is-small" %>
+          <%#= f.button :submit, "SAVE PROFILE INFO", class:"button is-prime is-small" %>
         </div>
 
       </div>
     </div>
     
-    <% end %>
+
   </div>
 </div>
 </section>
-
+    <% end %>
+    
 <script>
   const fileInput = document.querySelector('#file-js-examplez input[type=file]');
   fileInput.onchange = () => {
