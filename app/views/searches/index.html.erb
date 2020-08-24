@@ -17,7 +17,27 @@
     </div> %>
 
       <div class="column">
-        <p class="subtitle cards" style="margin-left: 25px;">USER <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
+        <div style="display: flex;">
+          <p class="subtitle cards" style="margin-left: 25px;">USER <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
+  
+          <div class="field has-addons">
+            <div class="control-search">
+              <%# if user_signed_in? %>
+              <%#= link_to 'Shots', root_path , class:"button is-white" %>
+              <%= form_tag(searches_path, :method => 'get') do %>
+              <%= text_field_tag :search, params[:search],  class:"input search", type:"text",placeholder:"Search...",name:"search", onkeydown:'clickSubmit();'%>
+            </div>
+            <div class="control-search">
+              <%= button_tag type: 'submit', class: "button", id: "search-form" do %>
+              <i class="fas fa-search" aria-hidden="true"></i>
+              <% end %>
+              <% end %>
+              <%# end %>
+            </div>
+          </div>
+
+        </div>
+
         <div class="follow-grid">
           <% @users.each do |user| %>
             <div class="level-item-search-f">
@@ -51,4 +71,38 @@
         </div>
       </div>
 
- </section>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered ">
+    <div class="columns is-variable is-1-mobile is-0-tablet is-0-desktop is-0-widescreen is-2-fullhd">
+      <div class="column">
+        <%= link_to "ABOUT", home_about_path%>
+      </div>
+      <div class="column">
+        <a>ASSOCIATION </a>
+      </div>
+      <div class="column">
+        <a>PRIVACY POLICY </a>
+      </div>
+      <div class="column is-3">
+        <p><strong>Panóplia</strong> is developed with 💜 by <a href="https://www.linkedin.com/in/leonardtlauenstein/">LEONARDT</a></p>
+      </div>
+      <div class="column">
+        <a>TERMS </a>
+      </div>
+      <div class="column">
+        <a>COMMUNITY PLEDGE </a>
+      </div>
+      <div class="column">
+        <a href="mailto:panoplia@outlook.pt">CONTACT US </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function clickSubmit() {
+    $(#search-form).trigger("click")
+  }
+<script>

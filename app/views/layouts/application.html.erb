@@ -55,36 +55,26 @@
 			<div id="navbar" class="navbar-menu">
 
 				<div class="navbar-end">
-					<% if user_signed_in? %>
+					
 						<p class="navbar-item">
 							<%#= link_to 'JOBS', jobs_path, class: "button is-black mr3 is-static" %>
 							<%= link_to 'MASTERCLASS', jobs_path, class: "button is-black mr3 is-static" %>
 							<%= link_to 'EVENTS', jobs_path, class: "button is-black mr3 is-static" %>
 							<%= link_to 'STORE', jobs_path, class: "button is-black mr3 is-static" %>
 							<%= link_to 'ABOUT', home_about_path, class: "button is-black" %>
+							<div class="control-search">
+								<%= link_to searches_path, type: 'submit', class: "button is-black", style:"padding-left: 0px;", id: "search-form" do %>
+								<i class="fas fa-search" aria-hidden="true"></i>
+								<% end %>
+							</div>
 						</p>
 
-						<div class="navbar-start">
-							<div class="navbar-item">
-								<div class="field has-addons">
-									<div class="control-search">
-										<% if user_signed_in? %>
-										<%#= link_to 'Shots', root_path , class:"button is-white" %>
-										<%= form_tag(searches_path, :method => 'get') do %>
-										<%= text_field_tag :search, params[:search],  class:"input search", type:"text",placeholder:"Search...",name:"search", onkeydown:'clickSubmit();'%>
-									</div>
-									<div class="control-search">
-										<%= button_tag type: 'submit', class: "button is-black", id: "search-form" do %>
-										<i class="fas fa-search" aria-hidden="true"></i>
-										<% end %>
-										<% end %>
-										<% end %>
-									</div>
-								</div>
-								<div class="line"></div>
-							</div>
+						<div class="navbar-item" >
+							<div class="line"></div>
 						</div>
-						
+				
+
+					<% if user_signed_in? %>
 						<div class="navbar-item">
 							<a class="is-arrowless">
 								<p class="navbar-item user">
@@ -163,11 +153,5 @@
 				</div>
 			</div>
 		</footer>
-
-		<script>
-			function clickSubmit() {
-				$(#search-form).trigger("click")
-			}
-		<script>
 	</body>
 </html>
