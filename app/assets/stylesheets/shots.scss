@@ -290,3 +290,20 @@ overflow:auto;
   text-decoration: none;
 	font-family: Brice-SemiBoldSemiCondensed;
 }
+
+.drop-zone-photo {
+	font-family: Brice-RegularSemiCondensed;
+	font-size: 14px;
+	color: #9c9a9a;
+}
+
+.drop-zone-photo.type {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 2rem;
+}
+
+.drop-img{
+  padding: 14rem 0;
+  position: relative;
+}

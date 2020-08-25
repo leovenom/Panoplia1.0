@@ -10,7 +10,26 @@
     <br/>
 
     <output id="list"></output>
-    <div id="drop_zone" class="title-drag is-size-5">DRAG AN DROP AN IMAGE <p class="subtitle cards is-size-6">or <span>browse</span> to choose a file</p></div>
+    <div id="drop_zone" class="title-drag is-size-5">
+      <div class="drop-zone-photo type">
+        <p>
+        Only high resolution image:<br/> JPG, JPEG, GIF or PNG
+        </p>
+        <p>
+        Animated GIF <br/>
+        400x300 800x600 1600x1200
+        </p>
+      </div>
+      <div class="drop-img">
+        DRAG AN DROP AN IMAGE 
+        <p class="subtitle cards is-size-6">or <span>browse</span> to choose a file
+        </p>
+      
+        <p class="drop-zone-photo size">
+        (1600x1200 px or maximum allowed file size 2 MB)
+        </p>
+      </div>
+    </div>
     <br/>
     <br/>
     <%#= f.input :user_shot, label: false, multiple: true, wrapper: false, label_html: { class: "file-label" } %>
