@@ -73,7 +73,6 @@
 							<div class="line"></div>
 						</div>
 				
-
 					<% if user_signed_in? %>
 						<div class="navbar-item">
 							<a class="is-arrowless">
@@ -111,7 +110,6 @@
 							</div>
 						</div>
 
-
 					<div class="navbar-item logout">
 						<%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
 					</div>
@@ -129,9 +127,6 @@
 		<footer class="footer">
 			<div class="content has-text-centered ">
 				<div class="columns is-variable is-1-mobile is-0-tablet is-0-desktop is-0-widescreen is-2-fullhd">
-					<div class="column">
-						<%= link_to "ABOUT", home_about_path%>
-					</div>
 					<div class="column">
 						<a>ASSOCIATION </a>
 					</div>
