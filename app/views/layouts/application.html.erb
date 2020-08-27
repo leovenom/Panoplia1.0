@@ -62,18 +62,15 @@
 							<%= link_to 'EVENTS', jobs_path, class: "button is-black mr3 is-static" %>
 							<%= link_to 'STORE', jobs_path, class: "button is-black mr3 is-static" %>
 							<%= link_to 'ABOUT', home_about_path, class: "button is-black" %>
-							<div class="control-search">
-								<%= link_to searches_path, type: 'submit', class: "button is-black", style:"padding-left: 0px;", id: "search-form" do %>
+							<%= link_to searches_path, type: 'submit', class: "button is-black", style:"padding-left: 25px;margin-bottom: 15px;", id: "search-form" do %>
 								<i class="fas fa-search" aria-hidden="true"></i>
-								<% end %>
-							</div>
+							<% end %>
 						</p>
 
-						<div class="navbar-item" >
+						<div class="navbar-item is-hidden-mobile" >
 							<div class="line"></div>
 						</div>
 				
-
 					<% if user_signed_in? %>
 						<div class="navbar-item">
 							<a class="is-arrowless">
@@ -91,7 +88,7 @@
 						<% if user_signed_in? %>
 						<%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
 						<%#= link_to 'POST A JOB', new_job_path, class: "button is-primarye nav mr3 is-static" %>
-						<div class="navbar-item has-dropdown is-hoverable">
+						<div class="navbar-item has-dropdown is-hoverable is-hidden-mobile">
 							<p class="navbar-item">
 								<%= link_to new_shot_path, class:"button is-primarye nav"  do %>
 									<span class="icon is-small"><i class="fa fa-upload" style="color:#fff;"></i></span>
@@ -111,7 +108,6 @@
 							</div>
 						</div>
 
-
 					<div class="navbar-item logout">
 						<%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
 					</div>
@@ -130,16 +126,10 @@
 			<div class="content has-text-centered ">
 				<div class="columns is-variable is-1-mobile is-0-tablet is-0-desktop is-0-widescreen is-2-fullhd">
 					<div class="column">
-						<%= link_to "ABOUT", home_about_path%>
-					</div>
-					<div class="column">
 						<a>ASSOCIATION </a>
 					</div>
 					<div class="column">
 						<a>PRIVACY POLICY </a>
-					</div>
-					<div class="column is-3">
-						<p><strong>Panóplia</strong> is developed with 💜 by <a href="https://www.linkedin.com/in/leonardtlauenstein/">LEONARDT</a></p>
 					</div>
 					<div class="column">
 						<a>TERMS </a>
@@ -149,6 +139,9 @@
 					</div>
 					<div class="column">
 						<a href="mailto:panoplia@outlook.pt">CONTACT US </a>
+					</div>
+					<div class="column is-3">
+						<p><strong>Panóplia</strong> is developed with 💜 by <a href="https://www.linkedin.com/in/leonardtlauenstein/">LEONARDT</a></p>
 					</div>
 				</div>
 			</div>
