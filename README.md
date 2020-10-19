@@ -24,27 +24,26 @@ Things you may want to cover:
 #### Make sure Ruby is installed on your system. Fire command prompt and run command:
 
 ```
+# Make sure Rails is installed
 ruby -v
-Make sure Rails is installed
 
+# If you see Ruby and Rails version then you are good to start, other wise Setup Ruby On Rails on Ubuntu
 rails -v
-If you see Ruby and Rails version then you are good to start, other wise Setup Ruby On Rails on Ubuntu
 ```
 #### Once done, Now
 
 ```
-Clone respected git repository
-
+# Clone respected git repository
 git clone https://github.com/leovenom/Panoplia1.0.git
-Install all dependencies
 
+# Install all dependencies
 bundle install
-Create db and migrate schema
 
+# Create db and migrate schema
 rake db:create
 rake db:migrate
-Now run your application
 
+# Now run your application
 rails s
 ```
 #### The Gem List
