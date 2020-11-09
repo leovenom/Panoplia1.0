@@ -1,43 +1,34 @@
 <section>
-		<div class="columns is-desktop">
-			<div class="background-pink">
-					<p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p>
-					<p class="subtitle has-text-centered">This is a space for artists to promote their work<span> and be found by entities looking for the most<span> creative minds available in the market.</p>
-					<%= image_tag ("background-log.jpg")%>
-			</div>
-
-			<div class="column is-6 sign-up">
-			<div class="column is-8 is-offset-2">
-
-				<h2 class="title has-text-centered">LOG IN TO PANÓPLIA</h2>
-				
-				<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-				  <div class="field">
-				  	<div class="control">
-				    	<%= f.input :email, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-				    </div>
-				  </div>
-
-				  <div class="field">
-				  	<div class="control">
-				    <%= f.input :password, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
-						</div>
-					</div>
-
-					<div class="field">
-				  	<div class="control">
-				    <%= f.input :remember_me, wrapper: false, as: :boolean if devise_mapping.rememberable? %>
-
-				  	</div>
-					</div>
-
-				  <%= f.button :submit, "LOG IN", class:"button is-prime is-small" %>
-				<% end %>
-				<br/>
-				<%= render "devise/shared/links" %>
-
-			</div>
-			</div>
+	<div class="columns is-desktop">
+		<div class="background-pink">
+			<p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p>
+			<p class="subtitle has-text-centered">This is a space for artists to promote their work<span> and be found by entities looking for the most<span> creative minds available in the market.</p>
+			<%= image_tag ("background-log.jpg")%>
 		</div>
+		<div class="column is-6 sign-up">
+		<div class="column is-8 is-offset-2">
+			<h2 class="title has-text-centered">LOG IN TO PANÓPLIA</h2>
+			<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			<div class="field">
+				<div class="control">
+					<%= f.input :email, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+				</div>
+			</div>
+			<div class="field">
+				<div class="control">
+				<%= f.input :password, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+				</div>
+			</div>
+			<div class="field">
+				<div class="control">
+				<%= f.input :remember_me, wrapper: false, as: :boolean if devise_mapping.rememberable? %>
+				</div>
+			</div>
+				<%= f.button :submit, "LOG IN", class:"button is-prime is-small" %>
+			<% end %>
+			<br/>
+			<%= render "devise/shared/links" %>
+		</div>
+		</div>
+	</div>
 </section>
