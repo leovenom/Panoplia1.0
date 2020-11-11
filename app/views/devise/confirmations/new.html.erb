@@ -26,7 +26,7 @@
 					<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
 						<%= link_to "Forgot your password?", new_password_path(resource_name)%><br />
 					<% end -%>
-					<%= link_to 'BACK', root_path, class:"text optional label mt2" %>
+					<%= link_to 'BACK', user_session_path, class:"text optional label mt2" %>
   		</div>
 		</div>
 
