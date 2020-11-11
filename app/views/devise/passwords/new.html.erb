@@ -19,7 +19,11 @@
 				<%= f.button :submit, "Send me reset password instructions", class:"button is-primary" %>
 				<% end %>
 				<br />
-				<%= render "devise/shared/links" %>
+				<%#= render "devise/shared/links" %>
+				<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+					<%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)%><br />
+				<% end -%>
+				<%= link_to 'BACK', user_session_path, class:"text optional label mt2" %>
 			</div>
 		</div>
 	</div>
