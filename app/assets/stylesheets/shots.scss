@@ -128,6 +128,12 @@
 	position: relative;
 	padding-left: 5px;
 }
+.user-name-show {
+	display: inline-block;
+	position: relative;
+	padding-left: 5px;
+	top: 7px;
+}
 
 .user-thumb {
 	display: inline-block;
@@ -150,7 +156,7 @@
 	@media only screen and (max-width: 800px) {
 		text-align: right;
 		.level-item {
-			// display: inline-block;
+			display: inline-flex;
 			padding: 0 4px;
 		}
 		.level-left+.level-right {
@@ -263,7 +269,7 @@ overflow:auto;
 // }
 
 .user-name-follow {
-  // display: inline-block;
+  display: inline-block;
   // position: relative;
 	margin: 2rem;
 	width: 200px;

@@ -13,7 +13,7 @@
 									<%= link_to letter_avatar_tag(@shot.user.name, 0), user_path(@shot.user) %>
 								<% end %> 
 							</div>
-							<div class="user-name">
+							<div class="user-name-show">
 								<h3 class="title-title"><%= @shot.title.titleize %></h3>
 								<span class="by">By </span><%=link_to @shot.user.name.upcase, @shot.user %>
 							</div>
