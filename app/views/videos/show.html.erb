@@ -10,7 +10,7 @@
 								<%=link_to cl_image_tag(@video.user.avatar.key), user_path(@video.user) unless @video.user.avatar.blank? %> 
 							</div>
 
-							<div class="user-name">
+							<div class="user-name-show">
 								<h3 class="title-title"><%= @video.title.titleize %></h3>
 								<span class="by">By </span><%= link_to @video.user.name.upcase, @video.user, class:"shot-user-name" %>
 							</div>
