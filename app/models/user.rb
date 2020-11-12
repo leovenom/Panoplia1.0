@@ -1,4 +1,6 @@
+require 'letter_avatar/has_avatar'
 class User < ApplicationRecord
+  include LetterAvatar::HasAvatar
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -8,7 +8,7 @@
             <% if @user.avatar.attached? %>
             <%= cl_image_tag(@user.avatar.key, :quality=>"auto:good") %>
             <% else %>
-            <%= image_tag 'panoplia-logo.png' %>
+            <%= letter_avatar_tag(@user.name, 0)%>
             <% end %>
           </figure>
           

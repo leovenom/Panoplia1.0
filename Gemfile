@@ -49,7 +49,7 @@ gem 'cloudinary', '~> 1.16', '>= 1.16.1'
 gem 'stripe', '~> 1.57', '>= 1.57.1'
 gem 'figaro', '~> 1.2'
 gem 'rubygems-update', '~> 3.1', '>= 3.1.4'
-
+gem 'letter_avatar'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
