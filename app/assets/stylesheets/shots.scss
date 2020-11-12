@@ -219,8 +219,11 @@ overflow:auto;
 	grid-template-columns: repeat(1fr);
   grid-gap: 10px;
 	margin: 0 1.5rem 0 1.5rem;
+	align-items: center;
+	justify-content: center;
 	@media only screen and (max-width: 650px) {
 		grid-template-columns: 1fr;
+		margin: 0 1.5rem 0 3.5rem;
 	}
 	.shot img {
 		height: 150px;
@@ -232,11 +235,12 @@ overflow:auto;
 	display: inline-flex;
 	grid-gap: 15px;
 	padding-left: 4rem;
+	margin-left: auto;
 }
 
 .level-item-search-f{
 	align-items: center;
-	justify-content: center;
+	justify-content: left;
   display: flex;
 }
 .user-thumb-following img {
@@ -247,15 +251,15 @@ overflow:auto;
 	margin: 1rem;
 }
 
-.follow-search-grid {
-	display: grid;
-	grid-template-columns: repeat(1fr);
-  grid-gap: 10px;
-	margin: 0 1.5rem 0 1.5rem;
-	@media only screen and (max-width: 650px) {
-		grid-template-columns: 1fr;
-	}
-}
+// .follow-search-grid {
+// 	display: grid;
+// 	grid-template-columns: repeat(1fr);
+//   grid-gap: 10px;
+// 	margin: 0 1.5rem 0 1.5rem;
+// 	@media only screen and (max-width: 650px) {
+// 		grid-template-columns: 1fr;
+// 	}
+// }
 
 .user-name-follow {
   display: inline-block;
