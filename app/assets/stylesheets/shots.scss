@@ -124,8 +124,8 @@
 }
 
 .user-name {
-	display: inline-block;
-	position: relative;
+	// display: inline-block;
+	// position: relative;
 	padding-left: 5px;
 }
 
@@ -150,7 +150,7 @@
 	@media only screen and (max-width: 800px) {
 		text-align: right;
 		.level-item {
-			display: inline-block;
+			// display: inline-block;
 			padding: 0 4px;
 		}
 		.level-left+.level-right {
@@ -161,6 +161,7 @@
 			margin: 0;
 		}
 	}
+
 }
 
 .shot-analytics,
@@ -234,8 +235,8 @@ overflow:auto;
 .shots-following {
 	display: inline-flex;
 	grid-gap: 15px;
-	padding-left: 4rem;
-	margin-left: auto;
+	// padding-left: 4rem;
+	// margin-left: auto;
 }
 
 .level-item-search-f{
@@ -262,9 +263,10 @@ overflow:auto;
 // }
 
 .user-name-follow {
-  display: inline-block;
-  position: relative;
-  padding: 2rem;
+  // display: inline-block;
+  // position: relative;
+	margin: 2rem;
+	width: 200px;
 }
 
 #slideout {
