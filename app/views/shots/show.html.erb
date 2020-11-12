@@ -7,7 +7,11 @@
 					<div class="columns show-page is-desktop">
 						<div class="column is-12">
 							<div class="user-thumb shot-show">
+							<% if @shot.user.avatar.attached? %>
 								<%=link_to cl_image_tag(@shot.user.avatar.key, :quality=>"auto:good"), user_path(@shot.user) unless @shot.user.avatar.blank?%>
+								<% else %>
+									<%= link_to letter_avatar_tag(@shot.user.name, 0), user_path(@shot.user) %>
+								<% end %> 
 							</div>
 							<div class="user-name">
 								<h3 class="title-title"><%= @shot.title.titleize %></h3>

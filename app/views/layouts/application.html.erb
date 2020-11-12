@@ -78,7 +78,8 @@
 									<% if current_user.avatar.attached? %>
 									<%= link_to cl_image_tag(current_user.avatar.key, :quality=>"auto:best"), user_path(current_user), class:"is-hidden-mobile" %>
 									<% else%>
-									<%= link_to image_tag('panoplia-logo.png'), user_path(current_user), class:"button is-black" %>
+									<%#= link_to image_tag('panoplia-logo.png'), user_path(current_user), class:"button is-black" %>
+									<%= link_to letter_avatar_tag(current_user.name, 0), user_path(current_user), class:"button is-black" %>
 									<% end%>
 								</p>
 							</a>

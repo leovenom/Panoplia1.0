@@ -9,7 +9,8 @@
               <% if job.user.avatar.attached? %>
               <%= link_to cl_image_tag(job.user.avatar.key, :quality=>"auto:good"), user_path(job.user) %>      
               <% else %>
-              <%= link_to image_tag('panoplia-logo.png'), user_path(job.user) %>
+              <%#= link_to image_tag('panoplia-logo.png'), user_path(job.user) %>
+              <%= link_to letter_avatar_tag(user.name, 0), user_path(job.user) %>
               <% end %> 
             </div>
             <div class="user-name-job">
