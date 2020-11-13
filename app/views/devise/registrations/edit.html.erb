@@ -36,19 +36,20 @@
             <p class="subtitle edit">PUBLIC PROFILE</p>
             <div class="field">
               <div class="control">
-                <%#= f.input :username, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+                <%= f.input :username, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
               </div>
             </div>
+
             <div class="field">
               <div class="control">
-                <%= f.input :name, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+                <%= f.input :name, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, required: true %>
               </div>
             </div>
             
 
             <div class="columns" style="margin-bottom:0">
               <div class=" column control" style="margin-bottom:0">
-                <%= f.input :location, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+                <%= f.input :location, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, required: true  %>
               </div>
               <div class="column select is-multiple" style="margin-bottom:0">
                 <label class="label">Select type</label>
@@ -58,7 +59,7 @@
 
             <div class="field">
               <div class="control bio">
-                <%= f.input :bio, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+                <%= f.input :bio, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, required: true %>
               </div>
             </div>
 
@@ -75,9 +76,9 @@
         <%# else %>
         <div class="field">
           <div class="control">
-            <label class="label">Looking for a job?</label>
-            <%= f.check_box :available %>
-            <%= f.label :available, "I am avaiable for a job.", autofocus: true, wrapper: false, label_html: { class: "label" } %>
+            <label class="label" for="available_for_a_job_checkbox">Looking for a job?</label>
+            <%= f.check_box :available, id:"available_for_a_job_checkbox", name:"available_for_a_job" %>
+            <%= f.label :available, "I am available for a job.", autofocus: true, wrapper: false, label_html: { class: "label" } %>
           </div>
         </div>
         <%# end %>
