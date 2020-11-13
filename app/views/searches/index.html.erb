@@ -38,6 +38,8 @@
           </div>
 
         </div>
+        <% if params[:search].blank? %>
+        <% else %>
 
         <div class="follow-grid">
           <% @users.each do |user| %>
@@ -70,6 +72,7 @@
           <%end%>
 
         </div>
+        <%end%>
       </div>
 
 </section>
