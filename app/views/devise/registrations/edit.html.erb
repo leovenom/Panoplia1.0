@@ -42,7 +42,7 @@
 
             <div class="field">
               <div class="control">
-                <%= f.input :name, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, required: true %>
+                <%= f.input :name, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, required: true, error: 'Name is mandatory, please specify one' %>
               </div>
             </div>
             
@@ -53,7 +53,8 @@
               </div>
               <div class="column select is-multiple" style="margin-bottom:0">
                 <label class="label">Select type</label>
-                <%=  f.input_field :art, collection: User::ARTS, autofocus: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, style:"width: 100%" %>
+                <%=  f.input_field :art, collection: User::ARTS, autofocus: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, style:"width: 100%", :input_html => { :multiple => true } %>
+                
               </div>
             </div>
 
