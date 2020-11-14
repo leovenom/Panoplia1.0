@@ -149,6 +149,17 @@ html, body {
 .file-label, .file-name {
 	font-family: Brice-BoldSemiCondensed;
 }
+span.file-name {
+	max-width: 150px;
+}
+@media only screen and (max-width: 1023px) {
+	.edit-avatar-pass {
+		margin-left: 4rem;
+	}
+	.hero.is-warning {
+		padding-top: 0;	
+	}	
+}
 
 .file.is-primary .file-cta {
   background-color: #9600c8;

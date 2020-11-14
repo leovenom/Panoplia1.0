@@ -106,19 +106,19 @@
 
     <%# avatar profile %>
     <div class="column hero is-warning">
-      <div class="pr5">
+      <div class="edit-avatar-pass mr2">
         <div id="avatar" class="avatar-edit">
-          <p class="subtitle edit pt4 has-text-centered">PUBLIC PICTURE</p>
+          <p class="subtitle edit pt4 ml5">PUBLIC PICTURE</p>
 
           <div class="field">
-            <div class="control has-text-centered">
+            <div class="control ml5" id="target">
               <%= cl_image_tag(resource.avatar.key, :quality=>"auto:good") if resource.avatar.attached? %>
             </div>
           </div>
 
-          <div id="file-js-examplez" class="file has-name is-centered">
+          <div id="file-js-examplez" class="file has-name">
             <label class="file is-primary has-name is-small">
-              <%= f.file_field :avatar, as: :file, class: 'file-input', onchange: "validateFiles(this);", data: { max_file_size: 2.megabytes } %>
+              <%= f.file_field :avatar, as: :file, class: 'file-input', id:"pictureInput", onchange: "validateFiles(this);", data: { max_file_size: 2.megabytes } %>
               <span class="file-cta">
                 <span class="file-icon">
                   <i class="fas fa-upload"></i>
@@ -196,4 +196,20 @@
       fileName.textContent = fileInput.files[0].name;
     }
   }
+
+  $(function() {
+  $('#pictureInput').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      console.log(file);
+      img.src = file.target.result;
+      $('#target').html(img);
+    }
+    reader.readAsDataURL(image);
+    console.log(files);
+  });
+});
 </script>
