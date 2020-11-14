@@ -72,10 +72,12 @@ h3.title.edit.cancel {
   margin-bottom: 0px;
 }
 #user_bio{
-  max-width: 267px;
-  height: 180px;
-  max-height: 250px;
+  min-width: -webkit-fill-available;
+  max-width: max-content;
+  min-height: 180px;
+  max-height: 250px
 }
+
 
 .label {
   display: block;
