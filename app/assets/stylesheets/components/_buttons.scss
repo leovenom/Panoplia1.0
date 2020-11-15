@@ -240,8 +240,11 @@
 	padding-left: 0.7em;
 	padding-right: 0.7em;
 }
+#sendNewSms {
+	background-color: #9600c8;
+}
 
-.is-prime:hover{
+#sendNewSms:hover{
 	background-color: #ff78be;
 	border-color: transparent;
 	color: #fff;

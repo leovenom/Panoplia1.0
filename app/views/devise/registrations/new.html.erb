@@ -39,13 +39,13 @@
 						</div>	
 						<div class="field">
 							<div class="control">
-								<label class="checkbox" for="checkbox">
-									<input type="checkbox" checked required id="checkbox" name="terms_and_conditions">
+								<label class="checkbox" for="toggle">
+									<input type="checkbox" checked required id="toggle" name="terms_and_conditions">
 									I agree to the <a href="#">terms and conditions</a>
 								</label>
 							</div>
 						</div>
-						<%= f.button :submit, "CREATE ACCOUNT", class:"button is-prime is-small" %>
+						<%= f.button :submit, "CREATE ACCOUNT", class:"button is-prime is-small", id:"sendNewSms" %>
 						<% end %>
 						<br/>
 						<%- if controller_name != 'sessions' %>
@@ -57,3 +57,16 @@
 				</div>
 			</div>
 		</section>
+
+		<script>
+			$('#toggle').click(function () {
+    //check if checkbox is checked
+    if ($(this).is(':checked')) {
+        
+        $('#sendNewSms').removeAttr('disabled'); //enable input
+        
+    } else {
+        $('#sendNewSms').attr('disabled', true); //disable input
+    }
+});
+		</script>
