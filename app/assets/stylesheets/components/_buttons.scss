@@ -246,6 +246,19 @@
 	border-color: transparent;
 	color: #fff;
 }
+.button[disabled], fieldset[disabled] .button {
+	background-color: #9600c8;
+
+}
+// #sendNewSms {
+// 	background-color: #9600c8;
+// }
+
+// #sendNewSms:hover{
+// 	background-color: #ff78be;
+// 	border-color: transparent;
+// 	color: #fff;
+// }
 
 //buttons large contact shot show
 .button.contact{
