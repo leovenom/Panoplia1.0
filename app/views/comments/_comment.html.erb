@@ -5,7 +5,7 @@
       <% if comment.user.avatar.attached? %>
         <%= link_to cl_image_tag(comment.user.avatar.key), user_path(comment.user)  unless comment.user.avatar.blank? %>
           <% else %>
-            <%#= link_to image_tag('panoplia-logo.png'), user_path(comment.user) %>
+            <%= link_to image_tag('panoplia-logo.png'), user_path(comment.user) %>
             <%= link_to letter_avatar_tag(comment.user.name, 0), user_path(comment.user) %>
           <% end %> 
       </p>
