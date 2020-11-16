@@ -29,7 +29,7 @@
 					<div class="column has-text-centered">
 						<%= image_tag 'hand.png', class:"fah"%>
 						<p class="title">
-							JOIN OUR COMMUNITY
+							<%= link_to "JOIN OUR COMMUNITY".html_safe, new_user_registration_path, class:"title Join", alt:"Sign up", name:"Sign up"%>
 						</p>
 						<p class="subtitle">
 							Be part of a community where you can showcase yout work<br/>to other artists and find new professional opportunities.
@@ -50,8 +50,6 @@
 			</div>
 		</section>
 	</div>
-
-
 
 	
 	<% end %>
