@@ -41,11 +41,11 @@
 								
 								<% if user_signed_in? && !current_user?(@video.user) %>
 								<% if current_user.liked? @video %>
-								<%= link_to unlike_shot_path(@video), method: :put, class: "unlike_shot" do %>
+								<%= link_to unlike_video_path(@video), method: :put, class: "unlike_video" do %>
 								<span class="button is-black icon"><i class="fa fa-heart has-text-primary"></i></span>
 								<% end %>
 								<% else %>
-								<%= link_to like_shot_path(@video), method: :put, class: "like_shot" do %>
+								<%= link_to like_video_path(@video), method: :put, class: "like_video" do %>
 								<span class="button is-roxo icon"><i class="fa fa-heart"></i>LIKE</span>
 								<% end %>
 								<% end %>
@@ -104,18 +104,18 @@
 									<% if user_signed_in? %>
 									
 									<% if current_user.liked? @video %>
-									<%= link_to unlike_shot_path(@video), method: :put, class: "unlike_shot" do %>
+									<%= link_to unlike_video_path(@video), method: :put, class: "unlike_video" do %>
 									<span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
 									<span class="vote_count"><%= @video.get_likes.size %></span>
 									<% end %>
 									<% else %>
-									<%= link_to like_shot_path(@video), method: :put, class: "like_shot" do %>
+									<%= link_to like_video_path(@video), method: :put, class: "like_video" do %>
 									<span class="icon"><i class="fa fa-heart"></i></span>
 									<span class="vote_count"><%= @video.get_likes.size %></span>
 									<% end %>
 									<% end %>
 									<% else %>
-									<%= link_to like_shot_path(@video), method: :put, class: "like_shot" do %>
+									<%= link_to like_video_path(@video), method: :put, class: "like_video" do %>
 									<span class="icon"><i class="fa fa-heart"></i></span>
 									<span class="vote_count"><%= @video.get_likes.size %></span>
 									<% end %>

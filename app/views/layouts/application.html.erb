@@ -92,10 +92,12 @@
 						<%#= link_to 'POST A JOB', new_job_path, class: "button is-primarye nav mr3 is-static" %>
 						<div class="navbar-item has-dropdown is-hoverable is-hidden-mobile">
 							<p class="navbar-item">
-								<%= link_to new_shot_path, class:"button is-primarye nav"  do %>
+								<%#= link_to new_shot_path, class:"button is-primarye nav"  do %>
+								<button class="button is-primarye nav">
 									<span class="icon is-small"><i class="fa fa-upload" style="color:#fff;"></i></span>
 										<span>UPLOAD</span>
-								<% end %> 
+								<%# end %>
+								</button>
 							</p>
 							<div class="navbar-dropdown post">
 								<span class="triangle"></span>

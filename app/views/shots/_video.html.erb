@@ -3,12 +3,16 @@
     <%= link_to video, class: "video" do %>
     <%= get_video_iframe(video.url) %>
     <% end %>
-
+   <%# if user_signed_in? %>
     <nav class="level shot-analytics">
       <div class="level-left">
         <div class="level-item">
           <div class="user-thumb">
+          <% if video.user.avatar.attached? %>
             <%=link_to cl_image_tag(video.user.avatar.key), user_path(video.user) unless video.user.avatar.blank? %> 
+          <% else %>
+           <%= link_to letter_avatar_tag(video.user.name, 0), user_path(video.user) %>
+          <% end %>
           </div>
           <div class="user-name">
             <%= link_to sanitize(video.title.titleize.truncate(13)), video %>
@@ -32,18 +36,18 @@
         <div class="level-item likes">
           <% if user_signed_in? %>
           <% if current_user.liked? video %>
-          <%= link_to unlike_shot_path(video), method: :put, class: "unlike_video" do %>
+          <%= link_to unlike_video_path(video), method: :put, class: "unlike_video" do %>
           <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
           <span class="vote_count"><%= video.get_likes.size %></span>
           <% end %>
           <% else %>
-          <%= link_to like_shot_path(video), method: :put, class: "like_video" do %>
+          <%= link_to like_video_path(video), method: :put, class: "like_video" do %>
           <span class="icon"><i class="fa fa-heart"></i></span>
           <span class="vote_count"><%= video.get_likes.size %></span>
           <% end %>
           <% end %>
           <% else %>
-          <%= link_to like_shot_path(video), method: :put, class: "like_video" do %>
+          <%= link_to like_video_path(video), method: :put, class: "like_video" do %>
           <span class="icon"><i class="fa fa-heart"></i></span>
           <span class="vote_count"><%= video.get_likes.size %></span>
           <% end %>
@@ -51,6 +55,6 @@
         </div>
       </div>
     </nav>
-    
+    <%# end %>
   </div>
 </div>

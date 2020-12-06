@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :videos do 
   	resources :comments 
   	member do 
-  		put 'like', to: "shots#like"
-  		put 'unlike', to: "shots#unlike"
+  		put 'like', to: "videos#like"
+  		put 'unlike', to: "videos#unlike"
     end
   end
   
