@@ -1,4 +1,8 @@
 .footer {
-  background-color: white;
-  padding: 1.5rem 1.5rem 1.5rem;
+  background-color: black;
+  padding: 2rem 1rem 1rem 1rem;
+  font-size: small;
+  p, strong {
+    color: white;
+  }
 }

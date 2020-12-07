@@ -69,7 +69,7 @@
 							<% end %></p>
 						<%# </p> %>
 
-						<div class="navbar-item is-hidden-mobile" >
+						<div class="navbar-item is-hidden-touch" >
 							<div class="line"></div>
 						</div>
 				
@@ -78,7 +78,7 @@
 							<a class="is-arrowless">
 								<p class="navbar-item user">
 									<% if current_user.avatar.attached? %>
-									<%= link_to cl_image_tag(current_user.avatar.key, :quality=>"auto:best"), user_path(current_user), class:"is-hidden-mobile" %>
+									<%= link_to cl_image_tag(current_user.avatar.key, :quality=>"auto:best"), user_path(current_user) %>
 									<% else%>
 									<%#= link_to image_tag('panoplia-logo.png'), user_path(current_user), class:"button is-black" %>
 									<%= link_to letter_avatar_tag(current_user.name, 0), user_path(current_user), class:"button is-black" %>
@@ -91,7 +91,7 @@
 						<% if user_signed_in? %>
 						<%#= link_to 'POST VIDEO', new_video_path, class: "button is-primary is-small mr3" %>
 						<%#= link_to 'POST A JOB', new_job_path, class: "button is-primarye nav mr3 is-static" %>
-						<div class="navbar-item has-dropdown is-hoverable is-hidden-mobile">
+						<div class="navbar-item has-dropdown is-hoverable is-hidden-touch">
 							<p class="navbar-item">
 								<%#= link_to new_shot_path, class:"button is-primarye nav"  do %>
 								<button class="button is-primarye nav">
@@ -127,29 +127,48 @@
 	
 		<%= yield %>
 		
-		<footer class="footer bg-success">
-			<div class="content has-text-centered ">
-				<div class="columns is-variable is-1-mobile is-0-tablet is-0-desktop is-0-widescreen is-2-fullhd">
-					<div class="column">
-						<a>ASSOCIATION </a>
+		<footer class="footer">
+
+				<div class="columns is-multiline is-centered is-3-mobile is-3-tablet is-8-desktop is-8-widescreen is-2-fullhd">
+					
+					<div class="navbar-brand">
+						<div class="column">
+							<%= link_to root_path, class:"navbar-item" do %>
+			
+								<%= image_tag 'panoplia-logo.png' %>
+			
+							<% end  %>
+						</div>
 					</div>
-					<div class="column">
-						<a>PRIVACY POLICY </a>
+
+					<div class="column is-10-mobile">
+						<a>CONTACT</a>
+						<p>panoplia@outlook.com</p>
+						<p>+ 351 910 293 834</p>
 					</div>
-					<div class="column">
-						<a>TERMS </a>
+
+					<div class="column is-10-mobile">
+						<a>ADRESS</a>
+						<p>MORADA DA PANOPLIA <br> 2891-028</p>
+						<p>LISBOA, PORTUGAL</p>
 					</div>
-					<div class="column">
-						<a>COMMUNITY PLEDGE </a>
+
+					<div class="column is-10-mobile">
+						<a>LINKS</a>
+						<p>ABOUT</p>
+						<p>ASSOCIATION</p>
+						<p>PRIVACY POLICY</p>
 					</div>
-					<div class="column">
-						<a href="mailto:panoplia@outlook.pt">CONTACT US </a>
+					<div class="column is-10-mobile">
+						<br>
+						<p>TERMS</p>
+						<p>COMMUNITY PLEDGE</p>
+						<a href="mailto:panoplia@outlook.pt">CONTACT US</a>
 					</div>
-					<div class="column is-3">
+					<div class="column is-half is-offset-one-quarter is-8-mobile">
 						<p><strong>Panóplia</strong> is developed with 💜 by <a href="https://leonardt.eu/">LEONARDT</a></p>
 					</div>
 				</div>
-			</div>
 		</footer>
 	</body>
 </html>
