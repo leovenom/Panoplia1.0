@@ -1,9 +1,9 @@
 <%= simple_form_for @video do |f| %>
 	<%= f.error_notification %>
-	<div class="columns is-centered is-desktop" style="height: 686px;">
+	<div class="columns is-centered is-desktop" style="height: 100vh;">
 
 		<div class="background-pink">
-			<%= link_to ' BACK', videos_path, class:"text optional label ml5 mt5" %>
+			<%= link_to ' BACK', root_path, class:"text optional label ml5 mt5" %>
 
 			<p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p>
 			 <%= image_tag ("background-log.jpg")%>
@@ -14,6 +14,7 @@
 				<p class="subtitle cards">UPLOAD A VIDEO</p>
 				<div class="field">
 					<label for="video-url" class="text optional label">URL</label>
+					<p>Only youtube or vimeo</p>
 					<div class="control">
 						<%= f.text_field :url, required: true, id:"video-url", name:"video[url]", class:"string optional input"%>            
 					</div>
@@ -35,7 +36,7 @@
 					<%= f.button :submit, class:"button is-prime is-small" %>
 				</div>
 				<div style="display: flex;">
-					<%= link_to 'SHOW ', @video, class:"text optional label mt3"  %>
+					<%#= link_to 'SHOW ', @video, class:"text optional label mt3"  %>
 				</div> 
 			</div>
 		</div>

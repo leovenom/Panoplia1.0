@@ -50,7 +50,6 @@ gem 'stripe', '~> 1.57', '>= 1.57.1'
 gem 'figaro', '~> 1.2'
 gem 'rubygems-update', '~> 3.1', '>= 3.1.4'
 gem 'letter_avatar'
-gem "actionview", ">= 6.0.3.3"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

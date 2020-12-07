@@ -14,7 +14,8 @@
               <%= link_to letter_avatar_tag(shot.user.name, 0), user_path(shot.user) %>
             <% end %> 
           </div>
-          <div class="user-name"><%=link_to sanitize(shot.title.titleize.truncate(13)), shot %>
+          <div class="user-name">
+            <%=link_to sanitize(shot.title.titleize.truncate(13)), shot %>
           </div>
         </div>
       </div>
@@ -34,7 +35,6 @@
         </div>
         <div class="level-item likes">
           <% if user_signed_in? %>
-          
           <% if current_user.liked? shot %>
           <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
           <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
@@ -52,7 +52,6 @@
           <span class="vote_count"><%= shot.get_likes.size %></span>
           <% end %>
           <% end %>
-
         </div>
       </div>
     </nav>

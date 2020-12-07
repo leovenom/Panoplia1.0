@@ -44,7 +44,7 @@
             
             <% if user_signed_in? && current_user?(@user)%>
             <div class="">
-              <%= link_to 'EDIT', edit_user_registration_path, class:"button is-roxo" %>
+              <%= link_to 'EDIT PROFILE', edit_user_registration_path, class:"button is-roxo" %>
             </div>
             <%= link_to 'CONTENTS', videos_path, class:"button is-roxo" %>
             <%end%>

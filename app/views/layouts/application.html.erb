@@ -42,31 +42,32 @@
 		 <nav class="navbar" role="navigation" aria-label="main navigation">
 			<div class="navbar-brand">
 				<%= link_to root_path, class:"navbar-item" do %>
-				<div class="image-logo">
+				<%# <div class="image-logo"> %>
 					<%= image_tag 'panoplia-logo.png' %>
-				</div>
+				<%# </div> %>
 				<% end  %>
-				<div class="navbar-burger burger is-hidden-desktop" data-target="navbar">
+
+				<div class="navbar-burger burger is-hidden-desktop" data-target="navbarExample">
 					<span></span>
 					<span></span>
 					<span></span>
 				</div>
 			</div>
 
-			<div id="navbar" class="navbar-menu">
+			<div id="navbarExample" class="navbar-menu">
 
 				<div class="navbar-end">
 					
-						<p class="navbar-item">
+						<%# <p class="navbar-item"> %>
 							<%#= link_to 'JOBS', jobs_path, class: "button is-black mr3 is-static" %>
-							<%= link_to 'MASTERCLASS', jobs_path, class: "button is-black mr3 is-static" %>
-							<%= link_to 'EVENTS', jobs_path, class: "button is-black mr3 is-static" %>
-							<%= link_to 'STORE', jobs_path, class: "button is-black mr3 is-static" %>
-							<%= link_to 'ABOUT', home_about_path, class: "button is-black" %>
-							<%= link_to searches_path, type: 'submit', class: "button is-black", style:"padding-left: 25px;margin-bottom: 15px;", id: "search-form" do %>
+							<p class="navbar-item"><%= link_to 'MASTERCLASS', jobs_path, class: "button is-black is-static" %></p>
+							<p class="navbar-item"><%= link_to 'EVENTS', jobs_path, class: "button is-black is-static" %></p>
+							<p class="navbar-item"><%= link_to 'STORE', jobs_path, class: "button is-black is-static" %></p>
+							<p class="navbar-item"><%= link_to 'ABOUT', home_about_path, class: "button is-black" %></p>
+							<p class="navbar-item"><%= link_to searches_path, type: 'submit', class: "button is-black", style:"padding-left: 25px;margin-bottom: 15px;", id: "search-form" do %>
 								<i class="fas fa-search" aria-hidden="true"></i>
-							<% end %>
-						</p>
+							<% end %></p>
+						<%# </p> %>
 
 						<div class="navbar-item is-hidden-mobile" >
 							<div class="line"></div>
@@ -92,10 +93,12 @@
 						<%#= link_to 'POST A JOB', new_job_path, class: "button is-primarye nav mr3 is-static" %>
 						<div class="navbar-item has-dropdown is-hoverable is-hidden-mobile">
 							<p class="navbar-item">
-								<%= link_to new_shot_path, class:"button is-primarye nav"  do %>
+								<%#= link_to new_shot_path, class:"button is-primarye nav"  do %>
+								<button class="button is-primarye nav">
 									<span class="icon is-small"><i class="fa fa-upload" style="color:#fff;"></i></span>
 										<span>UPLOAD</span>
-								<% end %> 
+								<%# end %>
+								</button>
 							</p>
 							<div class="navbar-dropdown post">
 								<span class="triangle"></span>
@@ -114,9 +117,9 @@
 						<%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class:"button is-black" %>
 					</div>
 					<% else %>
-					<p class="navbar-item">
+					<div class="navbar-item has-text-centered">
 						<%= link_to "LOG IN", new_user_session_path, class:"button is-primarye" %>
-					</p>
+					<div>
 					<% end %>
 				</div>
 			</div>
@@ -124,7 +127,7 @@
 	
 		<%= yield %>
 		
-		<footer class="footer">
+		<footer class="footer bg-success">
 			<div class="content has-text-centered ">
 				<div class="columns is-variable is-1-mobile is-0-tablet is-0-desktop is-0-widescreen is-2-fullhd">
 					<div class="column">
