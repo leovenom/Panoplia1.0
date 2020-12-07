@@ -36,9 +36,20 @@
               <%# end %>
             </div>
           </div>
-
         </div>
-        <% if params[:search].blank? %>
+        <div style="margin-left: 25px;">
+          <div class="control-search">
+            <%= form_tag(searches_path, :method => 'get') do %> 
+            </div>
+            <div class="control-search">
+              <%= button_tag type: 'submit',name:"search", onkeydown:'clickSubmit();', class: "button is-primarye", id: "search-form" do %>
+              <p>All artists</p>
+              <% end %>
+              <% end %>
+            </div>
+        </div>
+
+        <% if params[:search].nil? %>
         <% else %>
 
         <div class="follow-grid">
