@@ -127,31 +127,50 @@
 	
 		<%= yield %>
 		
-		<footer class="footer bg-success">
-			<div class="content has-text-centered ">
-				<div class="columns is-variable is-1-mobile is-0-tablet is-0-desktop is-0-widescreen is-2-fullhd">
-					<div class="column">
-						<a>ASSOCIATION </a>
-						<a>PRIVACY POLICY </a>
-						<a>TERMS </a>
+		<footer class="footer">
+			<%# <div class="content"> %>
+				<div class="columns is-multiline is-centered is-3-mobile is-3-tablet is-8-desktop is-8-widescreen is-2-fullhd">
+					
+					<div class="navbar-brand">
+						<div class="column">
+							<%= link_to root_path, class:"navbar-item" do %>
+							<%# <div class="image-logo"> %>
+								<%= image_tag 'panoplia-logo.png' %>
+							<%# </div> %>
+							<% end  %>
+						</div>
 					</div>
-					<div class="column">
-						<a>PRIVACY POLICY </a>
+
+					<div class="column is-10-mobile">
+						<a>CONTACT</a>
+						<p>panoplia@outlook.com</p>
+						<p>+ 351 910 293 834</p>
 					</div>
-					<div class="column">
-						<a>TERMS </a>
+
+					<div class="column is-10-mobile">
+						<a>ADRESS</a>
+						<p>MORADA DA PANOPLIA <br> 2891-028</p>
+						<p>LISBOA, PORTUGAL</p>
 					</div>
-					<div class="column">
-						<a>COMMUNITY PLEDGE </a>
+
+					<div class="column is-10-mobile">
+						<a>LINKS</a>
+						<p>ABOUT</p>
+						<p>ASSOCIATION</p>
+						<p>PRIVACY POLICY</p>
 					</div>
-					<div class="column">
-						<a href="mailto:panoplia@outlook.pt">CONTACT US </a>
+					<div class="column is-10-mobile">
+						<br>
+						<p>TERMS</p>
+						<p>COMMUNITY PLEDGE</p>
+						<a href="mailto:panoplia@outlook.pt">CONTACT US</a>
 					</div>
-					<div class="column is-3">
+			
+			<%# </div> %>
+					<div class="column is-half is-offset-one-quarter is-8-mobile">
 						<p><strong>Panóplia</strong> is developed with 💜 by <a href="https://leonardt.eu/">LEONARDT</a></p>
 					</div>
-				</div>
-			</div>
+						</div>
 		</footer>
 	</body>
 </html>
