@@ -114,101 +114,101 @@ document.addEventListener("turbolinks:load", function() {
       x.style.display = "none";
     }
   }
-  function changeTextAvatar(idElement) {
-      var element = document.getElementById('element' + idElement);
-      if (idElement === 1) {
-          if (element.innerHTML === 'Profile Picture') element.innerHTML = '→ Profile Picture';
-          else {
-              element.innerHTML = 'Profile Picture';
-          }
-      }
-  }
-  function changeFont1() {
-    var fon1 = document.getElementById("element1");
-    if (fon1.className == "roman") {
-      fon1.className = 'amatic';
-    } else {
-      fon1.className = 'roman';
-    }
-  }
+  // function changeTextAvatar(idElement) {
+  //     var element = document.getElementById('element' + idElement);
+  //     if (idElement === 1) {
+  //         if (element.innerHTML === 'Profile Picture') element.innerHTML = '→ Profile Picture';
+  //         else {
+  //             element.innerHTML = 'Profile Picture';
+  //         }
+  //     }
+  // }
+  // function changeFont1() {
+  //   var fon1 = document.getElementById("element1");
+  //   if (fon1.className == "roman") {
+  //     fon1.className = 'amatic';
+  //   } else {
+  //     fon1.className = 'roman';
+  //   }
+  // }
 
-    function myFunctionProfile() {
-      var y = document.getElementById("public-profile");
-      if (y.style.display === "") {
-        y.style.display = "block";
-      } else {
-        y.style.display = "";
-      }
-    }
-    function changeTextProfile(idElement) {
-        var element = document.getElementById('element' + idElement);
-        if (idElement === 2) {
-            if (element.innerHTML === '→ Public Profile') element.innerHTML = 'Public Profile';
-            else {
-                element.innerHTML = '→ Public Profile';
-            }
-        }
-    }
-    function changeFont2() {
-      var fon2 = document.getElementById("element2");
-      if (fon2.className == "amatic") {
-        fon2.className = 'roman';
-      } else {
-        fon2.className = 'amatic';
-      }
-    }
+  //   function myFunctionProfile() {
+  //     var y = document.getElementById("public-profile");
+  //     if (y.style.display === "") {
+  //       y.style.display = "block";
+  //     } else {
+  //       y.style.display = "";
+  //     }
+  //   }
+  //   function changeTextProfile(idElement) {
+  //       var element = document.getElementById('element' + idElement);
+  //       if (idElement === 2) {
+  //           if (element.innerHTML === '→ Public Profile') element.innerHTML = 'Public Profile';
+  //           else {
+  //               element.innerHTML = '→ Public Profile';
+  //           }
+  //       }
+  //   }
+  //   function changeFont2() {
+  //     var fon2 = document.getElementById("element2");
+  //     if (fon2.className == "amatic") {
+  //       fon2.className = 'roman';
+  //     } else {
+  //       fon2.className = 'amatic';
+  //     }
+  //   }
 
-      function myFunctionEmail() {
-        var z = document.getElementById("email");
-        if (z.style.display === "") {
-          z.style.display = "block";
-        } else {
-          z.style.display = "";
-        }
-      }
-      function changeTextEmail(idElement) {
-          var element = document.getElementById('element' + idElement);
-          if (idElement === 3) {
-              if (element.innerHTML === '→Edit Email') element.innerHTML = 'Email';
-              else {
-                  element.innerHTML = '→Edit Email';
-              }
-          }
-      }
-      function changeFont3() {
-        var fon3 = document.getElementById("element3");
-        if (fon3.className == "amatic") {
-          fon3.className = 'roman';
-        } else {
-          fon3.className = 'amatic';
-        }
-      }
+  //     function myFunctionEmail() {
+  //       var z = document.getElementById("email");
+  //       if (z.style.display === "") {
+  //         z.style.display = "block";
+  //       } else {
+  //         z.style.display = "";
+  //       }
+  //     }
+  //     function changeTextEmail(idElement) {
+  //         var element = document.getElementById('element' + idElement);
+  //         if (idElement === 3) {
+  //             if (element.innerHTML === '→Edit Email') element.innerHTML = 'Email';
+  //             else {
+  //                 element.innerHTML = '→Edit Email';
+  //             }
+  //         }
+  //     }
+  //     function changeFont3() {
+  //       var fon3 = document.getElementById("element3");
+  //       if (fon3.className == "amatic") {
+  //         fon3.className = 'roman';
+  //       } else {
+  //         fon3.className = 'amatic';
+  //       }
+  //     }
 
-        function myFunctionPassword() {
-          var p = document.getElementById("password");
-          if (p.style.display === "") {
-            p.style.display = "block";
-          } else {
-            p.style.display = "";
-          }
-        }
-        function changeTextPassword(idElement) {
-            var element = document.getElementById('element' + idElement);
-            if (idElement === 4) {
-                if (element.innerHTML === '→Edit Password') element.innerHTML = 'Password';
-                else {
-                    element.innerHTML = '→Edit Password';
-                }
-            }
-        }
-        function changeFont4() {
-          var fon4 = document.getElementById("element4");
-          if (fon4.className == "amatic") {
-            fon4.className = 'roman';
-          } else {
-            fon4.className = 'amatic';
-          }
-        }
+  //       function myFunctionPassword() {
+  //         var p = document.getElementById("password");
+  //         if (p.style.display === "") {
+  //           p.style.display = "block";
+  //         } else {
+  //           p.style.display = "";
+  //         }
+  //       }
+  //       function changeTextPassword(idElement) {
+  //           var element = document.getElementById('element' + idElement);
+  //           if (idElement === 4) {
+  //               if (element.innerHTML === '→Edit Password') element.innerHTML = 'Password';
+  //               else {
+  //                   element.innerHTML = '→Edit Password';
+  //               }
+  //           }
+  //       }
+  //       function changeFont4() {
+  //         var fon4 = document.getElementById("element4");
+  //         if (fon4.className == "amatic") {
+  //           fon4.className = 'roman';
+  //         } else {
+  //           fon4.className = 'amatic';
+  //         }
+  //       }
 
 
      //upload size
@@ -237,3 +237,4 @@ document.addEventListener("turbolinks:load", function() {
         $(inputFile).val('');
       };
     }
+
