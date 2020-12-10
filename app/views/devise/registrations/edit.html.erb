@@ -79,9 +79,9 @@
         <%# else %>
         <div class="field">
           <div class="control">
-            <label class="label" for="available_for_a_job_checkbox">Looking for a job?</label>
+            <%# <label class="label" for="available_for_a_job_checkbox">Looking for a job?</label> %>
             <%= f.check_box :available, id:"available_for_a_job_checkbox", name:"available_for_a_job" %>
-            <%= f.label :available, "I am available for a job.", autofocus: true, wrapper: false, label_html: { class: "label" } %>
+            <%= f.label :available, "YES, I AM AVAILABLE FOR A JOB.", autofocus: true, wrapper: false, label_html: { class: "label" }, class:"subtitle edit", style:"color: #9600c8;" %>
           </div>
         </div>
         <%# end %>
@@ -142,24 +142,25 @@
         </div>
 
         <%# email %>          
-        
-        <div class="pt4">
+        <br>
+        <%# <div class="pt4">
           <a id="element3" onclick="myFunctionEmail();javascript:changeTextEmail(3);changeFont3()" class="roman">Email</a>
-        </div>
+        </div> %>
 
         <div id="email" class="email">
           <%# <p class="subtitle edit">EMAIL</p> %>
           <div class="field">
             <div class="control">
-              <%= f.input :email, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, label: false %>
+              <%= f.input :email, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
           <%#= f.button :submit, "SAVE PROFILE INFO", class:"button is-prime is-small" %>
         </div>
         <%# password %>
-        <div>
+        <%# <div>
           <a id="element4" onclick="myFunctionPassword();javascript:changeTextPassword(4);changeFont4()" class="roman">Password</a>
-        </div>
+          
+        </div> %>
 
         <div id="password" class="password">
           <%# <p class="subtitle edit">PASSWORD</p> %>
@@ -171,7 +172,7 @@
 
           <div class="field">
             <div class="control">
-              <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, label: false %>
+              <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
             </div>
           </div>
 
