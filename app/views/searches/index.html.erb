@@ -34,6 +34,7 @@
               <% end %>
               <% end %>
               <%# end %>
+              <span class="tooltips fa fa-question-circle" tooltip="If the search doesn't work, please refresh the page and try again." tooltip-position="right"></span>
             </div>
           </div>
         </div>
@@ -87,9 +88,17 @@
       </div>
 
 </section>
+<script>
+  $('.tooltips').append("<span></span>");
+$('.tooltips:not([tooltip-position])').attr('tooltip-position','bottom');
 
+
+$(".tooltips").mouseenter(function(){
+ $(this).find('span').empty().append($(this).attr('tooltip'));
+});
+</script>
 <script>
   function clickSubmit() {
     $(#search-form).trigger("click")
-  }
+  };
 <script>
