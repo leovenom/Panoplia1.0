@@ -77,7 +77,7 @@
 							<div class="shot-contact">
 								<% if @video.user.available?%>
 								<p class="subtitle">This user is AVAILABLE for work</p>
-								<%= mail_to @video.user.email,"HIRE ME", class:'button is-roxo contact' %>
+								<%= mail_to @video.user.email,"LET’S TALK", class:'button is-roxo contact' %>
 								<% elsif !current_user?(@video.user)%>
 								<%# if @video.user.entity? %>
 								<p class="subtitle">This user is UNAVAILABLE for work</p>
