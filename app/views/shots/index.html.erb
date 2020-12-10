@@ -1,25 +1,25 @@
 <%= render 'hero' %>
 <%# if user_signed_in? %>
-<%= image_tag 'fundo.png', class:"fahvm"%>
+<%#= image_tag 'fundo.png', class:"fahvm"%>
 <%#end%>
 <section class="section">
-	<div class="shot">
+	<%# <div class="shot">
 	<%# if current_user.admin? || current_user.try(:admin?) %>
-			<% @entity_shots.each do |shot| %>
+			<%# @entity_shots.each do |shot| %>
     <%#= link_to shot, class: "shot" do %>
-		<a href="<%= shot.description %>">
-    <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
-		<div class="description">
+		<%#<a href="<%= shot.description %>
+    <%#= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
+		<%# <div class="description"> %>
 
-		</a>
-		</div>
+		<%# </a>
+		</div> %>
     <%# end %>
-	<% end %>
-	</div>
+	<%# end %>
+	<%#</div> %>
 	<%#else%>
 	<%# end %>
 
-		<p class="subtitle cards" style="margin-left: 25px;">BEST OF PANÓPLIA <span>EVER </span><i class="fas fa-sort-down"></i></p>
+		<p class="subtitle cards" style="margin-left: 25px;">WHAT’S NEW ON <span>PANÓPLIA </span><i class="fas fa-sort-down"></i></p>
 		<div id="">
 			<div class="shots">
 				<% @resources.each do |resource| %>
