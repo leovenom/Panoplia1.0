@@ -60,13 +60,13 @@
 					
 						<%# <p class="navbar-item"> %>
 							<%#= link_to 'JOBS', jobs_path, class: "button is-black mr3 is-static" %>
-							<p class="navbar-item"><%= link_to 'MASTERCLASS', jobs_path, class: "button is-black is-static" %></p>
 							<p class="navbar-item"><%= link_to 'EVENTS', jobs_path, class: "button is-black is-static" %></p>
-							<p class="navbar-item"><%= link_to 'STORE', jobs_path, class: "button is-black is-static" %></p>
+							<p class="navbar-item"><%= link_to 'MASTERCLASSES', jobs_path, class: "button is-black is-static" %></p>
+							<%# <p class="navbar-item"><%= link_to 'STORE', jobs_path, class: "button is-black is-static" %><%#</p> %>
 							<p class="navbar-item"><%= link_to 'ABOUT', home_about_path, class: "button is-black" %></p>
-							<p class="navbar-item"><%= link_to searches_path, type: 'submit', class: "button is-black", style:"padding-left: 25px;margin-bottom: 15px;", id: "search-form" do %>
-								<i class="fas fa-search" aria-hidden="true"></i>
-							<% end %></p>
+							<p class="navbar-item"><%= link_to 'ARTISTS', searches_path, type: 'submit', class: "button is-black", id: "search-form" %></p>
+								<%# <i class="fas fa-search" aria-hidden="true"style:"padding-left: 25px;margin-bottom: 15px;"></i> %>
+							<%# end %>
 						<%# </p> %>
 
 						<div class="navbar-item is-hidden-touch" >
