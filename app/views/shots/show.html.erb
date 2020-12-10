@@ -80,7 +80,7 @@
 							<div class="shot-contact">
 								<% if @shot.user.available? && !current_user?(@shot.user)%>
 								<p class="subtitle">This user is AVAILABLE for work</p>
-								<%= mail_to @shot.user.email,"HIRE ME", class:'button is-roxo contact' %>
+								<%= mail_to @shot.user.email,"LET’S TALK", class:'button is-roxo contact' %>
 								<% elsif !current_user?(@shot.user)%>
 								<%# if @shot.user.entity? %>
 								<p class="subtitle">This user is UNAVAILABLE for work</p>
