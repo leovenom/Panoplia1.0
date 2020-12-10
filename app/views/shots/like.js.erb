@@ -1,0 +1,9 @@
+$('.like_shot').on('ajax:success', function() {
+  $(this).parent().parent().find('.vote_count').html('<%= @shot.get_likes.size %>');
+  $(this).closest('.like_shot');
+});
+$('.unlike_shot').on('ajax:success', function() {
+  $(this).parent().parent().find('.vote_count').html('<%= @shot.get_likes.size %>');
+  $(this).closest('.unlike_shot');
+});
+

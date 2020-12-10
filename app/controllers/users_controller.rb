@@ -17,6 +17,14 @@ class UsersController < ApplicationController
     redirect_to profile_path
   end
 
+  def admin
+    admin?
+  end
+
+  def entity
+    entity?
+  end
+
   private
 
   def check_authorization

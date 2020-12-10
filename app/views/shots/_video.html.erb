@@ -1,3 +1,4 @@
+<% unless video.user.entity? %>
 <div class="shot-grid-item">
   <div class="shot-wrapper">
     <%= link_to video, class: "video" do %>
@@ -55,6 +56,7 @@
         </div>
       </div>
     </nav>
-    <%# end %>
+
   </div>
 </div>
+    <% end %>

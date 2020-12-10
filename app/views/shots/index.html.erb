@@ -1,9 +1,23 @@
 <%= render 'hero' %>
-<% if user_signed_in? %>
+<%# if user_signed_in? %>
 <%= image_tag 'fundo.png', class:"fahvm"%>
-<%end%>
+<%#end%>
 <section class="section">
-	<div class="column is-desktop">
+	<div class="shot">
+	<%# if current_user.admin? || current_user.try(:admin?) %>
+			<% @entity_shots.each do |shot| %>
+    <%#= link_to shot, class: "shot" do %>
+		<a href="<%= shot.description %>">
+    <%= cl_image_tag(shot.user_shot_url, :quality=>"auto:good") %>
+		<div class="description">
+
+		</a>
+		</div>
+    <%# end %>
+	<% end %>
+	</div>
+	<%#else%>
+	<%# end %>
 
 		<p class="subtitle cards" style="margin-left: 25px;">BEST OF PANÓPLIA <span>EVER </span><i class="fas fa-sort-down"></i></p>
 		<div id="">
@@ -19,4 +33,5 @@
 		</div>
 
 	</div>
+
 </section>

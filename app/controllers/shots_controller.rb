@@ -1,4 +1,5 @@
 class ShotsController < ApplicationController
+  respond_to :js, :html, :json
   before_action :set_shot, only: [:show, :edit, :update, :destroy, :like, :unlike]
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :like, :unlike]
   impressionist :actions=> [:show]
@@ -14,7 +15,7 @@ class ShotsController < ApplicationController
     @shots = @all_shots
     #@random_shot = Shot.where.not(id: @shot).order("RANDOM()").first
     #@entity_shot = Shot.includes(:user).where.not(id: @shot).where(users: { entity: true}).order('shots.created_at DESC').first
-    #@entity_shots = @all_shots.select { |shot| shot.user.entity? }
+    @entity_shots = @all_shots.limit(1).all.select { |shot| shot.user.entity? }
     @jobs = Job.all.order("created_at desc")
     #@videos = Video.all.order("created_at desc")
     #@resources = @videos.zip(@shots)
@@ -83,11 +84,18 @@ class ShotsController < ApplicationController
   end
 
   def like
+    @shot = Shot.find(params[:id])
+    if params[:format] == 'likes'
+      @shot.liked_by current_user
+    elsif  params[:format] == 'unlikes'
+      @shot.unliked_by current_user
+    else
     @shot.liked_by current_user
     respond_to do |format|
       format.html { redirect_back fallback_location: root_path }
       format.json { render layout:false }
     end
+  end
   end
 
   def unlike
@@ -97,6 +105,18 @@ class ShotsController < ApplicationController
       format.json { render layout:false }
     end
   end
+
+  # def like
+  #   @shot = Shot.find(params[:id])
+  #   if params[:format] == 'likes'
+  #     @shot.liked_by current_user
+  #   elsif  params[:format] == 'unlikes'
+  #     @shot.unliked_by current_user
+  #   end
+  # end
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

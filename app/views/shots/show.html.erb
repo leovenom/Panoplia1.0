@@ -107,18 +107,18 @@
 								<div class="level-item likes">
 									<% if user_signed_in? %>
 									<% if current_user.liked? @shot %>
-									<%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
+									<%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot", remote: :true do %>
 									<span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
 									<span class="vote_count"><%= @shot.get_likes.size %></span>
 									<% end %>
 									<% else %>
-									<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+									<%= link_to like_shot_path(@shot), method: :put, class: "like_shot", remote: :true do %>
 									<span class="icon"><i class="fa fa-heart"></i></span>
 									<span class="vote_count"><%= @shot.get_likes.size %></span>
 									<% end %>
 									<% end %>
 									<% else %>
-									<%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+									<%= link_to like_shot_path(@shot), method: :put, class: "like_shot", remote: :true do %>
 									<span class="icon"><i class="fa fa-heart"></i></span>
 									<span class="vote_count"><%= @shot.get_likes.size %></span>
 									<% end %>
@@ -133,8 +133,8 @@
 											<%# <div class="shot-data">
 												<div class="user-thumb avatar">
 													<%#= cl_image_tag @random_shot.user.avatar.key, class:'avatar' unless @random_shot.user.avatar.blank?  %>
-													<%#<h3 class="shot-user"><%= @random_shot.user.name.upcase %></h3>
-													<%#<h3 class="shot-title"><%= @random_shot.title.titleize %></h3>
+													<%#<h3 class="shot-user"><%= @random_shot.user.name.upcase </h3>%>
+													<%#<h3 class="shot-title"><%= @random_shot.title.titleize </h3>%>
 											<%#	</div>
 										</div> %>
 										<% end%>
