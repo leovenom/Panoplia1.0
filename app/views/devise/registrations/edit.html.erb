@@ -36,13 +36,15 @@
             <p class="subtitle edit">PUBLIC PROFILE</p>
             <div class="field">
               <div class="control">
-                <%= f.input :username, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+              	<label class="label">Username <span class="tooltips fa fa-question-circle" tooltip="This name is not public, it’s only for Panóplia’s database management." tooltip-position="right"></span></label>
+                <%= f.input :username, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, label: false  %>
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <%= f.input :name, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, required: true, error: 'Name is mandatory, please specify one' %>
+                <label class="label">Name <span class="tooltips fa fa-question-circle" tooltip="This is your public name. If you  don’t have an artistic name, please put your own name." tooltip-position="right"></span></label>
+                <%= f.input :name, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, required: true, error: 'Name is mandatory, please specify one', label: false  %>
               </div>
             </div>
             
@@ -52,7 +54,7 @@
                 <%= f.input :location, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, required: true  %>
               </div>
               <div class="column select is-multiple" style="margin-bottom:0">
-                <label class="label">Select type</label>
+                <label class="label">Select type <span class="tooltips fa fa-question-circle" tooltip="If you have more than one artistic field, please tell it above in the bio." tooltip-position="right"></span></label>
                 <%=  f.input_field :art, collection: User::ARTS, autofocus: true, label_html: { class: "label" }, style:"width: 100%", input_html: { multiple: true }, include_blank: false, include_hidden: false %>
                 
               </div>
@@ -131,6 +133,7 @@
                 No file uploaded
               </span>
             </label>
+            <span class="tooltips fa fa-question-circle" tooltip="If your image doesn’t upload, please refresh the page and try again." tooltip-position="top-edit"></span>
           </div>
           <%= f.error_notification message: 'Max size 2MB' %>
           <div class="has-text-centered">
@@ -187,6 +190,15 @@
   </div>
 </div>
 </section>
+<script>
+$('.tooltips').append("<span></span>");
+$('.tooltips:not([tooltip-position])').attr('tooltip-position','bottom');
+
+
+$(".tooltips").mouseenter(function(){
+ $(this).find('span').empty().append($(this).attr('tooltip'));
+});
+</script>
     
 <script>
   const fileInput = document.querySelector('#file-js-examplez input[type=file]');
