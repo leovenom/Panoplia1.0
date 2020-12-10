@@ -113,6 +113,14 @@
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
 }
+.tooltips[tooltip-position="url"] span:after{
+  top: 50%;
+  right: 100%;
+  margin-top: -8px;
+  border-right: 8px solid #9600c8;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
 
 .tooltips:hover span {
   visibility: visible;
@@ -153,5 +161,12 @@
   left: 100%;
   top: 50%;
   margin-top: -25px;
+  margin-left: 15px;
+}
+
+.tooltips[tooltip-position="url"]:hover span{
+  left: 100%;
+  top: 50%;
+  margin-top: -15px;
   margin-left: 15px;
 }
