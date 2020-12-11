@@ -17,7 +17,8 @@
 						<div class="field-body">
 							<div class="field">
 								<div class="control is-expanded">
-									<%= f.input :name, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+									<label class="label">Name <span class="tooltips fa fa-question-circle" tooltip="This is your public name. If you  don’t have an artistic name, please put your own name." tooltip-position="right"></span></label>
+									<%= f.input :name, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, label: false %>
 								</div>
 							</div>
 							<%# <a id='button'><i class="fa fa-info-circle" title="tooltip" data-toggle="tooltip" data-placement="right" aria-hidden="true"></i></a> %>
