@@ -1,5 +1,14 @@
+<%= image_tag 'fundo.png', class:"fahvm"%>
+
 <p>Welcome <%= @email %>!</p>
 
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<div style="display: flex;">
+  <a href="mailto:panoplia@outlook.pt" class="social-icon"><i class="far fa-envelope"></i></a>
+  <a href="https://www.facebook.com/panoplia.lx/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.instagram.com/_.panoplia._/" class="social-icon"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/company/pan%C3%B3plia/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+</div>
