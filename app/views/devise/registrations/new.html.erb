@@ -17,7 +17,7 @@
 						<div class="field-body">
 							<div class="field">
 								<div class="control is-expanded">
-									<label class="label">Name <span class="tooltips fa fa-question-circle" tooltip="This is your public name. If you  don’t have an artistic name, please put your own name." tooltip-position="right"></span></label>
+									<label class="label">Artistic name <span class="tooltips fa fa-question-circle" tooltip="This is your public name. If you  don’t have an artistic name, please put your own name." tooltip-position="right"></span></label>
 									<%= f.input :name, autofocus: true, input_html: { class: "input"}, wrapper: false, label_html: { class: "label" }, label: false %>
 								</div>
 							</div>
@@ -25,7 +25,7 @@
 
 							<div class="field">
 								<div class="control is-expanded">
-									<label class="label">Username <span class="tooltips fa fa-question-circle" tooltip="This name is not public, it’s only for Panóplia’s database management." tooltip-position="right"></span></label>
+									<label class="label">Name <span class="tooltips fa fa-question-circle" tooltip="This name is not public, it’s only for Panóplia’s database management." tooltip-position="right"></span></label>
 									<%= f.input :username, autofocus: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, label: false %>
 								</div>
 							</div>
@@ -33,7 +33,7 @@
 						</div>
 						<div class="field">
 							<div class="control">
-								<%= f.input :email, label: "E-mail adress", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
+								<%= f.input :email, label: "E-mail ", input_html: { class: "input"}, wrapper: false, label_html: { class: "label" } %>
 							</div>
 						</div>
 						<div class="field">
@@ -58,7 +58,8 @@
 						<% end %>
 						<br/>
 						<%- if controller_name != 'sessions' %>
-							<%= link_to "already have an account? Log in here", new_session_path(resource_name), class:"subtitle" %><br />
+							<label class="subtitle">Already have an account?</label>
+							<%= link_to "Log in here", new_session_path(resource_name), class:"subtitle signup"  %><br />
 						<% end -%>
 						<br>
 						<%#= render "devise/shared/links" %>
