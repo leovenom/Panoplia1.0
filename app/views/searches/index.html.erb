@@ -19,7 +19,7 @@
 
       <div class="column">
         <div style="display: flex;">
-          <p class="subtitle cards" style="margin-left: 25px;">USER <span>SEARCH </span><i class="fas fa-sort-down"></i></p>
+          <p class="subtitle cards" style="margin-left: 25px;">USER <span>SEARCH </span></p>
   
           <div class="field has-addons">
             <div class="control-search">
@@ -50,8 +50,8 @@
             </div>
         </div>
 
-        <% if params[:search].nil? %>
-        <% else %>
+        <%# if params[:search].nil? %>
+        <%# else %>
 
         <div class="follow-grid">
           <% @users.each do |user| %>
@@ -84,10 +84,77 @@
           <%end%>
 
         </div>
-        <%end%>
+        <%#end%>
       </div>
 
 </section>
+
+		<footer class="footer">
+
+				<div class="columns is-multiline is-centered is-3-mobile is-3-tablet is-8-desktop is-8-widescreen is-2-fullhd">
+					
+					<div class="navbar-brand">
+						<div class="column">
+							<%= link_to root_path, class:"navbar-item" do %>
+			
+								<%= image_tag 'panoplia-logo.png' %>
+			
+							<% end  %>
+						</div>
+					</div>
+
+					<div class="column is-10-mobile">
+						<a>CONTACT</a>
+						<p>panoplia@outlook.pt</p>
+						<%# <p>+ 351 910 293 834</p> %>
+					</div>
+
+					<div class="column is-10-mobile">
+						<a>LINKS</a>
+						<p>ASSOCIATION</p>
+						<%# <a>ADRESS</a>
+						<p>MORADA DA PANOPLIA <br> 2891-028</p>
+						<p>LISBOA, PORTUGAL</p> %>
+					</div>
+
+					<div class="column is-10-mobile">
+						<%# <a>LINKS</a>
+						<p>ABOUT</p>
+						<p>ASSOCIATION</p> %>
+						<br>
+						<p>PRIVACY POLICY</p>
+						<p>COMMUNITY PLEDGE</p>
+					</div>
+
+					<div class="column is-10-mobile">
+						<br>
+						<p>MASTERCLASSES</p>
+						<%= link_to 'ARTISTS', searches_path, type: 'submit', id: "search-form", class:"link_footer" %>
+					</div>
+					
+					<div class="column is-10-mobile">
+						<br>
+						<p>EVENTS</p>
+						<%= link_to 'ABOUT', home_about_path, class: "link_footer" %>
+						<%# <a href="mailto:panoplia@outlook.pt">CONTACT US</a> %>
+					</div>
+					<div class="column is-10-mobile">
+						<a>SOCIAL</a>
+							<div style="display: flex;">
+								<a href="mailto:panoplia@outlook.pt" class="social-icon"><i class="far fa-envelope"></i></a>
+								<a href="https://www.facebook.com/panoplia.lx/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+								</div>
+								<div style="display: flex;">
+								<a href="https://www.instagram.com/_.panoplia._/" class="social-icon"><i class="fab fa-instagram"></i></a>
+								<a href="https://www.linkedin.com/company/pan%C3%B3plia/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+							</div>
+					</div>
+					<div class="column is-half is-offset-one-quarter is-8-mobile">
+						<p><strong>Panóplia</strong> is developed with 💜 by <a href="https://leonardt.eu/">LEONARDT</a></p>
+					</div>
+				</div>
+		</footer>
+
 <script>
   $('.tooltips').append("<span></span>");
 $('.tooltips:not([tooltip-position])').attr('tooltip-position','bottom');
