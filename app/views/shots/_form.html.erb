@@ -1,6 +1,6 @@
 <%= simple_form_for @shot, html: { multipart: true }  do |f| %>
 
-<div class="columns is-centered is-desktop">
+<div class="columns is-centered is-desktop" style="height: 100%;">
 
   <div class="column hero white drag">
     <%= link_to 'BACK', shots_path, class:"text optional label" %>
@@ -50,7 +50,7 @@
     <%= f.error_notification message: 'Max size 2MB' %>
   </div>
 
-  <div class="column hero is-6 is-warning profile">
+  <div class="column hero is-6-desktop is-warning profile">
     <div class="column is-warning is-narrow">
       <p class="subtitle cards">UPLOAD A PHOTO</p>
 
