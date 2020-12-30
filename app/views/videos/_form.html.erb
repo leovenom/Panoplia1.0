@@ -1,20 +1,20 @@
 <%= simple_form_for @video do |f| %>
 	<%= f.error_notification %>
-	<div class="columns is-centered is-desktop" style="height: 100vh;">
+	<div class="columns is-centered is-desktop" style="height: 100%;">
 
-		<div class="background-pink">
+		<div class="column background-pink pb0 pr0">
 			<%= link_to ' BACK', root_path, class:"text optional label ml5 mt5" %>
 
 			<p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p>
 			 <%= image_tag ("background-log.jpg")%>
 		 </div>
 
-		 <div class="column is-6 hero is-warning profile">
+		 <div class="column is-6-desktop hero is-warning profile">
 			<div class="column is-warning is-narrow" style="">
 				<p class="subtitle cards">UPLOAD A VIDEO</p>
 				<div class="field">
 					<div class="control">
-						<label for="video-url" class="label">URL <span class="tooltips fa fa-question-circle" tooltip="Only Youtube or Vimeo allowed." tooltip-position="url"></span></label>
+						<label for="video-url" class="label" required  >URL <span class="tooltips fa fa-question-circle" tooltip="Only Youtube or Vimeo allowed." tooltip-position="url"></span></label>
 						<%= f.text_field :url, required: true, id:"video-url", name:"video[url]", class:"string optional input", label: false%>            
 					</div>
 				</div>
@@ -33,7 +33,7 @@
 				</div>
 
 				<div class="form-actions">
-					<%= f.button :submit, class:"button is-prime is-small" %>
+					<%= f.button :submit,"PUBLISH", class:"button is-prime is-small" %>
 				</div>
 				<div style="display: flex;">
 					<%#= link_to 'SHOW ', @video, class:"text optional label mt3"  %>

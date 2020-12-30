@@ -37,7 +37,7 @@
             <%end%>
             
             <% if @user.available? && !current_user?(@user)%>
-            <%= mail_to @user.email,"HIRE ME", class:'button is-roxo' %>
+            <%= mail_to @user.email,"Let's Talk", class:'button is-roxo' %>
             <% elsif !current_user?(@user)%>
             <button class="button is-dark" title="Disabled button" style="height: 35px;" disabled>HIRE ME</button>
             <% end%>

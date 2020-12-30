@@ -5,9 +5,9 @@
 		<meta charset="UTF-8">
 		<%= csrf_meta_tags %>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Panóplia 〰 Plataforma de empoderamento e divulgação de artistas 〰</title>
+		<title>Panóplia – A Platform to Empower Emergent Artists</title>
 		<meta name="Description" content="𝚙𝚘𝚛𝚚𝚞𝚎 𝚑á 𝚙𝚎𝚜𝚜𝚘𝚊𝚜 𝚚𝚞𝚎 𝚏𝚊𝚣𝚎𝚖 𝚌𝚘𝚒𝚜𝚊𝚜 𝚒𝚗𝚌𝚛í𝚟𝚎𝚒𝚜">
-		<meta property="og:title" content="〰 Plataforma de empoderamento e divulgação de artistas 〰">
+		<meta property="og:title" content="Panóplia – A Platform to Empower Emergent Artists">
 		<%= favicon_link_tag 'favicon.ico' %>
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
@@ -143,13 +143,14 @@
 
 					<div class="column is-10-mobile">
 						<a>CONTACT</a>
-						<p>panoplia@outlook.com</p>
+						<p>panoplia@outlook.pt</p>
 						<%# <p>+ 351 910 293 834</p> %>
 					</div>
 
 					<div class="column is-10-mobile">
 						<a>LINKS</a>
-						<p>ASSOCIATION</p>
+						<%= link_to 'ASSOCIATION', 'https://drive.google.com/drive/folders/1l7aCvJgVSJ663X9VLob_5bQbJw9TUHtz?usp=sharing', class: "link_footer" %>
+						<p>TERMS OF SERVICES</p>
 						<%# <a>ADRESS</a>
 						<p>MORADA DA PANOPLIA <br> 2891-028</p>
 						<p>LISBOA, PORTUGAL</p> %>

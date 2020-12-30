@@ -21,7 +21,8 @@
 			</div>
 			<div class="field">
 				<div class="control">
-				<%= f.input :remember_me, wrapper: false, as: :boolean if devise_mapping.rememberable? %>
+				<%= f.input :remember_me, wrapper: false, label: false, as: :boolean if devise_mapping.rememberable? %>
+				<label>Remember me</label>
 				</div>
 			</div>
 				<%= f.button :submit, "LOG IN", class:"button is-prime is-small" %>
