@@ -211,7 +211,8 @@
  video {
    max-width: 100%;
    object-fit: cover;
-   max-height: 580px; //450px
+  //  max-height: 580px; //450px
+   max-height: 90vh;
  }
  // para o poster do video
  // #hero video {
