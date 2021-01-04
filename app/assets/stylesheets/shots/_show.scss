@@ -125,3 +125,9 @@ span.by {
   color: black;
   font-family: Brice-SemiBoldSemiCondensed;
 }
+.img-config {
+	background-image: image-url("config.png");
+	position: relative;
+	background-size: cover; 
+	background-position: center;
+}

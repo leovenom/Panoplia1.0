@@ -1,12 +1,14 @@
 <%= simple_form_for @video do |f| %>
 	<%= f.error_notification %>
-	<div class="columns is-centered is-desktop" style="height: 100%;">
+	<div class="columns is-centered is-desktop video-img" style="height: 100%;">
 
-		<div class="column background-pink pb0 pr0">
+		<div class="column background-white">
 			<%= link_to ' BACK', root_path, class:"text optional label ml5 mt5" %>
-
-			<p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p>
-			 <%= image_tag ("background-log.jpg")%>
+			<br/>
+			<%# <p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p> %>
+			<div class="mr5 ml5">
+			 <%= image_tag ("vivideo.png")%>
+			</div>
 		 </div>
 
 		 <div class="column is-6-desktop hero is-warning profile">
