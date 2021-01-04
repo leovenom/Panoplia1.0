@@ -97,8 +97,91 @@ a.subtitle.signup:hover {
 	
 }
 
-.about {
-	font-family: Brice-BoldSemiCondensed;
-	color: #9600c8;
-	font-size: 1.2rem;
+// .about {
+// 	font-family: Brice-BoldSemiCondensed;
+// 	color: #9600c8;
+// 	font-size: 1.2rem;
+// }
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0.3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #9600c8;
 }
+.far.fa-envelope.about, .fab.fa-facebook-f.about, .fab.fa-instagram.about, .fab.fa-linkedin-in.about  {
+	color: #fff;
+	font-size: 0.8rem;
+}
+h1.subtitle.about {
+	margin-bottom: 20px;
+	font-size: 1.2rem;
+	color: black;
+	font-family: Brice-Bold;
+}
+h1.subtitle.about.small {
+	margin-bottom: 0;
+	font-size: 1rem;
+	color: black;
+	font-family: Brice-Bold;
+}
+p.texto-small{
+	font-family: Brice-LightSemiCondensed;
+}
+p.about.text {
+	font-family: Brice-BoldSemiCondensed;
+	font-size: 0.9rem;
+	margin: 0 36px 15px;
+}
+p.texto {
+	font-family: Brice-LightSemiCondensed;
+	margin: 10px 98px;
+	@media only screen and (max-width: 650px) {
+		margin: 10px 40px;
+	}
+}
+.column.imagem-about {
+	background-image: image-url("about-img.png");
+	position: relative;
+	background-size: cover; 
+	background-position: center;
+}
+.columns:not(:last-child).about {
+	margin-bottom: 0px;
+}
+p.subtitle.rosa {
+	font-size: 2.5rem;
+	color: #ff78be;
+	margin: 0px 98px 10px;
+	@media only screen and (max-width: 650px) {
+		margin: 10px 40px;
+	}
+}
+.face {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#Otexto {
+	padding:40px; margin-right:50px;
+
+	@media only screen and (max-width: 1023px) {
+		padding:40px; 
+		margin-right:0px;
+		width: 100%;
+	}
+}	
+
+#Oabout {
+	padding: 40px 0 0px 40px;
+
+	@media only screen and (max-width: 768px) {
+		padding: 40px 40px 0; 
+	}
+}	
