@@ -1,4 +1,12 @@
-# Panóplia Plataform With Ruby on Rails
+# Panóplia Plataform
+
+<a href="https://leonardt.eu">
+ <p align="center">
+  <img src="https://i.imgur.com/c16ilx6.png?w="350" alt="Profile"
+ </p>
+</a>
+
+# With Ruby on Rails
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
