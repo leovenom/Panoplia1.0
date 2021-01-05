@@ -29,9 +29,6 @@
   height: 600px;
 }
 
-
-
-
 .button.is-black.icon:hover {
 	background-color:black;;
 	color: white;
@@ -124,4 +121,10 @@ span.by {
   font-size: 1rem;
   color: black;
   font-family: Brice-SemiBoldSemiCondensed;
+}
+.img-config {
+	background-image: image-url("config.png");
+	position: relative;
+	background-size: cover; 
+	background-position: center;
 }
