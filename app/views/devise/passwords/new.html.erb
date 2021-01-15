@@ -1,12 +1,15 @@
 <section>
-	<div class="columns is-desktop">
+	<div class="columns is-centered is-desktop">
 		<div class="background-pink">
-			<p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p>
-			<p class="subtitle has-text-centered">This is a space for artists to promote their work<span> and be found by entities looking for the most<span> creative minds available in the market.</p>
-			<%= image_tag ("background-log.jpg")%>
+			<%# <p class="title has-text-centered">THE PLATFORM <span>FOR THE ARTISTIC <span>COMMUNITY</p> %>
+			<%# <p class="subtitle has-text-centered">This is a space for artists to promote their work<span> and be found by entities looking for the most<span> creative minds available in the market.</p> %>
+			<%= image_tag("@olatenorio.jpg")%>
+				<div id="slideout">
+					<a href="https://www.instagram.com/olatenorio/" target="_blank" ><p>@olatenorio</p></a>
+				</div>
 		</div>
 
-		<div class="column is-6 sign-up">
+		<div class="column is-6-desktop sign-up">
 			<div class="column is-8 is-offset-2">
 				<h2 class="title">Forgot your password?</h2>
 				<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
