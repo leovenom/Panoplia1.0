@@ -35,6 +35,6 @@ class User < ApplicationRecord
     following_ids.include?(other_user.id)
   end
   
-  ARTS = ["Illustration", "Graphic Design", "Drawing", "Photografy", "Video" , "Motion" , "Sculpture", "Graffiti", "Dance", "Music", "Serigraphy", "Theater", "Painting", "Collage", "Embroidery", "Developer"]
+  ARTS = ["Illustration", "Graphic Design", "Drawing", "Photography", "Video" , "Motion" , "Sculpture", "Graffiti", "Dance", "Music", "Serigraphy", "Theater", "Painting", "Collage", "Embroidery", "Developer"]
 
 end
