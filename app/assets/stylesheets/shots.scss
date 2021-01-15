@@ -333,6 +333,34 @@ overflow:auto;
 	font-family: Brice-SemiBoldSemiCondensed;
 }
 
+#slideoutG{
+	position: absolute;
+	top: 430px;
+	left: 0;
+	width: 40px;
+	height: 200px;
+	padding: 48px 0;
+	text-align: center;
+	background: #ffdc00;
+	-webkit-border-radius: 0 5px 5px 0;
+	-moz-border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 5px 0;
+	
+			}
+#slideoutG p {
+	-moz-transform:rotate(-90deg);
+	-ms-transform:rotate(-90deg);
+	-o-transform:rotate(-90deg);
+	-webkit-transform:rotate(-90deg);
+	text-align: center;
+	line-height: 233px;
+  width: 46px;
+	color: #9600c8;
+  cursor: pointer;
+  text-decoration: none;
+	font-family: Brice-SemiBoldSemiCondensed;
+}
+
 .drop-zone-photo {
 	font-family: Brice-RegularSemiCondensed;
 	font-size: 14px;
