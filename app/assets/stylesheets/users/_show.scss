@@ -26,11 +26,21 @@ p.subtitle.art {
 	font-family: Brice-BoldSemiCondensed;
 	font-size: 1.2rem;
 	margin: 2px 5px 10px;
+	color:#000;
 }
 
 p.subtitle.bio {
 	font-family: Brice-RegularSemiCondensed;
-	margin: 0px 50px 10px;
+	margin-bottom:10px;
+	padding: 0 19em;
+	color: #000;
+
+	@media only screen and (max-width: 1227px) {
+		padding: 0 10em;
+	}
+	@media only screen and (max-width: 868px) {
+		padding: 0 4em;
+	}
 	
 }
 
@@ -42,7 +52,7 @@ p.subtitle.location {
 
 h1.title.name {
 	margin: 20px 0px 15px;
-	font-family: Brice-SemiBoldSemiExpanded;
+	font-family: Brice-Bold;
 	font-size: 2.2rem;
 	color: #0a0a0a;
 }
@@ -100,7 +110,7 @@ a.subtitle.signup:hover {
 
 .about {
 	font-family: Brice-BoldSemiCondensed;
-	// color: #9600c8;
+	color: #9600c8;
 	font-size: 1.2rem;
 }
 
@@ -129,20 +139,24 @@ h1.subtitle.about {
 h1.subtitle.about.small {
 	margin-bottom: 0;
 	font-size: 1rem;
-	color: black;
 	font-family: Brice-Bold;
 }
 p.texto-small{
-	font-family: Brice-LightSemiCondensed;
+	font-family: Brice-RegularSemiCondensed;
+	color: #000;
+	font-size: 1.1rem;
+	margin-bottom: 12px;
 }
 p.about.text {
 	font-family: Brice-BoldSemiCondensed;
 	font-size: 0.9rem;
 	margin: 0 36px 15px;
+	color: #000;
 }
 p.texto {
-	font-family: Brice-LightSemiCondensed;
+	font-family: Brice-RegularSemiCondensed;
 	margin: 10px 98px;
+	color: #000;
 	@media only screen and (max-width: 650px) {
 		margin: 10px 40px;
 	}
