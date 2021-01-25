@@ -93,13 +93,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  Rails.application.routes.default_url_options[:host] = 'panoplia.herokuapp.com'
+  Rails.application.routes.default_url_options = { host:'https://panoplia.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
+    :from => 'panoplia@outlook.pt',
     :user_name => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'panoplia.herokuapp.com',
+    :domain => 'https://panoplia.herokuapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
