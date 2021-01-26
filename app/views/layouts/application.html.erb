@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<%# <title>Panóplia</title> %>
 		<meta charset="UTF-8">
 		<%= csrf_meta_tags %>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -142,19 +141,15 @@
 					</div>
 
 					<div class="column is-10-mobile">
-						<a>CONTACT</a>
+						<a class="foot">CONTACT</a>
 						<p>panoplia@outlook.pt</p>
-						<%# <p>+ 351 910 293 834</p> %>
 					</div>
 
 					<div class="column is-10-mobile">
-						<a>LINKS</a>
+						<a class="foot">LINKS</a>
 						<br/>
 						<p><%= link_to 'ASSOCIATION', 'https://drive.google.com/drive/folders/1l7aCvJgVSJ663X9VLob_5bQbJw9TUHtz?usp=sharing', class: "link_footer", target:"_blank" %></p>
 						<%= link_to 'TERMS OF SERVICES','https://drive.google.com/file/d/1P9wJSTFQM2YQVAXBI0ZWjIviaJxR0jff/view?usp=sharing', class: "link_footer", target:"_blank" %>
-						<%# <a>ADRESS</a>
-						<p>MORADA DA PANOPLIA <br> 2891-028</p>
-						<p>LISBOA, PORTUGAL</p> %>
 					</div>
 
 					<div class="column is-10-mobile">
@@ -175,7 +170,7 @@
 						<%= link_to 'ABOUT', home_about_path, class: "link_footer" %>
 					</div>
 					<div class="column is-10-mobile">
-						<a>SOCIAL</a>
+						<a class="foot">SOCIAL</a>
 							<div style="display: flex;">
 								<a href="mailto:panoplia@outlook.pt" target="_blank"  class="social-icon"><i class="far fa-envelope"></i></a>
 								<a href="https://www.facebook.com/panoplia.lx/" title="facebook" target="_blank"  class="social-icon"><i class="fab fa-facebook-f"></i></a>

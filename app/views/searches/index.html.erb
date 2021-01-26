@@ -104,25 +104,20 @@
 					</div>
 
 					<div class="column is-10-mobile">
-						<a>CONTACT</a>
+						<a class="foot">CONTACT</a>
 						<p>panoplia@outlook.pt</p>
-						<%# <p>+ 351 910 293 834</p> %>
 					</div>
 
 					<div class="column is-10-mobile">
-						<a>LINKS</a>
-						<p>ASSOCIATION</p>
-						<%# <a>ADRESS</a>
-						<p>MORADA DA PANOPLIA <br> 2891-028</p>
-						<p>LISBOA, PORTUGAL</p> %>
+						<a class="foot">LINKS</a>
+						<br/>
+						<p><%= link_to 'ASSOCIATION', 'https://drive.google.com/drive/folders/1l7aCvJgVSJ663X9VLob_5bQbJw9TUHtz?usp=sharing', class: "link_footer", target:"_blank" %></p>
+						<%= link_to 'TERMS OF SERVICES','https://drive.google.com/file/d/1P9wJSTFQM2YQVAXBI0ZWjIviaJxR0jff/view?usp=sharing', class: "link_footer", target:"_blank" %>
 					</div>
 
 					<div class="column is-10-mobile">
-						<%# <a>LINKS</a>
-						<p>ABOUT</p>
-						<p>ASSOCIATION</p> %>
 						<br>
-						<p>PRIVACY POLICY</p>
+						<%= link_to 'PRIVACY POLICY','https://drive.google.com/file/d/1_AKDYatoiknxqYVeEUYVxKJq8TFFJmC_/view?usp=sharing', class: "link_footer", target:"_blank" %>
 						<p>COMMUNITY PLEDGE</p>
 					</div>
 
@@ -136,21 +131,20 @@
 						<br>
 						<p>EVENTS</p>
 						<%= link_to 'ABOUT', home_about_path, class: "link_footer" %>
-						<%# <a href="mailto:panoplia@outlook.pt">CONTACT US</a> %>
 					</div>
 					<div class="column is-10-mobile">
-						<a>SOCIAL</a>
+						<a class="foot">SOCIAL</a>
 							<div style="display: flex;">
-								<a href="mailto:panoplia@outlook.pt" class="social-icon"><i class="far fa-envelope"></i></a>
-								<a href="https://www.facebook.com/panoplia.lx/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+								<a href="mailto:panoplia@outlook.pt" target="_blank"  class="social-icon"><i class="far fa-envelope"></i></a>
+								<a href="https://www.facebook.com/panoplia.lx/" title="facebook" target="_blank"  class="social-icon"><i class="fab fa-facebook-f"></i></a>
 								</div>
 								<div style="display: flex;">
-								<a href="https://www.instagram.com/_.panoplia._/" class="social-icon"><i class="fab fa-instagram"></i></a>
-								<a href="https://www.linkedin.com/company/pan%C3%B3plia/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+								<a href="https://www.instagram.com/_.panoplia._/" title="instagram" target="_blank"  class="social-icon"><i class="fab fa-instagram"></i></a>
+								<a href="https://www.linkedin.com/company/pan%C3%B3plia/" title="Linkedin" target="_blank"  class="social-icon"><i class="fab fa-linkedin-in"></i></a>
 							</div>
 					</div>
 					<div class="column is-half is-offset-one-quarter is-8-mobile">
-						<p><strong>Panóplia</strong> is developed with 💜 by <a href="https://leonardt.eu/">LEONARDT</a></p>
+						<p><strong>Panóplia</strong> is developed with 💜 by <a href="https://leonardt.eu/" target="_blank" title="Leonardt Lauenstein" >LEONARDT</a></p>
 					</div>
 				</div>
 		</footer>
