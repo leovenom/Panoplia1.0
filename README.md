@@ -1,4 +1,4 @@
-# Panóplia Plataform
+# Panóplia
 
 <a href="https://leonardt.eu">
  <p align="center">
